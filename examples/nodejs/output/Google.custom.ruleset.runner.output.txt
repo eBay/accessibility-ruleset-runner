@@ -1,0 +1,32 @@
+$ npm run custom.ruleset.runner
+
+> NodeJS-with-Selenium-Mocha-Chai-Example@1.0.0 custom.ruleset.runner C:\ViewStore\accessibility-ruleset-runner\examples\nodejs
+> mocha custom.ruleset.runner.js
+
+
+
+  Run custom ruleset
+FailureArrayLength: 3
+FailureArray: [ { passOrFail: 'FAIL',
+    rule: 'H33 Anchor Tag Title For New Windows',
+    ruleCode: '033',
+    ruleComplianceLevel: 'AA',
+    passed: 0,
+    elements: [ [Object] ],
+    message: '' },
+  { passOrFail: 'FAIL',
+    rule: 'Validate Skip to Main Content',
+    ruleCode: '0Skip',
+    ruleComplianceLevel: 'AA',
+    passed: 0,
+    elements: [ [Object] ] },
+  { passOrFail: 'FAIL',
+    rule: 'H42 H1 Heading',
+    ruleCode: '142',
+    ruleComplianceLevel: 'A',
+    passed: 0,
+    elements: [ [Object] ] } ]
+    √ should find no FAIL (5680ms)
+
+
+  1 passing (6s)

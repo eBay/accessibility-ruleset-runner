@@ -1,0 +1,24 @@
+{
+  "name": "NodeJS-with-Selenium-Mocha-Chai-Example",
+  "version": "1.0.0",
+  "description": "NodeJS with Selenium Mocha Chai Example",
+  "scripts": {
+    "custom.ruleset.runner": "mocha custom.ruleset.runner.js",
+    "aXe.ruleset.runner": "mocha aXe.ruleset.runner.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eBay/accessibility-ruleset-runner.git"
+  },
+  "keywords": [
+    "accessibility"
+  ],
+  "author": "sizu@ebay.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "fs": "0.0.1-security",
+    "mocha": "^6.1.3",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}

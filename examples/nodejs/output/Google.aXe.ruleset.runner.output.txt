@@ -1,0 +1,32 @@
+$ npm run aXe.ruleset.runner
+
+> NodeJS-with-Selenium-Mocha-Chai-Example@1.0.0 aXe.ruleset.runner C:\ViewStore\accessibility-ruleset-runner\examples\nodejs
+> mocha aXe.ruleset.runner.js
+
+
+
+  Run aXe ruleset
+FailedRuleNames:["aria-required-attr","aria-required-children"]
+[ { description:
+     'Ensures elements with ARIA roles have all required ARIA attributes',
+    help: 'Required ARIA attributes must be provided',
+    helpUrl:
+     'https://dequeuniversity.com/rules/axe/2.3/aria-required-attr?application=axeAPI',
+    id: 'aria-required-attr',
+    impact: 'critical',
+    nodes:
+     [ 'Elem: .a4bIc > input[type="text"][role="combobox"]          Source: <input class="gLFyf gsfi" maxlength="2048" name="q" type="text" jsaction="paste:puy29d" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" autocomplete="off" autocorrect="off" role="combobox" spellcheck="false" title="Search" value="" aria-label="Search">' ] },
+  { description:
+     'Ensures elements with an ARIA role that require child roles contain them',
+    help: 'Certain ARIA roles must contain particular children',
+    helpUrl:
+     'https://dequeuniversity.com/rules/axe/2.3/aria-required-children?application=axeAPI',
+    id: 'aria-required-children',
+    impact: 'critical',
+    nodes:
+     [ 'Elem: .a4bIc > input[type="text"][role="combobox"]          Source: <input class="gLFyf gsfi" maxlength="2048" name="q" type="text" jsaction="paste:puy29d" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" autocomplete="off" autocorrect="off" role="combobox" spellcheck="false" title="Search" value="" aria-label="Search">' ] } ]
+    √ should find no violations (6183ms)
+
+
+  1 passing (6s)
+

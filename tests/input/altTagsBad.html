@@ -1,0 +1,54 @@
+<html>
+<body>
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+	<h1>Bad Alt Tags</h1>
+<p>Wiki: ...</p>
+
+<h2>Alt Tags</h2>
+<h3>Fail Area</h3>
+<p>W3C: http://www.w3schools.com/tags/tag_area.asp</p>
+<img src="planets.gif" width="145" height="126" alt="Planets"
+usemap="#planetmap" id="img_1.1">
+
+<map name="planetmap" id="map_1.2">
+  <area shape="rect" coords="0,0,82,126" href="sun.htm" id="map_1.3">
+  <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury" id="map_1.4">
+  <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus" id="map_1.5">
+</map>
+	
+<h3>Fail Applet</h3>
+<p>W3C: http://www.w3schools.com/tags/tag_applet.asp</p>
+<applet code="Bubbles.class" width="350" height="350" id="applet_2.1">
+Java applet that draws animated bubbles.
+</applet>
+
+<h3>Fail Object</h3>
+<p>W3C: http://www.w3schools.com/tags/tag_object.asp</p>
+<p>Object 1</p>
+<object width="420" height="315" data="http://www.youtube.com/embed/XGSy3_Czz8k" id="object_3.1"></object>
+
+<h3>Pass IFrame</h3>
+<p>W3C: http://www.w3schools.com/tags/tag_iframe.asp</p>
+<iframe src="http://www.w3schools.com" id="iframe_4.1"></iframe>
+
+<h3>Fail Embed</h3>
+<p>http://reference.sitepoint.com/html/noembed</p>
+<p>Bad: Non sibling embed and noembed</p>
+<div>
+<embed id="embed_5.1">
+</embed>
+</div>
+<div>
+<embed id="embed_5.2" src="moviename.swf" width="100" height="80"
+  pluginspage="http://example.com/shockwave/download/" />
+</div>
+<div>
+<noembed id="noembed_5.3">
+  <img alt="Still from Movie" src="moviename.gif" 
+    width="100" height="80" />
+</noembed>
+</div>
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+
+</body>
+</html>

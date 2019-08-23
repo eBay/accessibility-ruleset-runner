@@ -1,0 +1,15 @@
+$ npm run test:custom.ruleset
+
+> accessibility-ruleset-runner@1.1.33 test:custom.ruleset C:\ViewStore\accessibility-ruleset-runner
+> mocha tests/custom.ruleset.test.js
+
+
+
+  Test custom ruleset against altTagsBad
+    v should find failures (6456ms)
+
+  Test custom ruleset against altTagsGood
+    v should find no failures (4002ms)
+
+
+  2 passing (10s)
