@@ -39,12 +39,17 @@ For example, when using version 73.0.3683.103 of Chrome, users may download the 
 
 These steps show how to run the code, after it has been downloaded.
 
-1.  Install package dependencies.  To install these node modules, from the accessibility-ruleset-runner/examples/nodejs folder, run:
+### Step 1: Install Package Dependencies
+
+To install these node modules, from the accessibility-ruleset-runner/examples/nodejs folder, run:
+
 ```sh
 npm install
 ```
 
-2.  Invoke ruleset runners.
+### Step 2: Invoke Ruleset Runners
+
+#### Custom Ruleset
 
 To invoke the custom ruleset runner, use the following command:
 
@@ -53,6 +58,8 @@ npm run custom.ruleset.runner
 ```
 
 The output should match the <a href='output/Google.custom.ruleset.runner.output.txt'>Custom Ruleset Runner Output</a>.
+
+#### aXe Ruleset
 
 To invoke the aXe rulset runner, use the following command:
 

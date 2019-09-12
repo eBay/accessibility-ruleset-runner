@@ -1,10 +1,12 @@
 # Chrome Developer Console
 These examples show how to run the rulesets directly in the Chrome Developer Console.
 
-## Step 1: View Setup
+## Running Rulesets Against a Website
+
+### Step 1: View Setup
 Open the Google Chrome browser.  Navigate to the url you wish to test.  For example, go to https://www.google.com.
 
-## Step 2: Open the Chrome Developer Console
+### Step 2: Open the Chrome Developer Console
 
 Follow these steps:
 
@@ -13,15 +15,15 @@ Follow these steps:
 <li>Click on the Console Tab.</li>
 </ul>
 
-## Step 3: Copy and Paste the Javascript Files
+### Step 3: Copy and Paste the Javascript Files
 
 To invoke the ruleset methods directly within the browser console, they must be copied into the console. Copy the entire ruleset javascript files (custom.ruleset.X.X.X.js and aXe.ruleset.X.X.X.js), paste them directly into the browser console and hit Enter.
 
-## Step 4: Invoke the Ruleset Methods
+### Step 4: Invoke the Ruleset Methods
 
 Run the commands as specified below.
 
-### Custom Ruleset
+#### Custom Ruleset
 The following commands are used to run the custom rulset and output the results:
 
 ```sh
@@ -37,7 +39,7 @@ var results = axs.Audit.run({"XPATH_ROOT":"//div[@id='div_1.2']"});
 ```
 <b>Note:</b> This will ignore page requirements like title, h1, skip to main content, etc
 
-### aXe Ruleset
+#### aXe Ruleset
 
 The aXe ruleset runner creates an array of which rules to run (each rule included here is associated with a <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a> AA guideline).
 
