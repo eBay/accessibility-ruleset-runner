@@ -1,10 +1,9 @@
 {
-  "name": "NodeJS-with-Selenium-Mocha-Chai-Example",
+  "name": "Custom-Ruleset-Tests",
   "version": "1.0.0",
-  "description": "NodeJS with Selenium Mocha Chai Example",
+  "description": "Custom Ruleset Tests",
   "scripts": {
-    "custom.ruleset.runner": "mocha custom.ruleset.runner.js",
-    "aXe.ruleset.runner": "mocha aXe.ruleset.runner.js"
+    "custom.ruleset.test": "mocha custom.ruleset.test.js"
   },
   "repository": {
     "type": "git",
