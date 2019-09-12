@@ -1,19 +1,19 @@
-/************************************************************************
-Copyright 2017-2019 eBay Inc.
-Author/Developer(s): Scott Izu, Sean Gates, Ian McBurnie
+//************************************************************************
+//Copyright 2017-2019 eBay Inc.
+//Author/Developer(s): Scott Izu, Sean Gates, Ian McBurnie
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+//Licensed under the Apache License, Version 2.0 (the "License");
+//you may not use this file except in compliance with the License.
+//You may obtain a copy of the License at
 
-    https://www.apache.org/licenses/LICENSE-2.0
+//    https://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-**************************************************************************/
+//Unless required by applicable law or agreed to in writing, software
+//distributed under the License is distributed on an "AS IS" BASIS,
+//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//See the License for the specific language governing permissions and
+//limitations under the License.
+//**************************************************************************/
  
 // Print a message at the bottom of the page
 AccessibilityEngine = function(jsonParameters) {
@@ -142,9 +142,7 @@ AccessibilityEngine = function(jsonParameters) {
 	return results;
 }
 
-/*
- * PAGE LAYOUT
- */
+//PAGE LAYOUT
 function ruleH25TitleElement(){
 	var result = createResult("H25 Title Tag", "025", "A");
 	var headElements = WAEDocumentFunction().getElementsByTagName("head");
@@ -308,9 +306,7 @@ function ruleH42HeadingSkipLinks(){
 	return result;
 }
 
-/*
- * FORMS
- */
+//FORMS
 function ruleH44PresenceOfLabelforInputTag(){
 	var result = createResult("H44 Input Tag Label", "044", "A");
 	var inputElements = getElementsByXpath(WAEDocumentFunction(), xpathRootPrefix+"//input[@type='password' or @type='text' or @type='checkbox' or @type='radio']", xpathRoot);
@@ -485,9 +481,7 @@ function formElementSubmitButtonOutsideForm(formElement) {
 	}
 }
 
-/**
- * IMAGE
- */
+//IMAGE
 function ruleH37PresenceOfAltInImage(){
 	var result = createResult("H37 Image Tag Alt Attribute", "037", "A");
 	var imgElements = getElementsByXpath(WAEDocumentFunction(), xpathRootPrefix+"//img", xpathRoot);
@@ -567,9 +561,7 @@ function handleContentImage(imgElement, anchorParent) {
 	}
 }
 
-/**
- * ALT TAGS
- */
+//ALT TAGS
 function ruleH24PresenceOfAltInImageMap(){
 	var result = createResult("H24 Image Map Alt Attribute", "024", "A");
 	var areaElements = getElementsByXpath(WAEDocumentFunction(), xpathRootPrefix+"//area", xpathRoot);
@@ -657,9 +649,7 @@ function ruleH46EmbedElement() {
 	return result;
 }
 
-/*
- * ANCHORS
- */
+//ANCHORS
 function ruleH33LinkOpensinNewWindow() {
 	var result = createResult("H33 Anchor Tag Title For New Windows", "033", "AA");
 	var anchorElements = getElementsByXpath(WAEDocumentFunction(), xpathRootPrefix+"//a[@target='_blank']", xpathRoot);
@@ -774,9 +764,7 @@ function ruleH75uniqueIDs() {
 	return result;
 }
 
-/*
- * RESULT DATA
- */
+//RESULT DATA
 createResult=function (ruleName, ruleCode, ruleComplianceLevel){
 	var result = {};
 	result.passOrFail = axs.constants.AuditResult.PASS;
@@ -928,13 +916,11 @@ function removeHashParameters(href) {
 	return hrefSplit[0];
 }
 
-/**
- * 1. aria-labelledby
- * 2. aria-label
- * 3. inner text
- * @param element
- * @returns
- */
+//1. aria-labelledby
+//2. aria-label
+//3. inner text
+//@param element
+//@returns
 function buildLabel(element) {
 	var ariaLabelledBy = buildTextFromReferencedIDs(element, "aria-labelledby");
 	if(!isEmpty(ariaLabelledBy)) {
@@ -948,13 +934,11 @@ function buildLabel(element) {
 	
 	return getInnerText(element);
 }
-	
-/**
- * 1. aria-describedby
- * 2. title
- * @param element
- * @returns
- */
+
+//1. aria-describedby
+//2. title
+//@param element
+//@returns
 function buildDescription(element) {
 	var ariaDescribedBy = buildTextFromReferencedIDs(element, "aria-describedby");
 	if(!isEmpty(ariaDescribedBy)) {
