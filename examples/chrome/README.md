@@ -26,7 +26,7 @@ The following commands are used to run the custom rulset and output the results:
 
 ```sh
 var results = axs.Audit.run();
-console.log(JSON.stringify(results));
+JSON.stringify(results);
 ```
 
 The output should match the <a href='output/ChromeDeveloperConsole.custom.ruleset.runner.output.txt'>custom Ruleset Runner Output</a>.
