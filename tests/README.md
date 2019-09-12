@@ -35,4 +35,6 @@ The output should match the <a href='output/custom.ruleset.test.output.txt'>Cust
 
 ## Methodology
 
-The cutsom ruleset is vetted against a library of html code snippets as discussed in <a href='../README.md#creating-a-ruleset'>Creating a Ruleset</a>.
+The cutsom ruleset is vetted against a library of good/bad html code snippets as discussed in <a href='../README.md#creating-a-ruleset'>Creating a Ruleset</a>.
+
+Each rule written requires careful thought into how various use cases should be treated.  When new use cases are discovered, they can be added to the sample html files to test rule enhancements.  When new rules are introduced, sample html files and tests should be added as well.
