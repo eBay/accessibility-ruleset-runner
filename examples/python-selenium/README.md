@@ -14,14 +14,14 @@ Write a Selenium Program to Open the Google Chrome browser.  Navigate to the url
 Download the project and run the test as follows:
 
 ```sh
-bash$>cd waeCustomRuleset
+bash$>cd examples/python-selenium/waeCustomRuleset/
       python web_driver_test.py
 ```
 
 The Project has 4 tests to demonstrate different injections for accessibility ruleset runner. You can run those individually as follows:
 
 ```sh
-bash$>cd waeCustomRuleset
+bash$>cd examples/python-selenium/waeCustomRuleset/
       python web_driver_test.py AxeRulesetSeleniumTest.test_ebay_accesibility_axe_ruleset
 ```
 
@@ -50,7 +50,9 @@ The aXe ruleset runner creates an array of which rules to run (each rule include
 
 You can specify the rules to run as follows:
 
+```
 Supported Rules = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']
+```
 
 ```sh
 rules_to_run = '[\'area-alt\']'
