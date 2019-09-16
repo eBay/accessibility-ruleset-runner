@@ -64,7 +64,7 @@ To invoke the aXe ruleset runner, use the following command:
 python aXe.ruleset.runner.py
 ```
 
-The output should match the <a href='output/eBay.aXe.ruleset.runner.output.txt'>Custom Ruleset Runner Output</a>.
+The output should match the <a href='output/eBay.aXe.ruleset.runner.output.txt'>aXe Ruleset Runner Output</a>.
 
 ## Modifications
 
