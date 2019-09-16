@@ -40,7 +40,7 @@ class CustomRulesetSeleniumTest(unittest.TestCase):
         with open(path,'r') as custom_ruleset:
             custom_rules = custom_ruleset.read()
 
-        accesibility_rules = custom_rules[0:len(custom_rules)-1] + '\n' + 'return JSON.stringify(axs.Audit.run());'
+        accesibility_rules = custom_rules + 'return JSON.stringify(axs.Audit.run());'
 
         return accesibility_rules
 

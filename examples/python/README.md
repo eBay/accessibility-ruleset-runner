@@ -1,4 +1,4 @@
-# Python with Selenium Examples
+# Python with Selenium
 These examples show how to run the rulesets using Selenium Webdriver.
 
 ## Pre-Requisites:
@@ -16,7 +16,7 @@ We assume the following are installed:
 
 <b>Note:</b> Windows users may need to add the location of Python (ie C:\Python27) to the Path environment variable.
 
-<a href='https://pypi.org/project/pip/'>pip</a> is the package installer for Python.  pip comes preinstalled for Python versions above Python 2.7.9.  You might also visit the <a href='https://pip.pypa.io/en/stable/installing/'>pip installation page</a>, if you need to install pip manually.
+<a href='https://pypi.org/project/pip/'>pip</a> is the package installer for Python.  pip comes preinstalled for Python versions above Python 2.7.9.  If you need to install pip manually, you may visit the <a href='https://pip.pypa.io/en/stable/installing/'>pip installation page</a> .
 
 <b>Note:</b> Windows users may need to add the location of pip (ie C:\Python27\Scripts) to the Path environment variable.
 
