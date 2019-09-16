@@ -19,12 +19,17 @@ var webDriver = require('selenium-webdriver');
 var chrome = require('selenium-webdriver/chrome');
 var assert = require('chai').assert;
 var fs = require('fs');
+var customRuleset = fs.readFileSync('../rulesets/custom.ruleset.1.1.32.js','utf8');
 
 var getDriver = function (browserName, options) {
   return options ? 
     new webDriver.Builder().forBrowser(browserName).setChromeOptions(options).build() : 
     new webDriver.Builder().forBrowser(browserName).build();
 };
+
+var modifyHTML = function (html) {
+  return html.replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ');
+}
 
 var verifyRuleNumberOfAssertionsFailed = function (results, ruleNumber, numberOfAssertionsFailed) {
   var failedElementsLength = results[ruleNumber]["elements"].length;
@@ -65,20 +70,18 @@ describe('Test custom ruleset against altTagsBad', function () {
   });
 
   it('should find failures', function (done) { 
-    var altTagsBad = fs.readFileSync('../tests/input/altTagsBad.html','utf8');
-    altTagsBad = altTagsBad.replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ');
-    var innerHTML = "document.body.innerHTML='"+altTagsBad+"';";
+    var html = fs.readFileSync('../tests/input/altTagsBad.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H24 Image Map Alt Attribute','H35 Applet Tag Alt Attribute','H53 Object Tag Alt Attribute','H64 IFrame Tag Title Attribute','H46 Embed Tag'];
-	
-    var customRuleset = fs.readFileSync('../rulesets/custom.ruleset.1.1.32.js','utf8');
-    customRuleset = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 	
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+customRuleset, 'custom ruleset')
+      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsFailed(results,0,1);
@@ -115,9 +118,8 @@ describe('Test custom ruleset against altTagsGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var altTagsGood = fs.readFileSync('../tests/input/altTagsGood.html','utf8');
-    altTagsGood = altTagsGood.replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ');
-    var innerHTML = "document.body.innerHTML='"+altTagsGood+"';";
+    var html = fs.readFileSync('../tests/input/altTagsGood.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     // In Chrome, The Applets do not load.  Chrome Removes Alt tags for Objects with Errors
     var chromBugFixApplets = "var applets = document.evaluate('//applet[@id=\"applet_2.1\"]', document, null, XPathResult.ANY_TYPE, null); var applet = applets.iterateNext(); applet.alt='Java Applet';";
@@ -125,14 +127,13 @@ describe('Test custom ruleset against altTagsGood', function () {
 
     var rulesToRun = ['H24 Image Map Alt Attribute','H35 Applet Tag Alt Attribute','H53 Object Tag Alt Attribute','H64 IFrame Tag Title Attribute','H46 Embed Tag'];
 
-    var customRuleset = fs.readFileSync('../rulesets/custom.ruleset.1.1.32.js','utf8');
-    customRuleset = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+chromBugFixApplets+chromBugFixObjects+customRuleset, 'custom ruleset')
+      driver.executeScript(innerHTML+chromBugFixApplets+chromBugFixObjects+ruleCode, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsTracked(results,0,3);
@@ -145,6 +146,90 @@ describe('Test custom ruleset against altTagsGood', function () {
         verifyRuleNumberOfAssertionsFailed(results,3,0);
         verifyRuleNumberOfAssertionsTracked(results,4,3);
         verifyRuleNumberOfAssertionsFailed(results,4,0);
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against anchorBad', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/anchorBad.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
+
+	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"a...anchor_A.1.1");
+        verifyFailureErrorCodeEquals(results,0,0,"033_AA_1");
+        verifyRuleNumberOfAssertionsTracked(results,1,9);
+        verifyRuleNumberOfAssertionsFailed(results,1,3);
+        verifyFailureElementIdentificationStringEquals(results,1,0,"a...anchor_B.1.2");
+        verifyFailureErrorCodeEquals(results,1,0,"133_AA_1");
+        verifyFailureElementIdentificationStringEquals(results,1,1,"a...anchor_B.2.2");
+        verifyFailureErrorCodeEquals(results,1,1,"133_AA_1");
+        verifyFailureElementIdentificationStringEquals(results,1,2,"a...anchor_B.3.2");
+        verifyFailureErrorCodeEquals(results,1,2,"133_AA_1");
+        verifyRuleNumberOfAssertionsTracked(results,2,9);
+        verifyRuleNumberOfAssertionsFailed(results,2,1);
+        verifyFailureElementIdentificationStringEquals(results,2,0,"a...anchor_C.1.1");
+        verifyFailureErrorCodeEquals(results,2,0,"075_AA_1");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against anchorGood', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/anchorGood.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
+
+	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,3);
+        verifyRuleNumberOfAssertionsFailed(results,0,0);
+        verifyRuleNumberOfAssertionsTracked(results,1,48);
+        verifyRuleNumberOfAssertionsFailed(results,1,0);
+        verifyRuleNumberOfAssertionsTracked(results,2,53);
+        verifyRuleNumberOfAssertionsFailed(results,2,0);
         done();
       }).catch((err) => {
         console.log(err);

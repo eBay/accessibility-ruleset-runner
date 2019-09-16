@@ -1,15 +1,21 @@
-$ npm run test:custom.ruleset
+$ npm run custom.ruleset.test
 
-> accessibility-ruleset-runner@1.1.33 test:custom.ruleset C:\ViewStore\accessibility-ruleset-runner
-> mocha tests/custom.ruleset.test.js
+> Custom-Ruleset-Tests@1.0.0 custom.ruleset.test C:\ForkedPublicGit\accessibility-ruleset-runner\tests
+> mocha custom.ruleset.test.js
 
 
 
   Test custom ruleset against altTagsBad
-    v should find failures (6456ms)
+    √ should find failures (3867ms)
 
   Test custom ruleset against altTagsGood
-    v should find no failures (4002ms)
+    √ should find no failures (2266ms)
+
+  Test custom ruleset against anchorBad
+    √ should find no failures (2134ms)
+
+  Test custom ruleset against anchorGood
+    √ should find no failures (2226ms)
 
 
-  2 passing (10s)
+  4 passing (11s)
