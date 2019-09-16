@@ -19,7 +19,7 @@ import unittest
 from os.path import dirname, abspath
 from selenium import webdriver
 
-class AxeRulesetSeleniumTest(unittest.TestCase):
+class AllRulesetSeleniumTest(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()

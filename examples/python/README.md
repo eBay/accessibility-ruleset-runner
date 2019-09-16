@@ -46,22 +46,43 @@ pip freeze
 
 ### Step 2: Invoke the Ruleset Runners
 
+#### Custom Ruleset
+
 To invoke the custom ruleset runner, use the following command:
 
 ```sh
-python ruleset.runner.py
+python custom.ruleset.runner.py
 ```
 
-The Project has 4 tests to demonstrate different injections for accessibility ruleset runner. You can run those individually as follows:
+The output should match the <a href='output/eBay.custom.ruleset.runner.output.txt'>Custom Ruleset Runner Output</a>.
+
+#### aXe Ruleset
+
+
+## Modifications
+
+### Test Another Website
+
+The examples are setup to be run without any configuration necessary.  However, users can test a different url by modifying the following line:
 
 ```sh
-bash$>cd examples/python-selenium/waeCustomRuleset/
-      python ruleset.runner.py AxeRulesetSeleniumTest.test_ebay_accesibility_axe_ruleset
+driver.get("https://www.ebay.com")
 ```
 
-### Additional Information
+In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a view.  Consider making the appopriate modifications necessary for your use case.
+
+## More Sample Code and Output
+
+### All Ruleset Runner
+
+The all.ruleset.runner.py file has 4 tests to demonstrate different injections for accessibility ruleset runner. You can run those individually as follows:
+
+```sh
+python all.ruleset.runner.py AllRulesetSeleniumTest.test_ebay_accesibility_axe_ruleset
+```
 
 #### Custom Ruleset
+
 The following commands are used to run the custom rulset and output the results:
 
 ```sh
@@ -103,14 +124,3 @@ self.inject_accessiblity_ruleset_runner()
 
 The output should match the <a href='output/SeleniumPythonExample.all.ruleset.runner.output.txt'>All Ruleset Runner Output</a>.
 
-## Modifications
-
-### Test Another Website
-
-The examples are setup to be run without any configuration necessary.  However, users can test a different url by modifying the following line:
-
-```sh
-driver.get("https://www.ebay.com")
-```
-
-In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a view.  Consider making the appopriate modifications necessary for your use case.

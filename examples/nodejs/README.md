@@ -35,7 +35,7 @@ The appropriate version of <a href='http://chromedriver.chromium.org/'>ChromeDri
 
 For example, when using version 73.0.3683.103 of Chrome, users may download the appopriate version of ChromeDriver (Mac/Unix/Windows) from <a href='https://chromedriver.storage.googleapis.com/index.html?path=73.0.3683.68/'>ChromeDriver 73.0.3683.68</a>.
 
-## Running Ruleset Examples
+## Running Ruleset Runners To Test a Website
 
 These steps show how to run the code, after it has been downloaded.
 
@@ -61,7 +61,7 @@ The output should match the <a href='output/Google.custom.ruleset.runner.output.
 
 #### aXe Ruleset
 
-To invoke the aXe rulset runner, use the following command:
+To invoke the aXe ruleset runner, use the following command:
 
 ```sh
 npm run aXe.ruleset.runner
