@@ -11,15 +11,6 @@ Code should *not* be pushed directly to `master`.
 
 The following guidelines apply to all contributors.
 
-## Making Changes
-* Fork the `accessibility-ruleset-runner` repository
-* Make your changes
-* Run tests
-* Push your changes to a branch in your fork
-* See our commit message guidelines further down in this document
-* Submit a pull request to the repository
-* Update `accessibility-ruleset-runner` GITHUB issue with the generated pull request link
-
 ## General Guidelines
 <ul>
   <li>Only one logical change per commit</li>
@@ -38,14 +29,6 @@ The following guidelines apply to all contributors.
   <li>Please squash all commits for a change into a single commit (this can be done using `git rebase -i`).</li>
 </ul>
 
-## Running Tests
-
-The custom ruleset is tested against sample html files which contain examples of good/bad html elements.  Each rule written requires careful thought into how various use cases should be treated.  When new use cases are discovered, they can be added to the sample html files to test rule enhancements.  When new rules are introduced, sample html files and tests should be added as well.
-
-```sh
-npm run test:custom.ruleset
-```
-
 ## Commit Message Guidelines
 * Provide a brief description of the change in the first line.
 * Insert a single blank line after the first line
@@ -62,3 +45,12 @@ Note: In Git commits the first line of the commit message has special significan
 We need to make public ruleset changes, including adding new rules, very carefully to maintain backward compatibility for contributions. Because of this, if you're interested in seeing a new rule, the best approach is to create an Github issue (or comment on an existing issue if there is one) requesting the rule and describing specific use cases for it.
 
 If the rule has merit, it will go through a thorough process of rule design and review. Any code should come after this.
+
+## Making Changes
+* Fork the `accessibility-ruleset-runner` repository
+* Make your changes
+* <a href='tests/README.md'>Run tests</a>
+* Push your changes to a branch in your fork
+* See our commit message guidelines further down in this document
+* Submit a pull request to the repository
+* Update `accessibility-ruleset-runner` GITHUB issue with the generated pull request link

@@ -35,16 +35,21 @@ The appropriate version of <a href='http://chromedriver.chromium.org/'>ChromeDri
 
 For example, when using version 73.0.3683.103 of Chrome, users may download the appopriate version of ChromeDriver (Mac/Unix/Windows) from <a href='https://chromedriver.storage.googleapis.com/index.html?path=73.0.3683.68/'>ChromeDriver 73.0.3683.68</a>.
 
-### Running Ruleset Examples
+## Running Ruleset Examples
 
 These steps show how to run the code, after it has been downloaded.
 
-1.  Install package dependencies.  To install these node modules, from the accessibility-ruleset-runner/examples/nodejs folder, run:
+### Step 1: Install Package Dependencies
+
+To install these node modules, from the accessibility-ruleset-runner/examples/nodejs folder, run:
+
 ```sh
 npm install
 ```
 
-2.  Invoke ruleset runners.
+### Step 2: Invoke Ruleset Runners
+
+#### Custom Ruleset
 
 To invoke the custom ruleset runner, use the following command:
 
@@ -54,6 +59,8 @@ npm run custom.ruleset.runner
 
 The output should match the <a href='output/Google.custom.ruleset.runner.output.txt'>Custom Ruleset Runner Output</a>.
 
+#### aXe Ruleset
+
 To invoke the aXe rulset runner, use the following command:
 
 ```sh
@@ -62,7 +69,9 @@ npm run aXe.ruleset.runner
 
 The output should match the <a href='output/Google.aXe.ruleset.runner.output.txt'>aXe Ruleset Runner Output</a>.
 
-### Modifications
+## Modifications
+
+### Test Another Website
 
 The examples are setup to be run without any configuration necessary.  However, users can test a different url by modifying the following line:
 
@@ -72,7 +81,7 @@ var url = "http://www.google.com";
 
 In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a view.  Consider making the appopriate modifications necessary for your use case.
 
-### Modifying Examples for Your Project
+### Include in Your Project
 
 These steps show how to use the published NPM module in your project.
 

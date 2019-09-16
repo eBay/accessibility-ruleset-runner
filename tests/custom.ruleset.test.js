@@ -65,13 +65,13 @@ describe('Test custom ruleset against altTagsBad', function () {
   });
 
   it('should find failures', function (done) { 
-    var altTagsBad = fs.readFileSync('./tests/input/altTagsBad.html','utf8');
+    var altTagsBad = fs.readFileSync('../tests/input/altTagsBad.html','utf8');
     altTagsBad = altTagsBad.replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ');
     var innerHTML = "document.body.innerHTML='"+altTagsBad+"';";
 
     var rulesToRun = ['H24 Image Map Alt Attribute','H35 Applet Tag Alt Attribute','H53 Object Tag Alt Attribute','H64 IFrame Tag Title Attribute','H46 Embed Tag'];
 	
-    var customRuleset = fs.readFileSync('./rulesets/custom.ruleset.1.1.32.js','utf8');
+    var customRuleset = fs.readFileSync('../rulesets/custom.ruleset.1.1.32.js','utf8');
     customRuleset = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 	
     driver = getDriver('chrome');
@@ -115,7 +115,7 @@ describe('Test custom ruleset against altTagsGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var altTagsGood = fs.readFileSync('./tests/input/altTagsGood.html','utf8');
+    var altTagsGood = fs.readFileSync('../tests/input/altTagsGood.html','utf8');
     altTagsGood = altTagsGood.replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ');
     var innerHTML = "document.body.innerHTML='"+altTagsGood+"';";
 
@@ -125,7 +125,7 @@ describe('Test custom ruleset against altTagsGood', function () {
 
     var rulesToRun = ['H24 Image Map Alt Attribute','H35 Applet Tag Alt Attribute','H53 Object Tag Alt Attribute','H64 IFrame Tag Title Attribute','H46 Embed Tag'];
 
-    var customRuleset = fs.readFileSync('./rulesets/custom.ruleset.1.1.32.js','utf8');
+    var customRuleset = fs.readFileSync('../rulesets/custom.ruleset.1.1.32.js','utf8');
     customRuleset = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
