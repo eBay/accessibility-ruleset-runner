@@ -1,0 +1,89 @@
+<html>
+<body>
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+	<h1>Bad Anchors</h1>
+<p>Wiki: ...</p>
+
+<h2>Basic Anchors</h2>
+<h3>Fail Example A.1</h3>
+	<p>Bad: Title does not clearly indicate that the link opens in a new window.</p>
+	<a id="anchor_A.1.1" href="http://example.com/subscribe.html" 
+		target="_blank" 
+		title="new window">
+		Subscribe to email notifications about breaking news
+	</a>
+	
+<h2>Similar Anchors</h2>
+<h3>Fail Example B.1</h3>
+	<p>Bad: Title and text indicate similar message, yet hrefs are different.</p>
+	<span> <a id="anchor_B.1.1" href="http://www.ebay.com"
+		title="opens ebay">eBay</a>
+	</span>
+	<span> <a id="anchor_B.1.2" href="http://www.gmail.com"
+		title="opens ebay">eBay</a>
+	</span>
+
+<h3>Fail Example B.2</h3>
+	<p>Bad: Title and text indicate similar message, yet hrefs are different.</p>
+	<span> <a id="anchor_B.2.1" href="http://www.google.com">Read
+			More</a>
+	</span>
+	<span> <a id="anchor_B.2.2" href="http://www.target.com">Read
+			More</a>
+	</span>
+
+<h3>Fail Example B.3</h3>
+	<p>Bad: Title and text indicate similar message, yet hrefs are different.</p>
+	<span> <a id="anchor_B.3.1" href="http://www.bbc.com" title="">Read
+			More2</a>
+	</span>
+	<span> <a id="anchor_B.3.2" href="http://www.abc.com">Read
+			More2</a>
+	</span>
+
+<h2>Distinct IDs for Anchors</h2>
+<h3>Fail Example C.1</h3>
+	<p>Bad: The ids are the same and should be unique.</p>
+	<span> <a id="anchor_C.1.1" href="http://www.bbc.com">Read
+			More2</a>
+	</span>
+	<span> <a id="anchor_C.1.1" href="http://www.abc.com">Read
+			More About It</a>
+	</span>
+	<!-- 
+
+<p>Note: This section was not added because we were not sure whether repeated links should be flagged.  Plus real code is more complex.  See tables at http://pages.ebay.com/help/policies/military-items.html
+ 
+<h2>Table Anchors</h2>
+<h3>Example B.1</h3>
+	<table border=1 ><tr><td>
+		<a id=t3.1 href="www.google.com">Link 1 www.google.com</a>
+		</td><td>
+		<a id=t3.2 href="www.google.com">Link 2 www.google.com</a>
+	</td></tr></table>
+	
+	<br><br>
+	
+		<table border=1 ><tr><td>
+	<a id=t4.1 href="www.ebay.com">Link 1 www.ebay.com</a>
+	</td></tr><tr><td>
+	<a id=t4.2 href="www.ebay.com">Link 2 www.ebay.com</a>
+	</td></tr></table>
+	
+	<br><br>
+	
+	<table border=1 ><tr><td>
+	<a id=t5.1 href="http://www.ebay.com/">Link 1 http://www.ebay.com/</a>
+	</td><td>
+	<a id=t5.2 href="http://www.google.com/">Link 2 http://www.google.com/</a>
+	</td></tr><tr><td>
+	<a id=t5.3 href="http://www.ebay.com/">Link 3 http://www.ebay.com/</a>
+	</td><td>
+	<a id=t5.4 href="http://www.google.com/">Link 4 http://www.google.com/</a>
+	</td></tr></table>
+-->
+
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+
+</body>
+</html>
