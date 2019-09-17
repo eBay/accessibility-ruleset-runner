@@ -60,7 +60,7 @@ In creating our custom ruleset, we have found certain general principles that ma
 </li>
 <li>Rulesets should return a well formed JSON.  JSON is also highly portable.  Results can be stored in a database for tracking, aggregated/displayed in dashboards and even converted directly into user friendly HTML Reports.
 </li>
-<li>Rulesets should be vetted against a library of html code snippets.  There should be examples of good/bad code that pass/fail various rules, as expected.  There are many variations of code on the web and the only way to gain confidence in a rule is to evolve the rule over time.  This is done by adding new use cases to the library as they are found and continually modifying the rule.
+<li>Rulesets should be vetted against a library of html code snippets.  There should be examples of good/bad code that pass/fail various rules, as expected.  Covering a large number of code variations tends to make the ruleset more robust.  See also <a href='tests/README.md#testing-methodology'>Testing Methodology</a>.
 </li>
 </ol>
 
