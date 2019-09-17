@@ -2,7 +2,6 @@
 <body>
 <!--REMOTE_WEB_DRIVER_BODY_HTML-->
 	<h1>Good Anchors</h1>
-<p>Wiki: ...</p>
 
 <h2>Basic Anchors</h2>
 <h3>Pass Example A.1</h3>
@@ -223,6 +222,21 @@
 
 <h3>Pass Example C.4</h3>
 <!-- We want the code to flag both errors and warnings and this case can be removed in  -->
+    <p>eBay exemption: Two links go to the same page except for hash tags.</p>
+    <a id="ttl_anchor_C.4.1" href="http://mylink1.com">Anchor Text 4.1</a>
+	<a id="ttl_anchor_C.4.2" href="http://mylink1.com#testMark">Anchor Text 4.1</a>
+	
+    <p>eBay exemption: Two links go to differnt places but the link text matches.  This is okay if the id starts with "ttl_" and the class is "g-asm" which is an item title.</p>
+    <a id="ttl_anchor_C.4.3" class="g-asm" href="http://mylink3.com">Anchor Text 4.2</a>
+	<a id="ttl_anchor_C.4.4" class="g-asm" href="http://mylink4.com">Anchor Text 4.2</a>
+
+    <p>eBay exemption: Two links go to differnt places but the link text matches.  This is okay if the class is "s-item__link" which is an item title.</p>
+	<a id="anchor_C.4.5" class="s-item__link" href="http://mylink5.com">Anchor Text 4.3</a>
+	<a id="anchor_C.4.6" class="s-item__link" href="http://mylink6.com">Anchor Text 4.3</a>
+
+    <p>eBay exemption: Two links go to differnt places but the link text matches.  This is okay if the class ancestor has item-title as class.</p>
+	<span class="item-title"><a id="anchor_C.4.7" href="http://mylink7.com">Anchor Text 4.4</a></span>
+	<span class="item-title"><a id="anchor_C.4.8" href="http://mylink8.com">Anchor Text 4.4</a></span>
 	
 	<p>eBay exemption: Two links go to different places but the link has visibility hidden
 	<a id="anchor_C.4.9" href="http://mylink9.com" style="visibility:hidden;">Anchor Text 4.5</a>
@@ -232,13 +246,13 @@
 	<a id="anchor_C.4.11" href="http://mylink11.com" style="display:none;">Anchor Text 4.6</a>
 	<a id="anchor_C.4.12" href="http://mylink12.com" style="display:none;">Anchor Text 4.6</a>
 	
-	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
-	
 <h3>Pass Example C.5</h3>
 	<p>Empty Text for Anchor But is Presentation</p>
 		<a id="anchor_C.16" href="http://www.google.com" aria-hidden="true" tabindex="-1"><img id="img_C.16" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Handbags"></a>
 		<a id="anchor_C.17" href="http://www.google.com/test" aria-hidden="true" tabindex="-1"><img id="img_C.17" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" role="presentation"></a>
 		<a id="anchor_C.18" href="http://www.google.com/test2" aria-hidden="true" tabindex="-1"><img id="img_C.18" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Handbags" style="width:1;height:1"></a>
+	
+	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
 	
 </body>
 </html>
