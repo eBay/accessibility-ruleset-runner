@@ -6,16 +6,22 @@ $ npm run custom.ruleset.test
 
 
   Test custom ruleset against altTagsBad
-    √ should find failures (3867ms)
+    √ should find failures (3866ms)
 
   Test custom ruleset against altTagsGood
-    √ should find no failures (2266ms)
+    √ should find no failures (2884ms)
 
   Test custom ruleset against anchorBad
-    √ should find no failures (2134ms)
+    √ should find no failures (2455ms)
 
   Test custom ruleset against anchorGood
-    √ should find no failures (2226ms)
+    √ should find no failures (2606ms)
+
+  Test custom ruleset against formBad
+    √ should find no failures (2533ms)
+
+  Test custom ruleset against formGood
+    √ should find no failures (2733ms)
 
 
-  4 passing (11s)
+  6 passing (17s)

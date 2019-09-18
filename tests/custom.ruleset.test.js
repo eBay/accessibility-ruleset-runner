@@ -92,6 +92,11 @@ var verifyFailureErrorCodeEquals = function (results, ruleNumber, failureNumber,
   assert.equal(elementFailureCode, errorCode);
 };
 
+var verifyFailureElementActionEquals = function (results, ruleNumber, failureNumber, action) {
+  var elementAction = results[ruleNumber]["elements"][failureNumber]["elementAction"];
+  assert.equal(elementAction, action);
+};
+
 describe('Test custom ruleset against altTagsBad', function () {
   this.timeout(500000);
   var driver;
@@ -262,6 +267,111 @@ describe('Test custom ruleset against anchorGood', function () {
         verifyRuleNumberOfAssertionsFailed(results,1,0);
         verifyRuleNumberOfAssertionsTracked(results,2,61);
         verifyRuleNumberOfAssertionsFailed(results,2,0);
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against formBad', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/formBad.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H44 Input Tag Label','H32 Form Submit Button'];
+
+	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,12);
+        verifyRuleNumberOfAssertionsFailed(results,0,11);
+        verifyFailureElementIdentificationStringEquals(results, 0, 0, "input...text_1.1");
+        verifyFailureErrorCodeEquals(results,0,0,"044_A_1");
+        verifyFailureElementIdentificationStringEquals(results, 0, 1, "input...text_1.2");
+        verifyFailureErrorCodeEquals(results,0,1,"044_A_1");
+        verifyFailureElementIdentificationStringEquals(results, 0, 2, "input...checkbox_1.3");
+        verifyFailureErrorCodeEquals(results,0,2,"044_A_1");
+        verifyFailureElementIdentificationStringEquals(results, 0, 3, "input...text_2.1");
+        verifyFailureErrorCodeEquals(results,0,3,"044_A_1");
+        verifyFailureElementIdentificationStringEquals(results, 0, 4, "input...checkbox_3.1");
+        verifyFailureErrorCodeEquals(results,0,4,"044_A_1");
+        verifyFailureElementIdentificationStringEquals(results, 0, 5, "input...checkbox_4.1");
+        verifyFailureElementIdentificationStringEquals(results, 0, 6, "input...checkbox_4.2");
+        verifyFailureElementIdentificationStringEquals(results, 0, 7, "input...text_4.3");
+        verifyFailureElementIdentificationStringEquals(results, 0, 8, "input...text_4.4");
+        verifyFailureElementIdentificationStringEquals(results, 0, 9, "input...checkbox_4.5");
+        verifyFailureElementIdentificationStringEquals(results, 0, 10, "input...checkbox_5.1");
+        verifyFailureErrorCodeEquals(results,0,10,"044_A_1");
+        verifyRuleNumberOfAssertionsTracked(results,1,4);
+        verifyRuleNumberOfAssertionsFailed(results,1,4);
+        verifyFailureElementIdentificationStringEquals(results,1,0,"form...form_1");
+        verifyFailureErrorCodeEquals(results,1,0,"032_A_1");
+        verifyFailureElementActionEquals(results,1,0,"http://www.ebay.com/1");
+        verifyFailureElementIdentificationStringEquals(results,1,1,"form...form_3");
+        verifyFailureErrorCodeEquals(results,1,1,"032_A_1");
+        verifyFailureElementActionEquals(results,1,1,"http://www.ebay.com/3");
+        verifyFailureElementIdentificationStringEquals(results,1,2,"form...form_5");
+        verifyFailureErrorCodeEquals(results,1,2,"032_A_1");
+        verifyFailureElementActionEquals(results,1,2,"http://www.ebay.com/5");
+        verifyFailureElementIdentificationStringEquals(results,1,3,"form...form_6");
+        verifyFailureErrorCodeEquals(results,1,3,"032_A_1");
+        verifyFailureElementActionEquals(results,1,3,"http://www.ebay.com/6");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against formGood', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var injectIFrameScript = "var iframe = document.getElementById('form_frame_11');"
+      +"iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;"
+      +"iframe.document.open();"
+      +"iframe.document.write('<input type=\"submit\" id=\"submit_11.3\" value=\"Submit Button 11.3\" src=\"11.3.jpg\" alt=\"Alt Text Option\" />');"
+      +"iframe.document.close();";
+
+    var html = fs.readFileSync('../tests/input/formGood.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H44 Input Tag Label','H32 Form Submit Button'];
+
+	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+injectIFrameScript+ruleCode, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,39);
+        verifyRuleNumberOfAssertionsFailed(results,0,0);
+        verifyRuleNumberOfAssertionsTracked(results,1,9);
+        verifyRuleNumberOfAssertionsFailed(results,1,0);
         done();
       }).catch((err) => {
         console.log(err);
