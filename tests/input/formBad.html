@@ -1,0 +1,80 @@
+<html>
+<body>
+	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+	<h1>Bad Forms Page</h1>
+	<h2>Fail Example 1</h2>
+	<p>Error: Input field labels are not marked with label tags (3).</p>
+	<p>Error: Form has no submit button.</p>
+	<!-- Firefox will keep non existent actions but Chrome will remove actions that dont exist.  Had to change action from form_1.asp to http://www.ebay.com -->
+	<!-- Chrome will also change action http://www.ebay.com to http://www.ebay.com/ -->
+	<form id="form_1" action="http://www.ebay.com/1">
+		Text Field 1.1 <input type="text" id="text_1.1"> <br>
+		Text Field 1.2 <input type="text" id="text_1.2"> <br>
+		Check Box 1.3 <input type="checkbox" id="checkbox_1.3">
+	</form>
+
+	<h2>Fail Example 2</h2>
+	<p>Error: Input field labels are not marked with label tags (1).</p>
+	Text Field 2.1
+	<input type="text" id="text_2.1">
+
+	<h2>Fail Example 3</h2>
+	<p>Error: This example has an empty label (1).</p>
+	<p>Error: Form has no submit button (button needs type="submit").</p>
+	<form id="form_3" action="http://www.ebay.com/3">
+		<label for="checkbox_id_3.1"></label> <input type="checkbox"
+			id="checkbox_3.1">
+		<button id="button_3.2">Button 3.2</button>
+	</form>
+
+	<h2>Fail Example 4</h2>
+	<p>Error: Even in tables, labels should be applied (5) which can be
+		checked with a Screen Reader.</p>
+	<table>
+		<tr>
+			<td>Check Box 4.1</td>
+			<td><input type="checkbox" id="checkbox_4.1"></td>
+		</tr>
+		<tr>
+			<td>Check Box 4.2</td>
+			<td><input type="checkbox" id="checkbox_4.2"></td>
+		</tr>
+		<tr>
+			<td><input type="text" id="text_4.3"></td>
+			<td>Text Field 4.3</td>
+		</tr>
+		<tr>
+			<td><input type="text" id="text_4.4"></td>
+			<td>Text Field 4.4</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" id="checkbox_4.5"></td>
+			<td>Check Box 4.5</td>
+		</tr>
+	</table>
+
+	<h2>Fail Example 5</h2>
+	<p>Error: This example has an empty explicit label (2).</p>
+	<p>Error: Form has no submit button (input needs type="submit").</p>
+	<p>Error: Form has no submit button (button needs type="submit").  Causes ActiveX Error.</p>
+	<form id="form_5" action="http://www.ebay.com/5">
+		<label> <input type="checkbox" id="checkbox_5.1">
+		</label>
+		<div>
+			<input type="button" id="submit_5.2" title="Submit Button 5.2" value="Value 5.2">
+		</div>
+		<button onclick="this.form.submit();">Submit Button 5.3</button>
+	</form>
+	
+	<h2>Fail Example 6</h2>
+	<p>Error: The submit button is hidden.</p>
+	<form id="form_6" action="http://www.ebay.com/6">
+		<input type="text" title="Text 6.1" id="text_6.1">
+		<span style="display: none;"
+			id="span_6.2">
+			<input type="submit" value="Search" class="aBtn-sB" id="submit_6.3">
+		</span>
+	</form>
+	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+</body>
+</html>

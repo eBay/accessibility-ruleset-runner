@@ -1,0 +1,234 @@
+<html>
+<body>
+	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+	<h1>Good Forms Page</h1>
+	<h2>Pass Example 1</h2>
+	<p>Good: Uses label for to associate labels with input fields.</p>
+	<p>Good: Includes a submit button for the form (input tag).</p>
+	<p>Good: Using the for attribute is preferred because clicking the
+		text will check the box or put focus in the text field.</p>
+	<form action="form_1.asp">
+		<label for="text_1.1">Text Field 1.1 </label> <label for="text_1.2">Text
+			Field 1.2 </label> <input type="text" id="text_1.1"> <br> <input
+			type="text" id="text_1.2"> <br> <label
+			for="checkbox_1.3">Check Box 1.3</label> <input type="checkbox"
+			id="checkbox_1.3"> <br>
+		<div>
+			<input type="submit" id="submit_1.4" value="Submit Button 1.4">
+		</div>
+	</form>
+
+	<h2>Pass Example 2</h2>
+	<p>Good: Uses table layout to associate fields.</p>
+	<p>Good: Using the for attribute is preferred because clicking the
+		text will check the box or put focus in the text field.</p>
+	<table>
+		<tr>
+			<td><label for="text_2.1">Text Field 2.1</label></td>
+			<td><input type="text" id="text_2.1"></td>
+		</tr>
+		<tr>
+			<td><input type="text" id="text_2.2"></td>
+			<td><label for="text_2.2">Text Field 2.2</td>
+		</tr>
+		<tr>
+			<td><label for="checkbox_2.3">Check Box 2.3</label></td>
+			<td><input type="checkbox" id="checkbox_2.3"></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" id="checkbox_2.4"></td>
+			<td><label for="checkbox_2.4">Check Box 2.4</label></td>
+		</tr>
+	</table>
+
+	<h2>Pass Example 3</h2>
+	<p>Good: Label elements wrap input elements so for attribute is not
+		needed.</p>
+	<p>Good: Includes a submit button for the form (button tag).</p>
+	<form action="form_3.asp">
+		<label>
+			<input type="checkbox" id="checkbox_3.1">
+			<span>Check Box 3.1</span>
+		</label>
+		<label>
+			<span>Check Box 3.2</span>
+			<input type="checkbox" id="checkbox_3.2">
+		</label>
+		<label>
+			<p>Check Box 3.3</p>
+			<input type="checkbox" id="checkbox_3.3">
+		</label>
+		<label>
+				<div>
+					<span>Check Box 3.4</span> <input type="checkbox" id="checkbox_3.4">
+				</div>
+		</label>
+		<label> 
+			<span> 
+				<input type="text" id="text_3.5">
+				<p>Text Field 3.5</p>
+			</span>
+		</label> 
+		<label>
+			Text Field 3.6 
+			<input type="text" id="text_3.6">
+		</label>
+		<label>
+			<input type="checkbox" id="checkbox_3.7" title="Check Box 3.7">
+		</label>
+		<button type="submit" id="submit_3.8">Button 3.8</button>
+	</form>
+
+	<h2>Pass Example 4</h2>
+	<p>Good: Elements use title attributes.</p>
+	<p>Good: Label elements wrap input elements so for attribute is not
+		needed.</p>
+	<p>Good: Includes a submit button image for the form (button tag).
+		The image shows on the button.</p>
+	<form action="form_4.asp">
+		For Check Box 4.1, the label is read by the Screen Reader and the
+		title shows as a tooltip. <label for="checkbox_4.1">Check Box
+			4.1</label> <input type="checkbox" id="checkbox_4.1"
+			title="Optional Tooltip for 4.1"> <input type="checkbox"
+			id="checkbox_4.2" title="Check Box 4.2"> <input
+			type="checkbox" id="checkbox_4.3" title="Check Box 4.3"> <input
+			type="checkbox" id="checkbox_4.4" title="Check Box 4.4"> <input
+			type="text" id="text_4.5" title="Check Box 4.5"> <input
+			type="text" id="text_4.6" title="Check Box 4.6">
+
+		<button type="submit" id="submit_4.7" value="Submit Button 4.7">
+			<img src="4.7.jpg" alt="Optional Alt Text for 4.7">
+		</button>
+
+	</form>
+
+	<h2>Pass Example 5</h2>
+	<p>Good: Includes a submit button image for the form (input tag).</p>
+	<form action="form_5.asp">
+		<input type="image" id="submit_5.1" value="Submit Button 5.1"
+			src="5.1.jpg" alt="Alt Text Option">
+	</form>
+
+	<h2>Example 6</h2>
+	<div id="gh-ac-box2">
+		<label for="gh-ac" style="visibility:hidden" class="gh-hdn g-hdn firefinder-match">Enter
+			your search keyword</label><input type="text" autofocus=""
+			class="gh-tb ui-autocomplete-input" size="50" maxlength="300"
+			placeholder="Search... " id="gh-ac" name="_nkw" autocomplete="off"><span
+			role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+	</div>
+	
+	<h2>Pass Example 7</h2>
+	<p>Good: Dynamically added labels are okay.  Also, if hidden, inputs do not need labels.</p>
+	<span>
+	<!-- 
+	<label for="defaultTid">
+	<div class="fl idtLft">
+		<img src="http://ir.ebaystatic.com/f/2ip2q1updu5pjbuestctt43g2mx.png" style="margin-top:-20px" border="1" alt="Default template">
+	</div>
+	<div class="fl idtLft" style="margin-top: -8px;width:300px">
+		<p><b>Basic</b></p>
+		<p class="subTxt">Appropriate for most guides (ex: How to Buy a Mattress)</p>
+	</div>
+	<div class="clr">
+	</div>
+	</label>
+	 -->
+	</span>
+	<input id="defaultTid" type="radio" class="radio-input" checked="checked" value="1" name="tid" style="visibility:hidden">
+	<span style="visibility:hidden">
+		<input id="radio_7.1" type="radio" class="radio-input" checked="checked" value="1">
+	</span>
+	
+	<h2>Pass Example 8</h2>
+	<p>Good: Forms which only have hidden inputs do not need to be checked for submit buttons.</p>
+	<form action="form_8.1.asp">
+		<input type="hidden" id="hidden_8.2" value="10">
+		<input type="hidden" id="hidden_8.3" value="11">
+	</form>
+	
+	<form action="form_8.4.asp" style="visibility:hidden">
+		<input id="radio_8.5" type="radio" class="radio-input" checked="checked" value="1">
+		<input id="radio_8.6" type="radio" class="radio-input" checked="checked" value="1">
+	</form>
+	
+	<form action="form_8.7.asp">
+		<div>Yes</div>
+	</form>
+	
+	<h2>Pass Example 9</h2>
+	<p>Good: Adds multiple labels using aria-labelledby.</p>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td id="th_9.1">Tracking</td>
+			<td id="th_9.2">Carrier</td>
+		</tr>
+		<tr>
+			<td id="td_9.3">Item 1</td>
+			<td><input type="text" id="text_9.4" aria-labelledby="td_9.3 th_9.1"></td>
+			<td><input type="text" id="text_9.5" aria-labelledby="td_9.3 th_9.2"></td>
+		</tr>
+		<tr>
+			<td id="td_9.6">Item 2</td>
+			<td><input type="text" id="text_9.7" aria-labelledby="td_9.6 th_9.1"></td>
+			<td><input type="text" id="text_9.8" aria-labelledby="td_9.6 carrier_header"></td>
+		</tr>
+		<tr>
+			<td id="td_9.9">Item 3</td>
+			<td><input type="text" id="text_9.10" aria-labelledby="td_9.9 th_9.1"></td>
+			<td><input type="text" id="text_9.11" aria-labelledby="td_9.9 th_9.2"></td>
+		</tr>
+	</table>
+	
+	<h2>Pass Example 10</h2>
+	<p>Good: Add a title through aria-label.</p>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Tracking</td>
+			<td>Carrier</td>
+		</tr>
+		<tr>
+			<td>Item 1</td>
+			<td><input type="text" aria-label="Item 1 Tracking"></td>
+			<td><input type="text" aria-label="Item 1 Carrier"></td>
+		</tr>
+		<tr>
+			<td>Item 2</td>
+			<td><input type="text" aria-label="Item 2 Tracking"></td>
+			<td><input type="text" aria-label="Item 2 Carrier"></td>
+		</tr>
+		<tr>
+			<td>Item 3</td>
+			<td><input type="text" aria-label="Item 3 Tracking"></td>
+			<td><input type="text" aria-label="Item 3 Carrier"></td>
+		</tr>
+	</table>
+	
+	<h2>Pass Example 11</h2>
+	<p>eBay Exemption: Sometimes we add iframes to load content which makes it difficult to find the iframe submit.  Not recommended but allowed.</p>
+	<form action="form_11.1.asp">
+		<input type="text" id="text_11.2" aria-label="Text 11.2">
+		In order for this form to be valid, javascript should be used to inject the submit button.
+		<pre>input type="submit" id="submit_11.3" value="Submit Button 11.3" src="11.3.jpg" alt="Alt Text Option"</pre>
+		<iframe id="form_frame_11">
+		    <!-- This code is injected directly from the test -->
+			<!-- input type="submit" id="submit_11.3" value="Submit Button 11.3" src="11.3.jpg" alt="Alt Text Option" /> -->
+		</iframe>
+		<div>Yes</div>
+	</form>
+	
+	<h2>Pass Example 12</h2>
+	<p>Good: HTML 5 allows a submit button to exist outside a form.</p>
+	
+	<form id="form_12_1" method="get" action="form_12.1.asp">
+		<label for="text_12.2">Text Field 12.2</label>
+	    <input type="text" name="text_12.2" id="text_12.2" />
+	</form>
+ 
+	<input type="submit" form="form_12_1" />
+	
+	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+</body>
+</html>
