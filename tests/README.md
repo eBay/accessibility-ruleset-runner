@@ -60,7 +60,7 @@ The rules of the custom ruleset are grouped into 5 main categories (see below). 
 <li>Forms
 <ul>
 <li>H44 Input Tag Label, <a href='https://www.w3.org/TR/WCAG20-TECHS/H44.html'>H44</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all'>1.1.1</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-programmatic'>1.3.1</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-cues'>3.3.2</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat-rsv'>4.1.2</a>)</li>
-<li>H32 Form Submit Button, <a href='https://www.w3.org/TR/WCAG20-TECHS/H32.html'>H33</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior-unpredictable-change'>3.2.2</a>)</li>
+<li>H32 Form Submit Button, <a href='https://www.w3.org/TR/WCAG20-TECHS/H32.html'>H32</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior-unpredictable-change'>3.2.2</a>)</li>
 </ul>
 </li>
 
