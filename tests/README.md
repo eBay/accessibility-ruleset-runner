@@ -75,7 +75,7 @@ The rules of the custom ruleset are grouped into 5 main categories (see below). 
 <li>H25 Title Tag, <a href='https://www.w3.org/TR/WCAG20-TECHS/H25.html'>H25</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-title'>2.4.2</a>)</li>
 <li>H57 HTML Tag Lang Attribute, <a href='https://www.w3.org/TR/WCAG20-TECHS/H57.html'>H57</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-doc-lang-id'>3.1.1</a>)</li>
 <li>H42 Heading Hierarchy, <a href='https://www.w3.org/TR/WCAG20-TECHS/H42.html'>H42</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-programmatic'>1.3.1</a>)</li>
-<li>H42 H1 Heading, <a href='https://www.w3.org/TR/WCAG20-TECHS/H37.html'>H37</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all'>1.1.1</a>)</li>
+<li>H42 H1 Heading, <a href='https://www.w3.org/TR/WCAG20-TECHS/H42.html'>H42</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-programmatic'>1.3.1</a>)</li>
 <li>Validate Skip to Main Content, <a href='https://www.w3.org/TR/WCAG20-TECHS/G1.html'>G1</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-skip'>2.4.1</a>)</li>
 </ul>
 </li>
