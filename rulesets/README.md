@@ -59,4 +59,4 @@ The rules of the custom ruleset are grouped into 5 main categories (see below). 
 
 ## aXe Ruleset
 
-For details about the aXe Ruleset, visit <a href='https://github.com/dequelabs/axe-core'>axe-core</a> and the <a href='https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md'>Rule Descriptions</a>
+<a href='https://www.deque.com/'>Deque Systems</a> actively supports <a href='https://github.com/dequelabs/axe-core'>aXe</a> and provides <a href='https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md'>rule descriptions</a>.
