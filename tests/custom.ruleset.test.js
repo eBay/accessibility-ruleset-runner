@@ -19,7 +19,31 @@ var webDriver = require('selenium-webdriver');
 var chrome = require('selenium-webdriver/chrome');
 var assert = require('chai').assert;
 var fs = require('fs');
+
 var customRuleset = fs.readFileSync('../rulesets/custom.ruleset.1.1.32.js','utf8');
+	  
+// In Chrome, The Images do not load.  This can wait until images load in async call.
+// runner must be defined, see createRunner
+var checkImagesLoaded = ""
+  +"var checkImagesLoaded = function() {"
+  +"  var images = document.evaluate('//img', document, null, XPathResult.ANY_TYPE, null);"
+  +"  var image = images.iterateNext();"
+  +"  if(image.width > 0){"
+  +"    runner();"
+  +"  } else {"
+  +"    setTimeout(checkImagesLoaded, 100);"
+  +"  }"
+  +"};"
+  +"checkImagesLoaded();";
+
+// Used to define runner for async call
+var createRunner = ""
+  +"function createRunner(callback, rulesToRun) {"
+  +"  return function() {"
+  +"    results = JSON.stringify(axs.Audit.run({rulesToRun: rulesToRun}));"
+  +"    callback(results);"
+  +"  };"
+  +"}";
 
 var getDriver = function (browserName, options) {
   return options ? 
@@ -96,7 +120,6 @@ var verifyFailureElementActionEquals = function (results, ruleNumber, failureNum
   var elementAction = results[ruleNumber]["elements"][failureNumber]["elementAction"];
   assert.equal(elementAction, action);
 };
-
 describe('Test custom ruleset against altTagsBad', function () {
   this.timeout(500000);
   var driver;
@@ -111,13 +134,13 @@ describe('Test custom ruleset against altTagsBad', function () {
 
     var rulesToRun = ['H24 Image Map Alt Attribute','H35 Applet Tag Alt Attribute','H53 Object Tag Alt Attribute','H64 IFrame Tag Title Attribute','H46 Embed Tag'];
 
-	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 	
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsFailed(results,0,1);
@@ -158,18 +181,22 @@ describe('Test custom ruleset against altTagsGood', function () {
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     // In Chrome, The Applets do not load.  Chrome Removes Alt tags for Objects with Errors
-    var chromBugFixApplets = "var applets = document.evaluate('//applet[@id=\"applet_2.1\"]', document, null, XPathResult.ANY_TYPE, null); var applet = applets.iterateNext(); applet.alt='Java Applet';";
-    var chromBugFixObjects = "var objects = document.evaluate('//object[@id=\"object_3.1\"]', document, null, XPathResult.ANY_TYPE, null); var object = objects.iterateNext(); object.alt='Flash Object 3.1';";
+    var fixAppletAndObject = ""
+      +"var applets = document.evaluate('//applet[@id=\"applet_2.1\"]', document, null, XPathResult.ANY_TYPE, null);"
+      +"var applet = applets.iterateNext();"
+      +"applet.alt='Java Applet';"
+      +"var objects = document.evaluate('//object[@id=\"object_3.1\"]', document, null, XPathResult.ANY_TYPE, null);"
+      +"var object = objects.iterateNext();"
+      +"object.alt='Flash Object 3.1';";
 
     var rulesToRun = ['H24 Image Map Alt Attribute','H35 Applet Tag Alt Attribute','H53 Object Tag Alt Attribute','H64 IFrame Tag Title Attribute','H46 Embed Tag'];
-
-	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+chromBugFixApplets+chromBugFixObjects+ruleCode, 'custom ruleset')
+      driver.executeScript(innerHTML+customRuleset+fixAppletAndObject+runner, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsTracked(results,0,3);
@@ -203,14 +230,13 @@ describe('Test custom ruleset against anchorBad', function () {
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
-
-	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsTracked(results,0,1);
@@ -250,14 +276,13 @@ describe('Test custom ruleset against anchorGood', function () {
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
-
-	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
 		processExemptions(results); // Patterns can be made for various exemptions
@@ -288,14 +313,13 @@ describe('Test custom ruleset against formBad', function () {
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H44 Input Tag Label','H32 Form Submit Button'];
-
-	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+ruleCode, 'custom ruleset')
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsTracked(results,0,12);
@@ -348,30 +372,106 @@ describe('Test custom ruleset against formGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var injectIFrameScript = "var iframe = document.getElementById('form_frame_11');"
+    var html = fs.readFileSync('../tests/input/formGood.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    // Used to add a submit button programmatically within an iframe, which is a valid way to provide a submit button in a form
+    var addSubmitButton = "var iframe = document.getElementById('form_frame_11');"
       +"iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;"
       +"iframe.document.open();"
       +"iframe.document.write('<input type=\"submit\" id=\"submit_11.3\" value=\"Submit Button 11.3\" src=\"11.3.jpg\" alt=\"Alt Text Option\" />');"
       +"iframe.document.close();";
 
-    var html = fs.readFileSync('../tests/input/formGood.html','utf8');
-    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
-
     var rulesToRun = ['H44 Input Tag Label','H32 Form Submit Button'];
-
-	var ruleCode = customRuleset + ' return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
 
     driver
     .then(function() {
-      driver.executeScript(innerHTML+injectIFrameScript+ruleCode, 'custom ruleset')
+      driver.executeScript(innerHTML+customRuleset+addSubmitButton+runner, 'custom ruleset')
       .then(function (response) {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsTracked(results,0,39);
         verifyRuleNumberOfAssertionsFailed(results,0,0);
         verifyRuleNumberOfAssertionsTracked(results,1,9);
         verifyRuleNumberOfAssertionsFailed(results,1,0);
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against imageBad', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/imageBad.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H37 Image Tag Alt Attribute'];
+    var runner = "var runner = createRunner(arguments[arguments.length - 1], "+JSON.stringify(rulesToRun)+");"
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeAsyncScript(innerHTML+customRuleset+createRunner+runner+checkImagesLoaded, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,12);
+        verifyRuleNumberOfAssertionsFailed(results,0,12);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"img...image_1.1");
+        verifyFailureElementIdentificationStringEquals(results,0,1,"img...image_2.2");
+        verifyFailureElementIdentificationStringEquals(results,0,2,"img...image_3.2");
+        verifyFailureElementIdentificationStringEquals(results,0,3,"img...image_4.2");
+        verifyFailureElementIdentificationStringEquals(results,0,4,"img...image_1C.3");
+        verifyFailureElementIdentificationStringEquals(results,0,5,"img...image_1C.6");
+        verifyFailureElementIdentificationStringEquals(results,0,6,"img...image_1C.7");
+        verifyFailureElementIdentificationStringEquals(results,0,7,"img...image_1C.8");
+        verifyFailureElementIdentificationStringEquals(results,0,8,"img...image_1C.10");
+        verifyFailureElementIdentificationStringEquals(results,0,9,"img...image_1C.11");
+        verifyFailureElementIdentificationStringEquals(results,0,10,"img...image_1C.13");
+        verifyFailureElementIdentificationStringEquals(results,0,11,"img...image_1C.14");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against imageGood', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/imageGood.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H37 Image Tag Alt Attribute'];
+    var runner = "var runner = createRunner(arguments[arguments.length - 1], "+JSON.stringify(rulesToRun)+");"
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeAsyncScript(innerHTML+customRuleset+createRunner+runner+checkImagesLoaded, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,33);
+        verifyRuleNumberOfAssertionsFailed(results,0,0);
         done();
       }).catch((err) => {
         console.log(err);

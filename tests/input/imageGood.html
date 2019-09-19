@@ -1,0 +1,197 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+	<h1>Good Images Page</h1>
+	
+<h2>Content Images Which Are Not Links</h2>
+<h3>Pass Example 1</h3>
+	<p>Good: Image has an alt attribute, since it is not contained within an anchor tag.</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H37 Example 1</p>
+	<p>
+	  <img id="img_1.1" src="icon_1.1.jpg" alt="Image 1.1">
+	</p>
+
+<h2>Content Images Which Are Links</h2>
+<h3>Pass Example 2</h3>
+	<p>Good: The anchor text replaces the the image alt.</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H30.html Example 3</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H2 Example 1</p>
+<ul>
+<li>(With Image, Preferred) Hyper Link with Image and Associated Text</li>
+<li>JAWS+IE reads "Anchor Text 2 Point 3, Link"</li>
+<li>JAWS+CH: "Anchor Text 2 Point 3, Link"</li>
+</ul>
+	<p>
+		<a id="anchor_2.1" href="anchor_2.1.html">
+			<img id="image_2.2" src="http://i14.ebayimg.com/01/u/000/77/47/f91c_7.JPG?set_id=81" alt="">
+			Anchor Text 2.3
+		</a>
+	</p>
+
+<h3>Pass Example 3</h3>	
+	<p>Good: The alt attribute provides information in addition to the anchor text, such as with a common icon.</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H30.html Example 4</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H30.html Example 5</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H2 Example 2</p>
+<ul>
+<li>(With Image, too much text) Hyper Link with Icon and Associated Text</li>
+<li>JAWS+IE: Image Alt 3 Point 2, Anchor Text 3 Point 3, Link Graphic</li>
+<li>JAWS+CH: Image Alt 3 Point 2, Anchor Text 3 Point 3, Link Graphic</li>
+</ul>
+	<p>
+		<a id="anchor_3.1" href="anchor_3.1.html">
+			<img id="image_3.2" src="http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/dHEAAOxy63FSshbu/$_1.JPG" alt="Image Alt 3.2" >
+			Anchor Text 3.3
+		</a>
+	</p>
+	
+<h3>Pass Example 4</h3>	
+	<p>eBay Exemption: This is not preffered because some modes will not read the image alt tag, but is allowed since users can switch mode.</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H30.html Example 2</p>
+<ul>
+<li>Example - Image,ImageAlt,</li>
+<li>JAWS+IE: Image Alt 4.2, Link Graphic</li>
+<li>JAWS+CH: Image Alt 4.2, Link Graphic</li>
+</ul>
+	<p>
+		<a id="anchor_4.1" href="anchor_4.1.html">
+			<img id="image_4.2" src="http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/dHEAAOxy63FSshbu/$_1.JPG" alt="Image Alt 4.2">
+		</a>
+	</p>
+
+<h3>Pass Example 5</h3>
+	<p>eBay Exemption: There are multiple items within a single anchor tag.  Additional images are exemptions.</p>
+	<p>Good: This example demonstrates an example where the Screen Reader will read the anchor text and image alt.</p>
+	<p>Good: The anchor title will be used as a tooltip on the anchor text, which visually impaired users can enlarge.</p>
+	<p>Good: The image alt will be used as a tooltip on the image, which visually impaired users can enlarge.</p>
+<ul>
+<li>(With Image, Not Preferred, duplicate information) Hyper Link with Icon, Associated Text and Optional Title</li>
+<li>JAWS+IE: Image Alt 5 Point 2, Anchor Text 5 Point 3, Image Alt 5 Point 4, Anchor Text 5 Point 5, Link Graphic</li>
+<li>JAWS+CH: Image Alt 5 Point 2, Anchor Text 5 Point 3, Image Alt 5 Point 4, Anchor Text 5 Point 5, Graphic</li>
+</ul>
+	<p>
+		<a id="anchor_5.1" href="anchor_5.1.html" title="Anchor Title 5.1" >
+			<img id="image_5.2" src="http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/dHEAAOxy63FSshbu/$_1.JPG" alt="Image Alt 5.2">
+			Anchor Text 5.3
+		    <img id="image_5.4" src="http://www.ebay.com/blogs/stories/sites/default/files/harley-davidson-330.jpg" alt="Image Alt 5.4">
+		    Anchor Text 5.5
+		</a>
+	</p>
+	
+<h3>Pass Example 6</h3>
+	<p>Good: The anchor text replaces the image alt (text is nested within separate tag).</p>
+	<p>Note: It is good practice to include an empty alt tag, to emphasize that the alt is purposely empty.</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H30.html Example 3</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H2 Example 1</p>
+<ul> 
+<li>(With Image, Preferred) Hyper Link with Image and Associated Text</li>
+<li>JAWS+IE: Anchor Text 6 Point 3, Link</li>
+<li>JAWS+CH: Anchor Text 6 Point 3, Link</li>
+</ul>
+	<p>
+		<a id="anchor_6.1" href="anchor_6.1.html">
+			<img id="image_6.2" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="">
+			<span>Anchor Text 6.3</span>
+		</a>
+	</p>
+
+<h3>Pass Example 7</h3>	
+	<p>eBay Exemption: The anchor title replaces the image alt.  Not pointed out in guidelines, but works as expected from testing</p>
+<ul>
+<li>Example - AnchorTitle,Image,</li>
+<li>JAWS+IE: Anchor Title 7 Point 1, Link</li>
+<li>JAWS+CH: Anchor Title 7 Point 1, Link</li>
+</ul>
+	<p>
+		<a id="anchor_7.1" href="anchor_7.1.html" title="Anchor Title 7.1"  >
+			<img id="image_7.2" src="http://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/x8gAAOxyVaBSxuda/$_12.JPG" alt="">
+		</a>
+	</p>
+
+<h2>Hidden Images Which Are Not Links</h2>
+<p>eBay Exemption: This page has multiple hidden images which are ignored by the Screen Reader (display:none or visibility:hidden).</p>
+
+<h3>Pass Example 1</h3>
+	<p>
+		<img id="image_1.1" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" style="visibility:hidden;width:5;height:5">
+		<img id="image_1.2" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" style="visibility:hidden;width:5;height:5">
+		<img id="image_1.3" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 1.3" style="visibility:hidden;width:5;height:5">
+	</p>
+	<p>
+		<img id="image_1.4" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" style="display:none;">
+		<img id="image_1.5" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" style="display:none;">
+		<img id="image_1.6" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 1.6" style="display:none;">
+	</p>
+
+<h2>Hidden Images Which Are Links</h2>
+<p>eBay Exemption: This page has multiple hidden images which are ignored by the Screen Reader (display:none or visibility:hidden).</p>
+
+<h3>Pass Example 2</h3>
+	<p>
+		<a id="anchor_2.1" href="anchor_2.1.html" style="visibility:hidden;">
+			<img id="image_2.2" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" style="width:5;height:5">
+		</a>
+		<a id="anchor_2.3" href="anchor_2.3.html" style="visibility:hidden;">
+			<img id="image_2.4" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" style="width:5;height:5">
+		</a>
+		<a id="anchor_2.5" href="anchor_2.5.html" style="visibility:hidden;">
+			<img id="image_2.6" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 2.6" style="width:5;height:5">
+		</a>
+	</p>
+	<p>
+		<a id="anchor_2.7" href="anchor_2.7.html" style="display:none">
+			<img id="image_2.8" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG">
+		</a>
+		<a id="anchor_2.9" href="anchor_2.9.html" style="display:none">
+			<img id="image_2.10" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="">
+		</a>
+		<a id="anchor_2.11" href="anchor_2.11.html" style="display:none">
+			<img id="image_2.12" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 2.12">
+		</a>
+	</p>
+
+<h2>Presentation Images Which Are Not Links</h2>
+<p>Good: Presentation images should have an empty alt tag (s.gif or spacer.gif or width:1;height:1).</p>
+<p>Good: Content images should have an alt tag (or anchor title or anchor text).</p>
+<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H67.html Example 1</p>
+
+	<h3>Pass Example 1C</h3>
+		<p>
+			<img id="image_1C.1" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/s.gif" style="width:100;height:100">Good
+		</p>
+		<p>
+			<img id="image_1C.2" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/s.gif" alt="" style="width:100;height:100">Good
+		</p>
+		<p>
+			<img id="image_1C.3" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/imgLatest.gif" alt="" style="width:100;height:100">Good
+		</p>
+		<p>
+			<img id="image_1C.4" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" style="width:1;height:1">Good
+		</p>
+		<p>
+			<img id="image_1C.5" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" style="width:1;height:1">Good
+		</p>
+		<p>
+			<img id="image_1C.9" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 1C.9" style="width:1;height:100">Good
+		</p>
+		<p>
+			<img id="image_1C.12" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 1C.12" style="width:100;height:1">Good
+		</p>
+		<p>
+			<img id="image_1C.15" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 1C.15" style="width:100;height:100">Good
+		<p>	
+		<p>
+		  <a id="anchor_C.16" href="http://www.google.com" aria-hidden="true" tabindex="-1"><img id="img_C.16" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Handbags"></a>
+		  <a id="anchor_C.17" href="http://www.google.com/test" aria-hidden="true" tabindex="-1"><img id="img_C.17" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" role="presentation"></a>
+		  <a id="anchor_C.18" href="http://www.google.com/test2" aria-hidden="true" tabindex="-1"><img id="img_C.18" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Handbags" style="width:1;height:1"></a>
+		</p>
+		<p>
+			<img id="image_1C.19" width="1" height="1" src="http://tags.w55c.net/rs?id=2d4145308751492389807184c81bed58&amp;dst=eb&amp;duid=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU" alt="" />
+			<img id="image_1C.20" width="1" height="1" src="http://cc.chango.com/c/i?chaid=ebay&amp;aid=11268&amp;nm=true&amp;puid2=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU" alt="" />
+		</p>
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+</body>
+</html>
