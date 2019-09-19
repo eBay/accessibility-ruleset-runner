@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+	<h1>Bad Images Page</h1>
+
+<h2>Content Images Which Are Not Links</h2>
+<h3>Fail Example 1 </h3>
+	<p>Bad: Image needs an alt attribute, since it is not contained within an anchor tag.</p>
+	<p>
+		<img id="image_1.1" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG">
+	</p>
+
+<h2>Content Images Which Are Links</h2>
+<h3>Fail Example 2 </h3>
+	<p>Bad: There is no anchor title, image alt or anchor text.</p>	
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/H2 Example 4</p>
+	<p>WCAG: http://www.w3.org/TR/WCAG20-TECHS/F89.html Example 1</p>
+<ul>
+<li>Example - Image,</li>
+<li>JAWS+IE: Desktop slash Icon underscore 2 Point 2, Link Graphic</li>
+<li>JAWS+CH: Anchor underline 2 Point 1, Link</li>
+</ul>
+	<p>
+		<a id="anchor_2.1" href="anchor_2.1.html">
+			<img id="image_2.2" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG">
+		</a>
+	</p>
+
+<h3>Fail Example 3 </h3>
+	<p>Bad: There is no anchor title or image alt and the anchor text is not recognized by the Screen Reader because it is within an anchor tag.</p>
+<ul>
+<li>Example - Image,</li>
+<li>JAWS+IE: tA0AAOxyUrZSzLo9/$_35.JPG, Link Graphic</li>
+<li>JAWS+CH: tA0AAOxyUrZSzLo9/$_35.JPG, Link Graphic (TAB) Paragraph Text 3 Point 3, Link</li>
+</ul>
+	<p>
+		<a id="anchor_3.1" href="anchor_3.1.html">
+			<img id="image_3.2" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" >
+			<p>Paragraph Text 3.3</p>
+		</a>
+	</p>
+
+<h3>Fail Example 4 </h3>
+	<p>Bad: There is no anchor title, image alt or anchor text.</p>
+<ul>
+<li>Example - Image,</li>
+<li>JAWS+IE: Desktop slash Icon underscore 4 Point 2, Link Graphic</li>
+<li>JAWS+CH: Anchor underline 4 Point 1, Link</li>
+</ul>
+	<p>
+		<a id="anchor_4.1" href="anchor_4.1.html">
+			<b class="spacer">
+				<img id="image_4.2" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" >
+			</b>
+		</a>
+	</p>
+	
+<!-- 
+
+<p>Note: These two examples are not tested because real code is much more complex.</p>
+ 
+ <p>Bad: Image should be ignored: See: http://www.w3.org/TR/WCAG20-TECHS/H2 Example 5</p>
+ <a href="products.html">
+  <img src="products.gif" alt="Products page"/>
+  Products page
+</a>   
+
+TODO Text and Text adjacent repeated links - We need Requirements
+TODO Image next to text, with same link we need to look at adjacent table cells as well as adjacent code
+TODO DuplicateTableElements - 
+<p>Bad: Image should be ignored: See: http://www.w3.org/TR/WCAG20-TECHS/H2 Example 3</p>
+ <a href="products.html">
+   <img src="icon.gif" alt="Products page" />
+ </a>
+ <a href="products.html">
+   Products page
+ </a> 
+ 
+eBay example which should be caught
+<div class="ddcrd daily-deal">
+
+	<div class="blast">
+			<div class="time" data-seconds="1144">00:12:03</div>
+		</div>
+	<div class="prom prom140">
+			<span class="gspr">77%&nbsp;OFF</span>
+			<i class="gspr"></i> <i class="gspr folw"></i>
+		</div>
+	<a target="_blank" href="http://deals.ebay.com/5000969506_D_Link_Wireless_N_Network_Surveillance_Camera_W__iPhone_Remote_Viewing_DSC_930L?_trksid=p2050601.m2174&amp;_trkparms=" class="icon firefinder-match"><img alt="D-Link Wireless-N Network Surveillance Camera W/ iPhone Remote Viewing DSC-930L" src="http://i.ebayimg.com/00/s/NTAwWDUwMA==/z/HAwAAOxy63FS6u4N/$_35.JPG"></a>
+	<a target="_blank" href="http://deals.ebay.com/5000969506_D_Link_Wireless_N_Network_Surveillance_Camera_W__iPhone_Remote_Viewing_DSC_930L?_trksid=p2050601.m2174&amp;_trkparms=" class="tl firefinder-match">D-Link Wireless-N Network Surveillance C…</a>
+
+	<div class="info">
+		<span class="prc">$27.99</span>
+	</div>
+
+</div>
+ -->
+
+<h2>Presentation Images Which Are Not Links</h2>
+<p>Bad: Presentation images should have an empty alt tag (s.gif or spacer.gif or width:1;height:1).</p>
+<p>Bad: Content images should have an alt tag (or anchor title or anchor text).</p>
+
+	<h3>Pass Example 1C</h3>
+		<p>
+			<img id="image_1C.3" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/s.gif" alt="Image Alt 1C.3" style="width:100;height:100">Bad
+		</p>
+		<p>
+			<img id="image_1C.6" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="Image Alt 1C.6" style="width:1;height:1">Bad
+		</p>
+		<p>
+			<img id="image_1C.7" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" style="width:1;height:100">Bad
+		</p>
+		<p>
+			<img id="image_1C.8" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" style="width:1;height:100">Bad
+		</p>
+		<p>
+			<img id="image_1C.10" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" style="width:100;height:1">Bad
+		</p>
+		<p>
+			<img id="image_1C.11" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" style="width:100;height:1">Bad
+		</p>
+		<p>
+			<img id="image_1C.13" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" style="width:100;height:100">Bad
+		</p>
+		<p>
+			<img id="image_1C.14" src="http://i.ebayimg.com/00/z/tA0AAOxyUrZSzLo9/$_35.JPG" alt="" style="width:100;height:100">Bad
+		</p>
+ 
+<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+</body>
+</html>
