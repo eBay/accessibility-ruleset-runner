@@ -6,28 +6,52 @@ $ npm run custom.ruleset.test
 
 
   Test custom ruleset against altTagsBad
-    √ should find failures (4885ms)
+    √ should find failures (4142ms)
 
   Test custom ruleset against altTagsGood
-    √ should find no failures (3571ms)
+    √ should find no failures (2992ms)
 
   Test custom ruleset against anchorBad
-    √ should find no failures (2546ms)
+    √ should find no failures (2704ms)
 
   Test custom ruleset against anchorGood
-    √ should find no failures (2604ms)
+    √ should find no failures (2651ms)
 
   Test custom ruleset against formBad
-    √ should find no failures (2641ms)
+    √ should find no failures (2665ms)
 
   Test custom ruleset against formGood
-    √ should find no failures (2689ms)
+    √ should find no failures (2646ms)
 
   Test custom ruleset against imageBad
-    √ should find no failures (2899ms)
+    √ should find no failures (3119ms)
 
   Test custom ruleset against imageGood
-    √ should find no failures (2620ms)
+    √ should find no failures (2724ms)
+
+  Test custom ruleset against pageLayoutBad
+    √ should find no failures (2651ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Source Invalid Text)
+    √ should find no failures (2736ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Source Missing)
+    √ should find no failures (2785ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Source Target Mismatch)
+    √ should find no failures (2591ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Target Duplicated)
+    √ should find no failures (2606ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Target is H Tag)
+    √ should find no failures (2679ms)
+
+  Test custom ruleset against pageLayoutGood
+    √ should find no failures (2706ms)
+
+  Test custom ruleset against pageLayoutGood (Hidden H1)
+    √ should find no failures (2699ms)
 
 
-  8 passing (25s)
+  16 passing (45s)

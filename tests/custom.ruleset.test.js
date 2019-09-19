@@ -52,7 +52,7 @@ var getDriver = function (browserName, options) {
 };
 
 var modifyHTML = function (html) {
-  return html.replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ');
+  return html.replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ').replace(/&/g, '&amp;');
 }
 
 // Certain elements the custom ruleset should flag but can removed based on a certain pattern
@@ -111,15 +111,26 @@ var verifyFailureElementIdentificationStringEquals = function (results, ruleNumb
   assert.equal(elementIdentificationString, identificationString);
 };
 
-var verifyFailureErrorCodeEquals = function (results, ruleNumber, failureNumber, errorCode) {
+var verifyFailureErrorCodeEquals = function (results, ruleNumber, failureNumber, failureCode) {
   var elementFailureCode = results[ruleNumber]["elements"][failureNumber]["elementFailureCode"];
-  assert.equal(elementFailureCode, errorCode);
+  assert.equal(elementFailureCode, failureCode);
 };
 
 var verifyFailureElementActionEquals = function (results, ruleNumber, failureNumber, action) {
   var elementAction = results[ruleNumber]["elements"][failureNumber]["elementAction"];
   assert.equal(elementAction, action);
 };
+
+var verifyFailureElementTextEquals = function (results, ruleNumber, failureNumber, textToCompare) {
+  var elementText = results[ruleNumber]["elements"][failureNumber]["elementText"];
+  assert.equal(elementText, textToCompare);
+};
+
+var verifyFailureElementOtherH1TextsContains = function (results, ruleNumber, failureNumber, elementOtherH1Text) {
+  var elementOtherH1Texts = results[ruleNumber]["elements"][failureNumber]["elementOtherH1Texts"];
+  assert(elementOtherH1Texts.includes(elementOtherH1Text));
+};
+
 describe('Test custom ruleset against altTagsBad', function () {
   this.timeout(500000);
   var driver;
@@ -472,6 +483,316 @@ describe('Test custom ruleset against imageGood', function () {
         var results = JSON.parse(response);
         verifyRuleNumberOfAssertionsTracked(results,0,33);
         verifyRuleNumberOfAssertionsFailed(results,0,0);
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutBad', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutBad.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H25 Title Tag','H57 HTML Tag Lang Attribute','H42 Heading Hierarchy','H42 H1 Heading','Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"html...");
+        verifyFailureErrorCodeEquals(results,0,0,"025_A_1");
+        verifyRuleNumberOfAssertionsTracked(results,1,1);
+        verifyRuleNumberOfAssertionsFailed(results,1,1);
+        verifyFailureElementIdentificationStringEquals(results,1,0,"html...");
+        verifyFailureErrorCodeEquals(results,1,0,"057_A_1");
+        verifyRuleNumberOfAssertionsTracked(results,2,11);
+        verifyRuleNumberOfAssertionsFailed(results,2,2);
+        verifyFailureElementIdentificationStringEquals(results,2,0,"h5...");
+        verifyFailureErrorCodeEquals(results,2,0,"042_A_1");
+        verifyFailureElementTextEquals(results,2,0,"MYHEADING_1.2.3.3.1");
+        verifyFailureElementIdentificationStringEquals(results,2,1,"h5...");
+        verifyFailureErrorCodeEquals(results,2,1,"042_A_1");
+        verifyFailureElementTextEquals(results,2,1,"MYHEADING_1.3.2.3.1");
+        verifyRuleNumberOfAssertionsTracked(results,3,1);
+        verifyRuleNumberOfAssertionsFailed(results,3,1);
+        verifyFailureElementIdentificationStringEquals(results,3,0,"html...");
+        verifyFailureErrorCodeEquals(results,3,0,"142_A_1");
+        verifyRuleNumberOfAssertionsTracked(results,4,1);
+        verifyRuleNumberOfAssertionsFailed(results,4,1);
+        verifyFailureElementIdentificationStringEquals(results,4,0,"html...");
+        verifyFailureErrorCodeEquals(results,4,0,"0Skip_AA_3");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutBad (Skip to Main Source Invalid Text)', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainSourceInvalidText.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"html...");
+        verifyFailureErrorCodeEquals(results,0,0,"0Skip_AA_2");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutBad (Skip to Main Source Missing)', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainSourceMissing.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"html...");
+        verifyFailureErrorCodeEquals(results,0,0,"0Skip_AA_1");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutBad (Skip to Main Source Target Mismatch)', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainSourceTargetMismatch.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"html...");
+        verifyFailureErrorCodeEquals(results,0,0,"0Skip_AA_3");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutBad (Skip to Main Target Duplicated)', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainTargetDuplicated.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H42 H1 Heading','Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"h1...");
+        verifyFailureErrorCodeEquals(results,0,0,"142_A_2");
+        verifyFailureElementOtherH1TextsContains(results,0,0,"MYHEADING_1");
+        verifyFailureElementOtherH1TextsContains(results,0,0,"MYHEADING_2");
+        verifyRuleNumberOfAssertionsTracked(results,1,1);
+        verifyRuleNumberOfAssertionsFailed(results,1,1);
+        verifyFailureElementIdentificationStringEquals(results,1,0,"html...");
+        verifyFailureErrorCodeEquals(results,1,0,"0Skip_AA_4");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutBad (Skip to Main Target is H Tag)', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainTargetIsHTag.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyFailureElementIdentificationStringEquals(results,0,0,"html...");
+        verifyFailureErrorCodeEquals(results,0,0,"0Skip_AA_3");
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutGood', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutGood.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H25 Title Tag','H57 HTML Tag Lang Attribute','H42 Heading Hierarchy','H42 H1 Heading','Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyRuleNumberOfAssertionsTracked(results,1,1);
+        verifyRuleNumberOfAssertionsFailed(results,1,1);
+        verifyRuleNumberOfAssertionsTracked(results,2,12);
+        verifyRuleNumberOfAssertionsFailed(results,2,0);
+        verifyRuleNumberOfAssertionsTracked(results,3,1);
+        verifyRuleNumberOfAssertionsFailed(results,3,0);
+        verifyRuleNumberOfAssertionsTracked(results,4,1);
+        verifyRuleNumberOfAssertionsFailed(results,4,0);
+        done();
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+describe('Test custom ruleset against pageLayoutGood (Hidden H1)', function () {
+  this.timeout(500000);
+  var driver;
+
+  afterEach(function () {
+    driver.quit();
+  });
+
+  it('should find no failures', function (done) { 
+    var html = fs.readFileSync('../tests/input/pageLayoutGood_HiddenH1.html','utf8');
+    var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
+
+    var rulesToRun = ['H25 Title Tag','H57 HTML Tag Lang Attribute','H42 Heading Hierarchy','H42 H1 Heading','Validate Skip to Main Content'];
+	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
+
+    driver = getDriver('chrome');
+
+    driver
+    .then(function() {
+      driver.executeScript(innerHTML+customRuleset+runner, 'custom ruleset')
+      .then(function (response) {
+        var results = JSON.parse(response);
+        verifyRuleNumberOfAssertionsTracked(results,0,1);
+        verifyRuleNumberOfAssertionsFailed(results,0,1);
+        verifyRuleNumberOfAssertionsTracked(results,1,1);
+        verifyRuleNumberOfAssertionsFailed(results,1,1);
+        verifyRuleNumberOfAssertionsTracked(results,2,4);
+        verifyRuleNumberOfAssertionsFailed(results,2,0);
+        verifyRuleNumberOfAssertionsTracked(results,3,1);
+        verifyRuleNumberOfAssertionsFailed(results,3,0);
+        verifyRuleNumberOfAssertionsTracked(results,4,1);
+        verifyRuleNumberOfAssertionsFailed(results,4,0);
         done();
       }).catch((err) => {
         console.log(err);

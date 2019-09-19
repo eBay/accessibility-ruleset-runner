@@ -33,6 +33,55 @@ npm run custom.ruleset.test
 
 The output should match the <a href='output/custom.ruleset.test.output.txt'>Custom Ruleset Test Output</a>.
 
+## Test Organization
+
+The rules of the custom ruleset are grouped into 5 main categories (see below).  Each custom rule aligns with a <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a> Technique. Next to each rule, we list the WCAG technique and success criteria.
+
+<ul>
+
+<li>Objects and Alternative Text
+<ul>
+<li>H24 Image Map Alt Attribute, <a href='https://www.w3.org/TR/WCAG20-TECHS/H24.html'>H24</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all'>1.1.1</a>, (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs'>2.4.4</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-link'>2.4.9</a>) </li>
+<li>H35 Applet Tag Alt Attribute, <a href='https://www.w3.org/TR/WCAG20-TECHS/H24.html'>H35</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all'>1.1.1</a>) </li>
+<li>H53 Object Tag Alt Attribute</li>
+<li>H64 IFrame Tag Title Attribute</li>
+<li>H46 Embed Tag</li>
+</ul>
+</li>
+
+<li>Anchors
+<ul>
+<li>H33 Anchor Tag Title For New Windows</li>
+<li>H33 Links Repeated</li>
+<li>H75 Unique Anchor IDs</li>
+</ul>
+</li>
+
+<li>Forms
+<ul>
+<li>H44 Input Tag Label</li>
+<li>H32 Form Submit Button</li>
+</ul>
+</li>
+
+<li>Images
+<ul>
+<li>H37 Image Tag Alt Attribute</li>
+</ul>
+</li>
+
+<li>Page Layout
+<ul>
+<li>H25 Title Tag</li>
+<li>H57 HTML Tag Lang Attribute</li>
+<li>H42 Heading Hierarchy</li>
+<li>H42 H1 Heading</li>
+<li>Validate Skip to Main Content</li>
+</ul>
+</li>
+
+</ul>
+
 ## Testing Methodology
 
 The cutsom ruleset is vetted against a library of good/bad html code snippets as discussed in <a href='../README.md#creating-a-ruleset'>Creating a Ruleset</a>.

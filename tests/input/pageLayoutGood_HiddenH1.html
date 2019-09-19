@@ -1,0 +1,65 @@
+<html lang="en">
+<title>Hidden H1</title>
+<body>
+	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+<style>
+.g-hdn {
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	outline: 0 none;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	z-index: -1;
+}
+</style>
+
+<!-- JAWS+IE8 TAB reads Skip to Main Same Page Link -->
+<!-- JAWS+Chrome TAB reads Skip to Main Same Page Link -->
+<!-- JAWS+FF TAB reads Skip to Main Same Page Link -->
+<a href="#mainContent">Skip to main content</a>
+	<p>eBay Exemption: This page has a hidden H1 tag.</p>
+	<p>eBay Exemption: H1 is Hidden.</p>
+	<p>eBay Exemption: H3 is Hidden.</p>
+	<p>Good: Demonstrates usage of content target for Skip to Main Link (PayPal).</p>
+
+	<b class="g-hdn">
+		<h1>Main Content Region Page like the g-hdn Global CSS class</h1>
+	</b>
+<a href="www.google.com">Google</a>
+<a href="www.facebook.com">Facebook</a>
+<a href="www.twitter.com">Twitter</a>
+<!-- JAWS+IE8 Enter reads Skip to Main Same Page Link/Page has 1 region 3 headings and 7 links/Reads remainder of page -->
+<!-- JAWS+Chrome Enter reads Same Page Link Skip to Main/Test It Main Region/Page has 1 region 3 headings and 7 links/Reads remainder of page -->
+<!-- JAWS+FF Enter reads Same Page Link Skip to Main/Skip to Main Same Page Link/Page has 1 region 3 headings and 7 links/Reads remainder of page -->
+<!-- JAWS+IE8 DOWN reads Test It Main Region, DOWN reads Test It Heading Level 2 -->
+<!-- JAWS+Chrome DOWN reads Test It Main Region, DOWN reads Heading Level 2 Test It -->
+<!-- JAWS+FF DOWN reads Test It Main Region, DOWN reads Heading Level 2 Test It -->
+<!-- JAWS+IE8 TAB Search for Iphones Link -->
+<!-- JAWS+Chrome TAB reads Test It Main Region, DOWN reads Heading Level 2 Test It -->
+<!-- JAWS+FF TAB reads Test It Main Region Search for Iphones Link -->
+<!-- Note: JAWS+FF reads region information when tabbing into region but not when tabbing out of the region -->
+<!-- JAWS+IE8 No Focus Indicator on Tab, No Focus Indicator on Click -->
+<!-- JAWS+Chrome Focus Indicator shows on Tab, Focus Indicator shows on Click -->
+<!-- JAWS+FF TAB No Focus Indicator on Tab, Focus Indicator shows on Click -->
+<!-- Note: Programmatic foucs is set using tabindex for IE8/Chrome so subsequent tab will focus on "Search for Iphones" -->
+<!-- Note: Use best practices for CSS, but "outline:0 none;" will remove the focus indicator for the region -->
+<div id="mainContent" role="main" tabindex="-1" aria-labelledby="mainH2" style="outline:0 none;">
+	<h2 id="mainH2">Heading 2</h2>
+		<a href="www.ebay.com/iphone">Search for Iphones</a>
+		<a href="www.ebay.com/electronics">Search for Electronics</a>
+	<b class="g-hdn">
+		<h3>Heading 3</h3>
+	</b>
+	<h4>Heading 4</h4>
+
+</div>
+<!-- JAWS+IE8 DOWN reads Test It Main Region End -->
+<!-- JAWS+Chrome DOWN reads Test It Main Region End -->
+<!-- JAWS+FF DOWN reads Test It Main Region End -->
+<h2>Footer</h2>
+<a href="www.ebayinc.com">eBay Inc</a>
+	<!--REMOTE_WEB_DRIVER_BODY_HTML-->
+</body>
+</html>
