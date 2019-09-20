@@ -1,9 +1,9 @@
 {
-  "name": "Custom-Ruleset-Tests",
+  "name": "Custom-Ruleset-Verification-Tests",
   "version": "1.0.0",
-  "description": "Custom Ruleset Tests",
+  "description": "Custom Ruleset Verification Tests",
   "scripts": {
-    "custom.ruleset.test": "mocha custom.ruleset.test.js"
+    "custom.ruleset.verification.tests": "mocha custom.ruleset.verification.tests.js"
   },
   "repository": {
     "type": "git",

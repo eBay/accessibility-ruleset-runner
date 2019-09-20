@@ -28,10 +28,10 @@ npm install
 To run the tests, use the following command:
 
 ```sh
-npm run custom.ruleset.test
+npm run custom.ruleset.verification.tests
 ```
 
-The output should match the <a href='output/custom.ruleset.test.output.txt'>Custom Ruleset Test Output</a>.
+The output should match the <a href='output/custom.ruleset.verification.tests.output.txt'>Custom Ruleset Test Output</a>.
 
 ## Testing Methodology
 
