@@ -1,4 +1,4 @@
-# Python with Selenium
+# Python with Selenium Examples
 These examples show how to run the rulesets using Selenium Webdriver.
 
 ## Pre-Requisites:

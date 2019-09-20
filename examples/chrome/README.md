@@ -1,4 +1,4 @@
-# Chrome Developer Console
+# Chrome Developer Console Examples
 These examples show how to run the rulesets directly in the Chrome Developer Console.
 
 ## Running Rulesets Against a Website
