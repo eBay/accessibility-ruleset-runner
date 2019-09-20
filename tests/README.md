@@ -13,7 +13,7 @@ See the <a href='../examples/nodejs/README.md#prerequisites'>prerequisites</a>.
 
 ## Running Verification Tests to Test the Custom Ruleset
 
-These steps show how to run the tests, after the code has been downloaded.
+The verification tests for the custom ruleset are based on five main categories as listed in the description of the <a href="../rulesets#custom-ruleset">Custom Ruleset</a>.  These steps show how to run the tests, after the code has been downloaded.
 
 ### Step 1: Install Package Dependencies
 
@@ -28,10 +28,10 @@ npm install
 To run the tests, use the following command:
 
 ```sh
-npm run custom.ruleset.test
+npm run custom.ruleset.verification.tests
 ```
 
-The output should match the <a href='output/custom.ruleset.test.output.txt'>Custom Ruleset Test Output</a>.
+The output should match the <a href='output/custom.ruleset.verification.tests.output.txt'>Custom Ruleset Verification Tests Output</a>.
 
 ## Testing Methodology
 
