@@ -4,7 +4,7 @@ eBay Accessibility Ruleset Runner automates 20% of <a href='https://www.w3.org/T
 ## Summary
 Getting started with accessibility testing can be difficult.  Not only are there a variety of tools out there to choose from but testers must be accessibility experts to sort through the large number of false positives identified by these tools.  In addition, accessibility testing requires a lot of time to perform manual acceptance tests and only a small portion of these tests can be automated.
 
-This project demonstrates how accessibility testing is done upstream during the development process.  The project includes a custom ruleset and an open source ruleset, which is what we use internally.  Developers can reuse our custom ruleset, exchange rulesets or add their own.
+This project demonstrates how accessibility testing is done upstream during the development process.  It includes two <a href="rulesets#custom-ruleset">rulesets</a> (a custom ruleset and an open source ruleset), which is what we use internally.  Developers can reuse our custom ruleset, exchange rulesets or add their own.
 
 ### What is WCAG 2.0
 
