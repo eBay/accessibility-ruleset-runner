@@ -31,7 +31,7 @@ To run the tests, use the following command:
 npm run custom.ruleset.verification.tests
 ```
 
-The output should match the <a href='output/custom.ruleset.verification.tests.output.txt'>Custom Ruleset Test Output</a>.
+The output should match the <a href='output/custom.ruleset.verification.tests.output.txt'>Custom Ruleset Verification Tests Output</a>.
 
 ## Testing Methodology
 
