@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Accessibility Ruleset Runner",
+  "short_name": "arr",
+  "description": "A Web Browser Extension to run accessibility rulesets.",
+  "version": "1.1.1",
+  "minimum_chrome_version": "54",
+  "permissions": [
+    "contextMenus",
+    "tabs",
+	"https://raw.githubusercontent.com/*",
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "unlimitedStorage"
+  ],
+  "background": {
+    "scripts": [
+      "content/rightClickMenu.js"
+    ]
+  },
+  "icons": {
+    "48": "content/arr.png"
+  }
+}
