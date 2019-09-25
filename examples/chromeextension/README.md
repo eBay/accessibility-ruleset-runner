@@ -4,6 +4,8 @@ These examples show how to run the rulesets using a Chrome Extension.
 ## Prerequisites
 We assume the Chrome Extension is installed.  Visit the <a href='https://chrome.google.com/webstore'>Chrome Web Store</a>, to install the Accessibility Ruleset Runner Chrome Extension.
 
+The Chrome Extension can also be manually installed.  First, download the Github code.  Then, follow the instructions listed in <a href='README.md#chrome-extension-development'>Chrome Extension Development</a>.
+
 ## Running Rulesets Against a Website
 
 ### Step 1: View Setup
@@ -43,7 +45,7 @@ The Chrome Extension follows these steps:
 
 #### Configure Parameters
 
-The Ruleset Runner Overlay can be modified to include additional parameters.  However, some base parameters might be useful:
+The Ruleset Runner Dialog can be modified to include additional parameters.  However, some base parameters might be useful:
 
 <ul>
 <li><b>View Name:</b> A name should be given to the view that was setup.  This name should be specific and descriptive enough to help scale (ie working with hundreds of views).  See below for the definition of a view.</li>
@@ -51,7 +53,9 @@ The Ruleset Runner Overlay can be modified to include additional parameters.  Ho
 <li><b>Report Title:</b> A report title is helpful if a report will be created with the results.  In some case, multiple views might be aggregated into a single report to help make the results more digestable.</li>
 </ul>
 
-A View is a set of webpages that all share certain characteristics.  For example, many companies have a search capability for items to purchase.  A View might be defined based on this search results page including the following characteristics: H1 contains Laptop, at least 5 items appear in the search results section, the header/footer landmark are present, a nav for the breadcrumb and left navigation are present, etc.  Notice that a particular view may not have the same exact html code each time it is loaded.
+<b>View</b> - A View is a set of webpages that all share certain characteristics.  For example, many companies have a search capability for items to purchase.  A View might be defined based on this search results page including the following characteristics: H1 contains Laptop, at least 5 items appear in the search results section, the header/footer landmark are present, a nav for the breadcrumb and left navigation are present, etc.  Notice that a particular view may not have the same exact html code each time it is loaded.
+
+The Ruleset Runner Dialog has some default code to highlight the fact that some parameters values might change based on other parameter values.  For instance, the report location might automatically be updated based on the Report Title or JIRA Project Name.
 
 #### Run Rulesets
 
@@ -85,7 +89,7 @@ A Firefox Extension can be created by modifying the manifest file.  In the manif
 
 ### Chrome Extension Development
 
-Chrome Extensions may be actively developed by:
+Chrome Extensions may be actively developed and then manually installed by:
 
 <ul>
 <li>Open the Google Chrome Browser</li>
@@ -121,3 +125,12 @@ To run the Headings Parser, right click, select "Accessibility", select "Heading
 
 To remove the Headings Parser overlays, right click, select "Accessibility", select "Headings Parser", select "Remove Overlays".
 
+### MIND Patterns
+
+The Ruleset Runner Dialog was created using the <a href='https://ebay.gitbook.io/mindpatterns/'>MIND Patterns</a>.  More specifically, several patterns are used:
+
+<ul>
+<li><a href='https://ebay.gitbook.io/mindpatterns/disclosure/dialog'>Dialog</a></li>
+<li><a href='https://ebay.gitbook.io/mindpatterns/input/autocomplete'>Autocomplete</a></li>
+<li><a href='https://ebay.gitbook.io/mindpatterns/disclosure/infotip'>Infotip</a></li>
+</ul>
