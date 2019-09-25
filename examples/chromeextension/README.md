@@ -2,7 +2,7 @@
 These examples show how to run the rulesets using a Chrome Extension.
 
 ## Prerequisites
-We assume the Chrome Extension is installed.  Visit the <a href='https://chrome.google.com/webstore'>Chrome Web Store</a>, to install the Accessibility Ruleset Runner Chrome Extension.  Installed extensions may be viewed in the <a href='chrome://extensions'>Chrome Extensions</a>. 
+We assume the Chrome Extension is installed.  Visit the <a href='https://chrome.google.com/webstore'>Chrome Web Store</a>, to install the Accessibility Ruleset Runner Chrome Extension.
 
 ## Running Rulesets Against a Website
 
@@ -24,7 +24,7 @@ Follow these steps:
 
 <ul>
 <li>Right click, select "Accessibility", select "Ruleset Runner", select "Add Overlays".</li>
-<li>On the Ruleset Runner Overlay, click Run.</li>
+<li>In the Ruleset Runner Dialog, click Run.</li>
 </ul>
 
 The output should match the <a href='output/ChromeExtension.ruleset.runner.output.txt'>Ruleset Runner Output</a>.
@@ -60,6 +60,8 @@ Unlike the other ruleset runner examples, the Chrome Extension combines the resu
 #### Highlight Element Failures
 
 Some default code is included to highlight various element failures.  The default code will add an overlay along with a red outline for elements that are visible.  This code can be expanded with additional features.  For instance, one might add links to rule descriptions, <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a> guidelines or even other reports.
+
+To remove the Accessibility Ruleset Runner overlays, right click, select "Accessibility", select "Ruleset Runner", select "Remove Overlays".
 
 #### Upload Results
 
@@ -114,3 +116,8 @@ The chrome extension also features a Headings Parser to help build consistency i
 <li>Skip to main content anchor</li>
 <li>Additional landmarks and headings</li>
 </ul>
+
+To run the Headings Parser, right click, select "Accessibility", select "Headings Parser", select "Add Overlays".
+
+To remove the Headings Parser overlays, right click, select "Accessibility", select "Headings Parser", select "Remove Overlays".
+
