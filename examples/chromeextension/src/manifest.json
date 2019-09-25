@@ -8,9 +8,8 @@
   "permissions": [
     "contextMenus",
     "tabs",
-    "http://*/*",
-    "https://*/*",
-    "<all_urls>",
+	"https://raw.githubusercontent.com/*",
+    "activeTab",
     "webRequest",
     "webRequestBlocking",
     "unlimitedStorage"
