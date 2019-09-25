@@ -183,7 +183,7 @@ function CFGetAdvancedXpathByElement(doc, element) {
     }
 }
 
-function CFGetElementsByXpath(doc, path, element) {
+function CFGetElementByXpath(doc, path, element) {
   if(typeof doc === 'undefined' || doc == null) {
     doc = CFDocumentFunction();
   }
@@ -191,16 +191,7 @@ function CFGetElementsByXpath(doc, path, element) {
     element = CFDocumentFunction();
   }
   
-  var elements = [];
-    var elementsIterator = doc.evaluate(path, element, null, XPathResult.ANY_TYPE, null);
-	var nextElement = elementsIterator.iterateNext();
-	var index = 0;
-	while(nextElement != null) {
-		elements[index] = nextElement;
-		index = index + 1;
-		nextElement = elementsIterator.iterateNext();
-	}
-  return elements;
+  return doc.evaluate(path, element, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
 
 // STRING MANIPULATION

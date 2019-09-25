@@ -1,6 +1,4 @@
 CommonFunctionsImportJS = "content/commonFunctions.1.1.11.js";
-CustomRulesetImportJS = "content/custom.ruleset.1.1.32.js";
-AXERulesetImportJS = "content/aXe.ruleset.2.3.1.js";
 RulesetRunnerImportJS = "content/rulesetRunner.js";
 HeadingsParserImportJS = "content/headingsParser.3.1.1.js";
 
@@ -27,10 +25,8 @@ chrome.contextMenus.create({
       contexts:["all"],
       onclick: function(info, tab){
         chrome.tabs.executeScript(tab.id, {file:CommonFunctionsImportJS}, function() {});
-        chrome.tabs.executeScript(tab.id, {file:CustomRulesetImportJS}, function() {});
-        chrome.tabs.executeScript(tab.id, {file:AXERulesetImportJS}, function() {});
         chrome.tabs.executeScript(tab.id, {file:RulesetRunnerImportJS}, function() {
-          chrome.tabs.executeScript(tab.id, {code:"RulesetRunner(true);"});
+          chrome.tabs.executeScript(tab.id, {code:"RulesetRunner();"});
 	    });
       }
     });

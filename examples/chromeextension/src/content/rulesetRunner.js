@@ -16,9 +16,20 @@
 // limitations under the License.
 //////////////////////////////////////////////////////////////////////////
 
-RulesetRunner=function(secure) {
-  var processTracker = {};
+CustomRulesetImportJSURL = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/custom.ruleset.1.1.32.js";
+AXERulesetImportJSURL = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.2.3.1.js";
 
+RulesetRunner=function() {
+  var processTracker = {};
+  DownloadCustom(processTracker, DownloadCustomFinished);
+}
+
+DownloadCustomFinished=function(processTracker) {
+  DownloadAXE(processTracker, CreateModal);
+}
+
+CreateModal=function(processTracker) {
+  console.log('Step 1: Configure Parameters');
   var defaultPageName = "DefaultPageName";
   try {
     // MODAL PATTERN
@@ -56,7 +67,7 @@ RulesetRunner=function(secure) {
     modalHTML = modalHTML + "\n          </span>";
     modalHTML = modalHTML + "\n        </div>";
     modalHTML = modalHTML + "\n        <label for='reporttitle'>REPORT_TITLE</label>: <input id='reporttitle' type='text' maxlength='100' size='100'><br>";
-    modalHTML = modalHTML + "\n        <br>A report will be stored at <span id='storagefolder'></span><br>";
+    modalHTML = modalHTML + "\n        <br>A report will be stored at: <span id='storagefolder'></span><br>";
     modalHTML = modalHTML + "\n        <br>The url being tested is <span id='url'></span><br>";
     modalHTML = modalHTML + "\n        <input id='xpathRoot' type='hidden' maxlength='100' size='100'>"; // 1/17/2018 - Added for Modal testing 
     modalHTML = modalHTML + "\n        <br>";
@@ -113,6 +124,7 @@ RulesetRunner=function(secure) {
 	  processTracker.xpathRoot = CFDocumentFunction().getElementById('xpathRoot').value;
 	  processTracker.url = CFDocumentFunction().getElementById('url').innerHTML;
 	  processTracker.reporttitle = CFDocumentFunction().getElementById('reporttitle').value;
+	  processTracker.viewname = CFDocumentFunction().getElementById('viewname').value;
 	
       CFDocumentFunction().body.removeChild(modal);
 	
@@ -127,10 +139,10 @@ RulesetRunner=function(secure) {
 
 // Configure the Bubble Help - http://ebay.github.io/mindpatterns/disclosure/infotip/
 function configureBubbleHelp(bubbleHelpWidgetID, bubbleHelpButtonID, bubbleHelpLiveID, bubbleHelpContentID) {
-  var bubbleHelpWidget = WAEDocumentFunction().getElementById(bubbleHelpWidgetID);
-  var bubbleHelpButton = WAEDocumentFunction().getElementById(bubbleHelpButtonID);
-  var bubbleHelpLive = WAEDocumentFunction().getElementById(bubbleHelpLiveID);
-  var bubbleHelpContent = WAEDocumentFunction().getElementById(bubbleHelpContentID);
+  var bubbleHelpWidget = CFDocumentFunction().getElementById(bubbleHelpWidgetID);
+  var bubbleHelpButton = CFDocumentFunction().getElementById(bubbleHelpButtonID);
+  var bubbleHelpLive = CFDocumentFunction().getElementById(bubbleHelpLiveID);
+  var bubbleHelpContent = CFDocumentFunction().getElementById(bubbleHelpContentID);
   bubbleHelpWidget.setAttribute("class", "bubblehelp bubblehelp-js");
   bubbleHelpWidget.sticky = function() {
     bubbleHelpContent.style.top = bubbleHelpWidget.offsetTop - CFDocumentFunction().scrollTop - Math.round(bubbleHelpContent.offsetHeight / 3) + 'px';
@@ -386,31 +398,34 @@ function createFolderFromName(name) {
 }
 
 AjaxCallForFormSubmission=function(processTracker) {
-	// Run Custom Ruleset
-	//var results = axs.Audit.run(eval('({"XPATH_ROOT":"//div[@class=\'nuweb-itemtile nuweb-itemtile-small\']"})')); // 
-	
-	processTracker.results = {};
-	
-	console.log('Running Custom Ruleset...');
-	var jsonParameters = {};
-	if(processTracker.xpathRoot !== '') {
-		console.log('using XPATH_ROOT to run WAE :'+processTracker.xpathRoot);
-		jsonParameters.XPATH_ROOT = processTracker.xpathRoot;
-	}
-	processTracker.results.custom = axs.Audit.run(jsonParameters);
-	// For circlar JSON comment at https://wiki.vip.corp.ebay.com/display/BUYEXP/Running+Wa11y+through+the+Command+Line+like+Go+Quickly?focusedCommentId=593600405&refresh=1554851093044#comment-593600405
-	// Remove element references
-	for(var i=0; i<processTracker.results.custom.length; i++) {
-		for(var ii=0; ii<processTracker.results.custom[i].elements.length; ii++) {
-			processTracker.results.custom[i].elements[ii].element = "";
-		}
-	}
-	
-	//console.log('Custom Ruleset Complete... results:'+JSON.stringify(processTracker.results.custom));
-	
-	console.log('Running aXe Ruleset...');
-	// Might be nice to make an ajax call here to change the rules list
-	var rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast',
+  console.log('Step 2: Run Rulesets');
+
+  // Run Custom Ruleset
+  //var results = axs.Audit.run(eval('({"XPATH_ROOT":"//div[@class=\'nuweb-itemtile nuweb-itemtile-small\']"})')); // 
+  processTracker.results = {};
+
+  console.log('Running Custom Ruleset...');
+  eval(processTracker.customRuleset); // Needs to be in this scope
+  var jsonParameters = {};
+  if(processTracker.xpathRoot !== '') {
+    console.log('using XPATH_ROOT to run WAE :'+processTracker.xpathRoot);
+    jsonParameters.XPATH_ROOT = processTracker.xpathRoot;
+  }
+  processTracker.results.custom = axs.Audit.run(jsonParameters);
+  // For circlar JSON comment at https://wiki.vip.corp.ebay.com/display/BUYEXP/Running+Wa11y+through+the+Command+Line+like+Go+Quickly?focusedCommentId=593600405&refresh=1554851093044#comment-593600405
+  // Remove element references
+  for(var i=0; i<processTracker.results.custom.length; i++) {
+    for(var ii=0; ii<processTracker.results.custom[i].elements.length; ii++) {
+      processTracker.results.custom[i].elements[ii].element = "";
+    }
+  }
+
+  //console.log('Custom Ruleset Complete... results:'+JSON.stringify(processTracker.results.custom));
+
+  console.log('Running aXe Ruleset...');
+  eval(processTracker.axeRuleset); // Needs to be in this scope
+  // Might be nice to make an ajax call here to change the rules list
+  var rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast',
 	'document-title','duplicate-id','empty-heading',
 	'heading-order','href-no-hash',
 	'html-lang-valid',
@@ -418,17 +433,17 @@ AjaxCallForFormSubmission=function(processTracker) {
 	'label','layout-table','link-name',
 	'marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup',
 	'scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description'
-	//'definition-list','dlitem',
-	//'frame-title','frame-title-unique',
-	//'html-has-lang',
-	//'image-alt',
-	//'label-title-only',
-	//'list','listitem',
-	//'region',
-	];
-	
-	processTracker.results.axe = [];
-	axe.a11yCheck(CFDocumentFunction(), { runOnly: {type: 'rule', values: rulesToRun }}, ProcessTrackerCallback(processTracker, rulesToRun));
+  //'definition-list','dlitem',
+  //'frame-title','frame-title-unique',
+  //'html-has-lang',
+  //'image-alt',
+  //'label-title-only',
+  //'list','listitem',
+  //'region',
+  ];
+
+  processTracker.results.axe = [];
+  axe.a11yCheck(CFDocumentFunction(), { runOnly: {type: 'rule', values: rulesToRun }}, ProcessTrackerCallback(processTracker, rulesToRun));
 }
 
 ProcessTrackerCallback=function(processTracker, rulesToRun) {
@@ -465,9 +480,11 @@ ProcessResults=function(processTracker) {
   console.log('Results:'+JSON.stringify(processTracker.results));
 
   // HIGHLIGHT ELEMENTS ON PAGE
+  console.log('Step 3: Highlight Element Failures');
   var elementCounterTotal = highlighElementsOnPage(processTracker.results);
 	
-  // UPLOAD WAE RESULTS
+  // UPLOAD RESULTS
+  console.log('Step 4: Upload Results');
   if(elementCounterTotal > 0
   || confirm('There were 0 errors.  Do you still want to upload the results?')) {
 	  
@@ -502,11 +519,15 @@ function highlighElementsOnPage(combinedResults) {
 	      var elementII = customresult.elements[ii];
 		  
           // HIGHLIGHT INDIVIDUAL ELEMENT BY XPATH
-          var element = CFGetElementsByXpath(CFDocumentFunction(), elementII.elementXPATH, CFDocumentFunction());
-          console.log('highlighting custom ruleset failure:');
-          var transparentInnerHTML = 'Element '+elementCounter+' of '+elementCounterTotal+'<br><b>rule:</b>'+customresult.rule;
-          var visibleInnerHTML = transparentInnerHTML+'<br><b>ruleCode:</b>'+customresult.ruleCode+' <br><b>ruleComplianceLevel:</b>'+customresult.ruleComplianceLevel;
-          highlightElement(element, divs, transparentInnerHTML, visibleInnerHTML);
+          var element = CFGetElementByXpath(CFDocumentFunction(), elementII.elementXPATH, CFDocumentFunction());
+          if(element) {
+            console.log('highlighting custom ruleset failure:');
+            var transparentInnerHTML = 'Element '+elementCounter+' of '+elementCounterTotal+'<br><b>rule:</b>'+customresult.rule;
+            var visibleInnerHTML = transparentInnerHTML+'<br><b>ruleCode:</b>'+customresult.ruleCode+' <br><b>ruleComplianceLevel:</b>'+customresult.ruleComplianceLevel;
+            highlightElement(element, divs, transparentInnerHTML, visibleInnerHTML);
+          } else {
+            console.log('Cannot highlight custom ruleset failure (elementNotFound) xpath:'+elementII.elementXPATH);
+          }
 		}
 	  }
 	}
@@ -534,12 +555,15 @@ function highlighElementsOnPage(combinedResults) {
 	    for(var ii=0; ii<nodes.length; ii++) {
 		  elementCounter++;
 	      var node = nodes[ii];
-		  var target = node['target']; // Selector
-          var element = document.querySelector(target);
-          console.log('highlighting axe ruleset failure:');
-          var transparentInnerHTML = 'Element '+elementCounter+' of '+elementCounterTotal+'<br><b>rule:</b>'+axeRuleViolation.id;
-          var visibleInnerHTML = transparentInnerHTML;
-          highlightElement(element, divs, transparentInnerHTML, visibleInnerHTML);
+          var element = CFDocumentFunction().querySelector(node.target); // Selector
+          if(element) {
+            console.log('highlighting axe ruleset failure:');
+            var transparentInnerHTML = 'Element '+elementCounter+' of '+elementCounterTotal+'<br><b>rule:</b>'+axeRuleViolation.id;
+            var visibleInnerHTML = transparentInnerHTML;
+            highlightElement(element, divs, transparentInnerHTML, visibleInnerHTML);
+          } else {
+            console.log('Cannot highlight axe ruleset failure (elementNotFound) selector:'+node.target);
+          }
 	    }
 	  }
 	}
@@ -570,6 +594,54 @@ function highlightElement(element, divs, transparentInnerHTML, visibleInnerHTML)
 
 // AJAX CALLS AND REQUESTS
 
+function DownloadCustom(processTracker, finishedFunction) {
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4) {
+			if(xhttp.status == 200) {
+				try {
+					//console.log(xhttp.responseText);
+					processTracker.customRuleset = xhttp.responseText;
+				} catch (err) {
+			        console.log(err);
+				}
+			} else {
+			    console.log("Report Upload Failed.")
+			}
+			
+			finishedFunction(processTracker);
+		}
+      };
+	  
+	  xhttp.open("GET", CustomRulesetImportJSURL, true);
+	  xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send();
+}
+
+function DownloadAXE(processTracker, finishedFunction) {
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4) {
+			if(xhttp.status == 200) {
+				try {
+					//console.log(xhttp.responseText);
+					processTracker.axeRuleset = xhttp.responseText;
+				} catch (err) {
+			        console.log(err);
+				}
+			} else {
+			    console.log("Report Upload Failed.")
+			}
+			
+			finishedFunction(processTracker);
+		}
+      };
+	  
+	  xhttp.open("GET", AXERulesetImportJSURL, true);
+	  xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send();
+}
+	
 function UploadJSONResultsRequest(processTracker, finishedFunction) {
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
