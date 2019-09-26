@@ -2,7 +2,7 @@
 These examples show how to run the rulesets using a Chrome Extension.
 
 ## Prerequisites
-We assume the Chrome Extension is installed.  Visit the <a href='https://chrome.google.com/webstore'>Chrome Web Store</a>, to install the Accessibility Ruleset Runner Chrome Extension.
+We assume the Chrome Extension is installed.  Visit the <a href='https://chrome.google.com/webstore/detail/accessibility-ruleset-run/cfakapffmdipciggkeefnpjjbobbnefi'>Accessibility Ruleset Runner Chrome Extension</a> in the <a href='https://chrome.google.com/webstore'>Chrome Web Store</a> and click "Add to Chrome" to install.
 
 The Chrome Extension can also be manually installed.  First, download the Github code.  Then, follow the instructions listed in <a href='README.md#chrome-extension-development'>Chrome Extension Development</a>.
 
