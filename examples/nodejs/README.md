@@ -33,7 +33,7 @@ Node Version Manager (NVM) is a tool that allows users to swtich between differe
 
 The appropriate version of <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> needs to be downloaded individually.  The ChromeDriver version must be compatible with the Operating System (Mac/Unix/Windows) and the version of Chrome.
 
-For example, when using version 73.0.3683.103 of Chrome, users may download the appopriate version of ChromeDriver (Mac/Unix/Windows) from <a href='https://chromedriver.storage.googleapis.com/index.html?path=73.0.3683.68/'>ChromeDriver 73.0.3683.68</a>.
+For example, when using version 73.0.3683.103 of Chrome, users may download the appopriate version of ChromeDriver (Mac/Unix/Windows) from <a href='https://chromedriver.storage.googleapis.com/index.html?path=73.0.3683.68/'>ChromeDriver 73.0.3683.68</a>.  Links for ChromeDriver downloads for all Chrome versions are listed <a href='http://chromedriver.storage.googleapis.com/index.html'>here</a>.
 
 ## Running Ruleset Runners To Test a Website
 
