@@ -10,9 +10,15 @@ These examples show how to run the rulesets using a Selenium/Mocha/Chai framewor
 ## Prerequisites
 We assume the following are installed:
 <ul>
-<li><a href='https://nodejs.org/en/'>Node.js</a></li>
 <li><a href='http://chromedriver.chromium.org/'>ChromeDriver</a></li>
+<li><a href='https://nodejs.org/en/'>Node.js</a></li>
 </ul>
+
+### ChromeDriver
+
+<a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
+
+See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
 ### Node.js
 
@@ -26,14 +32,6 @@ Node Version Manager (NVM) is a tool that allows users to swtich between differe
 <li>Mac/Unix users may install NVM by following the steps listed on the <a href='https://github.com/nvm-sh/nvm'>NVM Repository</a>.</li>
 <li>Windows users may download an NVM installer from <a href='https://github.com/coreybutler/nvm-windows'>NVM Windows Repository</a> (ie <a href='https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip'>NVM Windows 1.1.7</a>).</li>
 </ul>
-
-### ChromeDriver
-
-<a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
-
-The appropriate version of <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> needs to be downloaded individually.  The ChromeDriver version must be compatible with the Operating System (Mac/Unix/Windows) and the version of Chrome.
-
-For example, when using version 73.0.3683.103 of Chrome, users may download the appopriate version of ChromeDriver (Mac/Unix/Windows) from <a href='https://chromedriver.storage.googleapis.com/index.html?path=73.0.3683.68/'>ChromeDriver 73.0.3683.68</a>.
 
 ## Running Ruleset Runners To Test a Website
 

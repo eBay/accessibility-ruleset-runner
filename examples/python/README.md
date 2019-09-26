@@ -6,9 +6,15 @@ These examples show how to run the rulesets using Selenium Webdriver.
 We assume the following are installed:
 
 <ul>
-<li><a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a></li>
 <li><a href='http://chromedriver.chromium.org/'>ChromeDriver</a></li>
+<li><a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a></li>
 </ul>
+
+### ChromeDriver
+
+<a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
+
+See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
 ### Python 2.7.16
 
@@ -19,14 +25,6 @@ We assume the following are installed:
 <a href='https://pypi.org/project/pip/'>pip</a> is the package installer for Python.  pip comes preinstalled for Python versions above Python 2.7.9.  If you need to install pip manually, you may visit the <a href='https://pip.pypa.io/en/stable/installing/'>pip installation page</a>.
 
 <b>Note:</b> Windows users may need to add the location of pip (ie C:\Python27\Scripts) to the Path environment variable.
-
-### ChromeDriver
-
-<a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
-
-The appropriate version of <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> needs to be downloaded individually.  The ChromeDriver version must be compatible with the Operating System (Mac/Unix/Windows) and the version of Chrome.
-
-For example, when using version 73.0.3683.103 of Chrome, users may download the appopriate version of ChromeDriver (Mac/Unix/Windows) from <a href='https://chromedriver.storage.googleapis.com/index.html?path=73.0.3683.68/'>ChromeDriver 73.0.3683.68</a>.
 
 ## Running Ruleset Runners To Test a Website
 

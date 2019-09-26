@@ -2,7 +2,7 @@
 // Copyright 2017-2019 eBay Inc.
 // Author/Developer(s): Scott Izu
 // Last Modified: 9/24/2019
-// Version 3.1.2
+// Version 3.1.1
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
