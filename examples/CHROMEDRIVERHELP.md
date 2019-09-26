@@ -22,4 +22,4 @@ echo $HOME/bin
 
 Make sure this directory exists, it is on the system path and that <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is placed within the directory.
 
-If setup correctly, the command to show the chromedriver version will work from any directory.
+If setup correctly, the command to show the <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> version will work from any directory.
