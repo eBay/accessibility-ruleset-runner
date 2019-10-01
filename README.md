@@ -44,7 +44,7 @@ Here are some possible environments, some of which we have examples for:
 <li><a href='examples/nodejs/README.md'>NodeJS with Selenium/Mocha/Chai</a></li>
 <li><a href='examples/python/README.md'>Python with Selenium</a></li>
 <li><a href='examples/chromeextension/README.md'>Chrome Extension</a></li>
-<li>Java with Selenium/TestNG</li>
+<li><a href='examples/java/README.md'>Java with Selenium/TestNG</a></li>
 </ul>
 
 

@@ -1,0 +1,88 @@
+# Java with Selenium/TestNG Examples
+These examples show how to run the rulesets using a Selenium/TestNG framework:
+
+<ul>
+<li>selenium-java</li>
+<li>testng</li>
+</ul>
+
+## Pre-Requisites:
+
+We assume the following are installed:
+
+<ul>
+<li><a href='http://chromedriver.chromium.org/'>ChromeDriver</a></li>
+<li><a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a></li>
+</ul>
+
+### ChromeDriver
+
+<a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
+
+See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+
+### Java 8
+
+<a href='https://docs.oracle.com/javase/8/docs/technotes/guides/language/index.html'>Java</a> is a general-purpose class-based object-oriented high-level programming language.  This example was created using the <a href='https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html'>Java 8 JDK</a>.
+
+<a href='https://maven.apache.org/'>Maven</a> is a project management tool.  Mac/Unix/Windows users may install Maven by following the steps listed on the <a href='https://maven.apache.org/download.cgi'>Maven Download Page</a>.  This example was created using Maven 3.1.1.
+
+<b>Note:</b> Windows users are recommended to use the Git Bash console to run Maven.  An Installer may be found on the <a href='https://git-scm.com/download'>Git Downloads</a>.
+
+<a href='https://maven.apache.org/'>Maven</a> is used to download the following libraries, which are needed to run this example:
+
+<ul>
+<li><a href='https://mvnrepository.com/artifact/org.testng/testng/6.8.8'>testng 6.8.8</a></li
+<li><a href='https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.4.0'>selenium-java 3.4.0</a></li>
+<li><a href='https://mvnrepository.com/artifact/org.json/json/20160810'>json 20160810</a></li>
+</ul>
+
+## Running Ruleset Runners To Test a Website
+
+To invoke the ruleset runner, use the following command (in the examples/java folder):
+
+```sh
+mvn -Dtest=arr.AccessibilityRulesetRunnerTest test
+```
+
+The output should match the <a href='output/eBay.ruleset.runner.output.txt'>Ruleset Runner Output</a>.
+
+## Modifications
+
+### Test Another Website
+
+The examples are setup to be run without any configuration necessary.  However, users can test a different url by modifying the following line:
+
+```sh
+mvn -Dtest=arr.AccessibilityRulesetRunnerTest -DURLS_TO_TEST="[GoogleTest] http://www.google.com" test
+```
+
+In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a view.  Consider making the appopriate modifications necessary for your use case.
+
+## Additional Information
+
+### Integrated Development Environments
+
+This <a href='https://maven.apache.org/'>Maven</a> project can be imported into an Integrated Development Environment (IDE) like <a href='https://www.eclipse.org/'>Eclispe</a>.
+
+### Selenium Grid
+
+Building a selenium grid provides a lot more capability in terms of testing.  You will see some additional utility files included in that help with the following:
+
+<ul>
+<li>Loading Jenkins Job, System and Default Properties</li>
+<li>Automatic configuration of Chrome, Firefox and Remote Web Driver</li>
+<li>Automatic download of ChromeDriver, GeckoDriver, InternetExplorerDriver</li>
+</ul>
+
+These utility files work in various environments:
+
+<ul>
+<li>Local Desktop/Computer/Laptop</li>
+<li>Jenkins Server</li>
+<li>Selenium Grid</li>
+</ul>
+
+
+
+
