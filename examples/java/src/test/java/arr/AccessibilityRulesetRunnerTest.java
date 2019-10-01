@@ -17,14 +17,11 @@
 
 package arr;
 
-import java.util.Arrays;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-
 import util.ARRProperties;
 import util.WebDriverHolder;
 
@@ -95,7 +92,7 @@ public class AccessibilityRulesetRunnerTest {
 			Object aXeResponse = ((JavascriptExecutor) driver)
 					.executeAsyncScript(aXeRuleset
 							+ " axe.a11yCheck(document, {runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, arguments[arguments.length - 1]);");
-
+			
 			System.out.println("ValidationRules: aXeResponse:"
 					+ aXeResponse);
 			

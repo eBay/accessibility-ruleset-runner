@@ -32,7 +32,7 @@ See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information
 <a href='https://maven.apache.org/'>Maven</a> is used to download the following libraries, which are needed to run this example:
 
 <ul>
-<li><a href='https://mvnrepository.com/artifact/org.testng/testng/6.8.8'>testng 6.8.8</a></li
+<li><a href='https://mvnrepository.com/artifact/org.testng/testng/6.8.8'>testng 6.8.8</a></li>
 <li><a href='https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.4.0'>selenium-java 3.4.0</a></li>
 <li><a href='https://mvnrepository.com/artifact/org.json/json/20160810'>json 20160810</a></li>
 </ul>
@@ -71,14 +71,14 @@ Building a selenium grid provides a lot more capability in terms of testing.  Yo
 
 <ul>
 <li>Loading Jenkins Job, System and Default Properties</li>
-<li>Automatic configuration of Chrome, Firefox and Remote Web Driver</li>
-<li>Automatic download of ChromeDriver, GeckoDriver, InternetExplorerDriver</li>
+<li>Configuring Chrome, Firefox and Remote Web Driver</li>
+<li>Downloading ChromeDriver, GeckoDriver, InternetExplorerDriver</li>
 </ul>
 
 These utility files work in various environments:
 
 <ul>
-<li>Local Desktop/Computer/Laptop</li>
+<li>Developer Desktop/Laptop</li>
 <li>Jenkins Server</li>
 <li>Selenium Grid</li>
 </ul>
