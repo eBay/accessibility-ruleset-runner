@@ -17,11 +17,16 @@
 
 package arr;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+
 import util.ARRProperties;
 import util.WebDriverHolder;
 
@@ -81,20 +86,50 @@ public class AccessibilityRulesetRunnerTest {
 					.executeScript(customRuleset
 							+ "return JSON.stringify(axs.Audit.run(" + jsonParameters.toString() + "));");
 
-			System.out.println("ValidationRules: customResponse:"
-					+ customResponse);
+//			System.out.println("ValidationRules: customResponse:" + customResponse);
 			
 			// Run aXe Ruleset
 			String aXeRulesToRun = "['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']";
 
 			String aXeRuleset = RulesetDownloader.getAXERulesetJS();
 			
-			Object aXeResponse = ((JavascriptExecutor) driver)
+			Map aXeResponse = (Map) ((JavascriptExecutor) driver)
 					.executeAsyncScript(aXeRuleset
 							+ " axe.a11yCheck(document, {runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, arguments[arguments.length - 1]);");
+
+//			System.out.println("ValidationRules: aXeResponse:" + aXeResponse);
 			
-			System.out.println("ValidationRules: aXeResponse:"
-					+ aXeResponse);
+			// Create single results object
+			JSONObject results = new JSONObject();
+			results.put("custom", new JSONArray(customResponse));
+			results.put("axe", new JSONArray());
+			JSONObject axeresults = new JSONObject(aXeResponse);
+			System.out.println("axeresults:"+axeresults);
+			
+			Set<String> rulesWithViolation = new HashSet<String>();
+			if(axeresults.has("violations")) {
+				JSONArray violations = axeresults.getJSONArray("violations");
+				for(int i=0; i<violations.length(); i++) {
+					JSONObject axerule = new JSONObject();
+					axerule.put("ruleName", violations.getJSONObject(i).get("id"));
+					axerule.put("violations", new JSONArray());
+					axerule.getJSONArray("violations").put(violations.getJSONObject(i));
+					results.getJSONArray("axe").put(axerule);
+					rulesWithViolation.add(axerule.getString("ruleName"));
+				}
+			}
+			
+			JSONArray axeRulesToRun = new JSONArray(aXeRulesToRun);
+			for(int i=0; i<axeRulesToRun.length(); i++) { // Show that the test was run
+				if(!rulesWithViolation.contains(axeRulesToRun.getString(i))) {
+					JSONObject axerule = new JSONObject();
+					axerule.put("ruleName", axeRulesToRun.getString(i));
+					axerule.put("violations", new JSONArray());
+					results.getJSONArray("axe").put(axerule);
+				}
+			}
+			
+			System.out.println("Results:"+results);
 			
 			WebDriverHolder.shutdownDriver();
 			

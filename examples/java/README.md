@@ -27,7 +27,7 @@ See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information
 
 <a href='https://maven.apache.org/'>Maven</a> is a project management tool.  Mac/Unix/Windows users may install Maven by following the steps listed on the <a href='https://maven.apache.org/download.cgi'>Maven Download Page</a>.  This example was created using Maven 3.1.1.
 
-<b>Note:</b> Windows users are recommended to use the Git Bash console to run Maven.  An Installer may be found on the <a href='https://git-scm.com/download'>Git Downloads</a>.
+<b>Note:</b> Windows users are recommended to use the Git Bash console to run <a href='https://maven.apache.org/'>Maven</a>.  An Installer may be found on the <a href='https://git-scm.com/download'>Git Downloads</a>.
 
 <a href='https://maven.apache.org/'>Maven</a> is used to download the following libraries, which are needed to run this example:
 
@@ -59,6 +59,22 @@ mvn -Dtest=arr.AccessibilityRulesetRunnerTest -DURLS_TO_TEST="[GoogleTest] http:
 
 In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a view.  Consider making the appopriate modifications necessary for your use case.
 
+### Include in Your Project
+
+The Test NG Test follows these steps outlined in <a href='../README.md'>.  For each of these steps, we add some additional comments.
+
+#### Configure Parameters
+
+Various parameters/properties were included to give examples of possible parameters that would be needed in a test environment.  In addition, default properties should be overridden by system properties and Jenkins parameters.
+
+#### Run Rulesets
+
+Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
+
+#### Process Results
+
+This example includes a simple example of how to create an HTML report from the JSON results.
+
 ## Additional Information
 
 ### Integrated Development Environments
@@ -67,7 +83,7 @@ This <a href='https://maven.apache.org/'>Maven</a> project can be imported into 
 
 ### Selenium Grid
 
-Building a selenium grid provides a lot more capability in terms of testing.  You will see some additional utility files included in that help with the following:
+Building a selenium grid provides a lot more capability in terms of testing.  You will see some additional utility files included (need modification to work) that help with the following:
 
 <ul>
 <li>Loading Jenkins Job, System and Default Properties</li>
