@@ -1,4 +1,4 @@
-# Include in Your Project
+# Include in Your Project: General Steps
 
 Here, we include a more general discussion about what to consider when running rulesets in your project.  The general steps to run rulesets are:
 
@@ -26,5 +26,12 @@ Many of our ruleset runner examples demonstrate how to run one ruleset at a time
 
 ## Process Results
 
-After the results are created, they can be uploaded to a server.  The server might store the results in a database for tracking and building various dashboards.  The server also might convert the JSON results to an HTML report and upload it to a central location for other people to view.
+After the results are created, they can be used to do the following:
 
+<ul>
+<li>Highlight errors and take screenshots</li>
+<li>Store results in a database</li>
+<li>Convert JSON results to an HTML Report</li>
+</ul>
+
+Highlighting errors and taking screenshots can help people quickly find, file and fix issues to improve quality.  Results can be stored in a database for tracking, which can also be surfaced via a quality dashboard.  Converting the JSON results to an HTML report is another way to help people digest the information.  If these HTML reports are uploaded to a central location, then quality dashboards can also link directly to these HTML reports.

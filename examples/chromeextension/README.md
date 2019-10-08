@@ -35,7 +35,7 @@ The output should match the <a href='output/ChromeExtension.ruleset.runner.outpu
 
 ### Include in Your Project
 
-The Chrome Extension follows these steps outlined in <a href='../README.md'>.  For each of these steps, we add some additional comments.
+The Chrome Extension follows the steps outlined in <a href='../README.md'>Include in Your Project: General Steps</a>.  For each of these steps, we add some additional comments.
 
 #### Configure Parameters
 
@@ -43,7 +43,7 @@ The Ruleset Runner Dialog can be modified to include additional parameters.  It 
 
 #### Run Rulesets
 
-Unlike the other ruleset runner examples, results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
+Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
 
 #### Process Results
 
