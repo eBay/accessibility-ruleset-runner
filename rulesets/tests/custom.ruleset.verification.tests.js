@@ -20,7 +20,7 @@ var chrome = require('selenium-webdriver/chrome');
 var assert = require('chai').assert;
 var fs = require('fs');
 
-var customRuleset = fs.readFileSync('../custom.ruleset.1.1.32.js','utf8');
+var customRuleset = fs.readFileSync('custom.ruleset.1.1.32.js','utf8');
 	  
 // In Chrome, The Images do not load.  This can wait until images load in async call.
 // runner must be defined, see createRunner
@@ -140,7 +140,7 @@ describe('Test custom ruleset against altTagsBad', function () {
   });
 
   it('should find failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/altTagsBad.html','utf8');
+    var html = fs.readFileSync('tests/input/altTagsBad.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H24 Image Map Alt Attribute','H35 Applet Tag Alt Attribute','H53 Object Tag Alt Attribute','H64 IFrame Tag Title Attribute','H46 Embed Tag'];
@@ -188,7 +188,7 @@ describe('Test custom ruleset against altTagsGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/altTagsGood.html','utf8');
+    var html = fs.readFileSync('tests/input/altTagsGood.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     // In Chrome, The Applets do not load.  Chrome Removes Alt tags for Objects with Errors
@@ -237,7 +237,7 @@ describe('Test custom ruleset against anchorBad', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/anchorBad.html','utf8');
+    var html = fs.readFileSync('tests/input/anchorBad.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
@@ -283,7 +283,7 @@ describe('Test custom ruleset against anchorGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/anchorGood.html','utf8');
+    var html = fs.readFileSync('tests/input/anchorGood.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
@@ -320,7 +320,7 @@ describe('Test custom ruleset against formBad', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/formBad.html','utf8');
+    var html = fs.readFileSync('tests/input/formBad.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H44 Input Tag Label','H32 Form Submit Button'];
@@ -383,7 +383,7 @@ describe('Test custom ruleset against formGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/formGood.html','utf8');
+    var html = fs.readFileSync('tests/input/formGood.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     // Used to add a submit button programmatically within an iframe, which is a valid way to provide a submit button in a form
@@ -424,7 +424,7 @@ describe('Test custom ruleset against imageBad', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/imageBad.html','utf8');
+    var html = fs.readFileSync('tests/input/imageBad.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H37 Image Tag Alt Attribute'];
@@ -468,7 +468,7 @@ describe('Test custom ruleset against imageGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/imageGood.html','utf8');
+    var html = fs.readFileSync('tests/input/imageGood.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H37 Image Tag Alt Attribute'];
@@ -500,7 +500,7 @@ describe('Test custom ruleset against pageLayoutBad', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutBad.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutBad.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H25 Title Tag','H57 HTML Tag Lang Attribute','H42 Heading Hierarchy','H42 H1 Heading','Validate Skip to Main Content'];
@@ -554,7 +554,7 @@ describe('Test custom ruleset against pageLayoutBad (Skip to Main Source Invalid
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainSourceInvalidText.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutBad_SkipToMainSourceInvalidText.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['Validate Skip to Main Content'];
@@ -588,7 +588,7 @@ describe('Test custom ruleset against pageLayoutBad (Skip to Main Source Missing
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainSourceMissing.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutBad_SkipToMainSourceMissing.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['Validate Skip to Main Content'];
@@ -622,7 +622,7 @@ describe('Test custom ruleset against pageLayoutBad (Skip to Main Source Target 
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainSourceTargetMismatch.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutBad_SkipToMainSourceTargetMismatch.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['Validate Skip to Main Content'];
@@ -656,7 +656,7 @@ describe('Test custom ruleset against pageLayoutBad (Skip to Main Target Duplica
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainTargetDuplicated.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutBad_SkipToMainTargetDuplicated.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H42 H1 Heading','Validate Skip to Main Content'];
@@ -696,7 +696,7 @@ describe('Test custom ruleset against pageLayoutBad (Skip to Main Target is H Ta
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutBad_SkipToMainTargetIsHTag.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutBad_SkipToMainTargetIsHTag.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['Validate Skip to Main Content'];
@@ -730,7 +730,7 @@ describe('Test custom ruleset against pageLayoutGood', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutGood.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutGood.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H25 Title Tag','H57 HTML Tag Lang Attribute','H42 Heading Hierarchy','H42 H1 Heading','Validate Skip to Main Content'];
@@ -770,7 +770,7 @@ describe('Test custom ruleset against pageLayoutGood (Hidden H1)', function () {
   });
 
   it('should find no failures', function (done) { 
-    var html = fs.readFileSync('../tests/input/pageLayoutGood_HiddenH1.html','utf8');
+    var html = fs.readFileSync('tests/input/pageLayoutGood_HiddenH1.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
     var rulesToRun = ['H25 Title Tag','H57 HTML Tag Lang Attribute','H42 Heading Hierarchy','H42 H1 Heading','Validate Skip to Main Content'];

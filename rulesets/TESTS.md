@@ -40,7 +40,7 @@ The verification tests for the custom ruleset are based on five main categories 
 
 ### Step 1: Install Package Dependencies
 
-To install these node modules, from the accessibility-ruleset-runner/rulesets folder, run:
+To install these node modules (from the <a href='https://registry.npmjs.org/'>Public NPM Registry</a>), from the accessibility-ruleset-runner/rulesets folder, run:
 
 ```sh
 npm install

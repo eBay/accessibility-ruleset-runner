@@ -1,9 +1,9 @@
 {
-  "name": "Accessibility-Ruleset-Runner",
+  "name": "accessibility-ruleset-runner",
   "version": "1.0.0",
   "description": "Accessibility Ruleset Runner",
   "scripts": {
-    "custom.ruleset.verification.tests": "mocha ../tests/custom.ruleset.verification.tests.js"
+    "custom.ruleset.verification.tests": "mocha tests/custom.ruleset.verification.tests.js"
   },
   "repository": {
     "type": "git",

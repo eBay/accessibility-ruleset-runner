@@ -16,6 +16,7 @@
   "author": "sizu@ebay.com",
   "license": "Apache-2.0",
   "devDependencies": {
+    "accessibility-ruleset-runner": "^1.0.0",
     "chai": "^4.2.0",
     "fs": "0.0.1-security",
     "mocha": "^6.1.3",

@@ -60,3 +60,7 @@ The rules of the custom ruleset are grouped into 5 main categories (see below). 
 ## aXe Ruleset
 
 <a href='https://www.deque.com/'>Deque Systems</a> actively supports <a href='https://github.com/dequelabs/axe-core'>aXe</a> and provides <a href='https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md'>rule descriptions</a>.
+
+## NPM Module
+
+These rulesets are published to the <a href='https://registry.npmjs.org/'>Public NPM Registry</a>.
