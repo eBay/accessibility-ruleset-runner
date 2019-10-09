@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class JSONToHTMLConverter extends HTMLGenerator{
 	
-	String reportLocation;
+	String reportLocation = ".";
 	String pageTemplate;
 
 	String failedRowTemplate;
