@@ -118,4 +118,13 @@ public enum CustomRulesetRules {
 	public String getPatternHREF() {
 		return patternHREF;
 	}
+	
+	public static CustomRulesetRules getCustomRulesetRulesFromLongName(String aLongNameToCheck) {
+		for(CustomRulesetRules rule: CustomRulesetRules.values()) {
+			if(rule.getLongName().equals(aLongNameToCheck)) {
+				return rule;
+			}
+		}
+		return null;
+	}
 }

@@ -18,26 +18,23 @@
 package util;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import arr.CustomRulesetRules;
 
 public class JSONToHTMLConverter extends HTMLGenerator{
 	
-	String reportLocation = ".";
+	String reportLocation = "output/AccessibilityRulesetRunnerReport.html";
 	String pageTemplate;
+	String ruleDescriptionsTemplate;
 
 	String failedRowTemplate;
 	String exceptionTemplate;
 	String stackElementTemplate;
 	String reasonTemplate;
 	String testStepsTemplate;
-	String jiraLinkTemplate;
-	String jpmTable;
 
 	public static void main (String[] args) {
 		JSONToHTMLConverter ppi = new JSONToHTMLConverter();
@@ -47,38 +44,43 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 
 	public void convert(JSONObject results) {
 		this.pageTemplate = getPageTemplate(JSONToHTMLConverter.class, "HTMLReportTemplate.html");
+		this.ruleDescriptionsTemplate = getPageTemplate(JSONToHTMLConverter.class, "RuleDescriptions.html");
 		
 	  	failedRowTemplate = getInnerTemplate(pageTemplate, "<!--ROW_TEMPLATE-->");
 	  	exceptionTemplate = getInnerTemplate(pageTemplate, "EXCEPTION_TEMPLATE");
 	  	stackElementTemplate = getInnerTemplate(exceptionTemplate, "STACK_ELEMENT_TEMPLATE");
 	  	reasonTemplate = getInnerTemplate(failedRowTemplate, "<!--REASON-->");
 	  	testStepsTemplate = getInnerTemplate(failedRowTemplate, "<!--TEST_STEP_ITEM-->");
-	  	jiraLinkTemplate = getInnerTemplate(failedRowTemplate, "<!--JIRA_LINK-->");
-	  	
-	  	jpmTable = getInnerTemplate(failedRowTemplate, "<!--JPM_TABLE-->");
 
 		String homePage = HTMLGenerator.substituteMarker(pageTemplate, "<!--ROWS_TEMPLATE-->", listAllRowsForFailures(results));
 		writeFile(new File(reportLocation), homePage);
+		System.out.println("reportLocation:"+new File(reportLocation).getAbsolutePath());
 	}
 
 	private String listAllRowsForFailures(JSONObject results) {
 		StringBuilder dataHtml = new StringBuilder();
 
 		try {
+			JSONArray customArray = results.getJSONArray("custom");
+			for (int i=0; i<customArray.length(); i++) {
+				JSONObject customRule = customArray.getJSONObject(i);
+				JSONArray failedElements = customRule.getJSONArray("elements");
+				if (failedElements.length() > 0) {
+					// Generate html for page
+					String rowHTML = failedRowTemplate;
+					System.out.println("rowHTML:"+rowHTML);
 
-//			for (MyAssertionsTrackerInt atInt : myTest.getAssertions()) {
-//				MyRule myRule = (MyRule) atInt;
-//				if (myRule.getNumberOfAssertionsFailed() > 0) {
-//					
-//					// Generate html for page
-//					String rowHTML = failedRowTemplate;
-//
 //					List<String> numberedCommentList = createNumberedCommentList(myRule);
-//					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE1-->", myRule.getRule().getRuleCode());
-//					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE2-->", myRule.getRule().getRuleCode());
-//					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_NAME-->", myRule.getRule().getLongName());
-//					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_DETAILS-->", myRule.getRule().getDescriptionHTML());
-//					// Generate the HTMl for showing compliance level of each rule
+					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE1-->", customRule.getString("ruleCode"));
+					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE2-->", customRule.getString("ruleCode"));
+					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_NAME-->", customRule.getString("rule"));
+					
+					CustomRulesetRules customRulesetRule = CustomRulesetRules.getCustomRulesetRulesFromLongName(customRule.getString("rule"));
+					
+					String descriptionHTML = getInnerTemplate(ruleDescriptionsTemplate, customRulesetRule.getTemplateString());
+					
+					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_DETAILS-->", descriptionHTML);
+					// Generate the HTMl for showing compliance level of each rule
 //					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL1-->", myRule.getRule().getRuleComplianceLevel());
 //					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL2-->", myRule.getRule().getRuleComplianceLevel());
 //					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_ANCHOR_SOURCE-->", "<a title='View Rule Help Overlay' class='modalInput' rel='#"+myRule.getRule().getRuleCode()+"_HELP' relParent='#failedAPIContent'>");
@@ -112,9 +114,9 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 //					System.out.println("buildHTMLForColumnReason... myTest.name:"+myTest.getPageImage());
 //					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--REASONS-->", buildHTMLForColumnReason(myTest, myRule, numberedCommentList));
 //					
-//					dataHtml.append(rowHTML.toString());
-//				}
-//			}
+					dataHtml.append(rowHTML.toString());
+				}
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

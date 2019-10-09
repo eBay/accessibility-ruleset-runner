@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 // Copyright 2017-2019 eBay Inc.
-// Author/Developer(s): Scott Izu, Aravind Kannan
+// Author/Developer(s): Aravind Kannan, Scott Izu
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,13 +20,11 @@ package arr;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-
 import util.ARRProperties;
 import util.JSONToHTMLConverter;
 import util.WebDriverHolder;
@@ -39,7 +37,7 @@ import util.WebDriverHolder;
  * 3. With TestNGEclipsePlugin: Right Click->Run As->TestNG Test
  * 4. With TestNGEclipsePlugin parameters: Right Click->Run As->Run Configurations
  *    Right Click TestNG->New
- *    Name: MyTestNGTest
+ *    Name: AccessibilityRulesetRunnerTest
  *    Class: arr.AccessibilityRulesetRunner
  *    Arguments Tab->VM arguments:
  *    -DURLS_TO_TEST="[GoogleTest] http://www.google.com"
@@ -67,13 +65,16 @@ public class AccessibilityRulesetRunnerTest {
 			System.out.println("PRE PROCESSING STAGE: Page Configuration Setup");
 			ARRProperties.pageConfigurationsSetup(driver, viewName);
 			
-			System.out.println("PROCESSING STAGE: Running rules");
+			System.out.println("PROCESSING STAGE: Running rulesets");
+			JSONObject results = new JSONObject();
+
+			// Run Custom Ruleset
+			System.out.println("PROCESSING STAGE: Running Custom Ruleset");
 			String XPATH_ROOT = null;
 			if(!ARRProperties.XPATH_ROOT.getPropertyValueBasedOnPage(driver).isEmpty()) {
 				XPATH_ROOT = ARRProperties.XPATH_ROOT.getPropertyValueBasedOnPage(driver);
 			}
 			
-			// Run Custom Ruleset
 			JSONArray customRulesToRun = new JSONArray();
 			for (CustomRulesetRules rule : CustomRulesetRules.values()) {
 				customRulesToRun.put(rule.getLongName());
@@ -86,10 +87,12 @@ public class AccessibilityRulesetRunnerTest {
 			String customResponse = (String) ((JavascriptExecutor) driver)
 					.executeScript(customRuleset
 							+ "return JSON.stringify(axs.Audit.run(" + jsonParameters.toString() + "));");
-
+			results.put("custom", new JSONArray(customResponse));
 //			System.out.println("ValidationRules: customResponse:" + customResponse);
+
 			
 			// Run aXe Ruleset
+			System.out.println("PROCESSING STAGE: Running aXe Ruleset");
 			String aXeRulesToRun = "['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']";
 
 			String aXeRuleset = RulesetDownloader.getAXERulesetJS();
@@ -98,50 +101,52 @@ public class AccessibilityRulesetRunnerTest {
 					.executeAsyncScript(aXeRuleset
 							+ " axe.a11yCheck(document, {runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, arguments[arguments.length - 1]);");
 
+			addAXEResponseToResult(results, aXeResponse, aXeRulesToRun);
 //			System.out.println("ValidationRules: aXeResponse:" + aXeResponse);
-			
-			// Create single results object
-			JSONObject results = new JSONObject();
-			results.put("custom", new JSONArray(customResponse));
-			results.put("axe", new JSONArray());
-			JSONObject axeresults = new JSONObject(aXeResponse);
-			System.out.println("axeresults:"+axeresults);
-			
-			// Put failed rules into the single results object
-			Set<String> rulesWithViolation = new HashSet<String>();
-			if(axeresults.has("violations")) {
-				JSONArray violations = axeresults.getJSONArray("violations");
-				for(int i=0; i<violations.length(); i++) {
-					JSONObject axerule = new JSONObject();
-					axerule.put("ruleName", violations.getJSONObject(i).get("id"));
-					axerule.put("violations", new JSONArray());
-					axerule.getJSONArray("violations").put(violations.getJSONObject(i));
-					results.getJSONArray("axe").put(axerule);
-					rulesWithViolation.add(axerule.getString("ruleName"));
-				}
-			}
-			
-			// Put passed rules into the single results object
-			JSONArray axeRulesToRun = new JSONArray(aXeRulesToRun);
-			for(int i=0; i<axeRulesToRun.length(); i++) { // Show that the test was run
-				if(!rulesWithViolation.contains(axeRulesToRun.getString(i))) {
-					JSONObject axerule = new JSONObject();
-					axerule.put("ruleName", axeRulesToRun.getString(i));
-					axerule.put("violations", new JSONArray());
-					results.getJSONArray("axe").put(axerule);
-				}
-			}
-			
-			// Convert JSON to HTML
-			new JSONToHTMLConverter().convert(results);
+
+			WebDriverHolder.shutdownDriver();
 			
 			System.out.println("Results:"+results);
 			
-			WebDriverHolder.shutdownDriver();
+			// Convert JSON to HTML
+			System.out.println("POST PROCESSING STAGE: Creating HTML Report");
+			new JSONToHTMLConverter().convert(results);
 			
 		} catch (Exception ex) { // This should never be hit
 			ex.printStackTrace();
 			throw ex; // To make Jenkins job fail
+		}
+	}
+
+	private void addAXEResponseToResult(JSONObject results, Map aXeResponse, String aXeRulesToRun) {
+		// Create single results object
+		results.put("axe", new JSONArray());
+		JSONObject axeresults = new JSONObject(aXeResponse);
+//		System.out.println("axeresults:"+axeresults);
+		
+		// Put failed rules into the single results object
+		Set<String> rulesWithViolation = new HashSet<String>();
+		if(axeresults.has("violations")) {
+			JSONArray violations = axeresults.getJSONArray("violations");
+			for(int i=0; i<violations.length(); i++) {
+				JSONObject axerule = new JSONObject();
+				axerule.put("ruleName", violations.getJSONObject(i).get("id"));
+				axerule.put("violations", new JSONArray());
+				axerule.getJSONArray("violations").put(violations.getJSONObject(i));
+				results.getJSONArray("axe").put(axerule);
+				rulesWithViolation.add(axerule.getString("ruleName"));
+			}
+		}
+		
+		// Put passed rules into the single results object
+		JSONArray axeRulesToRun = new JSONArray(aXeRulesToRun);
+		for(int i=0; i<axeRulesToRun.length(); i++) { // Show that the test was run
+			if(!rulesWithViolation.contains(axeRulesToRun.getString(i))) {
+				JSONObject axerule = new JSONObject();
+				axerule.put("ruleName", axeRulesToRun.getString(i));
+				axerule.put("violations", new JSONArray());
+				results.getJSONArray("axe").put(axerule);
+			}
 		}
 	}
 }

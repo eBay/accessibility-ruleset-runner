@@ -241,7 +241,7 @@
 			<TR class="testRuleRow">
 				<TD width="10%" style="padding-left: 5px;" valign="top">
 					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
-					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->0Skip<!--RULE_CODE1--> 
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->037<!--RULE_CODE1--> 
 					(<!--COMPLIANCE_LEVEL1-->AA<!--COMPLIANCE_LEVEL1-->) 
 					<br>
 					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#0Skip_HELP'><!--OVERLAY_ANCHOR_SOURCE-->
@@ -253,20 +253,27 @@
 <!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://github.corp.ebay.com/pages/accessibility/patterns/navigation/skipto.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
 					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='0Skip_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
 						<h1>
-							<!--RULE_NAME-->Validate Skip to Main Content<!--RULE_NAME-->
+							<!--RULE_NAME-->H37 Image Tag Alt Attribute<!--RULE_NAME-->
 						</h1>
 						<b>Rule Code:</b>
-						<!--RULE_CODE2-->0Skip<!--RULE_CODE2-->
+						<!--RULE_CODE2-->037<!--RULE_CODE2-->
 						<br /> <b>Compliance Level:</b>
 						<!--COMPLIANCE_LEVEL2-->AA<!--COMPLIANCE_LEVEL2-->
-						<!--RULE_DETAILS--><!--skipToMainCont-->
+						<!--RULE_DETAILS--><!--H37_PAI-->
 	<h3>Description</h3>
 	<ol>
-		<li>This method conforms to the WCAG rule <a href="http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html">2.4.1<a/>.</li>
-		<li>This method checks whether a user for a screen reader is given provision to skip to the main content.</li>
-		<li>This check verifies unsighted user if wishes to jump or not straight into the main content of the page.</li>			
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H37.html">H37</a>.
+		</li>
+		<li>This rule identifies for the presence of alt text for all the
+			image tag that is not an ancestor of anchor tag.Also checks for the presentational image through its width and height.</li>
 	</ol>
-	<!--skipToMainCont--><!--RULE_DETAILS-->
+	<h3>Procedure</h3>
+	<ul>
+		<li>Found all the image tags in the page.</li>
+		<li>Checked for the presence of alt text associated with it.</li>
+	</ul>
+	<!--H37_PAI--><!--RULE_DETAILS-->
 						<img class='close' src='close.png' />
 					</div>
 					<!--OVERLAY_MASK_TARGET--><!--OVERLAY_MASK_TARGET-->
