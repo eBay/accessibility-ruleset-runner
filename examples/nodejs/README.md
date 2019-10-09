@@ -9,7 +9,7 @@ These examples show how to run the rulesets using a Selenium/Mocha/Chai framewor
 
 ## Prerequisites
 
-See the <a href='../rulesets/TESTS.md#prerequisites'>prerequisites</a>.
+See the <a href='../../rulesets/TESTS.md#prerequisites'>prerequisites</a>.
 
 ## Running Ruleset Runners To Test a Website
 
