@@ -9,7 +9,30 @@ Tests are run using a Selenium/Mocha/Chai framework:
 
 ## Prerequisites
 
-See the <a href='../examples/nodejs/README.md#prerequisites'>prerequisites</a>.
+We assume the following are installed:
+<ul>
+<li><a href='http://chromedriver.chromium.org/'>ChromeDriver</a></li>
+<li><a href='https://nodejs.org/en/'>Node.js</a></li>
+</ul>
+
+### ChromeDriver
+
+<a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
+
+See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+
+### Node.js
+
+<a href='https://nodejs.org/en/'>Node.js</a> is a JavaScript runtime built on Chrome's V8 JavaScript engine.  Visit the <a href='https://nodejs.org/en/download/'>Node.js Downloads</a> for various intallers.
+
+<b>Note:</b> Windows users are recommended to use the Git Bash console to run Node.js.  An Installer may be found on the <a href='https://git-scm.com/download'>Git Downloads</a>.
+
+Node Version Manager (NVM) is a tool that allows users to swtich between different versions of Node.js.
+
+<ul>
+<li>Mac/Unix users may install NVM by following the steps listed on the <a href='https://github.com/nvm-sh/nvm'>NVM Repository</a>.</li>
+<li>Windows users may download an NVM installer from <a href='https://github.com/coreybutler/nvm-windows'>NVM Windows Repository</a> (ie <a href='https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip'>NVM Windows 1.1.7</a>).</li>
+</ul>
 
 ## Running Verification Tests to Test the Custom Ruleset
 
