@@ -61,7 +61,7 @@ In addition, sometimes users need to sign in, load urls, click buttons, etc befo
 
 ### Include in Your Project
 
-The Test NG Test follows the steps outlined in <a href='../README.md'>Include in Your Project: General Steps</a>.  For each of these steps, we add some additional comments.
+The Test NG Test follows the steps outlined in <a href='../README.md'>General Steps for Running Rulesets</a>.  For each of these steps, we add some additional comments.
 
 #### Configure Parameters
 

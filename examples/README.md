@@ -1,4 +1,4 @@
-# Include in Your Project: General Steps
+# General Steps for Running Rulesets
 
 Here, we include a more general discussion about what to consider when running rulesets in your project.  The general steps to run rulesets are:
 

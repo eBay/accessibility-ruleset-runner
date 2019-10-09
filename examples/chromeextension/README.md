@@ -35,7 +35,7 @@ The output should match the <a href='output/ChromeExtension.ruleset.runner.outpu
 
 ### Include in Your Project
 
-The Chrome Extension follows the steps outlined in <a href='../README.md'>Include in Your Project: General Steps</a>.  For each of these steps, we add some additional comments.
+The Chrome Extension follows the <a href='../README.md'>General Steps for Running Rulesets</a>.  For each of these steps, we add some additional comments.
 
 #### Configure Parameters
 

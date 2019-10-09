@@ -32,17 +32,22 @@ Users can also contribute to our custom ruleset or even create their own ruleset
 Each example has its own Readme file which includes information about the following:
 <ul>
 <li>Prerequisites for general environment setup</li>
-<li>Running the example</li>
-<li>Sample modifications for exploration</li>
-<li>Modifications for use within your project</li>
+<li>Running the rulesets against a default website</li>
+<li>Modifications to test another website</li>
+<li>Modifications to include in your project</li>
 </ul>
 
-Here are some possible environments, some of which we have examples for:
+Here are some basic examples:
 
 <ul>
 <li><a href='examples/chrome/README.md'>Chrome Developer Console</a></li>
 <li><a href='examples/nodejs/README.md'>NodeJS with Selenium/Mocha/Chai</a></li>
 <li><a href='examples/python/README.md'>Python with Selenium</a></li>
+</ul>
+
+Here are some projects that follow the <a href='examples/README.md'>General Steps for Running Rulesets</a>.
+
+<ul>
 <li><a href='examples/chromeextension/README.md'>Chrome Extension</a></li>
 <li><a href='examples/java/README.md'>Java with Selenium/TestNG</a></li>
 </ul>
