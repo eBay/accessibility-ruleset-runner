@@ -28,6 +28,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import util.ARRProperties;
+import util.JSONToHTMLConverter;
 import util.WebDriverHolder;
 
 /**
@@ -106,6 +107,7 @@ public class AccessibilityRulesetRunnerTest {
 			JSONObject axeresults = new JSONObject(aXeResponse);
 			System.out.println("axeresults:"+axeresults);
 			
+			// Put failed rules into the single results object
 			Set<String> rulesWithViolation = new HashSet<String>();
 			if(axeresults.has("violations")) {
 				JSONArray violations = axeresults.getJSONArray("violations");
@@ -119,6 +121,7 @@ public class AccessibilityRulesetRunnerTest {
 				}
 			}
 			
+			// Put passed rules into the single results object
 			JSONArray axeRulesToRun = new JSONArray(aXeRulesToRun);
 			for(int i=0; i<axeRulesToRun.length(); i++) { // Show that the test was run
 				if(!rulesWithViolation.contains(axeRulesToRun.getString(i))) {
@@ -128,6 +131,9 @@ public class AccessibilityRulesetRunnerTest {
 					results.getJSONArray("axe").put(axerule);
 				}
 			}
+			
+			// Convert JSON to HTML
+			new JSONToHTMLConverter().convert(results);
 			
 			System.out.println("Results:"+results);
 			

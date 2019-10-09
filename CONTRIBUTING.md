@@ -49,7 +49,7 @@ If the rule has merit, it will go through a thorough process of rule design and 
 ## Making Changes
 * Fork the `accessibility-ruleset-runner` repository
 * Make your changes
-* <a href='tests/README.md'>Run tests</a>
+* <a href='rulesets/TESTS.md'>Run tests</a>
 * Push your changes to a branch in your fork
 * See our commit message guidelines further down in this document
 * Submit a pull request to the repository

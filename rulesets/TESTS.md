@@ -35,7 +35,7 @@ The output should match the <a href='output/custom.ruleset.verification.tests.ou
 
 ## Testing Methodology
 
-The cutsom ruleset is vetted against a library of good/bad html code snippets as discussed in <a href='../README.md#creating-a-ruleset'>Creating a Ruleset</a>.
+The custom ruleset is vetted against a library of good/bad html code snippets as discussed in <a href='../README.md#creating-a-ruleset'>Creating a Ruleset</a>.
 
 ### Writing a New Rule and Adding Test Cases
 
