@@ -51,6 +51,7 @@ public enum ARRProperties {
 	XPATH_EXEMPTIONS, 
 	USER_AGENT, 
 	STORAGE_FOLDER,
+	REPORT_TITLE,
 	PRE_ACTIONS,
 	OPT_IN_URL,
 	CANONICAL_HOST_NAME,
@@ -129,7 +130,7 @@ public enum ARRProperties {
 		// Third, force certain actions for some parameters
 		if (this == ARRProperties.URLS_TO_TEST) {
 			if (propertyFromPropertiesFile
-					.equals("[HomePage - Used as default since URLS_TO_TEST was not set while you ran WAE] http://www.ebay.com")) {
+					.equals("[HomePage - Used as default since URLS_TO_TEST was not set while you ran ARR] http://www.ebay.com")) {
 				System.out.println("");
 				System.out.println("");
 				System.out.println("************************ WARNING!!! MISSING PARAMETER *************************");
@@ -173,11 +174,11 @@ public enum ARRProperties {
 	}
 	
 	// Called by Engine to show which driver (multiple nodes in Jenkins) is testing which page
-	public static void pageConfigurationsSetup(WebDriver driver, String convenientIdentifier) {
+	public static void viewConfigurationsSetup(WebDriver driver, String convenientIdentifier) {
 		driverToCID.put(driver, convenientIdentifier);
 	}
 	
-	public String getPropertyValueBasedOnPage(WebDriver driver) {
+	public String getPropertyValueBasedOnView(WebDriver driver) {
 		// Second, look for page configurations within value
 		// value may be PRE_ACTIONS="" 
 		//   -> returns ""
@@ -213,11 +214,11 @@ public enum ARRProperties {
 		    // REFRESH
 		    // [GH Footer] WAIT 3
 		    // REFRESH
-		    String currentPageName = null;
+		    String currentViewName = null;
 		    String currentParameter = null;
 		    for (String line : arrayOfUrls) {
 		    	if(line.trim().startsWith("[")) {
-		    		if(cid.equals(currentPageName)) {
+		    		if(cid.equals(currentViewName)) {
 		    			if(printedOverrideMessage.get(cid) == null) {
 		    				 printedOverrideMessage.put(cid, true);
 							System.out.println("Override value is being used for Page:'"+cid+"' Property:"+this.name()+" Value:"+currentParameter);
@@ -228,9 +229,9 @@ public enum ARRProperties {
 		    		int idx = line.trim().indexOf("]");
 		    	    String head = line.trim().substring(0, idx);
 		    	    String tail = line.trim().substring(idx + 1);
-		    		currentPageName = head.substring(1, head.length());
+		    		currentViewName = head.substring(1, head.length());
 		    		currentParameter = tail;
-		    	} else if (currentPageName != null){
+		    	} else if (currentViewName != null){
 		    		if(currentParameter == null) {
 		    			currentParameter = line.trim();
 		    		} else {
@@ -239,14 +240,14 @@ public enum ARRProperties {
 		    	}
 		    }
 		    
-    		if(cid.equals(currentPageName)) {
+    		if(cid.equals(currentViewName)) {
     			if(printedOverrideMessage.get(cid) == null) {
     				 printedOverrideMessage.put(cid, true);
 					System.out.println("Override value is being used for Page:'"+cid+"' Property:"+this.name()+" Value:"+currentParameter);
 				}
 				return currentParameter;
     		}
-    		if(currentPageName != null) {
+    		if(currentViewName != null) {
     			String propertyFromPropertiesFile = cleanProperty(getPropertyFromPropertiesFile());
     			if (propertyFromPropertiesFile == null){
     				propertyFromPropertiesFile = "";

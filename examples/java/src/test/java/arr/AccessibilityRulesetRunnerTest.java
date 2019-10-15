@@ -17,16 +17,27 @@
 
 package arr;
 
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+
 import util.ARRProperties;
 import util.JSONToHTMLConverter;
+import util.ScreenshotsProcessor;
+import util.ScreenshotsProcessor.ScreenShotElementRectangle;
+import util.UrlProvider;
 import util.WebDriverHolder;
 
 /**
@@ -46,8 +57,7 @@ import util.WebDriverHolder;
  */
 public class AccessibilityRulesetRunnerTest {	
 	@Test(dataProvider = "urlsToTest", dataProviderClass = UrlProvider.class)
-	public void accessibilityRulesetRunnerTest(String url,
-			String viewName) throws Exception {
+	public void accessibilityRulesetRunnerTest(String url, String viewName) throws Exception {
 
 		/** Should trigger an error when running in Jenkins
 		 * If catch Exception, will trigger an error in report validation, stack trace will print
@@ -56,66 +66,114 @@ public class AccessibilityRulesetRunnerTest {
 		try { // Should trigger an error when running in Jenkins, will fail report validation			
 			WebDriver driver = WebDriverHolder.startupDriver();
 
-			if(driver != null) { // Allow for driver to be null.  We require each view to have a test result.  This way, if one view fails to be tested for any reason, we can not upload the WAE report.
+			if(driver != null) { // Allow for driver to be null.  We require each view to have a test result.  This way, if one view fails to be tested for any reason, we can not upload the ARR report.
 				driver.get(url);
 			} else {
 				System.out.println("!!!!! WARNING Driver was null at beginning of test");
 			}
 			
 			System.out.println("PRE PROCESSING STAGE: Page Configuration Setup");
-			ARRProperties.pageConfigurationsSetup(driver, viewName);
+			ARRProperties.viewConfigurationsSetup(driver, viewName);
 			
-			System.out.println("PROCESSING STAGE: Running rulesets");
+			System.out.println("PRE PROCESSING STAGE: Setup Results");
 			JSONObject results = new JSONObject();
+			results.put("viewName", viewName);
+			results.put("url", url);
+			results.put("reportTitle", ARRProperties.REPORT_TITLE.getPropertyValue());
+			results.put("xpathRoot", ARRProperties.XPATH_ROOT.getPropertyValue());
 
-			// Run Custom Ruleset
+			System.out.println("PREPROCESSING STAGE: Take View Screenshots");
+			ScreenshotsProcessor sp = new ScreenshotsProcessor();
+			takeViewScreenshots(driver, results, sp);
+
 			System.out.println("PROCESSING STAGE: Running Custom Ruleset");
-			String XPATH_ROOT = null;
-			if(!ARRProperties.XPATH_ROOT.getPropertyValueBasedOnPage(driver).isEmpty()) {
-				XPATH_ROOT = ARRProperties.XPATH_ROOT.getPropertyValueBasedOnPage(driver);
-			}
-			
-			JSONArray customRulesToRun = new JSONArray();
-			for (CustomRulesetRules rule : CustomRulesetRules.values()) {
-				customRulesToRun.put(rule.getLongName());
-			}
-			JSONObject jsonParameters = new JSONObject();
-			jsonParameters.put("rulesToRun", customRulesToRun);
-			jsonParameters.put("XPATH_ROOT", XPATH_ROOT);
+			runCustomRuleset(driver, results);
 
-			String customRuleset = RulesetDownloader.getCustomRulesetJS();
-			String customResponse = (String) ((JavascriptExecutor) driver)
-					.executeScript(customRuleset
-							+ "return JSON.stringify(axs.Audit.run(" + jsonParameters.toString() + "));");
-			results.put("custom", new JSONArray(customResponse));
-//			System.out.println("ValidationRules: customResponse:" + customResponse);
-
-			
-			// Run aXe Ruleset
 			System.out.println("PROCESSING STAGE: Running aXe Ruleset");
-			String aXeRulesToRun = "['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']";
+			runAXERuleset(driver, results);
 
-			String aXeRuleset = RulesetDownloader.getAXERulesetJS();
-			
-			Map aXeResponse = (Map) ((JavascriptExecutor) driver)
-					.executeAsyncScript(aXeRuleset
-							+ " axe.a11yCheck(document, {runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, arguments[arguments.length - 1]);");
-
-			addAXEResponseToResult(results, aXeResponse, aXeRulesToRun);
-//			System.out.println("ValidationRules: aXeResponse:" + aXeResponse);
+			System.out.println("POSTPROCESSING STAGE: Take View Screenshots");
 
 			WebDriverHolder.shutdownDriver();
-			
-			System.out.println("Results:"+results);
 			
 			// Convert JSON to HTML
 			System.out.println("POST PROCESSING STAGE: Creating HTML Report");
 			new JSONToHTMLConverter().convert(results);
+
+			System.out.println("Results:"+results);
 			
 		} catch (Exception ex) { // This should never be hit
 			ex.printStackTrace();
 			throw ex; // To make Jenkins job fail
 		}
+	}
+	
+	private void takeViewScreenshots(WebDriver driver, JSONObject results, ScreenshotsProcessor sp)  throws Exception {
+		String xpathRoot = results.getString("xpathRoot");
+		
+		if (!xpathRoot.isEmpty()) {
+			System.out.println("PRE PROCESSING STAGE: Page Screenshot Scroll to Root...");
+			WebElement rootElement = driver.findElements(By.xpath(xpathRoot)).get(0);
+			WebElement htmlElement = driver.findElements(By.xpath("//html")).get(0);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", rootElement);
+			Thread.sleep(3000);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", htmlElement);
+		}
+		
+		String viewName = results.getString("viewName");
+
+		new File("output").mkdirs();
+
+		String imageName1 = viewName.replaceAll(" ", "_") + "_SCREEN.jpg";
+		
+		sp.createSnapshotForScreen(driver, "output/" + imageName1);
+		results.put("viewImage", imageName1); // URLS on different threads were sharing screenshots, so have it in results
+		if (!xpathRoot.isEmpty()) {
+			WebElement rootElement = driver.findElements(By.xpath(xpathRoot)).get(0);
+			ScreenShotElementRectangle sser = new ScreenShotElementRectangle(rootElement.getLocation(), rootElement.getSize());
+
+			String imageName = viewName.replaceAll(" ", "_")+ "_ROOT_.jpg";
+			
+			sp.createSnapshot(sser, "output/" + imageName);
+			results.put("xpathImage", imageName); // URLS on different threads were sharing screenshots, so have it in results
+			System.out.println("RootElementImage: " + imageName);
+		}
+	}
+
+	private void runCustomRuleset(WebDriver driver, JSONObject results) {
+		String xpathRoot = results.getString("xpathRoot");
+		
+		// Run Custom Ruleset
+		JSONArray customRulesToRun = new JSONArray();
+		for (CustomRulesetRules rule : CustomRulesetRules.values()) {
+			customRulesToRun.put(rule.getLongName());
+		}
+		JSONObject jsonParameters = new JSONObject();
+		jsonParameters.put("rulesToRun", customRulesToRun);
+		if (!xpathRoot.isEmpty()) {
+			jsonParameters.put("XPATH_ROOT", xpathRoot);
+		}
+
+		String customRuleset = RulesetDownloader.getCustomRulesetJS();
+		String customResponse = (String) ((JavascriptExecutor) driver)
+				.executeScript(customRuleset
+						+ "return JSON.stringify(axs.Audit.run(" + jsonParameters.toString() + "));");
+		results.put("custom", new JSONArray(customResponse)); // addCustomResponseToResult
+//		System.out.println("ValidationRules: customResponse:" + customResponse);
+	}
+
+	private void runAXERuleset(WebDriver driver, JSONObject results) {
+		// Run aXe Ruleset
+		String aXeRulesToRun = "['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']";
+
+		String aXeRuleset = RulesetDownloader.getAXERulesetJS();
+		
+		Map aXeResponse = (Map) ((JavascriptExecutor) driver)
+				.executeAsyncScript(aXeRuleset
+						+ " axe.a11yCheck(document, {runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, arguments[arguments.length - 1]);");
+
+		addAXEResponseToResult(results, aXeResponse, aXeRulesToRun);
+//		System.out.println("ValidationRules: aXeResponse:" + aXeResponse);
 	}
 
 	private void addAXEResponseToResult(JSONObject results, Map aXeResponse, String aXeRulesToRun) {

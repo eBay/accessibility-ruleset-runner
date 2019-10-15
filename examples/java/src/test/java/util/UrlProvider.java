@@ -15,12 +15,11 @@
 // limitations under the License.
 //////////////////////////////////////////////////////////////////////////
 
-package arr;
+package util;
 
 import java.util.Arrays;
 import java.util.List;
 import org.testng.annotations.DataProvider;
-import util.ARRProperties;
 
 public class UrlProvider {
 

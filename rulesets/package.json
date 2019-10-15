@@ -1,5 +1,5 @@
 {
-  "name": "accessibility-ruleset-runner",
+  "name": "@ebay/accessibility-ruleset-runner",
   "version": "1.0.0",
   "description": "Accessibility Ruleset Runner",
   "scripts": {

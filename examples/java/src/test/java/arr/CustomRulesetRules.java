@@ -17,6 +17,8 @@
 
 package arr;
 
+import org.json.JSONObject;
+
 public enum CustomRulesetRules {
 
 	  // Page Layout
@@ -25,21 +27,21 @@ public enum CustomRulesetRules {
 
 	  ruleH57LangAttribute("H57 HTML Tag Lang Attribute", "<!--H57-->", "057", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H57.html", ""),
 		
-	  ruleSkiptoMainContent("Validate Skip to Main Content", "<!--skipToMainCont-->", "0Skip", "AA", "http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html", "https://ebay.gitbooks.io/mindpatterns/content/navigation/skipto.html"),
+	  ruleSkiptoMainContent("Validate Skip to Main Content", "<!--skipToMainCont-->", "0Skip", "AA", "http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html", "https://ebay.gitbook.io/mindpatterns/navigation/skipto.html"),
 
-	  ruleH42HeadingMarkupTags("H42 H1 Heading", "<!--H42_HMT-->", "142", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html", "https://ebay.gitbooks.io/mindpatterns/content/structure/heading.html"),
+	  ruleH42HeadingMarkupTags("H42 H1 Heading", "<!--H42_HMT-->", "142", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html", "https://ebay.gitbook.io/mindpatterns/structure/heading.html"),
 
-	  ruleH42HeadingSkipLinks("H42 Heading Hierarchy", "<!--H42_HSL-->", "042", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html", "https://ebay.gitbooks.io/mindpatterns/content/structure/heading.html"),
+	  ruleH42HeadingSkipLinks("H42 Heading Hierarchy", "<!--H42_HSL-->", "042", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html", "https://ebay.gitbook.io/mindpatterns/structure/heading.html"),
 	  
 	  // Form
 
 	  ruleH44PresenceOfLabelforInputTag("H44 Input Tag Label", "<!--H44_POL-->", "044", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H44.html", ""),
 	  
-	  ruleH32FormSubmitBtn("H32 Form Submit Button", "<!--H32-->", "032", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H32.html", "https://ebay.gitbooks.io/mindpatterns/content/structure/form.html"),
+	  ruleH32FormSubmitBtn("H32 Form Submit Button", "<!--H32-->", "032", "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H32.html", "https://ebay.gitbook.io/mindpatterns/structure/form.html"),
 	  
 	  // Image
 	  
-	  ruleH37PresenceOfAltInImage("H37 Image Tag Alt Attribute", "<!--H37_PAI-->", "037" , "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H37.html", "https://ebay.gitbooks.io/mindpatterns/content/structure/image.html"),
+	  ruleH37PresenceOfAltInImage("H37 Image Tag Alt Attribute", "<!--H37_PAI-->", "037" , "A", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H37.html", "https://ebay.gitbook.io/mindpatterns/structure/image.html"),
 
 	  // Alt Tags
 
@@ -55,7 +57,7 @@ public enum CustomRulesetRules {
 
 	  // Anchor
 	  
-	  ruleH33LinkOpensinNewWindow("H33 Anchor Tag Title For New Windows", "<!--H33-->", "033", "AA", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html", "https://ebay.gitbooks.io/mindpatterns/content/navigation/link.html"),
+	  ruleH33LinkOpensinNewWindow("H33 Anchor Tag Title For New Windows", "<!--H33-->", "033", "AA", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html", "https://ebay.gitbook.io/mindpatterns/navigation/link.html"),
 	  
 	  ruleH33sameAnchorLinks("H33 Links Repeated","<!--H33_DupLinks-->", "133", "AA", "http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html", ""),
 	  

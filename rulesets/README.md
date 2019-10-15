@@ -63,4 +63,4 @@ The rules of the custom ruleset are grouped into 5 main categories (see below). 
 
 ## NPM Module
 
-These rulesets are published to the <a href='https://registry.npmjs.org/'>Public NPM Registry</a> at <a href='https://registry.npmjs.org/accessibility-ruleset-runner'>accessibility-ruleset-runner</a>.
+These rulesets are published to the <a href='https://registry.npmjs.org/'>Public NPM Registry</a> at <a href='https://registry.npmjs.org/@ebay%2faccessibility-ruleset-runner'>@ebay/accessibility-ruleset-runner</a>.
