@@ -19,7 +19,17 @@
 
 <ul>
 <li><b><a href='topics/CHROMEDRIVERHELP.md'>ChromeDriver Help</a>:</b> Rulesets are often run using ChromeDriver.</li>
+<li><b><a href='examples/chromeextension/README.md#chrome-extension-development'>Chrome Extension Development</a>:</b> Developing a Chrome Extension makes it easy for everyone to run the rulesets.</li>
 <li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md'>General Steps for Running Rulesets</a>:</b> Running rulesets requires some general steps.</li>
+<li><b><a href='examples/java/README.md#multiple-views'>Multiple Views</a>:</b> Often multiple Views can be tested simultaneously.</li>
 <li><b><a href='rulesets/README.md'>Rulesets</a>:</b> Rules typically align with <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a>.</li>
+<li><b><a href='examples/java/README.md#selenium-grid'>Selenium Grid</a>:</b> Building a Selenium Grid can help scale testing.</li>
 <li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md#view-setup'>View Setup</a>:</b> Prior to running a ruleset, it is important to clearly define the View (ie what is being tested).</li>
+</ul>
+
+## Additional Resources
+
+<ul>
+<li><b><a href='examples/chromeextension/README.md#headings-parser'>Headings Parser</a>:</b> Creating a tool to highlight landmarks and headers can be helpful for developers.</li>
+<li><b><a href='examples/chromeextension/README.md#mind-patterns'>MIND Patterns</a>:</b> Creating accessibility patterns for common components is helpful to bake accessibility into the development process.</li>
 </ul>
