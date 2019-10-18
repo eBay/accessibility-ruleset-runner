@@ -14,7 +14,7 @@ We assume the following are installed:
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
 
-See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
 ### Python 2.7.16
 
