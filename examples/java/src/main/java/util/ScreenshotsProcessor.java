@@ -38,7 +38,7 @@ public class ScreenshotsProcessor {
 	int MIN_ELEMENT_LENGTH = 10;
 	int MAX_ELEMENT_PADDING_LENGTH = 200; // Must be greater than HIGHLIGHT_BORDER_LENGTH
 	
-	public void createSnapshotForScreen(WebDriver driver, String fileName) throws Exception{
+	public void createSnapshotForView(WebDriver driver, String fileName) throws Exception{
 		// If the driver is RemoteWebDriver then augment it to enable screen shots on it.
 		if (driver.getClass().getName().contains("RemoteWebDriver")) {
 			driver = new Augmenter().augment(driver);

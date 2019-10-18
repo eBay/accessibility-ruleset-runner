@@ -18,16 +18,18 @@
 package arr;
 
 import java.io.File;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+
 import util.ARRProperties;
 import util.JSONToHTMLConverter;
 import util.ScreenshotsProcessor;
@@ -67,8 +69,11 @@ public class AccessibilityRulesetRunnerTest {
 				System.out.println("!!!!! WARNING Driver was null at beginning of test");
 			}
 			
-			System.out.println("PRE PROCESSING STAGE: Page Configuration Setup");
+			System.out.println("PRE PROCESSING STAGE: View Configuration Setup");
 			ARRProperties.viewConfigurationsSetup(driver, viewName);
+
+			System.out.println("PRE PROCESSING STAGE: Resize Browser");
+			resizeBrowser(driver);
 			
 			System.out.println("PRE PROCESSING STAGE: Setup Results");
 			JSONObject results = new JSONObject();
@@ -77,7 +82,7 @@ public class AccessibilityRulesetRunnerTest {
 			results.put("reportTitle", ARRProperties.REPORT_TITLE.getPropertyValue());
 			results.put("xpathRoot", ARRProperties.XPATH_ROOT.getPropertyValue());
 
-			System.out.println("PREPROCESSING STAGE: Take View Screenshots");
+			System.out.println("PRE PROCESSING STAGE: Take View Screenshots");
 			ScreenshotsProcessor sp = new ScreenshotsProcessor();
 			takeViewScreenshots(driver, results, sp);
 
@@ -89,18 +94,39 @@ public class AccessibilityRulesetRunnerTest {
 
 			System.out.println("PROCESSING COMPLETE: Results:"+results);
 
-			System.out.println("POSTPROCESSING STAGE: Take Element Screenshots");
+			System.out.println("POST PROCESSING STAGE: Take Element Screenshots");
 			takeElementScreenshots(driver, results, sp);
 
 			WebDriverHolder.shutdownDriver();
 			
 			// Convert JSON to HTML
-			System.out.println("POST PROCESSING STAGE: Creating HTML Report");
+			System.out.println("POSTPROCESSING STAGE: Creating HTML Report");
 			new JSONToHTMLConverter().convert(results);
 			
 		} catch (Exception ex) { // This should never be hit
 			ex.printStackTrace();
 			throw ex; // To make Jenkins job fail
+		}
+	}
+
+	private void resizeBrowser(WebDriver driver) {
+		String browserSize = ARRProperties.BROWSER_SIZE.getPropertyValueBasedOnView(driver);
+		try {
+			if (browserSize.equals("Default")) {
+
+			} else if (browserSize.equals("Maximize")) {
+				System.out.println("PRE PROCESSING STAGE: Browser Maximize");
+				driver.manage().window().maximize();
+			} else {
+				System.out.println("PRE PROCESSING STAGE: Browser Resize");
+				String values[] = browserSize.split("x");
+				Integer windowWidth = Integer.parseInt(values[0].trim());
+				Integer windowHeight = Integer.parseInt(values[1].trim());
+				driver.manage().window().setPosition(new Point(0, 0));
+				driver.manage().window().setSize(new Dimension(windowWidth, windowHeight));
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 
@@ -156,28 +182,84 @@ public class AccessibilityRulesetRunnerTest {
 
 		new File("output").mkdirs();
 
-		String imageName1 = viewName.replaceAll(" ", "_") + "_SCREEN.jpg";
+		try { // View Image
+			String imageName = viewName.replaceAll(" ", "_") + "_VIEW.jpg";
+			sp.createSnapshotForView(driver, "output/" + imageName);
+			results.put("viewImage", imageName); // URLS on different threads were sharing screenshots, so have it in results
+			System.out.println("ViewImage: " + imageName);
+		} catch (Exception ex) {}
 		
-		sp.createSnapshotForScreen(driver, "output/" + imageName1);
-		results.put("viewImage", imageName1); // URLS on different threads were sharing screenshots, so have it in results
 		if (!xpathRoot.isEmpty()) {
 			WebElement rootElement = driver.findElements(By.xpath(xpathRoot)).get(0);
 			ScreenShotElementRectangle sser = new ScreenShotElementRectangle(rootElement.getLocation(), rootElement.getSize());
 
-			String imageName = viewName.replaceAll(" ", "_")+ "_ROOT_.jpg";
-			
-			sp.createSnapshot(sser, "output/" + imageName);
-			results.put("xpathImage", imageName); // URLS on different threads were sharing screenshots, so have it in results
-			System.out.println("RootElementImage: " + imageName);
+			try { // XPATH ROOT Image
+				String imageName = viewName.replaceAll(" ", "_")+ "_ROOT_.jpg";
+				sp.createSnapshot(sser, "output/" + imageName);
+				results.put("xpathImage", imageName); // URLS on different threads were sharing screenshots, so have it in results
+				System.out.println("RootElementImage: " + imageName);
+			} catch (Exception ex) {}
 		}
 	}
 	
 	private void takeElementScreenshots(WebDriver driver, JSONObject results,
 			ScreenshotsProcessor sp) {
+		String viewName = results.getString("viewName");
+		Integer imageCounter = 1;
 
 		JSONArray customArray = results.getJSONArray("custom");
 		for (int i=0; i<customArray.length(); i++) {
-			
+			JSONObject customRule = customArray.getJSONObject(i);
+			JSONArray failedElements = customRule.getJSONArray("elements");
+			for(int j=0; j<failedElements.length(); j++) {
+				JSONObject element = failedElements.getJSONObject(j);
+				if(element.has("elementXLeft")
+						&& element.has("elementYTop")
+						&& element.has("elementXRight")
+						&& element.has("elementYBottom")) {
+					int xLeft = element.getInt("elementXLeft");
+					int yTop = element.getInt("elementYTop");
+					int xRight = element.getInt("elementXRight");
+					int yBottom = element.getInt("elementYBottom");
+					ScreenShotElementRectangle sser = new ScreenShotElementRectangle(xLeft, yTop, xRight, yBottom);
+					
+					try { // Failed Element Image
+						String imageName = viewName.replaceAll(" ", "_")+"_CUSTOM_ELEMENT_"+imageCounter+"_.jpg";
+						sp.createSnapshot(sser, "output/" + imageName);
+						element.put("elementImage", imageName); // URLS on different threads were sharing screenshots, so have it in element
+						System.out.println("FailedElementImage: " + imageName);
+						
+						imageCounter++;
+					} catch (Exception ex) {}
+				}
+			}
+		}
+
+		JSONObject axeResults = results.getJSONObject("axe");
+		JSONArray violations = axeResults.getJSONArray("violations");
+		for (int i=0; i<violations.length(); i++) {
+			JSONObject axeRule = violations.getJSONObject(i);
+			JSONArray nodes = axeRule.getJSONArray("nodes");
+			for (int j=0; j<nodes.length(); j++) {
+				JSONObject node = nodes.getJSONObject(j);
+				
+				// TODO Modify AXE Ruleset to include xLeft, yTop, xRight, yBottom
+				// OR Post process Failures to find these values
+//				int xLeft = element.getInt("elementXLeft");
+//				int yTop = element.getInt("elementYTop");
+//				int xRight = element.getInt("elementXRight");
+//				int yBottom = element.getInt("elementYBottom");
+//				ScreenShotElementRectangle sser = new ScreenShotElementRectangle(xLeft, yTop, xRight, yBottom);
+//				
+//				try { // Failed Element Image
+//					String imageName = viewName.replaceAll(" ", "_")+"_AXE_ELEMENT_"+imageCounter+"_.jpg";
+//					sp.createSnapshot(sser, "output/" + imageName);
+//					node.put("elementImage", imageName); // URLS on different threads were sharing screenshots, so have it in element
+//					System.out.println("FailedElementImage: " + imageName);
+//					
+//					imageCounter++;
+//				} catch (Exception ex) {}
+			}
 		}
 	}
 }

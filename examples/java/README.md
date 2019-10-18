@@ -45,7 +45,7 @@ To invoke the ruleset runner, use the following command (in the examples/java fo
 mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
 ```
 
-The output should match the <a href='output/eBay.ruleset.runner.output.txt'>Ruleset Runner Output</a>.
+The output should match the <a href='output/HomePage URLS_TO_TEST was not set.ruleset.runner.output.txt'>Ruleset Runner Output</a>.
 
 Actually, the use of the settings file and location of the test to run are explicit and simply running the following should work.
 
@@ -65,29 +65,33 @@ mvn test -e -DURLS_TO_TEST="[Google] http://www.google.com"
 
 In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a View.  Consider making the appopriate modifications necessary for your use case.
 
-In practice, multiple Views are tested simultaneously using a <a href='#selenium-grid">Selenium Grid</a>.  To run multiple Views, try something like:
-
-```sh
-mvn test -e -DURLS_TO_TEST="[EBay] http://www.ebay.com, [PayPal] http://www.paypal.com"
-```
-
 ### Include in Your Project
 
 The Test NG Test follows the steps outlined in <a href='../README.md'>General Steps for Running Rulesets</a>.  For each of these steps, we add some additional comments.
 
 #### Configure Parameters
 
-Various parameters/properties were included to give examples of possible parameters that would be needed in a test environment.  In addition, default properties should be overridden by system properties and Jenkins parameters.
+Various parameters/properties were included to give examples of possible parameters that would be needed in a test environment.  In addition, code is included to ensure that default properties are overridden by system properties and Jenkins parameters.
 
 #### Run Rulesets
 
-Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.  In practice, results from multiple Views may be also be combined into a single JSON object.
+Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
 
 #### Process Results
 
-This example includes a simple example of how to create an HTML report from the results JSON object.  In practice, an HTML report might include multiple Views in a single report.  In order to do this, one might enchance the JSONToHTMLConverter class and modify the HTMLReportTemplate.html file appropriately.
+This example includes a simple example of how to create an HTML report from the results JSON object.
 
 ## Additional Information
+
+### Multiple Views
+
+In practice, multiple Views are tested simultaneously using a <a href='#selenium-grid">Selenium Grid</a>.  To run multiple Views, try something like:
+
+```sh
+mvn test -e -DURLS_TO_TEST="[EBay] http://www.ebay.com, [PayPal] http://www.paypal.com"
+```
+
+Results from multiple Views may be also be combined into a single JSON object.  Then, an HTML report could be created which includes these Views, by modifying the JSONToHTMLConverter class and HTMLReportTemplate.html file appropriately.
 
 ### Integrated Development Environments
 

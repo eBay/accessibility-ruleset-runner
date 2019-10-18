@@ -18,8 +18,6 @@
 package util;
 
 import java.io.File;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -61,27 +59,38 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		report = HTMLGenerator.substituteMarker(report, "<!--REPORT_TITLE2-->", results.getString("reportTitle"));
 		report = HTMLGenerator.substituteMarker(report, "<!--VIEW_NAME-->", results.getString("viewName"));
 		report = HTMLGenerator.substituteMarker(report, "<!--URL-->", results.getString("url"));
-		report = HTMLGenerator.substituteMarker(report, "<!--VIEW_SCREENSHOT-->", createViewScreenShotAnchor(results));
+		report = HTMLGenerator.substituteMarker(report, "<!--VIEW_SCREENSHOT-->", buildViewScreenShotAnchor(results));
 		report = HTMLGenerator.substituteMarker(report, "<!--ROWS_TEMPLATE-->", listAllRowsForFailures(results));
 		writeFile(new File(reportLocation), report);
 		System.out.println("reportLocation:"+new File(reportLocation).getAbsolutePath());
 	}
 
-	private String createViewScreenShotAnchor(JSONObject results) {
-		String viewImage = results.getString("viewImage");
-		String[] names = viewImage.split("\\.");
+	private String buildViewScreenShotAnchor(JSONObject results) {
 		StringBuilder anchor = new StringBuilder();
-		anchor.append("\n\n");
-		anchor.append("<a title='View Page in Snapshot Overlay' class='modalInput' rel="+HTMLGenerator.addSingleQuotes('#'+names[0]+"view")+" relParent='#leftPanel'>");
+		if(results.has("viewImage")) {
+			String viewImage = results.getString("viewImage");
+			buildScreenshotHTML(anchor, viewImage, "View");
+		}
+		if(results.has("xpathImage")) {
+			String xpathImage = results.getString("xpathImage");
+			buildScreenshotHTML(anchor, xpathImage, "Root Element");
+		}
+		return anchor.toString();
+	}
+
+	private void buildScreenshotHTML(StringBuilder anchor, String image,
+			String label) {
+		String[] names = image.split("\\.");
+		anchor.append("\n\n<br>");
+		anchor.append("<a title='See "+label+" in Snapshot Overlay' class='modalInput' rel="+HTMLGenerator.addSingleQuotes('#'+names[0])+" relParent='#'>");
 		anchor.append("<img alt='camera' style='width: 32px; height: 25px;' src='cam.png' />");
 		anchor.append("</a>");
-		anchor.append("<div class='modal' id="+HTMLGenerator.addSingleQuotes(names[0]+"view")+" style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>");
-		anchor.append("<image src="+HTMLGenerator.addSingleQuotes(viewImage)+" width='100%' height='100%'/>");
+		anchor.append("<div class='modal' id="+HTMLGenerator.addSingleQuotes(names[0])+" style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>");
+		anchor.append("<image src="+HTMLGenerator.addSingleQuotes(image)+" width='100%' height='100%'/>");
 		anchor.append("<br>");
 		anchor.append("<img class='close' src='close.png' />");
 		anchor.append("</div>");
-		anchor.append("<div class='exposeMask' id="+HTMLGenerator.addSingleQuotes('#'+names[0]+"view_MASK")+" ></div>");
-		return anchor.toString();
+		anchor.append("<div class='exposeMask' id="+HTMLGenerator.addSingleQuotes('#'+names[0]+"_MASK")+" ></div>");
 	}
 
 	private String listAllRowsForFailures(JSONObject results) {
@@ -238,8 +247,8 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 			List<String> numberedCommentList) {
 		StringBuffer testStepsHTML = new StringBuffer();
 		for (int i=0; i<elementFailures.length(); i++) {
-			JSONObject elementFailure = elementFailures.getJSONObject(i);
-			String alteredComment = addStripToComment(elementFailure, numberedCommentList.get(i), i+1);
+			JSONObject element = elementFailures.getJSONObject(i);
+			String alteredComment = addStripToComment(element, numberedCommentList.get(i), i+1);
 			String testStepItem = HTMLGenerator.substituteMarker(this.testStepsTemplate,
 					"<!--TEST_STEP_DETAILS-->", alteredComment); // ORIGINAL
 			testStepsHTML.append(testStepItem);
@@ -252,55 +261,42 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		return reason.toString();
 	}
 
-	private String addStripToComment(JSONObject elementFailure, String comment, Integer counter) {
+	private String addStripToComment(JSONObject element, String comment, Integer counter) {
 		StringBuilder commentSB = new StringBuilder();
 		commentSB.append(comment);
-		commentSB.append("<br>");
-//		try {
-//			String imageName = myRule.getMyFailure(counter).getImage();
-//			if (imageName != null) {
-//				String[] names = imageName.split("\\.");
-//				String anchor = "\n\n"
-//						+ "<a title='View Element in Snapshot Overlay' class='modalInput' rel="+HTMLGenerator.addSingleQuotes('#'+names[0])+" relParent='#failedAPIContent'>"
-//						+ "<img alt='camera' style='width: 32px; height: 25px;' src='"+ARRCredentials.IMAGES_URL+"cam.png' />"
-//						+ "</a>"
-//						+ "<div class='modal' id="+HTMLGenerator.addSingleQuotes(names[0])+" style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>"
-//						+ "<image src="+HTMLGenerator.addSingleQuotes(imageName)+" width='100%' height='100%'/>"
-//						+ "<br>"
-//						+ "<img class='close' src='close.png' />"
-//						+ "</div>"
-//						+ "<div class='exposeMask' id="+HTMLGenerator.addSingleQuotes(names[0]+"_MASK")+" ></div>";
-//				comment = comment + anchor;
-//			}
-//		} catch (Exception ex) {
-//		}
+		
+		if(element.has("elementImage")) {
+			String elementImage = element.getString("elementImage");
+			buildScreenshotHTML(commentSB, elementImage, "Element");
+		}
 	
 		// Default id is from id attribute. If that fails, try class, if that fails, use the text of the tag
 	
 		// Generate ID
+		commentSB.append("<br>");
 		commentSB.append("\n&nbsp;&nbsp;&nbsp;");
 		commentSB.append("<b>tag:</b>");
-		commentSB.append(elementFailure.getString("elementTag"));
-		if (elementFailure.has("elementClass") && !elementFailure.getString("elementClass").isEmpty()) {
+		commentSB.append(element.getString("elementTag"));
+		if (element.has("elementClass") && !element.getString("elementClass").isEmpty()) {
 			commentSB.append("\n&nbsp;&nbsp;&nbsp;");
 			commentSB.append("<b>class:</b>");
-			commentSB.append(elementFailure.getString("elementClass"));
+			commentSB.append(element.getString("elementClass"));
 		}
-		if (elementFailure.has("elementName") && !elementFailure.getString("elementName").isEmpty()) {
+		if (element.has("elementName") && !element.getString("elementName").isEmpty()) {
 			commentSB.append("\n&nbsp;&nbsp;&nbsp;");
 			commentSB.append("<b>name:</b>");
-			commentSB.append(elementFailure.getString("elementName"));
+			commentSB.append(element.getString("elementName"));
 		}
-		if (elementFailure.has("elementID") && !elementFailure.getString("elementID").isEmpty()) {
+		if (element.has("elementID") && !element.getString("elementID").isEmpty()) {
 			commentSB.append("\n&nbsp;&nbsp;&nbsp;");
 			commentSB.append("<b>id:</b>");
-			commentSB.append(elementFailure.getString("elementID"));
+			commentSB.append(element.getString("elementID"));
 		}
 		
 		// New addition
 		commentSB.append("<br>\n&nbsp;&nbsp;&nbsp;");
 		commentSB.append("<b>xpath:</b>");
-		commentSB.append(elementFailure.getString("elementXPATH"));
+		commentSB.append(element.getString("elementXPATH"));
 		return commentSB.toString();
 	}
 
@@ -380,7 +376,7 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		descriptionHTML.append("<h3>Description</h3>");
 		descriptionHTML.append(description);
 		descriptionHTML.append(".");
-		descriptionHTML.append("<h3>Further Help</h3>");
+		descriptionHTML.append("<h3>Help</h3>");
 		descriptionHTML.append(help);
 		descriptionHTML.append(".  For more information, visit <a href='");
 		descriptionHTML.append(helpUrl);
@@ -443,42 +439,27 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 	private String addStripToCommentForAXE(JSONObject node, String comment, Integer counter) {
 		StringBuilder commentSB = new StringBuilder();
 		commentSB.append(comment);
-		commentSB.append("<br>");
-//		try {
-//			String imageName = myRule.getMyFailure(counter).getImage();
-//			if (imageName != null) {
-//				String[] names = imageName.split("\\.");
-//				String anchor = "\n\n"
-//						+ "<a title='View Element in Snapshot Overlay' class='modalInput' rel="+HTMLGenerator.addSingleQuotes('#'+names[0])+" relParent='#failedAPIContent'>"
-//						+ "<img alt='camera' style='width: 32px; height: 25px;' src='"+ARRCredentials.IMAGES_URL+"cam.png' />"
-//						+ "</a>"
-//						+ "<div class='modal' id="+HTMLGenerator.addSingleQuotes(names[0])+" style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>"
-//						+ "<image src="+HTMLGenerator.addSingleQuotes(imageName)+" width='100%' height='100%'/>"
-//						+ "<br>"
-//						+ "<img class='close' src='close.png' />"
-//						+ "</div>"
-//						+ "<div class='exposeMask' id="+HTMLGenerator.addSingleQuotes(names[0]+"_MASK")+" ></div>";
-//				comment = comment + anchor;
-//			}
-//		} catch (Exception ex) {
-//		}
+
+		// Note: Screenshots for aXe element failures have not been implemented yet
+		if(node.has("elementImage")) {
+			String elementImage = node.getString("elementImage");
+			buildScreenshotHTML(commentSB, elementImage, "Element");
+		}
 	
 		// Default id is from id attribute. If that fails, try class, if that fails, use the text of the tag
 	
 		// Generate ID
+		commentSB.append("<br>");
 		commentSB.append("\n&nbsp;&nbsp;&nbsp;");
 		commentSB.append("<b>html:</b>");
-//		commentSB.append("<xmp>");
 		String html = node.getString("html");
 		try {
-//			html = URLEncoder.encode(html, StandardCharsets.UTF_8.toString());
 			html = StringEscapeUtils.escapeXml(html);
 			html = html.replaceAll("\n", "");
 			html = html.replaceAll("\r", "");
 			html = html.replaceAll("\t", "");
 		} catch (Exception ex) {}
 		commentSB.append(html);
-//		commentSB.append("</xmp>");
 		commentSB.append("\n<br>&nbsp;&nbsp;&nbsp;");
 		commentSB.append("<b>target:</b>");
 		JSONArray targets = node.getJSONArray("target");

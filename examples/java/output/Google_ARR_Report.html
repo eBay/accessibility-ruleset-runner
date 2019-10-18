@@ -1,0 +1,331 @@
+<!-- 
+- Copyright 2017-2019 eBay Inc.
+- Author/Developer(s): Scott Izu
+- 
+- Licensed under the Apache License, Version 2.0 (the "License");
+- you may not use this file except in compliance with the License.
+- You may obtain a copy of the License at
+- 
+-    https://www.apache.org/licenses/LICENSE-2.0
+- 
+- Unless required by applicable law or agreed to in writing, software
+- distributed under the License is distributed on an "AS IS" BASIS,
+- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+- See the License for the specific language governing permissions and
+- limitations under the License.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--REPORT_TITLE--><title>Test Report</title><!--REPORT_TITLE-->
+	<link rel="stylesheet" href="arr.report.1.1.1.css">
+	<script src="jquery.1.8.2.js"></script>
+	<script src="arr.report.rows.handler.1.1.1.js"></script>
+	<script src="arr.report.modal.1.1.1.js"></script>
+	<script type="text/javascript">	
+
+	$(document).ready(function() {
+		initializeRowsHandlers();
+		initializeModal();
+	});
+</script>
+</head>
+<body>
+	<div id="failedAPIContent"
+		style="border-radius: 4px 4px 4px 4px; box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);">
+		<center><h1><!--REPORT_TITLE2-->Test Report<!--REPORT_TITLE2--></h1></center>
+		<b>View Name:</b> <!--VIEW_NAME-->Google<!--VIEW_NAME-->
+		<br><b>URL:</b> <!--URL-->http://www.google.com<!--URL-->
+		<!--VIEW_SCREENSHOT-->
+
+<br><a title='See View in Snapshot Overlay' class='modalInput' rel='#Google_VIEW' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='Google_VIEW' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='Google_VIEW.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#Google_VIEW_MASK' ></div><!--VIEW_SCREENSHOT-->
+		<hr></hr>
+		<TABLE BORDER=0 style="margin-left: 0;" width="100%">
+			<!-- Rule Reason color from #02397e to grey to #cbcbcb -->
+			<TR class="ruleCodeReasonRow">
+				<TH width="10%">Rule Code</TH>
+				<TH width="90%">Reason</TH>
+			</TR>
+			<!--EXCEPTION_TEMPLATE
+			<div
+				style="position: relative; top: 255px; left: 200px; font-size: 0.9em; word-wrap: break-word; text-decoration: none;">
+				Oops.. error generating test failure report..
+				STACK_ELEMENT_TEMPLATE
+				<br>Class: /*CLASS_VALUE*/arr.AccessibilityRulesetRunnerTest/*CLASS_VALUE*/
+				<br>Method: /*METHOD_VALUE*/main/*METHOD_VALUE*/
+				<br>Line #: /*LINE_VALUE*/128/*LINE_VALUE*/
+				</br>
+				STACK_ELEMENT_TEMPLATE
+			</div>
+			EXCEPTION_TEMPLATE-->
+			<!--ROWS_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->0Skip<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#0Skip_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: Google%0A  URL: http://www.google.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . There is no mechanism to skip to the main content of the page.  One of the first ten anchors on the page needs to allow a user to skip to the main content of the page.  Try &lt;a href='#mainContent'&gt;Skip to main content&lt;/a&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/navigation/skipto.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='0Skip_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->0Skip : Validate Skip to Main Content<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--skipToMainCont-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a href="http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html">2.4.1<a/>.</li>
+		<li>This method checks whether a user for a screen reader is given provision to skip to the main content.</li>
+		<li>This check verifies unsighted user if wishes to jump or not straight into the main content of the page.</li>			
+	</ol>
+	<!--skipToMainCont--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='0Skip_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . There is no mechanism to skip to the main content of the page.  One of the first ten anchors on the page needs to allow a user to skip to the main content of the page.  Try &lt;a href='#mainContent'&gt;Skip to main content&lt;/a&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#Google_CUSTOM_ELEMENT_1_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='Google_CUSTOM_ELEMENT_1_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='Google_CUSTOM_ELEMENT_1_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#Google_CUSTOM_ELEMENT_1__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>html<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->142<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->A<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#142_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: Google%0A  URL: http://www.google.com%0A  Rule Name: ruleH42HeadingMarkupTags%0A  Rule Code: 142%0A  Rule Compliance Level: A%0A%0AReasons:%0A  1 . This page has no h1 tag.  Try &lt;h1&gt;Main Page Heading&lt/h1&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/structure/heading.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='142_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->142 : H42 H1 Heading<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->A<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--H42_HMT-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html">H42</a>.
+		</li>
+		<li>This rule identifies the page has only one H1 tag associated
+			with it.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Check for the presence of h1 heading markup in the page.</li>
+		<li>Check that there are not multiple h1 tags.</li>
+	</ul>
+	<!--H42_HMT--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='142_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . This page has no h1 tag.  Try &lt;h1&gt;Main Page Heading&lt/h1&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#Google_CUSTOM_ELEMENT_2_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='Google_CUSTOM_ELEMENT_2_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='Google_CUSTOM_ELEMENT_2_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#Google_CUSTOM_ELEMENT_2__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>html<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->033<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#033_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: Google%0A  URL: http://www.google.com%0A  Rule Name: ruleH33LinkOpensinNewWindow%0A  Rule Code: 033%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . The anchor with href=https://www.google.com/?gws_rd=ssl# and target=_blank opens in a new window/tab and needs to inform the user. The current label='Send feedback' and description='' is not sufficient.  Improve the label (which comes from the aria-labelledby attribute, aria-label attribute or inline text) and/or description (which comes from the aria-describedby attribute or title attribute) to warn the user with the exact verbiage 'opens in new window or tab.'  Try &lt;a href='...'&gt;...&lt;span class='clipped'&gt; - opens in new window or tab&lt;/span&gt&lt;/a&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/navigation/link.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='033_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->033 : H33 Anchor Tag Title For New Windows<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--H33-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html">H33</a>.
+		</li>
+		<li>This rule identifies the presence of title as for all the
+			links in the page which open in a new window.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Get all anchor elements that have a title attribute.</li>
+		<li>Check that the title attribute together with the link text
+			describes the purpose of the link.</li>
+	</ul>
+	<!--H33--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='033_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . The anchor with href=<code><i><font size='2' color='red'>https://www.google.com/?gws_rd=ssl#</font></i></code> and target=<code><i><font size='2' color='red'>_blank</font></i></code> opens in a new window/tab and needs to inform the user. The current label='Send feedback' and description='' is not sufficient.  Improve the label (which comes from the aria-labelledby attribute, aria-label attribute or inline text) and/or description (which comes from the aria-describedby attribute or title attribute) to warn the user with the exact verbiage 'opens in new window or tab.'  Try &lt;a href='...'&gt;...&lt;span class='clipped'&gt; - opens in new window or tab&lt;/span&gt&lt;/a&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#Google_CUSTOM_ELEMENT_3_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='Google_CUSTOM_ELEMENT_3_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='Google_CUSTOM_ELEMENT_3_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#Google_CUSTOM_ELEMENT_3__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>a
+&nbsp;&nbsp;&nbsp;<b>id:</b>dk2qOd<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='viewport']/DIV[7][@id='main']/DIV[1][@id='footer']/DIV[1][@id='fbarcnt']/DIV[1][@id='footcnt']/DIV[1][@id='fbar']/DIV[1][@class='fbar']/SPAN[1][@id='fsr']/SPAN[1]/SPAN[1][@id='fsett']/A[6][@id='dk2qOd']<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->aria-required-attr<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->A<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#aria-required-attr_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  Page Name: Test%0A  URL: http://www.ebay.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . This page has no skip to main content target.  Try &lt;div id='mainContent' role='main' tabindex='-1'&gt;...&lt;/div&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='aria-required-attr_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->aria-required-attr<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->A<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><h3>Description</h3>Ensures elements with ARIA roles have all required ARIA attributes.<h3>Help</h3>Required ARIA attributes must be provided.  For more information, visit <a href='https://dequeuniversity.com/rules/axe/2.3/aria-required-attr?application=axeAPI'>Deque University</a>.<br><br><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='aria-required-attr_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . Required ARIA attribute not present: aria-expanded. <br>
+&nbsp;&nbsp;&nbsp;<b>html:</b>&lt;input class=&quot;gLFyf gsfi&quot; maxlength=&quot;2048&quot; name=&quot;q&quot; type=&quot;text&quot; jsaction=&quot;paste:puy29d&quot; aria-autocomplete=&quot;both&quot; aria-haspopup=&quot;false&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; role=&quot;combobox&quot; spellcheck=&quot;false&quot; title=&quot;Search&quot; value=&quot;&quot; aria-label=&quot;Search&quot; data-ved=&quot;0ahUKEwidndSO86blAhVCvJ4KHUAnCVoQ39UDCAY&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;<b>target:</b>.a4bIc > input[type="text"][role="combobox"]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->aria-required-children<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->A<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#aria-required-children_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  Page Name: Test%0A  URL: http://www.ebay.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . This page has no skip to main content target.  Try &lt;div id='mainContent' role='main' tabindex='-1'&gt;...&lt;/div&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='aria-required-children_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->aria-required-children<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->A<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><h3>Description</h3>Ensures elements with an ARIA role that require child roles contain them.<h3>Help</h3>Certain ARIA roles must contain particular children.  For more information, visit <a href='https://dequeuniversity.com/rules/axe/2.3/aria-required-children?application=axeAPI'>Deque University</a>.<br><br><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='aria-required-children_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . Required ARIA children role not present: listbox textbox. <br>
+&nbsp;&nbsp;&nbsp;<b>html:</b>&lt;input class=&quot;gLFyf gsfi&quot; maxlength=&quot;2048&quot; name=&quot;q&quot; type=&quot;text&quot; jsaction=&quot;paste:puy29d&quot; aria-autocomplete=&quot;both&quot; aria-haspopup=&quot;false&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; role=&quot;combobox&quot; spellcheck=&quot;false&quot; title=&quot;Search&quot; value=&quot;&quot; aria-label=&quot;Search&quot; data-ved=&quot;0ahUKEwidndSO86blAhVCvJ4KHUAnCVoQ39UDCAY&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;<b>target:</b>.a4bIc > input[type="text"][role="combobox"]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROWS_TEMPLATE-->
+		</TABLE>
+		
+		
+</body>
+</html>

@@ -19,7 +19,7 @@ We assume the following are installed:
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
 
-See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+See <a href='../../examples/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
 ### Node.js
 
@@ -36,7 +36,7 @@ Node Version Manager (NVM) is a tool that allows users to swtich between differe
 
 ## Running Verification Tests to Test the Custom Ruleset
 
-The verification tests for the custom ruleset are based on five main categories as listed in the description of the <a href="../rulesets#custom-ruleset">Custom Ruleset</a>.  These steps show how to run the tests, after the code has been downloaded.
+The verification tests for the custom ruleset are based on five main categories as listed in the description of the <a href="../../rulesets#custom-ruleset">Custom Ruleset</a>.  These steps show how to run the tests, after the code has been downloaded.
 
 ### Step 1: Install Package Dependencies
 
@@ -54,15 +54,15 @@ To run the tests, use the following command:
 npm run custom.ruleset.verification.tests
 ```
 
-The output should match the <a href='tests/output/custom.ruleset.verification.tests.output.txt'>Custom Ruleset Verification Tests Output</a>.
+The output should match the <a href='output/custom.ruleset.verification.tests.output.txt'>Custom Ruleset Verification Tests Output</a>.
 
 ## Testing Methodology
 
-The custom ruleset is vetted against a library of good/bad html code snippets as discussed in <a href='../README.md#creating-a-ruleset'>Creating a Ruleset</a>.
+The custom ruleset is vetted against a library of good/bad html code snippets as discussed in <a href='../../README.md#creating-a-ruleset'>Creating a Ruleset</a>.
 
-### Writing a New Rule and Adding Test Cases
+### Test Library
 
-Writing a new rule requires careful thought into how variations of code should be treated.  These uses cases can be verified via testing in order to ensure the rule is working as expected.  This becomes the foundation for which additional use cases can be added as they are discovered.
+Creating and modifying rules requires careful thought into how variations of code should be treated.  Variations of code can be added to a <a href='tests/input'>Test Library</a>, providing several use cases to verify the rule is working as expected.  This becomes the foundation for which additional use cases can be added as they are discovered.
 
 ### Discovery of Incorrectly Classified Code Snippets
 

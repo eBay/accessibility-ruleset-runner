@@ -43,7 +43,7 @@ The Ruleset Runner Dialog can be modified to include additional parameters.  It 
 
 #### Run Rulesets
 
-Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
+Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  Here, the aXe results are filtered in preparation for a POST call.  This step can be modified to change how the rulesets are executed.
 
 #### Process Results
 

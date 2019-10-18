@@ -69,7 +69,10 @@ In creating our custom ruleset, we have found certain general principles that ma
 </ol>
 
 # Contribution
-Contributions in terms of patches, features, or comments are always welcome. Refer to <a href='CONTRIBUTING.md'>CONTRIBUTING</a> for guidelines. Submit Github issues for any feature enhancements, bugs, or documentation problems as well as questions and comments.
+Contributions in terms of patches, features, or comments are always welcome. Refer to the <a href='CONTRIBUTING.md'>Contributing Guidelines</a> for help. Submit Github issues for any feature enhancements, bugs, or documentation problems as well as questions and comments.
+
+# Topic Guide
+Several topics are discussed and scattered throughout this repository. Please use this <a href='TOPICGUIDE.md'>Topic Guide</a>.
 
 # License
 Copyright (c) 2018-2019 eBay Inc.
