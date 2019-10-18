@@ -64,7 +64,7 @@ The custom ruleset is vetted against a library of good/bad html code snippets as
 
 Creating and modifying rules requires careful thought into how variations of code should be treated.  Variations of code can be added to a test library (<a href='input'>Custom Ruleset Test Library</a>), providing several use cases to verify the rule is working as expected.  This becomes the foundation for which additional use cases can be added as they are discovered.
 
-### Discovery of Incorrectly Classified Code Snippets
+### Treatment of Incorrectly Classified Code Snippets
 
 Sometimes the ruleset will not classify a specific code variation correctly.  We have the following options:
 
