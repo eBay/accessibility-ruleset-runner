@@ -6,17 +6,13 @@
     "custom.ruleset.runner": "mocha custom.ruleset.runner.js",
     "aXe.ruleset.runner": "mocha aXe.ruleset.runner.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:eBay/accessibility-ruleset-runner.git"
-  },
   "keywords": [
     "accessibility"
   ],
   "author": "sizu@ebay.com",
   "license": "Apache-2.0",
   "devDependencies": {
-    "accessibility-ruleset-runner": "^1.0.0",
+    "@ebay/accessibility-ruleset-runner": "^1.0.0",
     "chai": "^4.2.0",
     "fs": "0.0.1-security",
     "mocha": "^6.1.3",

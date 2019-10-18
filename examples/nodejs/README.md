@@ -63,7 +63,7 @@ These steps show how to use the published NPM module in your project.
 
 1.  Install accessibility-ruleset-runner to bring in the javascript files for the custom/axe rulesets.
 ```sh
-npm install accessibility-ruleset-runner --save-dev
+npm install @ebay/accessibility-ruleset-runner --save-dev
 ```
 
 2. Edit the custom.ruleset.runner.js and axe.ruleset.runner.js to point to the installed custom.ruleset.X.X.X.js and axe.ruleset.X.X.X.js javascript files (replace X's appropriately)

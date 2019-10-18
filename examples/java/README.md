@@ -42,10 +42,16 @@ See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information
 To invoke the ruleset runner, use the following command (in the examples/java folder):
 
 ```sh
-mvn -Dtest=arr.AccessibilityRulesetRunnerTest test
+mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
 ```
 
 The output should match the <a href='output/eBay.ruleset.runner.output.txt'>Ruleset Runner Output</a>.
+
+Actually, the use of the settings file and location of the test to run are explicit and simply running the following should work.
+
+```sh
+mvn test
+```
 
 ## Modifications
 
@@ -54,10 +60,16 @@ The output should match the <a href='output/eBay.ruleset.runner.output.txt'>Rule
 The examples are setup to be run without any configuration necessary.  However, users can test a different url by modifying the following line:
 
 ```sh
-mvn -Dtest=arr.AccessibilityRulesetRunnerTest -DURLS_TO_TEST="[GoogleTest] http://www.google.com" test
+mvn test -e -DURLS_TO_TEST="[Google] http://www.google.com"
 ```
 
-In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a view.  Consider making the appopriate modifications necessary for your use case.
+In addition, sometimes users need to sign in, load urls, click buttons, etc before testing a View.  Consider making the appopriate modifications necessary for your use case.
+
+In practice, multiple Views are tested simultaneously using a <a href='#selenium-grid">Selenium Grid</a>.  To run multiple Views, try something like:
+
+```sh
+mvn test -e -DURLS_TO_TEST="[EBay] http://www.ebay.com, [PayPal] http://www.paypal.com"
+```
 
 ### Include in Your Project
 
@@ -69,11 +81,11 @@ Various parameters/properties were included to give examples of possible paramet
 
 #### Run Rulesets
 
-Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
+Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.  In practice, results from multiple Views may be also be combined into a single JSON object.
 
 #### Process Results
 
-This example includes a simple example of how to create an HTML report from the JSON results.
+This example includes a simple example of how to create an HTML report from the results JSON object.  In practice, an HTML report might include multiple Views in a single report.  In order to do this, one might enchance the JSONToHTMLConverter class and modify the HTMLReportTemplate.html file appropriately.
 
 ## Additional Information
 

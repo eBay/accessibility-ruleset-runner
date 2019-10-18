@@ -18,13 +18,9 @@
 package arr;
 
 import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.By;
@@ -32,7 +28,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
 import util.ARRProperties;
 import util.JSONToHTMLConverter;
 import util.ScreenshotsProcessor;
@@ -44,14 +39,14 @@ import util.WebDriverHolder;
  * People can test their URLs against accessibility rules, by running this test.
  * 1. With CommandLine: mvn test -e
  * 2. With CommandLine parameters:
- *    mvn test -e -DURLS_TO_TEST="[GoogleTest] http://www.google.com"
+ *    mvn test -e -DURLS_TO_TEST="[Google] http://www.google.com"
  * 3. With TestNGEclipsePlugin: Right Click->Run As->TestNG Test
  * 4. With TestNGEclipsePlugin parameters: Right Click->Run As->Run Configurations
  *    Right Click TestNG->New
  *    Name: AccessibilityRulesetRunnerTest
  *    Class: arr.AccessibilityRulesetRunner
  *    Arguments Tab->VM arguments:
- *    -DURLS_TO_TEST="[GoogleTest] http://www.google.com"
+ *    -DURLS_TO_TEST="[Google] http://www.google.com"
  * 
  * Note: Class name must end with Test suffix to be run by mvn test from the command line
  */
@@ -92,51 +87,20 @@ public class AccessibilityRulesetRunnerTest {
 			System.out.println("PROCESSING STAGE: Running aXe Ruleset");
 			runAXERuleset(driver, results);
 
-			System.out.println("POSTPROCESSING STAGE: Take View Screenshots");
+			System.out.println("PROCESSING COMPLETE: Results:"+results);
+
+			System.out.println("POSTPROCESSING STAGE: Take Element Screenshots");
+			takeElementScreenshots(driver, results, sp);
 
 			WebDriverHolder.shutdownDriver();
 			
 			// Convert JSON to HTML
 			System.out.println("POST PROCESSING STAGE: Creating HTML Report");
 			new JSONToHTMLConverter().convert(results);
-
-			System.out.println("Results:"+results);
 			
 		} catch (Exception ex) { // This should never be hit
 			ex.printStackTrace();
 			throw ex; // To make Jenkins job fail
-		}
-	}
-	
-	private void takeViewScreenshots(WebDriver driver, JSONObject results, ScreenshotsProcessor sp)  throws Exception {
-		String xpathRoot = results.getString("xpathRoot");
-		
-		if (!xpathRoot.isEmpty()) {
-			System.out.println("PRE PROCESSING STAGE: Page Screenshot Scroll to Root...");
-			WebElement rootElement = driver.findElements(By.xpath(xpathRoot)).get(0);
-			WebElement htmlElement = driver.findElements(By.xpath("//html")).get(0);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", rootElement);
-			Thread.sleep(3000);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", htmlElement);
-		}
-		
-		String viewName = results.getString("viewName");
-
-		new File("output").mkdirs();
-
-		String imageName1 = viewName.replaceAll(" ", "_") + "_SCREEN.jpg";
-		
-		sp.createSnapshotForScreen(driver, "output/" + imageName1);
-		results.put("viewImage", imageName1); // URLS on different threads were sharing screenshots, so have it in results
-		if (!xpathRoot.isEmpty()) {
-			WebElement rootElement = driver.findElements(By.xpath(xpathRoot)).get(0);
-			ScreenShotElementRectangle sser = new ScreenShotElementRectangle(rootElement.getLocation(), rootElement.getSize());
-
-			String imageName = viewName.replaceAll(" ", "_")+ "_ROOT_.jpg";
-			
-			sp.createSnapshot(sser, "output/" + imageName);
-			results.put("xpathImage", imageName); // URLS on different threads were sharing screenshots, so have it in results
-			System.out.println("RootElementImage: " + imageName);
 		}
 	}
 
@@ -172,39 +136,48 @@ public class AccessibilityRulesetRunnerTest {
 				.executeAsyncScript(aXeRuleset
 						+ " axe.a11yCheck(document, {runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, arguments[arguments.length - 1]);");
 
-		addAXEResponseToResult(results, aXeResponse, aXeRulesToRun);
+		results.put("axe", new JSONObject(aXeResponse));
 //		System.out.println("ValidationRules: aXeResponse:" + aXeResponse);
 	}
 
-	private void addAXEResponseToResult(JSONObject results, Map aXeResponse, String aXeRulesToRun) {
-		// Create single results object
-		results.put("axe", new JSONArray());
-		JSONObject axeresults = new JSONObject(aXeResponse);
-//		System.out.println("axeresults:"+axeresults);
+	private void takeViewScreenshots(WebDriver driver, JSONObject results, ScreenshotsProcessor sp)  throws Exception {
+		String xpathRoot = results.getString("xpathRoot");
 		
-		// Put failed rules into the single results object
-		Set<String> rulesWithViolation = new HashSet<String>();
-		if(axeresults.has("violations")) {
-			JSONArray violations = axeresults.getJSONArray("violations");
-			for(int i=0; i<violations.length(); i++) {
-				JSONObject axerule = new JSONObject();
-				axerule.put("ruleName", violations.getJSONObject(i).get("id"));
-				axerule.put("violations", new JSONArray());
-				axerule.getJSONArray("violations").put(violations.getJSONObject(i));
-				results.getJSONArray("axe").put(axerule);
-				rulesWithViolation.add(axerule.getString("ruleName"));
-			}
+		if (!xpathRoot.isEmpty()) {
+			System.out.println("PRE PROCESSING STAGE: Page Screenshot Scroll to Root...");
+			WebElement rootElement = driver.findElements(By.xpath(xpathRoot)).get(0);
+			WebElement htmlElement = driver.findElements(By.xpath("//html")).get(0);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", rootElement);
+			Thread.sleep(3000);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", htmlElement);
 		}
 		
-		// Put passed rules into the single results object
-		JSONArray axeRulesToRun = new JSONArray(aXeRulesToRun);
-		for(int i=0; i<axeRulesToRun.length(); i++) { // Show that the test was run
-			if(!rulesWithViolation.contains(axeRulesToRun.getString(i))) {
-				JSONObject axerule = new JSONObject();
-				axerule.put("ruleName", axeRulesToRun.getString(i));
-				axerule.put("violations", new JSONArray());
-				results.getJSONArray("axe").put(axerule);
-			}
+		String viewName = results.getString("viewName");
+
+		new File("output").mkdirs();
+
+		String imageName1 = viewName.replaceAll(" ", "_") + "_SCREEN.jpg";
+		
+		sp.createSnapshotForScreen(driver, "output/" + imageName1);
+		results.put("viewImage", imageName1); // URLS on different threads were sharing screenshots, so have it in results
+		if (!xpathRoot.isEmpty()) {
+			WebElement rootElement = driver.findElements(By.xpath(xpathRoot)).get(0);
+			ScreenShotElementRectangle sser = new ScreenShotElementRectangle(rootElement.getLocation(), rootElement.getSize());
+
+			String imageName = viewName.replaceAll(" ", "_")+ "_ROOT_.jpg";
+			
+			sp.createSnapshot(sser, "output/" + imageName);
+			results.put("xpathImage", imageName); // URLS on different threads were sharing screenshots, so have it in results
+			System.out.println("RootElementImage: " + imageName);
+		}
+	}
+	
+	private void takeElementScreenshots(WebDriver driver, JSONObject results,
+			ScreenshotsProcessor sp) {
+
+		JSONArray customArray = results.getJSONArray("custom");
+		for (int i=0; i<customArray.length(); i++) {
+			
 		}
 	}
 }

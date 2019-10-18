@@ -136,7 +136,7 @@ public enum ARRProperties {
 				System.out.println("************************ WARNING!!! MISSING PARAMETER *************************");
 				System.out.println("");
 				System.out.println("URLS_TO_TEST system property has to be set as shown below.");
-				System.out.println("eg: mvn test -e -DURLS_TO_TEST=\"[EBay] http://www.ebay.com, [PayPal] http://www.paypal.com\" ");
+				System.out.println("eg: mvn test -e -DURLS_TO_TEST=\"[eBay] http://www.ebay.com, [PayPal] http://www.paypal.com\" ");
 				System.out.println("You can set -DURLS_TO_TEST=http://www.ebay.com in the VM arguments for mvn or TestNG");
 				System.out.println("");
 				System.out.println("************************ WARNING!!! MISSING PARAMETER *************************");

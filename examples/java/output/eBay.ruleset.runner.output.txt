@@ -1,15 +1,794 @@
-$ mvn -Dtest=arr.AccessibilityRulesetRunnerTest test
+$ mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
+[INFO] Error stacktraces are turned on.
 [INFO] Scanning for projects...
 [INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] Building arr 1.1.1
 [INFO] ------------------------------------------------------------------------
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8 KB at 30.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9 KB at 176.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 KB at 592.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom (15 KB at 314.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (29 KB at 450.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.pom (8 KB at 158.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 KB at 265.3KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 KB at 495.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom (15 KB at 361.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/2.5.1/maven-compiler-plugin-2.5.1.jar (32 KB at 460.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.pom (11 KB at 232.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.12.4/surefire-2.12.4.pom (14 KB at 259.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.12.4/maven-surefire-plugin-2.12.4.jar (30 KB at 402.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/testng/testng/6.8.8/testng-6.8.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/testng/testng/6.8.8/testng-6.8.8.pom (8 KB at 112.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/3/oss-parent-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/3/oss-parent-3.pom (4 KB at 51.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom (2 KB at 20.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/beanshell/beanshell/2.0b4/beanshell-2.0b4.pom (2 KB at 33.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.pom (8 KB at 152.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/3.4.0/selenium-java-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/3.4.0/selenium-java-3.4.0.pom (11 KB at 160.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.4.0/selenium-api-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.4.0/selenium-api-3.4.0.pom (3 KB at 66.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/3.4.0/selenium-chrome-driver-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/3.4.0/selenium-chrome-driver-3.4.0.pom (5 KB at 97.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.pom (5 KB at 111.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/cglib/cglib-nodep/3.2.4/cglib-nodep-3.2.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/cglib/cglib-nodep/3.2.4/cglib-nodep-3.2.4.pom (4 KB at 82.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/cglib/cglib-parent/3.2.4/cglib-parent-3.2.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/cglib/cglib-parent/3.2.4/cglib-parent-3.2.4.pom (10 KB at 199.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (5 KB at 88.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.pom (11 KB at 167.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom (57 KB at 1128.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 KB at 338.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom
+Downloaded: http://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom (12 KB at 226.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom (19 KB at 457.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom (55 KB at 1214.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom (14 KB at 359.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.pom (2 KB at 30.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.0/gson-parent-2.8.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.0/gson-parent-2.8.0.pom (4 KB at 86.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava/21.0/guava-21.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava/21.0/guava-21.0.pom (7 KB at 134.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/21.0/guava-parent-21.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/21.0/guava-parent-21.0.pom (10 KB at 236.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.pom (7 KB at 127.4KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.3/httpcomponents-client-4.5.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.3/httpcomponents-client-4.5.3.pom (16 KB at 364.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/7/project-7.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/project/7/project-7.pom (27 KB at 492.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.pom (5 KB at 128.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.6/httpcomponents-core-4.4.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.6/httpcomponents-core-4.4.6.pom (14 KB at 219.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.9/commons-codec-1.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.9/commons-codec-1.9.pom (12 KB at 225.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/32/commons-parent-32.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/32/commons-parent-32.pom (52 KB at 1120.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.1.0/jna-4.1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.1.0/jna-4.1.0.pom (2 KB at 17.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.pom (2 KB at 32.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-edge-driver/3.4.0/selenium-edge-driver-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-edge-driver/3.4.0/selenium-edge-driver-3.4.0.pom (5 KB at 106.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-firefox-driver/3.4.0/selenium-firefox-driver-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-firefox-driver/3.4.0/selenium-firefox-driver-3.4.0.pom (5 KB at 111.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-ie-driver/3.4.0/selenium-ie-driver-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-ie-driver/3.4.0/selenium-ie-driver-3.4.0.pom (5 KB at 86.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-opera-driver/3.4.0/selenium-opera-driver-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-opera-driver/3.4.0/selenium-opera-driver-3.4.0.pom (5 KB at 93.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-safari-driver/3.4.0/selenium-safari-driver-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-safari-driver/3.4.0/selenium-safari-driver-3.4.0.pom (5 KB at 101.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.4.0/selenium-support-3.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.4.0/selenium-support-3.4.0.pom (6 KB at 141.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 14.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2 KB at 32.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom
+Downloaded: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom (24 KB at 412.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom (23 KB at 386.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/41/commons-parent-41.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/41/commons-parent-41.pom (64 KB at 989.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom (16 KB at 306.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom (13 KB at 259.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom (61 KB at 1513.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom (16 KB at 289.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/w3c/css/sac/1.3/sac-1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/w3c/css/sac/1.3/sac-1.3.pom (2 KB at 25.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/cssparser/cssparser/0.9.22/cssparser-0.9.22.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/cssparser/cssparser/0.9.22/cssparser-0.9.22.pom (14 KB at 212.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit/2.26/htmlunit-2.26.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit/2.26/htmlunit-2.26.pom (39 KB at 607.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.pom (2 KB at 23.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom (5 KB at 175.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.pom (2 KB at 22.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.pom (5 KB at 75.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit-core-js/2.26/htmlunit-core-js-2.26.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit-core-js/2.26/htmlunit-core-js-2.26.pom (2 KBat 29.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/neko-htmlunit/2.25/neko-htmlunit-2.25.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/neko-htmlunit/2.25/neko-htmlunit-2.25.pom (5 KB at 76.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.pom (4 KB at 70.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.pom
+Downloaded: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.pom (3 KB at 41.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-client/9.4.3.v20170317/websocket-client-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-client/9.4.3.v20170317/websocket-client-9.4.3.v20170317.pom (6 KB at 65.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-parent/9.4.3.v20170317/websocket-parent-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-parent/9.4.3.v20170317/websocket-parent-9.4.3.v20170317.pom (2 KB at 28.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-project/9.4.3.v20170317/jetty-project-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-project/9.4.3.v20170317/jetty-project-9.4.3.v20170317.pom (53 KB at 676.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.3.v20170317/jetty-util-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.3.v20170317/jetty-util-9.4.3.v20170317.pom (3KB at 32.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.3.v20170317/jetty-io-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.3.v20170317/jetty-io-9.4.3.v20170317.pom (2 KB at 27.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-client/9.4.3.v20170317/jetty-client-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-client/9.4.3.v20170317/jetty-client-9.4.3.v20170317.pom (5 KB at 53.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.4.3.v20170317/jetty-http-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.4.3.v20170317/jetty-http-9.4.3.v20170317.pom (3KB at 51.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-common/9.4.3.v20170317/websocket-common-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-common/9.4.3.v20170317/websocket-common-9.4.3.v20170317.pom (3 KB at 47.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.3.v20170317/websocket-api-9.4.3.v20170317.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.3.v20170317/websocket-api-9.4.3.v20170317.pom (3 KB at 53.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.1.v20170120/jetty-io-9.4.1.v20170120.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.1.v20170120/jetty-io-9.4.1.v20170120.pom (2 KB at 31.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-project/9.4.1.v20170120/jetty-project-9.4.1.v20170120.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-project/9.4.1.v20170120/jetty-project-9.4.1.v20170120.pom (52 KB at 1149.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.1.v20170120/jetty-util-9.4.1.v20170120.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.1.v20170120/jetty-util-9.4.1.v20170120.pom (3KB at 49.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/codeborne/phantomjsdriver/1.4.0/phantomjsdriver-1.4.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/codeborne/phantomjsdriver/1.4.0/phantomjsdriver-1.4.0.pom (3 KB at 40.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/3.1.0/selenium-java-3.1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/3.1.0/selenium-java-3.1.0.pom (5 KB at 100.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.1.0/selenium-remote-driver-3.1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.1.0/selenium-remote-driver-3.1.0.pom (4 KB at 99.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.1.0/selenium-api-3.1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.1.0/selenium-api-3.1.0.pom (3 KB at 64.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom (9 KB at 195.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom (7 KB at 149.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.pom (5 KB at 89.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.2/httpcomponents-client-4.5.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.2/httpcomponents-client-4.5.2.pom (16 KB at 364.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.pom (7 KB at 135.7KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.pom (6 KB at 96.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.4/httpcomponents-core-4.4.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.4/httpcomponents-core-4.4.4.pom (13 KB at 228.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.26/htmlunit-driver-2.26.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.26/htmlunit-driver-2.26.pom (7 KB at123.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/maven-metadata.xml
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/maven-metadata.xml (4 KB at 92.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.3.1/selenium-api-3.3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.3.1/selenium-api-3.3.1.pom (3 KB at 53.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.5.1/selenium-api-3.5.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.5.1/selenium-api-3.5.1.pom (3 KB at 50.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.5.2/selenium-api-3.5.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.5.2/selenium-api-3.5.2.pom (3 KB at 62.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.5.3/selenium-api-3.5.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.5.3/selenium-api-3.5.3.pom (3 KB at 62.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.6.0/selenium-api-3.6.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.6.0/selenium-api-3.6.0.pom (3 KB at 64.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.7.0/selenium-api-3.7.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.7.0/selenium-api-3.7.0.pom (3 KB at 61.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.7.1/selenium-api-3.7.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.7.1/selenium-api-3.7.1.pom (3 KB at 64.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.8.0/selenium-api-3.8.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.8.0/selenium-api-3.8.0.pom (3 KB at 45.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.8.1/selenium-api-3.8.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.8.1/selenium-api-3.8.1.pom (3 KB at 54.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.9.0/selenium-api-3.9.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.9.0/selenium-api-3.9.0.pom (3 KB at 61.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.9.1/selenium-api-3.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.9.1/selenium-api-3.9.1.pom (3 KB at 66.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.10.0/selenium-api-3.10.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.10.0/selenium-api-3.10.0.pom (3 KB at 57.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.11.0/selenium-api-3.11.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.11.0/selenium-api-3.11.0.pom (3 KB at 46.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.12.0/selenium-api-3.12.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.12.0/selenium-api-3.12.0.pom (3 KB at 45.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.13.0/selenium-api-3.13.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.13.0/selenium-api-3.13.0.pom (3 KB at 54.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.pom (3 KB at 46.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.0/selenium-api-3.141.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.0/selenium-api-3.141.0.pom (3 KB at46.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.5/selenium-api-3.141.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.5/selenium-api-3.141.5.pom (3 KB at45.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.pom (3 KB at 59.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-1/selenium-api-4.0.0-alpha-1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-1/selenium-api-4.0.0-alpha-1.pom (3 KB at 48.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-2/selenium-api-4.0.0-alpha-2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-2/selenium-api-4.0.0-alpha-2.pom (3 KB at 54.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-3/selenium-api-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/4.0.0-alpha-3/selenium-api-4.0.0-alpha-3.pom (3 KB at 46.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/maven-metadata.xml
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/maven-metadata.xml (4 KB at 114.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.3.1/selenium-support-3.3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.3.1/selenium-support-3.3.1.pom (4 KB at 60.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.3.1/selenium-remote-driver-3.3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.3.1/selenium-remote-driver-3.3.1.pom (4 KB at 88.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.pom (820 B at 19.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.5.1/selenium-support-3.5.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.5.1/selenium-support-3.5.1.pom (6 KB at 89.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.5.1/selenium-remote-driver-3.5.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.5.1/selenium-remote-driver-3.5.1.pom (5 KB at 83.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava/23.0/guava-23.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava/23.0/guava-23.0.pom (6 KB at 130.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.0/guava-parent-23.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.0/guava-parent-23.0.pom (10 KB at 168.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.pom (965 B at 14.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.pom (2 KB at 25.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.0.18/error_prone_parent-2.0.18.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.0.18/error_prone_parent-2.0.18.pom (5 KB at 92.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.pom (3 KB at 52.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.pom (3 KB at 45.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-parent/1.14/animal-sniffer-parent-1.14.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-parent/1.14/animal-sniffer-parent-1.14.pom (5KB at 107.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom (24 KB at 448.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom (5 KB at 87.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.5.2/selenium-support-3.5.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.5.2/selenium-support-3.5.2.pom (6 KB at 92.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.5.2/selenium-remote-driver-3.5.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.5.2/selenium-remote-driver-3.5.2.pom (5 KB at 106.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.5.3/selenium-support-3.5.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.5.3/selenium-support-3.5.3.pom (6 KB at 124.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.5.3/selenium-remote-driver-3.5.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.5.3/selenium-remote-driver-3.5.3.pom (5 KB at 91.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.6.0/selenium-support-3.6.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.6.0/selenium-support-3.6.0.pom (5 KB at 111.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.pom (5 KB at 106.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.7.5/byte-buddy-1.7.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.7.5/byte-buddy-1.7.5.pom (12 KB at 152.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.5/byte-buddy-parent-1.7.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.5/byte-buddy-parent-1.7.5.pom (25 KB at 416.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.7.0/selenium-support-3.7.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.7.0/selenium-support-3.7.0.pom (5 KB at 83.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.7.0/selenium-remote-driver-3.7.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.7.0/selenium-remote-driver-3.7.0.pom (5 KB at 108.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom (2 KB at 42.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.2/gson-parent-2.8.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.2/gson-parent-2.8.2.pom (4 KB at 89.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.7.1/selenium-support-3.7.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.7.1/selenium-support-3.7.1.pom (5 KB at 116.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.7.1/selenium-remote-driver-3.7.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.7.1/selenium-remote-driver-3.7.1.pom (5 KB at 108.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.8.0/selenium-support-3.8.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.8.0/selenium-support-3.8.0.pom (5 KB at 113.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.8.0/selenium-remote-driver-3.8.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.8.0/selenium-remote-driver-3.8.0.pom (5 KB at 88.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.8.1/selenium-support-3.8.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.8.1/selenium-support-3.8.1.pom (5 KB at 116.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.8.1/selenium-remote-driver-3.8.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.8.1/selenium-remote-driver-3.8.1.pom (5 KB at 114.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.9.0/selenium-support-3.9.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.9.0/selenium-support-3.9.0.pom (5 KB at 113.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.9.0/selenium-remote-driver-3.9.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.9.0/selenium-remote-driver-3.9.0.pom (5 KB at 124.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.7.9/byte-buddy-1.7.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.7.9/byte-buddy-1.7.9.pom (12 KB at 225.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.9/byte-buddy-parent-1.7.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.9/byte-buddy-parent-1.7.9.pom (25 KB at 533.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava/23.6-jre/guava-23.6-jre.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava/23.6-jre/guava-23.6-jre.pom (8 KB at 162.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.6-jre/guava-parent-23.6-jre.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/23.6-jre/guava-parent-23.6-jre.pom (10 KB at 176.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.pom (5 KB at 69.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.pom (2 KB at 31.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.1.3/error_prone_parent-2.1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.1.3/error_prone_parent-2.1.3.pom (5KB at 97.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.9.1/okhttp-3.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.9.1/okhttp-3.9.1.pom (2 KB at 34.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.9.1/parent-3.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.9.1/parent-3.9.1.pom (18 KB at 359.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.13.0/okio-1.13.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.13.0/okio-1.13.0.pom (2 KB at 31.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.13.0/okio-parent-1.13.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.13.0/okio-parent-1.13.0.pom (5 KB at 76.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.9.1/selenium-support-3.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.9.1/selenium-support-3.9.1.pom (5 KB at 86.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.9.1/selenium-remote-driver-3.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.9.1/selenium-remote-driver-3.9.1.pom (5 KB at 92.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.10.0/selenium-support-3.10.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.10.0/selenium-support-3.10.0.pom (5KB at 90.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.10.0/selenium-remote-driver-3.10.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.10.0/selenium-remote-driver-3.10.0.pom (5 KB at 100.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.11.0/selenium-support-3.11.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.11.0/selenium-support-3.11.0.pom (5KB at 119.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.11.0/selenium-remote-driver-3.11.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.11.0/selenium-remote-driver-3.11.0.pom (5 KB at 97.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.12.0/selenium-support-3.12.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.12.0/selenium-support-3.12.0.pom (5KB at 119.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.12.0/selenium-remote-driver-3.12.0.pom (5 KB at 90.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.8.3/byte-buddy-1.8.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.8.3/byte-buddy-1.8.3.pom (12 KB at 170.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.8.3/byte-buddy-parent-1.8.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.8.3/byte-buddy-parent-1.8.3.pom (26 KB at 524.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.13.0/selenium-support-3.13.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.13.0/selenium-support-3.13.0.pom (5KB at 119.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.13.0/selenium-remote-driver-3.13.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.13.0/selenium-remote-driver-3.13.0.pom (5 KB at 97.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.4/gson-2.8.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.4/gson-2.8.4.pom (2 KB at 48.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.4/gson-parent-2.8.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.4/gson-parent-2.8.4.pom (4 KB at 69.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava/25.0-jre/guava-25.0-jre.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava/25.0-jre/guava-25.0-jre.pom (8 KB at 185.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/25.0-jre/guava-parent-25.0-jre.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/25.0-jre/guava-parent-25.0-jre.pom (11 KB at 178.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.pom (7 KB at 138.4KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.5/httpcomponents-client-4.5.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.5/httpcomponents-client-4.5.5.pom (16 KB at 296.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/10/httpcomponents-parent-10.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/10/httpcomponents-parent-10.pom (33 KB at 597.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.pom (5 KB at 110.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.9/httpcomponents-core-4.4.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.9/httpcomponents-core-4.4.9.pom (14 KB at 321.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/9/httpcomponents-parent-9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/9/httpcomponents-parent-9.pom (34 KB at 795.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.pom (3 KB at 52.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.10.0/parent-3.10.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.10.0/parent-3.10.0.pom (19 KB at 378.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.14.0/okio-1.14.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.14.0/okio-1.14.0.pom (2 KB at 37.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.14.0/okio-parent-1.14.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.14.0/okio-parent-1.14.0.pom (5 KB at 95.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.14.1/okio-1.14.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.14.1/okio-1.14.1.pom (2 KB at 39.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.14.1/okio-parent-1.14.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.14.1/okio-parent-1.14.1.pom (5 KB at 101.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.14.0/selenium-support-3.14.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.14.0/selenium-support-3.14.0.pom (5KB at 96.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.14.0/selenium-remote-driver-3.14.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.14.0/selenium-remote-driver-3.14.0.pom (5 KB at 83.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.pom (10 KB at 232.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.8.15/byte-buddy-parent-1.8.15.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.8.15/byte-buddy-parent-1.8.15.pom (27 KB at 479.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.0/selenium-support-3.141.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.0/selenium-support-3.141.0.pom (4 KB at 76.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.0/selenium-remote-driver-3.141.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.0/selenium-remote-driver-3.141.0.pom (4 KB at 75.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.pom (3 KB at 40.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.11.0/parent-3.11.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.11.0/parent-3.11.0.pom (20 KB at 416.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.5/selenium-support-3.141.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.5/selenium-support-3.141.5.pom (4 KB at 97.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.5/selenium-remote-driver-3.141.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.5/selenium-remote-driver-3.141.5.pom (4 KB at 97.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.pom (4 KB at 88.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.pom (4 KB at 69.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-1/selenium-support-4.0.0-alpha-1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-1/selenium-support-4.0.0-alpha-1.pom (3 KB at 54.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-1/selenium-remote-driver-4.0.0-alpha-1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-1/selenium-remote-driver-4.0.0-alpha-1.pom (4 KB at 63.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.9.12/byte-buddy-1.9.12.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.9.12/byte-buddy-1.9.12.pom (11 KB at 210.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.9.12/byte-buddy-parent-1.9.12.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.9.12/byte-buddy-parent-1.9.12.pom (36 KB at 640.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava/27.1-jre/guava-27.1-jre.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava/27.1-jre/guava-27.1-jre.pom (9 KB at 149.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/27.1-jre/guava-parent-27.1-jre.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/27.1-jre/guava-parent-27.1-jre.pom (11 KB at 283.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.pom (3 KB at 53.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/26.0-android/guava-parent-26.0-android.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava-parent/26.0-android/guava-parent-26.0-android.pom (10 KB at 220.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.pom (3 KB at 41.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom (5 KB at 82.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/2.5.2/checker-qual-2.5.2.pom (3 KB at 39.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.2.0/error_prone_annotations-2.2.0.pom (2 KB at 32.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.2.0/error_prone_parent-2.2.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.2.0/error_prone_parent-2.2.0.pom (5KB at 113.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.pom (3 KB at 58.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-parent/1.17/animal-sniffer-parent-1.17.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-parent/1.17/animal-sniffer-parent-1.17.pom (9KB at 233.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/40/mojo-parent-40.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/40/mojo-parent-40.pom (33 KB at 608.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.14.0/okhttp-3.14.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.14.0/okhttp-3.14.0.pom (3 KB at 53.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.14.0/parent-3.14.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.14.0/parent-3.14.0.pom (21 KB at 403.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.17.2/okio-1.17.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.17.2/okio-1.17.2.pom (2 KB at 38.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.17.2/okio-parent-1.17.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.17.2/okio-parent-1.17.2.pom (5 KB at 98.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-2/selenium-support-4.0.0-alpha-2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-2/selenium-support-4.0.0-alpha-2.pom (3 KB at 70.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-2/selenium-remote-driver-4.0.0-alpha-2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-2/selenium-remote-driver-4.0.0-alpha-2.pom (4 KB at 70.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/io/opentracing/contrib/opentracing-tracerresolver/0.1.7/opentracing-tracerresolver-0.1.7.pom
+Downloaded: http://repo.maven.apache.org/maven2/io/opentracing/contrib/opentracing-tracerresolver/0.1.7/opentracing-tracerresolver-0.1.7.pom (3 KB at 52.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/io/opentracing/contrib/opentracing-tracerresolver-parent/0.1.7/opentracing-tracerresolver-parent-0.1.7.pom
+Downloaded: http://repo.maven.apache.org/maven2/io/opentracing/contrib/opentracing-tracerresolver-parent/0.1.7/opentracing-tracerresolver-parent-0.1.7.pom (11 KB at 182.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/io/opentracing/opentracing-api/0.33.0/opentracing-api-0.33.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/io/opentracing/opentracing-api/0.33.0/opentracing-api-0.33.0.pom (2 KB at 29.8KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/io/opentracing/parent/0.33.0/parent-0.33.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/io/opentracing/parent/0.33.0/parent-0.33.0.pom (15 KB at 266.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/io/opentracing/opentracing-util/0.33.0/opentracing-util-0.33.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/io/opentracing/opentracing-util/0.33.0/opentracing-util-0.33.0.pom (3 KB at 47.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/io/opentracing/opentracing-noop/0.33.0/opentracing-noop-0.33.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/io/opentracing/opentracing-noop/0.33.0/opentracing-noop-0.33.0.pom (2 KB at 36.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-3/selenium-support-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-3/selenium-support-4.0.0-alpha-3.pom (4 KB at 84.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/4.0.0-alpha-3/selenium-chrome-driver-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/4.0.0-alpha-3/selenium-chrome-driver-4.0.0-alpha-3.pom (4 KB at 81.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chromium-driver/4.0.0-alpha-3/selenium-chromium-driver-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chromium-driver/4.0.0-alpha-3/selenium-chromium-driver-4.0.0-alpha-3.pom (4 KB at 63.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-devtools/4.0.0-alpha-3/selenium-devtools-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-devtools/4.0.0-alpha-3/selenium-devtools-4.0.0-alpha-3.pom (4 KB at 68.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-json/4.0.0-alpha-3/selenium-json-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-json/4.0.0-alpha-3/selenium-json-4.0.0-alpha-3.pom (3 KB at 53.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-3/selenium-remote-driver-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/4.0.0-alpha-3/selenium-remote-driver-4.0.0-alpha-3.pom (4 KB at 79.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.0.1/okhttp-4.0.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.0.1/okhttp-4.0.1.pom (3 KB at 54.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/2.2.2/okio-2.2.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/com/squareup/okio/okio/2.2.2/okio-2.2.2.pom (2 KB at 38.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.2.60/kotlin-stdlib-1.2.60.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.2.60/kotlin-stdlib-1.2.60.pom (2 KB at 27.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.2.60/kotlin-stdlib-common-1.2.60.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.2.60/kotlin-stdlib-common-1.2.60.pom (2 KB at 41.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom (5 KB at 112.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.3.40/kotlin-stdlib-1.3.40.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.3.40/kotlin-stdlib-1.3.40.pom (2 KB at 44.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.40/kotlin-stdlib-common-1.3.40.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.40/kotlin-stdlib-common-1.3.40.pom (2 KB at 42.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-http/4.0.0-alpha-3/selenium-http-4.0.0-alpha-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-http/4.0.0-alpha-3/selenium-http-4.0.0-alpha-3.pom (4 KB at 56.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.pom (14 KB at 209.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom (5 KB at 119.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom
+Downloaded: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom (2 KB at 48.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom (4 KB at 90.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/json/json/20160810/json-20160810.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/json/json/20160810/json-20160810.pom (6 KB at 93.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/testng/testng/6.8.8/testng-6.8.8.jar
+Downloading: http://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar
+Downloading: http://repo.maven.apache.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.jar
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/3.4.0/selenium-java-3.4.0.jar
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.4.0/selenium-api-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-java/3.4.0/selenium-java-3.4.0.jar (181 B at 3.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/3.4.0/selenium-chrome-driver-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/com/beust/jcommander/1.27/jcommander-1.27.jar (55 KB at 517.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-edge-driver/3.4.0/selenium-edge-driver-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-chrome-driver/3.4.0/selenium-chrome-driver-3.4.0.jar (10 KB at 195.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-firefox-driver/3.4.0/selenium-firefox-driver-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar (276 KB at 2068.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-ie-driver/3.4.0/selenium-ie-driver-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-edge-driver/3.4.0/selenium-edge-driver-3.4.0.jar (5 KB at 115.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-opera-driver/3.4.0/selenium-opera-driver-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-ie-driver/3.4.0/selenium-ie-driver-3.4.0.jar (14 KB at 363.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-api/3.4.0/selenium-api-3.4.0.jar (105 KB at 609.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-safari-driver/3.4.0/selenium-safari-driver-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-opera-driver/3.4.0/selenium-opera-driver-3.4.0.jar (8 KB at 186.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.4.0/selenium-support-3.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-safari-driver/3.4.0/selenium-safari-driver-3.4.0.jar (8 KB at 209.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/cglib/cglib-nodep/3.2.4/cglib-nodep-3.2.4.jar
+Downloaded: http://repo.maven.apache.org/maven2/cglib/cglib-nodep/3.2.4/cglib-nodep-3.2.4.jar (343 KB at 5272.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/testng/testng/6.8.8/testng-6.8.8.jar (817 KB at 2759.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar (54 KB at 1181.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-support/3.4.0/selenium-support-3.4.0.jar (141KB at 805.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar (469 KB at 6086.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+Downloaded: http://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar (278 KB at 3854.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/w3c/css/sac/1.3/sac-1.3.jar
+Downloaded: http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar (61 KB at 1341.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/cssparser/cssparser/0.9.22/cssparser-0.9.22.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/w3c/css/sac/1.3/sac-1.3.jar (16 KB at 376.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar (227 KB at 3595.5 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/cssparser/cssparser/0.9.22/cssparser-0.9.22.jar (373 KB at 4776.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/google/guava/guava/21.0/guava-21.0.jar
+Downloading: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-remote-driver/3.4.0/selenium-remote-driver-3.4.0.jar (317 KB at 933.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit/2.26/htmlunit-2.26.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar (44 KB at 1332.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit-core-js/2.26/htmlunit-core-js-2.26.jar
+Downloaded: http://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar (204 KB at 1009.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/neko-htmlunit/2.25/neko-htmlunit-2.25.jar
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/neko-htmlunit/2.25/neko-htmlunit-2.25.jar (127 KB at 2436.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit-core-js/2.26/htmlunit-core-js-2.26.jar (1187KB at 7192.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar (731 KB at 5490.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar (317 KB at 4941.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.1.v20170120/jetty-io-9.4.1.v20170120.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-firefox-driver/3.4.0/selenium-firefox-driver-3.4.0.jar (789 KB at 1156.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.1.v20170120/jetty-util-9.4.1.v20170120.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar (41 KB at 977.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-io/9.4.1.v20170120/jetty-io-9.4.1.v20170120.jar (128 KB at 2841.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-util/9.4.1.v20170120/jetty-util-9.4.1.v20170120.jar (442 KB at 6404.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar
+Downloaded: http://repo.maven.apache.org/maven2/net/sourceforge/htmlunit/htmlunit/2.26/htmlunit-2.26.jar (1933 KB at 5505.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/com/codeborne/phantomjsdriver/1.4.0/phantomjsdriver-1.4.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/com/codeborne/phantomjsdriver/1.4.0/phantomjsdriver-1.4.0.jar (12 KB at 283.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.26/htmlunit-driver-2.26.jar
+Downloaded: http://repo.maven.apache.org/maven2/com/google/guava/guava/21.0/guava-21.0.jar (2463 KB at 5862.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar (308 KB at 5212.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.3.v20170317/websocket-api-9.4.3.v20170317.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/seleniumhq/selenium/htmlunit-driver/2.26/htmlunit-driver-2.26.jar (73 KB at 2015.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-client/9.4.3.v20170317/websocket-client-9.4.3.v20170317.jar
+Downloaded: http://repo.maven.apache.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar (94 KB at 2528.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-client/9.4.3.v20170317/jetty-client-9.4.3.v20170317.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.3.v20170317/websocket-api-9.4.3.v20170317.jar (42 KB at 1082.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.4.3.v20170317/jetty-http-9.4.3.v20170317.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-client/9.4.3.v20170317/websocket-client-9.4.3.v20170317.jar (31 KB at 632.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-common/9.4.3.v20170317/websocket-common-9.4.3.v20170317.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-http/9.4.3.v20170317/jetty-http-9.4.3.v20170317.jar (160 KB at 2801.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.jar
+Downloaded: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar (1431 KB at 6137.8 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-client/9.4.3.v20170317/jetty-client-9.4.3.v20170317.jar (259 KB at 3046.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.jar
+Downloading: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-common/9.4.3.v20170317/websocket-common-9.4.3.v20170317.jar (195 KB at 3881.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar
+Downloaded: http://repo.maven.apache.org/maven2/xalan/serializer/2.7.2/serializer-2.7.2.jar (270 KB at 5398.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/json/json/20160810/json-20160810.jar
+Downloaded: http://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar (216 KB at 4222.9 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/json/json/20160810/json-20160810.jar (54 KB at 1438.3 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar (894 KB at 1993.7 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar (1336 KB at 5635.9 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/xalan/xalan/2.7.2/xalan-2.7.2.jar (3081 KB at 8260.0 KB/sec)
 [INFO]
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ arr ---
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom (2 KB at 43.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom (9 KB at 188.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom (15 KB at 297.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom (3 KB at 48.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom (2 KB at 39.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom (3 KB at 64.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom (2 KB at 34.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom (9 KB at 182.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (4 KB at 94.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom (492 Bat 9.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom (6 KB at 143.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom (998 B at 19.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom (7 KB at 128.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+Downloaded: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom (4 KB at 61.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom (2 KB at 37.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom(3 KB at 65.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom (2 KB at 44.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom (2 KB at 46.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom (2 KB at 59.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (7 KB at 163.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (2 KB at 44.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom (2 KB at 43.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom (2 KB at 34.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom (424 B at 8.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom (4 KB at 76.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (2 KB at 34.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom (3 KB at 38.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2 KB at 38.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom (7 KB at 138.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (2 KB at 25.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom (4 KB at 69.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (4 KB at 70.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 KB at 389.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom (6 KB at 99.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom (9 KB at 173.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (7 KB at 126.2KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (12 KB at 226.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (889 B at 25.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (6 KB at 154.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (3 KB at65.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (3 KB at 75.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (5 KB at 129.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8 KB at 160.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom (890 B at 22.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom (3 KB at 71.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom (16 KB at 351.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+Downloading: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+Downloading: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+Downloaded: http://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar (30 KB at 840.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar (10 KB at 262.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar (14 KB at 335.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar (6 KB at 144.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (7 KB at214.5 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar (43 KB at 1315.5 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar (60 KB at 1806.8 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar (218 KB at 4737.8 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar (119 KB at 767.7 KB/sec)
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] Copying 2 resources
+[INFO] Copying 3 resources
 [INFO]
 [INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ arr ---
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.pom (2 KB at 44.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.9/maven-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.9/maven-2.0.9.pom (19 KB at 419.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/8/maven-parent-8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/8/maven-parent-8.pom (24 KB at 453.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.9/maven-artifact-2.0.9.pom (2 KB at 27.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.1/plexus-utils-1.5.1.pom (3 KB at 47.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.pom (8 KB at 181.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.pom (3 KB at 44.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.pom (4 KB at 60.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.pom (2 KB at 50.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.pom (3 KB at 37.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.pom (2 KB at 36.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.pom (2 KB at 37.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.pom (3 KB at 64.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.pom(3 KB at 56.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.pom (2 KB at 38.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.pom (3 KB at 52.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.pom (2 KB at 31.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/1.0/maven-toolchain-1.0.pom (4 KB at 69.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom (4 KB at 84.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (9 KB at 160.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom (9 KB at 160.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.pom (867 B at 16.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/1.9.1/plexus-compiler-1.9.1.pom (4 KB at 69.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.20/plexus-components-1.1.20.pom (3 KB at 51.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.1/plexus-3.1.pom (19 KB at 371.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom (7 KB at 124.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom (14 KB at 245.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.pom (692 B at 16.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.pom (688 B at 15.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/1.9.1/plexus-compilers-1.9.1.pom (2 KB at33.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.jar
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.jar
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.jar
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/1.9.1/plexus-compiler-api-1.9.1.jar (21 KB at 614.5 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.9.1/plexus-compiler-javac-1.9.1.jar (14 KB at 358.4 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/1.9.1/plexus-compiler-manager-1.9.1.jar (5 KB at 103.5 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (221 KB at 4088.4 KB/sec)
 [INFO] Nothing to compile - all classes are up to date
 [INFO]
 [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ arr ---
@@ -20,7 +799,143 @@ $ mvn -Dtest=arr.AccessibilityRulesetRunnerTest test
 [INFO] Nothing to compile - all classes are up to date
 [INFO]
 [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ arr ---
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.12.4/surefire-booter-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.12.4/surefire-booter-2.12.4.pom (3KB at 68.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.12.4/surefire-api-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.12.4/surefire-api-2.12.4.pom (3 KB at48.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.12.4/maven-surefire-common-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.12.4/maven-surefire-common-2.12.4.pom (6 KB at 131.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.1/maven-plugin-annotations-3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.1/maven-plugin-annotations-3.1.pom (2 KB at 31.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.1/maven-plugin-tools-3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.1/maven-plugin-tools-3.1.pom (16 KB at 303.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.pom (4 KB at 78.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom (19 KB at 481.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.pom (2 KB at 35.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.9/maven-reporting-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.9/maven-reporting-2.0.9.pom (2 KB at 29.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.pom (4 KB at 94.3KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.pom (17 KB at 466.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/22/commons-parent-22.pom (41 KB at 787.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom (15 KB at 352.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.pom (4 KB at 95.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/12/maven-shared-components-12.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/12/maven-shared-components-12.pom (10 KB at 198.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/13/maven-parent-13.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/13/maven-parent-13.pom (23 KB at 433.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/apache/6/apache-6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/apache/6/apache-6.pom (13 KB at 304.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom (2 KB at 24.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.12.4/surefire-booter-2.12.4.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.12.4/maven-surefire-common-2.12.4.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.12.4/surefire-api-2.12.4.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.12.4/surefire-api-2.12.4.jar (115 KB at 2609.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/1.3/maven-common-artifact-filters-1.3.jar (31 KB at 594.7 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.12.4/surefire-booter-2.12.4.jar (34 KB at 664.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.1/maven-plugin-annotations-3.1.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar (309 KB at 4818.8 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.9/maven-reporting-api-2.0.9.jar (10 KB at 291.2 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.1/maven-plugin-annotations-3.1.jar (14 KB at 380.4 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.8/plexus-utils-3.0.8.jar (227 KB at 3711.3 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.12.4/maven-surefire-common-2.12.4.jar (257 KB at 1059.8 KB/sec)
 [INFO] Surefire report directory: C:\ForkedPublicGit\accessibility-ruleset-runner\examples\java\target\surefire-reports
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.pom (4KB at 95.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.12.4/surefire-providers-2.12.4.pom (3 KB at 62.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.pom (723 B at 17.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0/maven-2.0.pom (9 KB at 225.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.pom (3 KB at 67.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.pom (3 KB at 57.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/testng/testng/5.7/testng-5.7.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/testng/testng/5.7/testng-5.7.pom (12 KB at 260.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom (2 KB at 44.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0/maven-3.0.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0/maven-3.0.pom (22 KB at 534.3 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/15/maven-parent-15.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/15/maven-parent-15.pom (24 KB at 571.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.pom (680 B at 17.0 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-2/wagon-1.0-beta-2.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-beta-2/wagon-1.0-beta-2.pom (6 KB at 151.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.pom (10 KB at 212.2 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.8/maven-artifact-2.0.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.8/maven-artifact-2.0.8.pom (2 KB at 28.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.8/maven-2.0.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.8/maven-2.0.8.pom (12 KB at 196.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/6/maven-parent-6.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/6/maven-parent-6.pom (20 KB at 477.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.8/maven-model-2.0.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.8/maven-model-2.0.8.pom (4 KB at 68.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.8/maven-project-2.0.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.8/maven-project-2.0.8.pom (3 KB at 58.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.8/maven-plugin-api-2.0.8.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.8/maven-plugin-api-2.0.8.pom (2 KB at 35.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.9/plexus-utils-1.4.9.pom (3 KB at 45.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng/2.12.4/surefire-testng-2.12.4.jar (33 KB at 745.6 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-testng-utils/2.12.4/surefire-testng-utils-2.12.4.jar (23 KB at 522.6 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0/maven-artifact-2.0.jar (77 KB at 1602.4 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-grouper/2.12.4/surefire-grouper-2.12.4.jar (37 KB at 738.4 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.9/maven-plugin-api-2.0.9.jar (13 KB at 393.4 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.9/maven-settings-2.0.9.jar (48 KB at 1453.4 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.9/maven-project-2.0.9.jar (119 KB at 3214.2KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.9/maven-model-2.0.9.jar (86 KB at 2244.1 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar
+Downloading: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar (37 KB at 1232.2 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.9/maven-profile-2.0.9.jar (35 KB at 1015.6 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.9/maven-artifact-manager-2.0.9.jar(57 KB at 1711.5 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.jar (160 KB at 1080.8 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar (190 KB at 3447.9 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.jar (46 KB at 1330.6 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.9/maven-plugin-registry-2.0.9.jar (29 KB at 887.2 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.9/maven-repository-metadata-2.0.9.jar (24 KB at 470.3 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.9/maven-core-2.0.9.jar (156 KB at 3711.6 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.9/maven-plugin-parameter-documenter-2.0.9.jar (21 KB at 509.7 KB/sec)
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.jar
+Downloading: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.jar
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.jar (14 KB at 448.8 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.9/maven-plugin-descriptor-2.0.9.jar (37 KB at 1033.6 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.jar (38 KB at 1158.8 KB/sec)
+Downloaded: http://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.jar (11 KB at 233.5 KB/sec)
 
 -------------------------------------------------------
  T E S T S
@@ -37,20 +952,27 @@ Using property from projectDefault.properties, REMOTE_URL:null
 Using property from projectDefault.properties, PROXY:null
 startupDriver
 Trying ChromeDriver (may install)
-Starting ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab) on port 22677
+Starting ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab) on port 45505
 Only local connections are allowed.
-Oct 09, 2019 4:07:02 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 16, 2019 11:14:06 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 PRE PROCESSING STAGE: Page Configuration Setup
-PROCESSING STAGE: Running rules
-PROCESSING STAGE: Running Custom Ruleset
+PRE PROCESSING STAGE: Setup Results
+Using property from projectDefault.properties, REPORT_TITLE:Test Report
 Using property from projectDefault.properties, XPATH_ROOT:null
+PREPROCESSING STAGE: Take View Screenshots
+Reading Screenshot from file: screen.length():284639 screenAbsolutePath:C:\Users\sizu\AppData\Local\Temp\screenshot191245274100597552.png
+PROCESSING STAGE: Running Custom Ruleset
 PROCESSING STAGE: Running aXe Ruleset
+POSTPROCESSING STAGE: Take View Screenshots
 shutdownDriver
-Results:{"custom":[{"ruleCode":"025","elements":[],"rule":"H25 Title Tag","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"057","elements":[],"rule":"H57 HTML Tag Lang Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"0Skip","elements":[],"rule":"Validate Skip to Main Content","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":1},{"ruleCode":"142","elements":[],"rule":"H42 H1 Heading","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"042","elements":[],"rule":"H42 Heading Hierarchy","passOrFail":"PASS","ruleComplianceLevel":"A","passed":67},{"ruleCode":"044","elements":[],"rule":"H44 Input Tag Label","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"032","elements":[],"rule":"H32 Form Submit Button","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"037","elements":[{"elementFailureCode":"037_A_1","elementID":"","elementXLeft":299.5,"elementXPATH":"/HTML[1]/BODY[1]/DIV[4][@id='mainContent']/DIV[2][@id='rtm_list1']/DIV[1]/DIV[1]/DIV[1][@class='carousel__container']/UL[1][@class='carousel__list']/LI[2]/DIV[1]/A[1]/DIV[1]/IMG[1]","elementWidth":1,"elementYBottom":144.5,"elementTag":"img","elementName":"","elementYTop":143.5,"elementXRight":300.5,"elementHeight":1,"elementClass":"","elementSRC":"https://i.ebayimg.com/images/g/z1sAAOSw2addk7Mr/s-l960.webp","elementAlt":"Sell Now. Have Cash for Gifting Later.","element":{}},{"elementFailureCode":"037_A_1","elementID":"","elementXLeft":2123.5,"elementXPATH":"/HTML[1]/BODY[1]/DIV[4][@id='mainContent']/DIV[2][@id='rtm_list1']/DIV[1]/DIV[1]/DIV[1][@class='carousel__container']/UL[1][@class='carousel__list']/LI[4]/DIV[1]/A[1]/DIV[1]/IMG[1]","elementWidth":1,"elementYBottom":144.5,"elementTag":"img","elementName":"","elementYTop":143.5,"elementXRight":2124.5,"elementHeight":1,"elementClass":"","elementSRC":"https://i.ebayimg.com/images/g/jJMAAOSwGe5dgQ-c/s-l960.webp","elementAlt":"Amp Up Your Experience","element":{}},{"elementFailureCode":"037_A_1","elementID":"","elementXLeft":299.5,"elementXPATH":"/HTML[1]/BODY[1]/DIV[4][@id='mainContent']/DIV[9][@id='rtm_list3']/A[1]/DIV[1]/IMG[1]","elementWidth":1,"elementYBottom":2070,"elementTag":"img","elementName":"","elementYTop":2069,"elementXRight":300.5,"elementHeight":1,"elementClass":"","elementSRC":"https://i.ebayimg.com/images/g/x7sAAOSwhPZdgJeg/s-l960.webp","elementAlt":"See Terms - Get it with PayPal Credit","element":{}}],"rule":"H37 Image Tag Alt Attribute","passOrFail":"FAIL","ruleComplianceLevel":"A","passed":70},{"ruleCode":"024","elements":[],"rule":"H24 Image Map Alt Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":10},{"ruleCode":"035","elements":[],"rule":"H35 Applet Tag Alt Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":0},{"ruleCode":"053","elements":[],"rule":"H53 Object Tag Alt Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":0},{"ruleCode":"064","elements":[],"rule":"H64 IFrame Tag Title Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":3},{"ruleCode":"046","elements":[],"rule":"H46 Embed Tag","passOrFail":"PASS","ruleComplianceLevel":"A","passed":0},{"ruleCode":"033","elements":[],"rule":"H33 Anchor Tag Title For New Windows","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":0,"message":""},{"ruleCode":"133","elements":[],"rule":"H33 Links Repeated","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":377,"message":""},{"ruleCode":"075","elements":[],"rule":"H75 Unique Anchor IDs","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":435,"message":""}],"axe":[{"violations":[{"help":"id attribute value must be unique","nodes":[{"all":[],"impact":"moderate","html":"<symbol id=\"icon-close\" viewBox=\"1.5 1.5 21 21\">","none":[],"any":[{"data":"icon-close","impact":"moderate","relatedNodes":[{"html":"<symbol id=\"icon-close\" viewBox=\"1.5 1.5 21 21\">","target":["#gh_user > svg > symbol:nth-child(1)"]},{"html":"<symbolid=\"icon-close\" viewBox=\"1.5 1.5 21 21\">","target":["svg > symbol:nth-child(32)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: icon-close"}],"target":["svg:nth-child(8) > symbol"]},{"all":[],"impact":"moderate","html":"<script type=\"text/template\" id=\"mvideotemplate\">","none":[],"any":[{"data":"mvideotemplate","impact":"moderate","relatedNodes":[{"html":"<script type=\"text/template\" id=\"mvideotemplate\">","target":["#infcontainer > script:nth-child(11)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: mvideotemplate"}],"target":["#infcontainer > script:nth-child(5)"]},{"all":[],"impact":"moderate","html":"<div id=\"faqdragger\">\n\t\t\t\t<div class=\"hdst drag\">\n\t\t\t\t\t<h3 id=\"faqot\">\n\t\t\t\t\t\t<res:content value=\"${res.content.global.inflow.inflowcomponent.faq}\"><\/res:content>\n\t\t\t\t\t<\/h3>\n\t\t\t\t<\/div>\n\t\t\t<\/div>","none":[],"any":[{"data":"faqdragger","impact":"moderate","relatedNodes":[{"html":"<div id=\"faqdragger\">\n\t\t\t\t<div class=\"hdstdrag\">\n\t\t\t\t\t<h3 id=\"chatot\">\n\t\t\t\t\t\t${res.content.global.inflow.inflowcomponent.needsomehelp} \n\t\t\t\t\t<\/h3>\n\t\t\t\t<\/div>\n\t\t\t<\/div>","target":["#chatpopupdeskovr > div:nth-child(1)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: faqdragger"}],"target":["#faqdeskoly > div:nth-child(1)"]},{"all":[],"impact":"moderate","html":"<div id=\"answer0\" aria-live=\"polite\" class=\"mfleft answer hdn\"><p>You can find them in your Saved feed at the top of the eBay home page.<\/p>\n<\/div>","none":[],"any":[{"data":"answer0","impact":"moderate","relatedNodes":[{"html":"<div id=\"answer0\" aria-live=\"polite\" class=\"mfleft answer hdn reta\"><p>You can find them in your Saved feed at the top of the eBay home page.<\/p>\n<\/div>","target":["#mfaqlist > li:nth-child(1) > .enclose > div:nth-child(2)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: answer0"}],"target":["#faqlist > li:nth-child(1) > .enclose > div.answer"]},{"all":[],"impact":"moderate","html":"<div id=\"answer1\" aria-live=\"polite\" class=\"mfleft answer hdn\"><p>We'd love to hear your thoughts. Simply select the tab below to let us know what you think.<\/p>\n<\/div>","none":[],"any":[{"data":"answer1","impact":"moderate","relatedNodes":[{"html":"<div id=\"answer1\" aria-live=\"polite\" class=\"mfleft answer hdn reta\"><p>We'd love to hear your thoughts. Simply select the tab below to let us know what you think.<\/p>\n<\/div>","target":["#mfaqlist > li:nth-child(2) > .enclose >div:nth-child(2)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: answer1"}],"target":["#faqlist > li:nth-child(2) > .enclose > div.answer"]},{"all":[],"impact":"moderate","html":"<div id=\"chatdesc\"> \n\t\t\t<a tabindex=\"0\" id=\"chatwus\" channelid=\"i-chat\" href=\"javascript:;\"><\/a>\n\t\t\t<div style=\"margin-top:10px;\">\n\t\t\t\t\n\t\t\t<\/div>\n\t\t\t<\/div>","none":[],"any":[{"data":"chatdesc","impact":"moderate","relatedNodes":[{"html":"<div id=\"chatdesc\">","target":["#chatpopupdeskovrcstm > div:nth-child(3)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: chatdesc"}],"target":["#chatpopupdeskovr > div:nth-child(3)"]},{"all":[],"impact":"moderate","html":"<div class=\"ml ipadscroll\" id=\"roly_2\" style=\"height:100%;overflow:auto\" role=\"dialog\" aria-labelledby=\"hittl\">","none":[],"any":[{"data":"roly_2","impact":"moderate","relatedNodes":[{"html":"<div class=\"ml ipadscroll\" id=\"roly_2\" style=\"height:100%;overflow:auto\" role=\"dialog\" aria-labelledby=\"hittl\">","target":["#faqsecoverlay > [role=\"dialog\"].ml.ipadscroll"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: roly_2"}],"target":["#faqoverlay > [role=\"dialog\"].ml.ipadscroll"]},{"all":[],"impact":"moderate","html":"<div id=\"ovlyfaq\" class=\"oly-b\" style=\"padding-bottom: 100px;\">","none":[],"any":[{"data":"ovlyfaq","impact":"moderate","relatedNodes":[{"html":"<div id=\"ovlyfaq\" class=\"oly-b\" style=\"padding-bottom: 100px;\">\n\n\t\t\t<div id=\"faqsecenclose\">\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t<\/div>\n\t\t<\/div>","target":["#faqsecoverlay > [role=\"dialog\"] > div.oly-b"]}],"id":"duplicate-id","message":"Document has multiple elements with the same idattribute: ovlyfaq"}],"target":["#faqoverlay > [role=\"dialog\"] > div.oly-b"]},{"all":[],"impact":"moderate","html":"<path id=\"a\" d=\"M0 17.263h24v-17H0z\"><\/path>","none":[],"any":[{"data":"a","impact":"moderate","relatedNodes":[{"html":"<path id=\"a\" d=\"M0 17.26h24v-17H0z\"><\/path>","target":["#svg-flag--MY > defs > path"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: a"}],"target":["#svg-flag--CA > defs > path"]}],"impact":"moderate","description":"Ensures every id attribute value is unique","helpUrl":"https://dequeuniversity.com/rules/axe/2.3/duplicate-id?application=axeAPI","id":"duplicate-id","tags":["cat.parsing","wcag2a","wcag411"]}],"ruleName":"duplicate-id"},{"violations":[],"ruleName":"area-alt"},{"violations":[],"ruleName":"accesskeys"},{"violations":[],"ruleName":"aria-allowed-attr"},{"violations":[],"ruleName":"aria-required-attr"},{"violations":[],"ruleName":"aria-required-children"},{"violations":[],"ruleName":"aria-required-parent"},{"violations":[],"ruleName":"aria-roles"},{"violations":[],"ruleName":"aria-valid-attr-value"},{"violations":[],"ruleName":"aria-valid-attr"},{"violations":[],"ruleName":"audio-caption"},{"violations":[],"ruleName":"blink"},{"violations":[],"ruleName":"button-name"},{"violations":[],"ruleName":"bypass"},{"violations":[],"ruleName":"checkboxgroup"},{"violations":[],"ruleName":"color-contrast"},{"violations":[],"ruleName":"document-title"},{"violations":[],"ruleName":"empty-heading"},{"violations":[],"ruleName":"heading-order"},{"violations":[],"ruleName":"href-no-hash"},{"violations":[],"ruleName":"html-lang-valid"},{"violations":[],"ruleName":"image-redundant-alt"},{"violations":[],"ruleName":"input-image-alt"},{"violations":[],"ruleName":"label"},{"violations":[],"ruleName":"layout-table"},{"violations":[],"ruleName":"link-name"},{"violations":[],"ruleName":"marquee"},{"violations":[],"ruleName":"meta-refresh"},{"violations":[],"ruleName":"meta-viewport"},{"violations":[],"ruleName":"meta-viewport-large"},{"violations":[],"ruleName":"object-alt"},{"violations":[],"ruleName":"radiogroup"},{"violations":[],"ruleName":"scopr-attr-valid"},{"violations":[],"ruleName":"server-side-image-map"},{"violations":[],"ruleName":"tabindex"},{"violations":[],"ruleName":"table-duplicate-name"},{"violations":[],"ruleName":"td-headers-attr"},{"violations":[],"ruleName":"th-has-data-cells"},{"violations":[],"ruleName":"valid-lang"},{"violations":[],"ruleName":"video-caption"},{"violations":[],"ruleName":"video-description"}]}
 POST PROCESSING STAGE: Creating HTML Report
-reportLocation:C:\ForkedPublicGit\accessibility-ruleset-runner\examples\java\output\AccessibilityRulesetRunnerReport.html
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.563 sec
+buildTestDetails... viewName:HomePage - URLS_TO_TEST was not set
+buildEmailerLink... viewName:HomePage - URLS_TO_TEST was not set
+buildHTMLForColumnReason... viewName:HomePage - URLS_TO_TEST was not set
+reportLocation:C:\ForkedPublicGit\accessibility-ruleset-runner\examples\java\output\HomePage - URLS_TO_TEST was not set.html
+Results:{"viewImage":"HomePage_-_URLS_TO_TEST_was_not_set_SCREEN.jpg","viewName":"HomePage - URLS_TO_TEST was not set","custom":[{"ruleCode":"025","elements":[],"rule":"H25 Title Tag","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"057","elements":[],"rule":"H57 HTML Tag Lang Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"0Skip","elements":[],"rule":"Validate Skip to Main Content","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":1},{"ruleCode":"142","elements":[],"rule":"H42 H1 Heading","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"042","elements":[],"rule":"H42 Heading Hierarchy","passOrFail":"PASS","ruleComplianceLevel":"A","passed":64},{"ruleCode":"044","elements":[],"rule":"H44 Input Tag Label","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"032","elements":[],"rule":"H32 Form Submit Button","passOrFail":"PASS","ruleComplianceLevel":"A","passed":1},{"ruleCode":"037","elements":[{"elementFailureCode":"037_A_1","elementID":"","elementXLeft":1211.5,"elementXPATH":"/HTML[1]/BODY[1]/DIV[4][@id='mainContent']/DIV[2][@id='rtm_list1']/DIV[1]/DIV[1]/DIV[1][@class='carousel__container']/UL[1][@class='carousel__list']/LI[2]/DIV[1]/A[1]/DIV[1]/IMG[1]","elementWidth":1,"elementYBottom":144.5,"elementTag":"img","elementName":"","elementYTop":143.5,"elementXRight":1212.5,"elementHeight":1,"elementClass":"","elementSRC":"https://i.ebayimg.com/images/g/z1sAAOSw2addk7Mr/s-l960.webp","elementAlt":"SellNow. Have Cash for Gifting Later.","element":{}}],"rule":"H37 Image Tag Alt Attribute","passOrFail":"FAIL","ruleComplianceLevel":"A","passed":68},{"ruleCode":"024","elements":[],"rule":"H24 Image Map Alt Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":10},{"ruleCode":"035","elements":[],"rule":"H35 Applet Tag Alt Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":0},{"ruleCode":"053","elements":[],"rule":"H53 Object Tag Alt Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":0},{"ruleCode":"064","elements":[],"rule":"H64 IFrame Tag Title Attribute","passOrFail":"PASS","ruleComplianceLevel":"A","passed":3},{"ruleCode":"046","elements":[],"rule":"H46 Embed Tag","passOrFail":"PASS","ruleComplianceLevel":"A","passed":0},{"ruleCode":"033","elements":[],"rule":"H33 Anchor Tag Title For New Windows","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":0,"message":""},{"ruleCode":"133","elements":[],"rule":"H33 Links Repeated","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":376,"message":""},{"ruleCode":"075","elements":[],"rule":"H75 Unique Anchor IDs","passOrFail":"PASS","ruleComplianceLevel":"AA","passed":430,"message":""}],"reportTitle":"Test Report","xpathRoot":"","url":"http://www.ebay.com","axe":[{"violations":[{"help":"id attribute value must be unique","nodes":[{"all":[],"impact":"moderate","html":"<symbol id=\"icon-close\" viewBox=\"1.5 1.5 21 21\">","none":[],"any":[{"data":"icon-close","impact":"moderate","relatedNodes":[{"html":"<symbolid=\"icon-close\" viewBox=\"1.5 1.5 21 21\">","target":["#gh_user > svg > symbol:nth-child(1)"]},{"html":"<symbol id=\"icon-close\" viewBox=\"1.5 1.5 21 21\">","target":["svg > symbol:nth-child(32)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: icon-close"}],"target":["svg:nth-child(8) > symbol"]},{"all":[],"impact":"moderate","html":"<script type=\"text/template\" id=\"mvideotemplate\">","none":[],"any":[{"data":"mvideotemplate","impact":"moderate","relatedNodes":[{"html":"<script type=\"text/template\" id=\"mvideotemplate\">","target":["#infcontainer > script:nth-child(11)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: mvideotemplate"}],"target":["#infcontainer > script:nth-child(5)"]},{"all":[],"impact":"moderate","html":"<div id=\"faqdragger\">\n\t\t\t\t<div class=\"hdst drag\">\n\t\t\t\t\t<h3 id=\"faqot\">\n\t\t\t\t\t\t<res:content value=\"${res.content.global.inflow.inflowcomponent.faq}\"><\/res:content>\n\t\t\t\t\t<\/h3>\n\t\t\t\t<\/div>\n\t\t\t<\/div>","none":[],"any":[{"data":"faqdragger","impact":"moderate","relatedNodes":[{"html":"<div id=\"faqdragger\">\n\t\t\t\t<div class=\"hdst drag\">\n\t\t\t\t\t<h3 id=\"chatot\">\n\t\t\t\t\t\t${res.content.global.inflow.inflowcomponent.needsomehelp} \n\t\t\t\t\t<\/h3>\n\t\t\t\t<\/div>\n\t\t\t<\/div>","target":["#chatpopupdeskovr > div:nth-child(1)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: faqdragger"}],"target":["#faqdeskoly > div:nth-child(1)"]},{"all":[],"impact":"moderate","html":"<div id=\"answer0\" aria-live=\"polite\" class=\"mfleft answer hdn\"><p>You can find them in your Saved feed at the top of the eBay home page.<\/p>\n<\/div>","none":[],"any":[{"data":"answer0","impact":"moderate","relatedNodes":[{"html":"<div id=\"answer0\" aria-live=\"polite\" class=\"mfleft answer hdn reta\"><p>You can find them in your Saved feed at the top of the eBay home page.<\/p>\n<\/div>","target":["#mfaqlist > li:nth-child(1) > .enclose > div:nth-child(2)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: answer0"}],"target":["#faqlist > li:nth-child(1) > .enclose > div.answer"]},{"all":[],"impact":"moderate","html":"<divid=\"answer1\" aria-live=\"polite\" class=\"mfleft answer hdn\"><p>We'd love to hear your thoughts. Simply select the tab below to let us know what you think.<\/p>\n<\/div>","none":[],"any":[{"data":"answer1","impact":"moderate","relatedNodes":[{"html":"<div id=\"answer1\" aria-live=\"polite\" class=\"mfleft answer hdn reta\"><p>We'd love to hear your thoughts. Simply select the tab below to let us know what you think.<\/p>\n<\/div>","target":["#mfaqlist > li:nth-child(2) > .enclose > div:nth-child(2)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: answer1"}],"target":["#faqlist > li:nth-child(2) > .enclose > div.answer"]},{"all":[],"impact":"moderate","html":"<div id=\"chatdesc\"> \n\t\t\t<a tabindex=\"0\" id=\"chatwus\" channelid=\"i-chat\" href=\"javascript:;\"><\/a>\n\t\t\t<div style=\"margin-top:10px;\">\n\t\t\t\t\n\t\t\t<\/div>\n\t\t\t<\/div>","none":[],"any":[{"data":"chatdesc","impact":"moderate","relatedNodes":[{"html":"<div id=\"chatdesc\">","target":["#chatpopupdeskovrcstm > div:nth-child(3)"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: chatdesc"}],"target":["#chatpopupdeskovr > div:nth-child(3)"]},{"all":[],"impact":"moderate","html":"<div class=\"ml ipadscroll\" id=\"roly_2\" style=\"height:100%;overflow:auto\" role=\"dialog\" aria-labelledby=\"hittl\">","none":[],"any":[{"data":"roly_2","impact":"moderate","relatedNodes":[{"html":"<div class=\"ml ipadscroll\" id=\"roly_2\" style=\"height:100%;overflow:auto\" role=\"dialog\" aria-labelledby=\"hittl\">","target":["#faqsecoverlay > [role=\"dialog\"].ml.ipadscroll"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: roly_2"}],"target":["#faqoverlay > [role=\"dialog\"].ml.ipadscroll"]},{"all":[],"impact":"moderate","html":"<div id=\"ovlyfaq\" class=\"oly-b\" style=\"padding-bottom: 100px;\">","none":[],"any":[{"data":"ovlyfaq","impact":"moderate","relatedNodes":[{"html":"<div id=\"ovlyfaq\" class=\"oly-b\" style=\"padding-bottom: 100px;\">\n\n\t\t\t<div id=\"faqsecenclose\">\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t<\/div>\n\t\t<\/div>","target":["#faqsecoverlay > [role=\"dialog\"] > div.oly-b"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: ovlyfaq"}],"target":["#faqoverlay > [role=\"dialog\"] > div.oly-b"]},{"all":[],"impact":"moderate","html":"<path id=\"a\" d=\"M0 17.263h24v-17H0z\"><\/path>","none":[],"any":[{"data":"a","impact":"moderate","relatedNodes":[{"html":"<path id=\"a\" d=\"M0 17.26h24v-17H0z\"><\/path>","target":["#svg-flag--MY > defs > path"]}],"id":"duplicate-id","message":"Document has multiple elements with the same id attribute: a"}],"target":["#svg-flag--CA > defs > path"]}],"impact":"moderate","description":"Ensures every id attribute value is unique","helpUrl":"https://dequeuniversity.com/rules/axe/2.3/duplicate-id?application=axeAPI","id":"duplicate-id","tags":["cat.parsing","wcag2a","wcag411"]}],"ruleName":"duplicate-id"},{"violations":[],"ruleName":"area-alt"},{"violations":[],"ruleName":"accesskeys"},{"violations":[],"ruleName":"aria-allowed-attr"},{"violations":[],"ruleName":"aria-required-attr"},{"violations":[],"ruleName":"aria-required-children"},{"violations":[],"ruleName":"aria-required-parent"},{"violations":[],"ruleName":"aria-roles"},{"violations":[],"ruleName":"aria-valid-attr-value"},{"violations":[],"ruleName":"aria-valid-attr"},{"violations":[],"ruleName":"audio-caption"},{"violations":[],"ruleName":"blink"},{"violations":[],"ruleName":"button-name"},{"violations":[],"ruleName":"bypass"},{"violations":[],"ruleName":"checkboxgroup"},{"violations":[],"ruleName":"color-contrast"},{"violations":[],"ruleName":"document-title"},{"violations":[],"ruleName":"empty-heading"},{"violations":[],"ruleName":"heading-order"},{"violations":[],"ruleName":"href-no-hash"},{"violations":[],"ruleName":"html-lang-valid"},{"violations":[],"ruleName":"image-redundant-alt"},{"violations":[],"ruleName":"input-image-alt"},{"violations":[],"ruleName":"label"},{"violations":[],"ruleName":"layout-table"},{"violations":[],"ruleName":"link-name"},{"violations":[],"ruleName":"marquee"},{"violations":[],"ruleName":"meta-refresh"},{"violations":[],"ruleName":"meta-viewport"},{"violations":[],"ruleName":"meta-viewport-large"},{"violations":[],"ruleName":"object-alt"},{"violations":[],"ruleName":"radiogroup"},{"violations":[],"ruleName":"scopr-attr-valid"},{"violations":[],"ruleName":"server-side-image-map"},{"violations":[],"ruleName":"tabindex"},{"violations":[],"ruleName":"table-duplicate-name"},{"violations":[],"ruleName":"td-headers-attr"},{"violations":[],"ruleName":"th-has-data-cells"},{"violations":[],"ruleName":"valid-lang"},{"violations":[],"ruleName":"video-caption"},{"violations":[],"ruleName":"video-description"}]}
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.265 sec
 
 Results :
 
@@ -59,7 +981,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 37.552s
-[INFO] Finished at: Wed Oct 09 16:07:20 PDT 2019
-[INFO] Final Memory: 14M/614M
+[INFO] Total time: 1:15.986s
+[INFO] Finished at: Wed Oct 16 11:14:28 PDT 2019
+[INFO] Final Memory: 12M/278M
 [INFO] ------------------------------------------------------------------------

@@ -18,10 +18,17 @@
 package util;
 
 import java.io.File;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import arr.CustomRulesetRules;
 import arr.CustomRulesetRulesErrorCodes;
 
@@ -38,7 +45,7 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 	String testStepsTemplate;
 
 	public void convert(JSONObject results) {
-		this.reportLocation = "output/"+results.getString("viewName")+".html";
+		this.reportLocation = "output/"+results.getString("viewName")+"_ARR_Report.html";
 		
 		this.pageTemplate = getPageTemplate(JSONToHTMLConverter.class, "HTMLReportTemplate.html");
 		this.ruleDescriptionsTemplate = getPageTemplate(JSONToHTMLConverter.class, "RuleDescriptions.html");
@@ -84,54 +91,8 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		StringBuilder dataHtml = new StringBuilder();
 
 		try {
-			JSONArray customArray = results.getJSONArray("custom");
-			for (int i=0; i<customArray.length(); i++) {
-				JSONObject customRule = customArray.getJSONObject(i);
-				JSONArray failedElements = customRule.getJSONArray("elements");
-				if (failedElements.length() > 0) {
-					// Generate html for page
-					String rowHTML = failedRowTemplate;
-
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE1-->", customRule.getString("ruleCode"));
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE2-->", customRule.getString("ruleCode"));
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_NAME-->", customRule.getString("rule"));
-					
-					CustomRulesetRules customRulesetRule = CustomRulesetRules.getCustomRulesetRulesFromLongName(customRule.getString("rule"));
-					
-					String descriptionHTML = getInnerTemplate(ruleDescriptionsTemplate, customRulesetRule.getTemplateString());
-					
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_DETAILS-->", descriptionHTML);
-					// Generate the HTMl for showing compliance level of each rule
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL1-->", customRulesetRule.getRuleComplianceLevel());
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL2-->", customRulesetRule.getRuleComplianceLevel());
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_ANCHOR_SOURCE-->", "<a title='View Rule Help Overlay' class='modalInput' rel='#"+customRulesetRule.getRuleCode()+"_HELP' relParent='#failedAPIContent'>");
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_ANCHOR_TARGET-->", "<div class='modal' id='"+customRulesetRule.getRuleCode()+"_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>");
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--WCAG_ANCHOR_SOURCE-->", "<a target='_blank' title='Rule - WCAG Documentation' href='"+customRulesetRule.getWCAGURL()+"'>");
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_MASK_TARGET-->", "<div class='exposeMask' id='"+customRulesetRule.getRuleCode()+"_HELP_MASK' ></div>");
-
-					String href = customRulesetRule.getPatternHREF();
-					if(href != null && !href.isEmpty()) {
-						rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--PATTERNS_LINK_ANCHOR-->", "<a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href="+HTMLGenerator.addSingleQuotes(href)+">");
-					} else {
-						rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--PATTERNS_LINK-->", "");
-					}
-
-					List<String> numberedCommentList = createNumberedCommentList(failedElements);	
-					
-					System.out.println("buildTestDetails... viewName:"+viewName);			
-					String testDetails = buildTestDetails(viewName, url, customRulesetRule, numberedCommentList);
-
-					System.out.println("buildEmailerLink... viewName:"+viewName);
-					String emailLink = buildEmailerLink(testDetails);
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--EMAILER_LINK-->", emailLink);
-
-					System.out.println("buildHTMLForColumnReason... viewName:"+viewName);	
-					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--REASONS-->", buildHTMLForColumnReason(customRulesetRule, failedElements, numberedCommentList));
-					
-					dataHtml.append(rowHTML.toString());
-				}
-			}
-
+			listAllRowsForCustomRulesetFailures(results, dataHtml, viewName, url);
+			listAllRowsForAXERulesetFailures(results, dataHtml, viewName, url);
 		} catch (Exception e) {
 			e.printStackTrace();
 			String oops = exceptionTemplate;
@@ -140,8 +101,72 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		}
 		return dataHtml.toString();
 	}
+	
+	private String buildHTMLForViewExceptionStackTraceElements(Exception e) {
+		StringBuffer listSTElements = new StringBuffer();
+		StackTraceElement[] stack = e.getStackTrace();
+		for (StackTraceElement stackTraceElement : stack) {
+			String stElement = stackElementTemplate;
+			stElement = HTMLGenerator.substituteMarker(stElement, "/*CLASS_VALUE*/", stackTraceElement.getClassName());
+			stElement = HTMLGenerator.substituteMarker(stElement, "/*METHOD_VALUE*/", stackTraceElement.getMethodName());
+			stElement = HTMLGenerator.substituteMarker(stElement, "/*LINE_VALUE*/", ""+stackTraceElement.getLineNumber());
+			listSTElements.append(stElement);
+		}
+		return listSTElements.toString();
+	}
+	
+	private void listAllRowsForCustomRulesetFailures(JSONObject results, StringBuilder dataHtml, String viewName, String url) {
 
-	private List<String> createNumberedCommentList(JSONArray elementFailures) {
+		JSONArray customArray = results.getJSONArray("custom");
+		for (int i=0; i<customArray.length(); i++) {
+			JSONObject customRule = customArray.getJSONObject(i);
+			CustomRulesetRules customRulesetRule = CustomRulesetRules.getCustomRulesetRulesFromLongName(customRule.getString("rule"));
+			JSONArray failedElements = customRule.getJSONArray("elements");
+			if (failedElements.length() > 0) {
+				// Generate html for page
+				String rowHTML = failedRowTemplate;
+
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE1-->", customRule.getString("ruleCode"));
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_NAME-->", customRule.getString("ruleCode")+" : "+customRule.getString("rule"));
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_DETAILS-->", buildDescriptionHTML(customRulesetRule));
+				// Generate the HTMl for showing compliance level of each rule
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL1-->", customRulesetRule.getRuleComplianceLevel());
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL2-->", customRulesetRule.getRuleComplianceLevel());
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_ANCHOR_SOURCE-->", "<a title='View Rule Help Overlay' class='modalInput' rel='#"+customRulesetRule.getRuleCode()+"_HELP' relParent='#failedAPIContent'>");
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_ANCHOR_TARGET-->", "<div class='modal' id='"+customRulesetRule.getRuleCode()+"_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>");
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--WCAG_ANCHOR_SOURCE-->", "<a target='_blank' title='Rule - WCAG Documentation' href='"+customRulesetRule.getWCAGURL()+"'>");
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_MASK_TARGET-->", "<div class='exposeMask' id='"+customRulesetRule.getRuleCode()+"_HELP_MASK' ></div>");
+
+				String href = customRulesetRule.getPatternHREF();
+				if(href != null && !href.isEmpty()) {
+					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--PATTERNS_LINK_ANCHOR-->", "<a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href="+HTMLGenerator.addSingleQuotes(href)+">");
+				} else {
+					rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--PATTERNS_LINK-->", "");
+				}
+
+				List<String> numberedCommentList = buildNumberedCommentList(failedElements);	
+				
+				System.out.println("buildTestDetails... viewName:"+viewName);			
+				String testDetails = buildTestDetails(viewName, url, customRulesetRule, numberedCommentList);
+
+				System.out.println("buildEmailerLink... viewName:"+viewName);
+				String emailLink = buildEmailerLink(testDetails);
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--EMAILER_LINK-->", emailLink);
+
+				System.out.println("buildHTMLForColumnReason... viewName:"+viewName);	
+				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--REASONS-->", buildHTMLForColumnReason(failedElements, numberedCommentList));
+				
+				dataHtml.append(rowHTML.toString());
+			}
+		}
+	}
+
+	private String buildDescriptionHTML(CustomRulesetRules customRulesetRule) {
+		String descriptionHTML = getInnerTemplate(ruleDescriptionsTemplate, customRulesetRule.getTemplateString());
+		return descriptionHTML;
+	}
+
+	private List<String> buildNumberedCommentList(JSONArray elementFailures) {
 		List<String> commentList = new ArrayList<String>();
 		for (int i=0; i<elementFailures.length(); i++) {
 			JSONObject elementFailure = elementFailures.getJSONObject(i);
@@ -209,12 +234,12 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		return comment;
 	}
 
-	public String buildHTMLForColumnReason(CustomRulesetRules customRulesetRule, JSONArray elementFailures,
+	public String buildHTMLForColumnReason(JSONArray elementFailures,
 			List<String> numberedCommentList) {
 		StringBuffer testStepsHTML = new StringBuffer();
 		for (int i=0; i<elementFailures.length(); i++) {
 			JSONObject elementFailure = elementFailures.getJSONObject(i);
-			String alteredComment = addStripToComment(customRulesetRule, elementFailure, numberedCommentList.get(i), i+1);
+			String alteredComment = addStripToComment(elementFailure, numberedCommentList.get(i), i+1);
 			String testStepItem = HTMLGenerator.substituteMarker(this.testStepsTemplate,
 					"<!--TEST_STEP_DETAILS-->", alteredComment); // ORIGINAL
 			testStepsHTML.append(testStepItem);
@@ -227,7 +252,7 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		return reason.toString();
 	}
 
-	private String addStripToComment(CustomRulesetRules customRulesetRule, JSONObject elementFailure, String comment, Integer counter) {
+	private String addStripToComment(JSONObject elementFailure, String comment, Integer counter) {
 		StringBuilder commentSB = new StringBuilder();
 		commentSB.append(comment);
 		commentSB.append("<br>");
@@ -278,17 +303,192 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 		commentSB.append(elementFailure.getString("elementXPATH"));
 		return commentSB.toString();
 	}
-	
-	private String buildHTMLForViewExceptionStackTraceElements(Exception e) {
-		StringBuffer listSTElements = new StringBuffer();
-		StackTraceElement[] stack = e.getStackTrace();
-		for (StackTraceElement stackTraceElement : stack) {
-			String stElement = stackElementTemplate;
-			stElement = HTMLGenerator.substituteMarker(stElement, "/*CLASS_VALUE*/", stackTraceElement.getClassName());
-			stElement = HTMLGenerator.substituteMarker(stElement, "/*METHOD_VALUE*/", stackTraceElement.getMethodName());
-			stElement = HTMLGenerator.substituteMarker(stElement, "/*LINE_VALUE*/", ""+stackTraceElement.getLineNumber());
-			listSTElements.append(stElement);
+
+	/**
+	 * Adds rows into HTML Report by parsing aXe response.
+	 * See also https://www.deque.com/axe/axe-for-web/documentation/api-documentation/#results-object (Results Object section)
+	 * 
+	 * @param results
+	 * @param dataHtml
+	 * @param viewName
+	 * @param url
+	 */
+	private void listAllRowsForAXERulesetFailures(JSONObject results,
+			StringBuilder dataHtml, String viewName, String url) {
+		JSONObject axeResults = results.getJSONObject("axe");
+		JSONArray violations = axeResults.getJSONArray("violations");
+		for (int i=0; i<violations.length(); i++) {
+			JSONObject axeRule = violations.getJSONObject(i);
+			String ruleName = axeRule.getString("id");
+
+			String complianceLevel = "AAA";
+			JSONArray tags = axeRule.getJSONArray("tags");
+			for(int k=0; k<tags.length(); k++) {
+				String tag = tags.getString(k);
+				if(tag.equals("wcag2a")) {
+					complianceLevel = "A";
+				} else if(tag.equals("wcag2aa")) {
+					complianceLevel = "AA";
+				}
+			}
+			
+			// Generate html for page
+			String rowHTML = failedRowTemplate;
+
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_CODE1-->", ruleName);
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_NAME-->", ruleName);
+			
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--RULE_DETAILS-->", buildDescriptionHTMLForAXE(axeRule));
+			// Generate the HTMl for showing compliance level of each rule
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL1-->", complianceLevel);
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--COMPLIANCE_LEVEL2-->", complianceLevel);
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_ANCHOR_SOURCE-->", "<a title='View Rule Help Overlay' class='modalInput' rel='#"+ruleName+"_HELP' relParent='#failedAPIContent'>");
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_ANCHOR_TARGET-->", "<div class='modal' id='"+ruleName+"_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>");
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--WCAG_ANCHOR_SOURCE-->", "");
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--OVERLAY_MASK_TARGET-->", "<div class='exposeMask' id='"+ruleName+"_HELP_MASK' ></div>");
+
+			// Remove WCAG LINK
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--WCAG_ANCHOR_SOURCE-->", "");
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--WCAG_ANCHOR_SOURCE2-->", "");
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--WCAG_ANCHOR_IMG-->", "");
+			
+			// Remove MIND Pattern LINK
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--PATTERNS_LINK-->", "");
+
+			List<String> numberedCommentList = buildNumberedCommentListForAXE(axeRule.getJSONArray("nodes"));	
+			
+			System.out.println("buildTestDetails... viewName:"+viewName);			
+//				String testDetails = buildTestDetailsForAXE(viewName, url, customRulesetRule, numberedCommentList);
+
+			System.out.println("buildEmailerLink... viewName:"+viewName);
+//				String emailLink = buildEmailerLink(testDetails);
+//				rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--EMAILER_LINK-->", emailLink);
+
+			System.out.println("buildHTMLForColumnReason... viewName:"+viewName);	
+			rowHTML = HTMLGenerator.substituteMarker(rowHTML, "<!--REASONS-->", buildHTMLForColumnReasonForAXE(axeRule.getJSONArray("nodes"), numberedCommentList));
+			
+			dataHtml.append(rowHTML.toString());
 		}
-		return listSTElements.toString();
+	}
+
+	private String buildDescriptionHTMLForAXE(JSONObject violation) {
+		String description = violation.getString("description");
+		String help = violation.getString("help");
+		String helpUrl = violation.getString("helpUrl");
+		
+		StringBuilder descriptionHTML = new StringBuilder();
+		descriptionHTML.append("<h3>Description</h3>");
+		descriptionHTML.append(description);
+		descriptionHTML.append(".");
+		descriptionHTML.append("<h3>Further Help</h3>");
+		descriptionHTML.append(help);
+		descriptionHTML.append(".  For more information, visit <a href='");
+		descriptionHTML.append(helpUrl);
+		descriptionHTML.append("'>Deque University</a>.");
+		descriptionHTML.append("<br><br>");
+		
+		return descriptionHTML.toString();
+	}
+
+	private List<String> buildNumberedCommentListForAXE(JSONArray nodes) {
+		List<String> commentList = new ArrayList<String>();
+		for (int i=0; i<nodes.length(); i++) {
+			JSONObject node = nodes.getJSONObject(i);
+			JSONArray any = node.getJSONArray("any");
+			Set<String> messages = new HashSet<String>();
+			for(int j=0; j<any.length(); j++) {
+				JSONObject anyJSON = any.getJSONObject(j);
+				messages.add(anyJSON.getString("message"));
+			}
+			JSONArray all = node.getJSONArray("all"); // Should not have anything here for violations
+			for(int j=0; j<all.length(); j++) {
+				JSONObject allJSON = all.getJSONObject(j);
+				messages.add(allJSON.getString("message"));
+			}
+			JSONArray none = node.getJSONArray("none");
+			for(int j=0; j<none.length(); j++) {
+				JSONObject noneJSON = none.getJSONObject(j);
+				messages.add(noneJSON.getString("message"));
+			}
+			
+			StringBuilder messagesSB = new StringBuilder();
+			for(String message: messages) {
+				messagesSB.append(message);
+				messagesSB.append(". ");
+			}
+			
+			commentList.add((i+1) + " . " + messagesSB.toString());
+		}
+		return commentList;
+	}
+
+	private String buildHTMLForColumnReasonForAXE(JSONArray nodes,
+			List<String> numberedCommentList) {
+		StringBuffer testStepsHTML = new StringBuffer();
+		for (int i=0; i<nodes.length(); i++) {
+			JSONObject node = nodes.getJSONObject(i);
+			String alteredComment = addStripToCommentForAXE(node, numberedCommentList.get(i), i+1);
+			String testStepItem = HTMLGenerator.substituteMarker(this.testStepsTemplate,
+					"<!--TEST_STEP_DETAILS-->", alteredComment); // ORIGINAL
+			testStepsHTML.append(testStepItem);
+		}
+
+		String reason = reasonTemplate;
+		reason = HTMLGenerator.substituteMarker(reason, "<!--TEST_STEPS-->",
+				testStepsHTML.toString());
+
+		return reason.toString();
+	}
+	
+	private String addStripToCommentForAXE(JSONObject node, String comment, Integer counter) {
+		StringBuilder commentSB = new StringBuilder();
+		commentSB.append(comment);
+		commentSB.append("<br>");
+//		try {
+//			String imageName = myRule.getMyFailure(counter).getImage();
+//			if (imageName != null) {
+//				String[] names = imageName.split("\\.");
+//				String anchor = "\n\n"
+//						+ "<a title='View Element in Snapshot Overlay' class='modalInput' rel="+HTMLGenerator.addSingleQuotes('#'+names[0])+" relParent='#failedAPIContent'>"
+//						+ "<img alt='camera' style='width: 32px; height: 25px;' src='"+ARRCredentials.IMAGES_URL+"cam.png' />"
+//						+ "</a>"
+//						+ "<div class='modal' id="+HTMLGenerator.addSingleQuotes(names[0])+" style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'>"
+//						+ "<image src="+HTMLGenerator.addSingleQuotes(imageName)+" width='100%' height='100%'/>"
+//						+ "<br>"
+//						+ "<img class='close' src='close.png' />"
+//						+ "</div>"
+//						+ "<div class='exposeMask' id="+HTMLGenerator.addSingleQuotes(names[0]+"_MASK")+" ></div>";
+//				comment = comment + anchor;
+//			}
+//		} catch (Exception ex) {
+//		}
+	
+		// Default id is from id attribute. If that fails, try class, if that fails, use the text of the tag
+	
+		// Generate ID
+		commentSB.append("\n&nbsp;&nbsp;&nbsp;");
+		commentSB.append("<b>html:</b>");
+//		commentSB.append("<xmp>");
+		String html = node.getString("html");
+		try {
+//			html = URLEncoder.encode(html, StandardCharsets.UTF_8.toString());
+			html = StringEscapeUtils.escapeXml(html);
+			html = html.replaceAll("\n", "");
+			html = html.replaceAll("\r", "");
+			html = html.replaceAll("\t", "");
+		} catch (Exception ex) {}
+		commentSB.append(html);
+//		commentSB.append("</xmp>");
+		commentSB.append("\n<br>&nbsp;&nbsp;&nbsp;");
+		commentSB.append("<b>target:</b>");
+		JSONArray targets = node.getJSONArray("target");
+		String del = "";
+		for(int i=0; i<targets.length(); i++) {
+			String target = targets.getString(i);
+			commentSB.append(del);
+			commentSB.append(target);
+			del = ", ";
+		}
+		return commentSB.toString();
 	}
 }
