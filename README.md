@@ -45,7 +45,7 @@ Here are some basic examples:
 <li><a href='examples/python/README.md'>Python with Selenium</a></li>
 </ul>
 
-Here are some projects that follow the <a href='examples/README.md'>General Steps for Running Rulesets</a>.
+Here are some projects that follow the <a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md'>General Steps for Running Rulesets</a>.
 
 <ul>
 <li><a href='examples/chromeextension/README.md'>Chrome Extension</a></li>
