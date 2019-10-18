@@ -14,7 +14,7 @@ Here, we include a more general discussion about what to consider when running r
 Having some base parameters might be useful:
 
 <ul>
-<li><b>View Name:</b> A name should be given to the view that was setup.  This name should be specific and descriptive enough to help scale (ie working with hundreds of views).  See below for the definition of a view.</li>
+<li><b>View Name:</b> A name should be given to the view being tested.  This name should be specific and descriptive enough to help scale (ie working with hundreds of views).  See <a href='#view-setup'>View Setup</a> for the definition of a view.</li>
 <li><b>JIRA Project Name:</b> Many companies use JIRA and bugs can be filed appropriately using this parameter.</li>
 <li><b>Report Title:</b> A report title is helpful if a report will be created with the results.  In some case, multiple views might be aggregated into a single report to help make the results more digestable.</li>
 </ul>

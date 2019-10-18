@@ -1,11 +1,10 @@
 # Topic Guide
 
-## Running Rulesets
+## Creating Rulesets
 
 <ul>
-<li><b><a href='topics/CHROMEDRIVERHELP.md'>ChromeDriver Help</a>:</b> Rulesets are often run using ChromeDriver.</li>
-<li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md'>General Steps for Running Rulesets</a>:</b> Running rulesets requires 4 general steps.</li>
-<li><b><a href='rulesets/README.md'>Rulesets</a>:</b> Rules typically align with <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a>.</li>
+<li><b><a href='README.md#creating-a-ruleset'>Creating a Ruleset</a>:</b> Certain general principles apply when creating a ruleset.</li>
+<li><b><a href='rulesets/tests/README.md#test-library'>Test Library</a>:</b> A test library should be created to verify any ruleset.</li>
 </ul>
 
 ## Ruleset Verification Testing
@@ -16,9 +15,11 @@
 <li><b><a href='rulesets/tests/README.md#test-library'>Test Library</a>:</b> A test library should be used to verify rules work as expected.</li>
 </ul>
 
-## Creating Rulesets
+## Running Rulesets
 
 <ul>
-<li><b><a href='README.md#creating-a-ruleset'>Creating a Ruleset</a>:</b> Certain general principles apply when creating a ruleset.</li>
-<li><b><a href='rulesets/tests/README.md#test-library'>Test Library</a>:</b> A test library should be created to verify any ruleset.</li>
+<li><b><a href='topics/CHROMEDRIVERHELP.md'>ChromeDriver Help</a>:</b> Rulesets are often run using ChromeDriver.</li>
+<li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md'>General Steps for Running Rulesets</a>:</b> Running rulesets requires some general steps.</li>
+<li><b><a href='rulesets/README.md'>Rulesets</a>:</b> Rules typically align with <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a>.</li>
+<li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md#view-setup'>View Setup</a>:</b> Prior to running a ruleset, it is important to clearly define the View (ie what is being tested).</li>
 </ul>
