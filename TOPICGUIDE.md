@@ -23,7 +23,7 @@
 <li><b><a href='examples/chromeextension/README.md#chrome-extension-development'>Chrome Extension Development</a>:</b> Developing a Chrome Extension makes it easy for everyone to run the rulesets.</li>
 <li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md'>General Steps for Running Rulesets</a>:</b> Running rulesets requires some general steps.</li>
 <li><b><a href='examples/java/README.md#multiple-views'>Multiple Views</a>:</b> Often multiple Views can be tested simultaneously.</li>
-<li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md#process-results'>Process Results</a>:</b> Results may be processes to take screenshots, store results or create reports.</li>
+<li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md#process-results'>Process Results</a>:</b> Results may be processed to take screenshots, store results or create reports.</li>
 <li><b><a href='examples/java/README.md#selenium-grid'>Selenium Grid</a>:</b> Building a Selenium Grid can help scale testing.</li>
 <li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md#view-setup'>View Setup</a>:</b> Prior to running a ruleset, it is important to clearly define the View (ie what is being tested).</li>
 </ul>
