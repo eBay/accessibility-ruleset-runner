@@ -4,6 +4,7 @@
 
 <ul>
 <li><b><a href='README.md#creating-a-ruleset'>Creating a Ruleset</a>:</b> Certain general principles apply when creating a ruleset.</li>
+<li><b><a href='rulesets/README.md'>Rulesets</a>:</b> Rules typically align with a standard or guideline (ie <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a>).</li>
 <li><b><a href='rulesets/tests/README.md#test-library'>Test Library</a>:</b> A test library should be created to verify any ruleset.</li>
 </ul>
 
@@ -12,7 +13,7 @@
 <ul>
 <li><b><a href='topics/CHROMEDRIVERHELP.md'>ChromeDriver Help</a>:</b> Verification tests are performed using ChromeDriver.</li>
 <li><b><a href='rulesets/tests/README.md#exemptions'>Exemptions</a>:</b> Ruleset failures may be post processed to handle exemptions.</li>
-<li><b><a href='rulesets/tests/README.md#test-library'>Test Library</a>:</b> A test library should be used to verify rules work as expected.</li>
+<li><b><a href='rulesets/tests/README.md#test-library'>Test Library</a>:</b> A test library should be created to verify any ruleset.</li>
 </ul>
 
 ## Running Rulesets
@@ -22,7 +23,6 @@
 <li><b><a href='examples/chromeextension/README.md#chrome-extension-development'>Chrome Extension Development</a>:</b> Developing a Chrome Extension makes it easy for everyone to run the rulesets.</li>
 <li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md'>General Steps for Running Rulesets</a>:</b> Running rulesets requires some general steps.</li>
 <li><b><a href='examples/java/README.md#multiple-views'>Multiple Views</a>:</b> Often multiple Views can be tested simultaneously.</li>
-<li><b><a href='rulesets/README.md'>Rulesets</a>:</b> Rules typically align with <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a>.</li>
 <li><b><a href='examples/java/README.md#selenium-grid'>Selenium Grid</a>:</b> Building a Selenium Grid can help scale testing.</li>
 <li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md#view-setup'>View Setup</a>:</b> Prior to running a ruleset, it is important to clearly define the View (ie what is being tested).</li>
 </ul>
