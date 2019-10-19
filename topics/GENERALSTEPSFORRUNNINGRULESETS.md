@@ -48,3 +48,8 @@ After the results are created, they can be used to do the following:
 </ul>
 
 Highlighting errors and taking screenshots can help people quickly find, file and fix issues to improve quality.  Results can be stored in a database for tracking, which can also be surfaced via a quality dashboard.  Converting the JSON results to an HTML report is another way to help people digest the information.  If these HTML reports are uploaded to a central location, then quality dashboards can also link directly to these HTML reports.
+
+<ul>
+<li>The <a href='../examples/chromeextension'>Chrome Extension</a> example demonstrates how to highlight errors.</li>
+<li>The <a href='../examples/java'>Java with Selenium/TestNG</a> example demonstrates how to highlight errors, take screenshots and create an HTML Report.</li>
+</ul>
