@@ -67,7 +67,7 @@ In addition, sometimes users need to sign in, load urls, click buttons, etc befo
 
 ### Include in Your Project
 
-The Test NG Test follows the steps outlined in <a href='../README.md'>General Steps for Running Rulesets</a>.  For each of these steps, we add some additional comments.
+The Test NG Test follows the steps outlined in <a href='../../topics/GENERALSTEPSFORRUNNINGRULESETS.md'>General Steps for Running Rulesets</a>.  For each of these steps, we add some additional comments.
 
 #### Configure Parameters
 
@@ -95,7 +95,7 @@ Results from multiple Views may be also be combined into a single JSON object.  
 
 ### Integrated Development Environments
 
-This <a href='https://maven.apache.org/'>Maven</a> project can be imported into an Integrated Development Environment (IDE) like <a href='https://www.eclipse.org/'>Eclispe</a>.
+This <a href='https://maven.apache.org/'>Maven</a> project can be imported into an Integrated Development Environment (IDE) like <a href='https://www.eclipse.org/'>Eclipse</a>.
 
 ### Selenium Grid
 
