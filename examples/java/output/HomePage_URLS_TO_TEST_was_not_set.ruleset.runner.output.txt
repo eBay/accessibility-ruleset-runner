@@ -980,7 +980,7 @@ buildHTMLForColumnReason... viewName:HomePage URLS_TO_TEST was not set
 buildTestDetails... viewName:HomePage URLS_TO_TEST was not set
 buildEmailerLink... viewName:HomePage URLS_TO_TEST was not set
 buildHTMLForColumnReason... viewName:HomePage URLS_TO_TEST was not set
-reportLocation:C:\ForkedPublicGit\accessibility-ruleset-runner\examples\java\output\HomePage URLS_TO_TEST was not set_ARR_Report.html
+reportLocation:C:\ForkedPublicGit\accessibility-ruleset-runner\examples\java\output\HomePage_URLS_TO_TEST_was_not_set_ARR_Report.html
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 37.204 sec
 
 Results :

@@ -45,7 +45,7 @@ To invoke the ruleset runner, use the following command (in the examples/java fo
 mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
 ```
 
-The output should match the <a href='output/HomePage URLS_TO_TEST was not set.ruleset.runner.output.txt'>Ruleset Runner Output</a>.
+The output should match the <a href='output/HomePage_URLS_TO_TEST_was_not_set.ruleset.runner.output.txt'>Ruleset Runner Output</a> and an <a href='https://htmlpreview.github.io/?https://github.com/ebay/accessibility-ruleset-runner/blob/master/examples/java/output/HomePage_URLS_TO_TEST_was_not_set_ARR_Report.html'>HTML Report</a> should be created.
 
 Actually, the use of the settings file and location of the test to run are explicit and simply running the following should work.
 

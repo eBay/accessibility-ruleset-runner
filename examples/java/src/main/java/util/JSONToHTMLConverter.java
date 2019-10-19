@@ -43,7 +43,8 @@ public class JSONToHTMLConverter extends HTMLGenerator{
 	String testStepsTemplate;
 
 	public void convert(JSONObject results) {
-		this.reportLocation = "output/"+results.getString("viewName")+"_ARR_Report.html";
+		String viewName = results.getString("viewName");
+		this.reportLocation = "output/"+viewName.replaceAll(" ", "_")+"_ARR_Report.html";
 		
 		this.pageTemplate = getPageTemplate(JSONToHTMLConverter.class, "HTMLReportTemplate.html");
 		this.ruleDescriptionsTemplate = getPageTemplate(JSONToHTMLConverter.class, "RuleDescriptions.html");
