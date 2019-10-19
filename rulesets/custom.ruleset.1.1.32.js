@@ -134,7 +134,7 @@ AccessibilityEngine = function(jsonParameters) {
 		results = [];
 		var result = createResult("Error", "000", "A");
 		addResultFailed(result, null, "000_A_0");
-		console.log('000_A_0 err '+ruleErr.stack);
+		console.log('000_A_0 err '+err.stack);
 		result.message = err;
 		results[0] = result;
 		//alert(err.stack);

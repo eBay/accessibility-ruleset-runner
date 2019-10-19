@@ -1,0 +1,566 @@
+<!-- 
+- Copyright 2017-2019 eBay Inc.
+- Author/Developer(s): Scott Izu
+- 
+- Licensed under the Apache License, Version 2.0 (the "License");
+- you may not use this file except in compliance with the License.
+- You may obtain a copy of the License at
+- 
+-    https://www.apache.org/licenses/LICENSE-2.0
+- 
+- Unless required by applicable law or agreed to in writing, software
+- distributed under the License is distributed on an "AS IS" BASIS,
+- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+- See the License for the specific language governing permissions and
+- limitations under the License.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--REPORT_TITLE--><title>Test Report</title><!--REPORT_TITLE-->
+	<link rel="stylesheet" href="arr.report.1.1.1.css">
+	<script src="jquery.1.8.2.js"></script>
+	<script src="arr.report.rows.handler.1.1.1.js"></script>
+	<script src="arr.report.modal.1.1.1.js"></script>
+	<script type="text/javascript">	
+
+	$(document).ready(function() {
+		initializeRowsHandlers();
+		initializeModal();
+	});
+</script>
+</head>
+<body>
+	<div id="failedAPIContent"
+		style="border-radius: 4px 4px 4px 4px; box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);">
+		<center><h1><!--REPORT_TITLE2-->Test Report<!--REPORT_TITLE2--></h1></center>
+		<b>View Name:</b> <!--VIEW_NAME-->PayPal<!--VIEW_NAME-->
+		<br><b>URL:</b> <!--URL-->http://www.paypal.com<!--URL-->
+		<!--VIEW_SCREENSHOT-->
+
+<br><a title='See View in Snapshot Overlay' class='modalInput' rel='#PayPal_VIEW' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_VIEW' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_VIEW.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_VIEW_MASK' ></div><!--VIEW_SCREENSHOT-->
+		<hr></hr>
+		<TABLE BORDER=0 style="margin-left: 0;" width="100%">
+			<!-- Rule Reason color from #02397e to grey to #cbcbcb -->
+			<TR class="ruleCodeReasonRow">
+				<TH width="10%">Rule Code</TH>
+				<TH width="90%">Reason</TH>
+			</TR>
+			<!--EXCEPTION_TEMPLATE
+			<div
+				style="position: relative; top: 255px; left: 200px; font-size: 0.9em; word-wrap: break-word; text-decoration: none;">
+				Oops.. error generating test failure report..
+				STACK_ELEMENT_TEMPLATE
+				<br>Class: /*CLASS_VALUE*/arr.AccessibilityRulesetRunnerTest/*CLASS_VALUE*/
+				<br>Method: /*METHOD_VALUE*/main/*METHOD_VALUE*/
+				<br>Line #: /*LINE_VALUE*/128/*LINE_VALUE*/
+				</br>
+				STACK_ELEMENT_TEMPLATE
+			</div>
+			EXCEPTION_TEMPLATE-->
+			<!--ROWS_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->0Skip<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#0Skip_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: PayPal%0A  URL: http://www.paypal.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . There is no mechanism to skip to the main content of the page.  One of the first ten anchors on the page needs to allow a user to skip to the main content of the page.  Try &lt;a href='#mainContent'&gt;Skip to main content&lt;/a&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/navigation/skipto.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='0Skip_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->0Skip : Validate Skip to Main Content<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--skipToMainCont-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a href="http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html">2.4.1<a/>.</li>
+		<li>This method checks whether a user for a screen reader is given provision to skip to the main content.</li>
+		<li>This check verifies unsighted user if wishes to jump or not straight into the main content of the page.</li>			
+	</ol>
+	<!--skipToMainCont--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='0Skip_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . There is no mechanism to skip to the main content of the page.  One of the first ten anchors on the page needs to allow a user to skip to the main content of the page.  Try &lt;a href='#mainContent'&gt;Skip to main content&lt;/a&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_1_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_1_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_1_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_1__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>html
+&nbsp;&nbsp;&nbsp;<b>class:</b>no-js jsEnabled<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->142<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->A<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#142_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: PayPal%0A  URL: http://www.paypal.com%0A  Rule Name: ruleH42HeadingMarkupTags%0A  Rule Code: 142%0A  Rule Compliance Level: A%0A%0AReasons:%0A  1 . This page has no h1 tag.  Try &lt;h1&gt;Main Page Heading&lt/h1&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/structure/heading.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='142_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->142 : H42 H1 Heading<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->A<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--H42_HMT-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html">H42</a>.
+		</li>
+		<li>This rule identifies the page has only one H1 tag associated
+			with it.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Check for the presence of h1 heading markup in the page.</li>
+		<li>Check that there are not multiple h1 tags.</li>
+	</ul>
+	<!--H42_HMT--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='142_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . This page has no h1 tag.  Try &lt;h1&gt;Main Page Heading&lt/h1&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_2_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_2_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_2_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_2__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>html
+&nbsp;&nbsp;&nbsp;<b>class:</b>no-js jsEnabled<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->037<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->A<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#037_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H37.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: PayPal%0A  URL: http://www.paypal.com%0A  Rule Name: ruleH37PresenceOfAltInImage%0A  Rule Code: 037%0A  Rule Compliance Level: A%0A%0AReasons:%0A  1 . The content image with src=https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module2-icon-1.png needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.%0A  2 . The content image with src=https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module2-icon-3.png needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.%0A  3 . The content image with src=https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/Credit.png needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.%0A  4 . The content image with src=https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module3-icon-1.png needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.%0A  ..."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/structure/image.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='037_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->037 : H37 Image Tag Alt Attribute<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->A<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--H37_PAI-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H37.html">H37</a>.
+		</li>
+		<li>This rule identifies for the presence of alt text for all the
+			image tag that is not an ancestor of anchor tag.Also checks for the presentational image through its width and height.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Found all the image tags in the page.</li>
+		<li>Checked for the presence of alt text associated with it.</li>
+	</ul>
+	<!--H37_PAI--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='037_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . The content image with src=<code><i><font size='2' color='red'>https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module2-icon-1.png</font></i></code> needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_3_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_3_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_3_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_3__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>img
+&nbsp;&nbsp;&nbsp;<b>class:</b>panel-img<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/DIV[1][@id='main']/SECTION[2][@id='bottomPanel']/DIV[1]/DIV[1]/IMG[1][@class='panel-img']<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->2 . The content image with src=<code><i><font size='2' color='red'>https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module2-icon-3.png</font></i></code> needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_4_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_4_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_4_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_4__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>img
+&nbsp;&nbsp;&nbsp;<b>class:</b>panel-img<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/DIV[1][@id='main']/SECTION[2][@id='bottomPanel']/DIV[1]/DIV[2]/IMG[1][@class='panel-img']<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->3 . The content image with src=<code><i><font size='2' color='red'>https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/Credit.png</font></i></code> needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_5_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_5_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_5_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_5__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>img
+&nbsp;&nbsp;&nbsp;<b>class:</b>panel-img<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/DIV[1][@id='main']/SECTION[2][@id='bottomPanel']/DIV[1]/DIV[3]/IMG[1][@class='panel-img']<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->4 . The content image with src=<code><i><font size='2' color='red'>https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module3-icon-1.png</font></i></code> needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_6_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_6_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_6_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_6__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>img
+&nbsp;&nbsp;&nbsp;<b>class:</b>panel-img<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/DIV[1][@id='main']/SECTION[3][@id='bottomPanel']/DIV[1]/DIV[1]/IMG[1][@class='panel-img']<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->5 . The content image with src=<code><i><font size='2' color='red'>https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module3-icon3.png</font></i></code> needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_7_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_7_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_7_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_7__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>img
+&nbsp;&nbsp;&nbsp;<b>class:</b>panel-img<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/DIV[1][@id='main']/SECTION[3][@id='bottomPanel']/DIV[1]/DIV[2]/IMG[1][@class='panel-img']<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->6 . The content image with src=<code><i><font size='2' color='red'>https://www.paypalobjects.com/digitalassets/c/website/marketing/na/us/home/module3-icon-2.png</font></i></code> needs an image alt attribute.  Try &lt;img alt='Image Description'&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_8_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_8_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_8_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_8__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>img
+&nbsp;&nbsp;&nbsp;<b>class:</b>panel-img<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/DIV[1][@id='main']/SECTION[3][@id='bottomPanel']/DIV[1]/DIV[3]/IMG[1][@class='panel-img']<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->033<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#033_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: PayPal%0A  URL: http://www.paypal.com%0A  Rule Name: ruleH33LinkOpensinNewWindow%0A  Rule Code: 033%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . The anchor with href=https://www.paypal.com/us/webapps/mpp/about and target=_blank opens in a new window/tab and needs to inform the user. The current label='About' and description='' is not sufficient.  Improve the label (which comes from the aria-labelledby attribute, aria-label attribute or inline text) and/or description (which comes from the aria-describedby attribute or title attribute) to warn the user with the exact verbiage 'opens in new window or tab.'  Try &lt;a href='...'&gt;...&lt;span class='clipped'&gt; - opens in new window or tab&lt;/span&gt&lt;/a&gt;.%0A  ..."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/navigation/link.html'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='033_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->033 : H33 Anchor Tag Title For New Windows<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--H33-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html">H33</a>.
+		</li>
+		<li>This rule identifies the presence of title as for all the
+			links in the page which open in a new window.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Get all anchor elements that have a title attribute.</li>
+		<li>Check that the title attribute together with the link text
+			describes the purpose of the link.</li>
+	</ul>
+	<!--H33--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='033_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . The anchor with href=<code><i><font size='2' color='red'>https://www.paypal.com/us/webapps/mpp/about</font></i></code> and target=<code><i><font size='2' color='red'>_blank</font></i></code> opens in a new window/tab and needs to inform the user. The current label='About' and description='' is not sufficient.  Improve the label (which comes from the aria-labelledby attribute, aria-label attribute or inline text) and/or description (which comes from the aria-describedby attribute or title attribute) to warn the user with the exact verbiage 'opens in new window or tab.'  Try &lt;a href='...'&gt;...&lt;span class='clipped'&gt; - opens in new window or tab&lt;/span&gt&lt;/a&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_9_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_9_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_9_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_9__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>a<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/FOOTER[1][@class='global-footer']/DIV[1]/UL[2]/LI[1]/A[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->2 . The anchor with href=<code><i><font size='2' color='red'>https://www.paypal.com/stories/us</font></i></code> and target=<code><i><font size='2' color='red'>_blank</font></i></code> opens in a new window/tab and needs to inform the user. The current label='Blog' and description='' is not sufficient.  Improve the label (which comes from the aria-labelledby attribute, aria-label attribute or inline text) and/or description (which comes from the aria-describedby attribute or title attribute) to warn the user with the exact verbiage 'opens in new window or tab.'  Try &lt;a href='...'&gt;...&lt;span class='clipped'&gt; - opens in new window or tab&lt;/span&gt&lt;/a&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_10_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_10_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_10_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_10__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>a<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/FOOTER[1][@class='global-footer']/DIV[1]/UL[2]/LI[2]/A[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->3 . The anchor with href=<code><i><font size='2' color='red'>https://www.paypal.com/us/webapps/mpp/jobs</font></i></code> and target=<code><i><font size='2' color='red'>_blank</font></i></code> opens in a new window/tab and needs to inform the user. The current label='Jobs' and description='' is not sufficient.  Improve the label (which comes from the aria-labelledby attribute, aria-label attribute or inline text) and/or description (which comes from the aria-describedby attribute or title attribute) to warn the user with the exact verbiage 'opens in new window or tab.'  Try &lt;a href='...'&gt;...&lt;span class='clipped'&gt; - opens in new window or tab&lt;/span&gt&lt;/a&gt;.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_11_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_11_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_11_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_11__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>a<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/FOOTER[1][@class='global-footer']/DIV[1]/UL[2]/LI[3]/A[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->133<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#133_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  View Name: PayPal%0A  URL: http://www.paypal.com%0A  Rule Name: ruleH33sameAnchorLinks%0A  Rule Code: 133%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . The anchor with href=https://www.paypal.com/us/webapps/mpp/account-selection is too similar to another anchor with href=https://www.paypal.com/us/welcome/signup.  The current label='Sign Up for Free' and description='' is not sufficient.  These may be distinguished by adding context to either the label or description."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='133_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->133 : H33 Links Repeated<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--H33_DupLinks-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html">H33</a>.
+		<li>This method checks whether the label and description tags are sufficient to clarify the purpose of the link.</li>
+	</ol>
+	<!--H33_DupLinks--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='133_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . The anchor with href=<code><i><font size='2' color='red'>https://www.paypal.com/us/webapps/mpp/account-selection</font></i></code> is too similar to another anchor with href=<code><i><font size='2' color='red'>https://www.paypal.com/us/welcome/signup</font></i></code>.  The current label='Sign Up for Free' and description='' is not sufficient.  These may be distinguished by adding context to either the label or description.
+
+<br><a title='See Element in Snapshot Overlay' class='modalInput' rel='#PayPal_CUSTOM_ELEMENT_12_' relParent='#'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='PayPal_CUSTOM_ELEMENT_12_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='PayPal_CUSTOM_ELEMENT_12_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div><div class='exposeMask' id='#PayPal_CUSTOM_ELEMENT_12__MASK' ></div><br>
+&nbsp;&nbsp;&nbsp;<b>tag:</b>a
+&nbsp;&nbsp;&nbsp;<b>class:</b>btn closing-cta center-block  btn-white<br>
+&nbsp;&nbsp;&nbsp;<b>xpath:</b>/HTML[1]/BODY[1]/DIV[1][@id='body']/DIV[1][@id='main']/SECTION[4]/DIV[1][@class='containerCentered']/DIV[1]/A[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->duplicate-id<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->A<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#duplicate-id_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  Page Name: Test%0A  URL: http://www.ebay.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . This page has no skip to main content target.  Try &lt;div id='mainContent' role='main' tabindex='-1'&gt;...&lt;/div&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='duplicate-id_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->duplicate-id<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->A<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><h3>Description</h3>Ensures every id attribute value is unique.<h3>Help</h3>id attribute value must be unique.  For more information, visit <a href='https://dequeuniversity.com/rules/axe/2.3/duplicate-id?application=axeAPI'>Deque University</a>.<br><br><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='duplicate-id_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . Document has multiple elements with the same id attribute: bottomPanel. <br>
+&nbsp;&nbsp;&nbsp;<b>html:</b>&lt;section class=&quot;row-fluid row panel center-text custom-panel white three-panel&quot; id=&quot;bottomPanel&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;<b>target:</b>#main > section.custom-panel.white<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->href-no-hash<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AAA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#href-no-hash_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  Page Name: Test%0A  URL: http://www.ebay.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . This page has no skip to main content target.  Try &lt;div id='mainContent' role='main' tabindex='-1'&gt;...&lt;/div&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='href-no-hash_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->href-no-hash<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AAA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><h3>Description</h3>Ensures that href values are valid link references to promote only using anchors as links.<h3>Help</h3>Anchors must only be used as links with valid URLs or URL fragments.  For more information, visit <a href='https://dequeuniversity.com/rules/axe/2.3/href-no-hash?application=axeAPI'>Deque University</a>.<br><br><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='href-no-hash_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . Anchor has an href value of #. <br>
+&nbsp;&nbsp;&nbsp;<b>html:</b>&lt;a data-pa-click=&quot;footer|SiteFeedback&quot; href=&quot;#&quot; pa-marked=&quot;1&quot;&gt;Feedback&lt;/a&gt;
+<br>&nbsp;&nbsp;&nbsp;<b>target:</b>#siteFeedback > a<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->meta-viewport-large<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AAA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#meta-viewport-large_HELP' relParent='#failedAPIContent'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  Page Name: Test%0A  URL: http://www.ebay.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . This page has no skip to main content target.  Try &lt;div id='mainContent' role='main' tabindex='-1'&gt;...&lt;/div&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='meta-viewport-large_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->meta-viewport-large<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AAA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><h3>Description</h3>Ensures <meta name="viewport"> can scale a significant amount.<h3>Help</h3>Users should be able to zoom and scale the text up to 500%.  For more information, visit <a href='https://dequeuniversity.com/rules/axe/2.3/meta-viewport-large?application=axeAPI'>Deque University</a>.<br><br><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><div class='exposeMask' id='meta-viewport-large_HELP_MASK' ></div><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . <meta> tag limits zooming. <br>
+&nbsp;&nbsp;&nbsp;<b>html:</b>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, minimal-ui, shrink-to-fit=no&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;<b>target:</b>head > meta[name="viewport"]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROWS_TEMPLATE-->
+		</TABLE>
+		
+		
+</body>
+</html>

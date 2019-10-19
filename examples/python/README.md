@@ -14,11 +14,13 @@ We assume the following are installed:
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
 
-See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
 ### Python 2.7.16
 
 <a href='https://www.python.org/doc/essays/blurb/'>Python</a> is an interpreted high-level programming language.  Its built in data structures and dynamic typing make it attractive for rapid development and scripting.  Visit the <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> Release for various installers.
+
+<b>Note:</b> Windows users are recommended to use the Git Bash console to run Node.js.  An Installer may be found on the <a href='https://git-scm.com/download'>Git Downloads</a>.
 
 <b>Note:</b> Windows users may need to add the location of Python (ie C:\Python27) to the Path environment variable.
 

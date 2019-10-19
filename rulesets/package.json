@@ -1,9 +1,9 @@
 {
-  "name": "Custom-Ruleset-Verification-Tests",
+  "name": "@ebay/accessibility-ruleset-runner",
   "version": "1.0.0",
-  "description": "Custom Ruleset Verification Tests",
+  "description": "Accessibility Ruleset Runner",
   "scripts": {
-    "custom.ruleset.verification.tests": "mocha custom.ruleset.verification.tests.js"
+    "custom.ruleset.verification.tests": "mocha tests/custom.ruleset.verification.tests.js"
   },
   "repository": {
     "type": "git",

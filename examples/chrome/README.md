@@ -17,9 +17,10 @@ Follow these steps:
 
 ### Step 3: Copy and Paste the Javascript Files 
 
-To invoke the ruleset methods directly within the browser console, they must be copied into the console. For both rulesets (custom.ruleset.X.X.X.js and aXe.ruleset.X.X.X.js), do follow these steps:
+To invoke the ruleset methods (<a href='../../rulesets'>Rulesets</a>) directly within the browser console, they must be copied into the console. For both rulesets (custom.ruleset.X.X.X.js and aXe.ruleset.X.X.X.js), do follow these steps:
 
 <ul>
+<li>Click Raw to get to the raw version of the file.</li>
 <li>Copy the entire ruleset javascript file.</li>
 <li>Paste the file directly into the browser console.</li>
 <li>Hit Enter.</li>

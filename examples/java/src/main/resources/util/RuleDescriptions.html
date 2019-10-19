@@ -1,0 +1,322 @@
+<!-- 
+- Copyright 2017-2019 eBay Inc.
+- Author/Developer(s): Scott Izu
+- 
+- Licensed under the Apache License, Version 2.0 (the "License");
+- you may not use this file except in compliance with the License.
+- You may obtain a copy of the License at
+- 
+-    https://www.apache.org/licenses/LICENSE-2.0
+- 
+- Unless required by applicable law or agreed to in writing, software
+- distributed under the License is distributed on an "AS IS" BASIS,
+- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+- See the License for the specific language governing permissions and
+- limitations under the License.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Rule Descriptions</title>
+</head>
+<body>
+	<h1>Rule Descriptions</h1>
+
+	<h2>Page Layout - H25 Title Tag</h2>
+	<!--H25-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H25.html">H25</a>.
+		</li>
+		<li>This rule identifies the title element in the head section
+			that defines in a simple phrase the purpose of the document.</li>
+		<li>This helps users to orient themselves within the site quickly
+			without having to search for orientation information in the body of
+			the page.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Examine the source code of the HTML or XHTML document.</li>
+		<li>Check that a non-empty title element appears in the head
+			section.</li>
+	</ul>
+	<!--H25-->
+
+	<h2>Page Layout - H57 HTML Tag Lang Attribute</h2>
+	<!--H57-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H57.html">H57</a>.
+		</li>
+		<li>This rule is to Identify the language of the document which
+			is important for a number of reasons.</li>
+		<li>This helps users to orient themselves within the site quickly
+			without having to search for orientation information in the body of
+			the page.</li>
+		<li>Speech synthesizers that support multiple languages will be
+			able to orient and adapt to the pronunciation and syntax that are
+			specific to the language of the page, speaking the text in the
+			appropriate accent with proper pronunciation.</li>
+		<li>Marking the language can benefit future developments in
+			technology, for example users who are unable to translate between
+			languages themselves will be able to use machines to translate
+			unfamiliar languages.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Examine the html element of the document.</li>
+		<li>Check that the html element has a lang and/or xml:lang
+			attribute.</li>
+	</ul>
+	<!--H57-->
+	
+	<h2>Page Layout - H42 H1 Heading</h2>
+	<!--H42_HMT-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html">H42</a>.
+		</li>
+		<li>This rule identifies the page has only one H1 tag associated
+			with it.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Check for the presence of h1 heading markup in the page.</li>
+		<li>Check that there are not multiple h1 tags.</li>
+	</ul>
+	<!--H42_HMT-->
+	
+	<h2>Page Layout - H42 Heading Hierarchy</h2>
+	<!--H42_HSL-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H42.html">H42</a>.
+		</li>
+		<li>This rule identifies headings are used in a hierarchical
+			layout with h3 as a subsection of h2, which is a subsection of h1.</li>
+	</ol>
+	<!--H42_HSL-->
+
+	<h2>Page Layout - Validate Skip to Main Content</h2>
+	<!--skipToMainCont-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a href="http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html">2.4.1<a/>.</li>
+		<li>This method checks whether a user for a screen reader is given provision to skip to the main content.</li>
+		<li>This check verifies unsighted user if wishes to jump or not straight into the main content of the page.</li>			
+	</ol>
+	<!--skipToMainCont-->
+	
+	<h2>Form - H44 Input Tag Label</h2>
+	<!--H44_POL-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H44.html">H44</a>.
+		</li>
+		<li>This rule identifies for the presence of label attached to a
+			specific form control through the use of the for attribute.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>List1 of all the input elements id is identified and
+			collected.</li>
+		<li>List2 of all the label for attribute value is identified and
+			collected.</li>
+		<li>Comparing the two lists for the presence of List1 item
+			through iteration is present in the List2.</li>
+	</ul>
+	<!--H44_POL-->
+
+	<h2>Form - H32 Form Submit Button</h2>
+	<!--H32-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H32.html">H32</a>.
+		</li>
+		<li>This rule identifies the mechanism that allows users to
+			explicitly request changes of context.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Find all forms in the content and for each form.</li>
+		<li>Check that it has a submit button.</li>
+	</ul>
+	<!--H32-->
+	
+	<h2>Image - H37 Image Tag Alt Attribute</h2>
+	<!--H37_PAI-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H37.html">H37</a>.
+		</li>
+		<li>This rule identifies for the presence of alt text for all the
+			image tag that is not an ancestor of anchor tag.Also checks for the presentational image through its width and height.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Found all the image tags in the page.</li>
+		<li>Checked for the presence of alt text associated with it.</li>
+	</ul>
+	<!--H37_PAI-->
+
+	<h2>Alt Tags - H24 Image Map Alt Attribute</h2>
+	<!--H24-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H24.html">H24</a>.
+		</li>
+		<li>This rule identifies for the presence of alt attribute of the
+			area element to provide text that describes the purpose of the image
+			map areas.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Get all area elements in an image map.</li>
+		<li>Check that the area element has an alt attribute.</li>
+	</ul>
+	<!--H24-->
+	
+	<h2>Alt Tags - H35 Applet Tag Alt Attribute</h2>
+	<!--H35-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H35.html">H35</a>.
+		</li>
+		<li>This rule identifies the presence of text alternative for an
+			applet by using the alt attribute to label an applet.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>View the source code of the applet element.</li>
+		<li>Check that the applet element contains an alt attribute with
+			a text alternative for the applet.</li>
+	</ul>
+	<!--H35-->
+
+	<h2>Alt Tags - H53 Object Tag Alt Attribute</h2>
+	<!--H53-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H53.html">H53</a>.
+		</li>
+		<li>This rule identifies the presence of text alternative for
+			content rendered using the object element.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Get all object elements on the page.</li>
+		<li>Check that the body of each object element contains a text
+			alternative for the object.</li>
+	</ul>
+	<!--H53-->
+
+	<h2>Alt Tags - H64 IFrame Tag Title Attribute</h2>
+	<!--H64-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H64.html">H64</a>.
+		</li>
+		<li>This rule identifies all the iframes or frames available in
+			the page has title attribute, associated with the iframes used in the
+			page.</li>
+		<li>Note that the title attribute labels frames, and is different
+			from the title element which labels documents.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Get all frame and iframe elements on the page.</li>
+		<li>Check each frame and iframe element in the HTML or XHTML
+			source code for the presence of a title attribute.</li>
+	</ul>
+	<!--H64-->
+	
+	<h2>Anchor - H33 Anchor Tag Title For New Windows</h2>
+	<!--H33-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html">H33</a>.
+		</li>
+		<li>This rule identifies the presence of title as for all the
+			links in the page which open in a new window.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Get all anchor elements that have a title attribute.</li>
+		<li>Check that the title attribute together with the link text
+			describes the purpose of the link.</li>
+	</ul>
+	<!--H33-->
+	
+	<h2>Anchor - H33 Links Repeated</h2>
+	<!--H33_DupLinks-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H33.html">H33</a>.
+		<li>This method checks whether the label and description tags are sufficient to clarify the purpose of the link.</li>
+	</ol>
+	<!--H33_DupLinks-->
+	
+	<h2>Anchor - H57 Unique IDs</h2>
+	<!--H75_UniqueIDs-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/WCAG20-TECHS/H75.html">H75</a>.
+		<li>This method checks whether anchor tags have unique ids.</li>
+	</ol>
+	<!--H75_UniqueIDs-->
+	
+
+	<h2>Core - H46 Embed Tag</h2>
+	<!--H46-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H46.html">H46</a>.
+		</li>
+		<li>This rule identifies whether the alternative content is
+			provided for the noembed element in a noembed element.</li>
+	</ol>
+	<!--H46-->
+
+	<h2>Core - H43</h2>
+	<!--H43-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a
+			href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H43.html">H43</a>.
+		</li>
+		<li>This rule identifies whether each data cell (in a data table)
+			is associated with the appropriate headers.</li>
+	</ol>
+	<h3>Procedure</h3>
+	<ul>
+		<li>Get all data tables where any cell contains an id or header
+			attribute.</li>
+		<li>Check that each id listed in the headers attribute of the
+			data cell matches the id attribute of a cell that is used as a header
+			element.</li>
+		<li>Check that the headers attribute of a data cell contains the
+			id attribute of all headers associated with the data cell.</li>
+		<li>Check that all ids are unique (that is, no two elements in
+			the page have the same id).</li>
+	</ul>
+	<!--H43-->
+
+</body>
+</html>

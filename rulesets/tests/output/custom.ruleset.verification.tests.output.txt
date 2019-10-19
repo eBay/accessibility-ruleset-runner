@@ -1,0 +1,57 @@
+$ npm run custom.ruleset.verification.tests
+
+> accessibility-ruleset-runner@1.0.0 custom.ruleset.verification.tests C:\ForkedPublicGit\accessibility-ruleset-runner\rulesets
+> mocha tests/custom.ruleset.verification.tests.js
+
+
+
+  Test custom ruleset against altTagsBad
+    √ should find failures (16450ms)
+
+  Test custom ruleset against altTagsGood
+    √ should find no failures (12340ms)
+
+  Test custom ruleset against anchorBad
+    √ should find no failures (8170ms)
+
+  Test custom ruleset against anchorGood
+    √ should find no failures (7956ms)
+
+  Test custom ruleset against formBad
+    √ should find no failures (8068ms)
+
+  Test custom ruleset against formGood
+    √ should find no failures (8481ms)
+
+  Test custom ruleset against imageBad
+    √ should find no failures (11506ms)
+
+  Test custom ruleset against imageGood
+    √ should find no failures (8248ms)
+
+  Test custom ruleset against pageLayoutBad
+    √ should find no failures (8048ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Source Invalid Text)
+    √ should find no failures (8068ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Source Missing)
+    √ should find no failures (7941ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Source Target Mismatch)
+    √ should find no failures (7900ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Target Duplicated)
+    √ should find no failures (7788ms)
+
+  Test custom ruleset against pageLayoutBad (Skip to Main Target is H Tag)
+    √ should find no failures (8192ms)
+
+  Test custom ruleset against pageLayoutGood
+    √ should find no failures (7782ms)
+
+  Test custom ruleset against pageLayoutGood (Hidden H1)
+    √ should find no failures (7984ms)
+
+
+  16 passing (2m)

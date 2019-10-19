@@ -447,33 +447,36 @@ AjaxCallForFormSubmission=function(processTracker) {
 }
 
 ProcessTrackerCallback=function(processTracker, rulesToRun) {
-	return function(axeresults) {
-		//console.log('aXe rule completed... axeresults.violations.length:'+axeresults.violations.length+' axeresults.violations:'+JSON.stringify(axeresults.violations));
+  return function(axeresults) {
+    // Could potentially do a simple assignment, but we filter axeresults client side so POST works
+    // processTracker.results.axe - axeresults;
 
-		var rulesWithViolation = [];
-		
-		if(axeresults.violations) {
-			for(var i=0; i<axeresults.violations.length; i++) {
-				var axerule = {};
-				axerule.ruleName = axeresults.violations[i].id;
-				axerule.violations = [];
-				axerule.violations.push(axeresults.violations[i]);
-				processTracker.results.axe.push(axerule);
-				rulesWithViolation[axerule.ruleName] = true;
-			}
-		}
-		
-		for(var i=0; i<rulesToRun.length; i++) { // Show that the test was run
-			if(!rulesWithViolation[rulesToRun[i]]) {
-				var axerule = {};
-				axerule.ruleName = rulesToRun[i];
-				axerule.violations = [];
-				processTracker.results.axe.push(axerule);
-			}
-		}
-		
-		ProcessResults(processTracker);
-	};
+    //console.log('aXe rule completed... axeresults.violations.length:'+axeresults.violations.length+' axeresults.violations:'+JSON.stringify(axeresults.violations));
+
+    var rulesWithViolation = [];
+
+    if(axeresults.violations) {
+      for(var i=0; i<axeresults.violations.length; i++) {
+        var axerule = {};
+        axerule.ruleName = axeresults.violations[i].id;
+        axerule.violations = [];
+        axerule.violations.push(axeresults.violations[i]);
+        processTracker.results.axe.push(axerule);
+        rulesWithViolation[axerule.ruleName] = true;
+      }
+    }
+
+    for(var i=0; i<rulesToRun.length; i++) { // Show that the test was run
+      if(!rulesWithViolation[rulesToRun[i]]) {
+        var axerule = {};
+        axerule.ruleName = rulesToRun[i];
+        axerule.violations = [];
+        processTracker.results.axe.push(axerule);
+      }
+    }
+
+    ProcessResults(processTracker);
+  };
 }
 
 ProcessResults=function(processTracker) {

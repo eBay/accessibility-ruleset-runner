@@ -1,0 +1,119 @@
+<!-- 
+- Copyright 2017-2019 eBay Inc.
+- Author/Developer(s): Scott Izu
+- 
+- Licensed under the Apache License, Version 2.0 (the "License");
+- you may not use this file except in compliance with the License.
+- You may obtain a copy of the License at
+- 
+-    https://www.apache.org/licenses/LICENSE-2.0
+- 
+- Unless required by applicable law or agreed to in writing, software
+- distributed under the License is distributed on an "AS IS" BASIS,
+- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+- See the License for the specific language governing permissions and
+- limitations under the License.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--REPORT_TITLE--><title>Test Summary</title><!--REPORT_TITLE-->
+	<link rel="stylesheet" href="arr.report.1.1.1.css">
+	<script src="jquery.1.8.2.js"></script>
+	<script src="arr.report.rows.handler.1.1.1.js"></script>
+	<script src="arr.report.modal.1.1.1.js"></script>
+	<script type="text/javascript">	
+
+	$(document).ready(function() {
+		initializeRowsHandlers();
+		initializeModal();
+	});
+</script>
+</head>
+<body>
+	<div id="failedAPIContent"
+		style="border-radius: 4px 4px 4px 4px; box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);">
+		<center><h1><!--REPORT_TITLE2-->Test Summary<!--REPORT_TITLE2--></h1></center>
+		<b>View Name:</b> <!--VIEW_NAME--><!--VIEW_NAME-->
+		<br><b>URL:</b> <!--URL--><!--URL-->
+		<!--VIEW_SCREENSHOT--><!--VIEW_SCREENSHOT-->
+		<hr></hr>
+		<TABLE BORDER=0 style="margin-left: 0;" width="100%">
+			<!-- Rule Reason color from #02397e to grey to #cbcbcb -->
+			<TR class="ruleCodeReasonRow">
+				<TH width="10%">Rule Code</TH>
+				<TH width="90%">Reason</TH>
+			</TR>
+			<!--EXCEPTION_TEMPLATE
+			<div
+				style="position: relative; top: 255px; left: 200px; font-size: 0.9em; word-wrap: break-word; text-decoration: none;">
+				Oops.. error generating test failure report..
+				STACK_ELEMENT_TEMPLATE
+				<br>Class: /*CLASS_VALUE*/arr.AccessibilityRulesetRunnerTest/*CLASS_VALUE*/
+				<br>Method: /*METHOD_VALUE*/main/*METHOD_VALUE*/
+				<br>Line #: /*LINE_VALUE*/128/*LINE_VALUE*/
+				</br>
+				STACK_ELEMENT_TEMPLATE
+			</div>
+			EXCEPTION_TEMPLATE-->
+			<!--ROWS_TEMPLATE--><!--ROW_TEMPLATE-->
+			<TR class="testRuleRow">
+				<TD width="10%" style="padding-left: 5px;" valign="top">
+					<!--EXPAND COLLAPSE BUTTON--><a class="button"></a><!--EXPAND COLLAPSE BUTTON-->
+					<!--FAILED_RULE_OUTER--><!--FAILED_RULE--><!--RULE_CODE1-->0Skip<!--RULE_CODE1--> 
+					(<!--COMPLIANCE_LEVEL1-->AA<!--COMPLIANCE_LEVEL1-->) 
+					<br>
+					<!--OVERLAY_ANCHOR_SOURCE--><a title='View Rule Help Overlay' class='modalInput' rel='#0Skip_HELP'><!--OVERLAY_ANCHOR_SOURCE-->
+						<img alt='question' src='question.png' />
+					</a>
+					<!--WCAG_ANCHOR_SOURCE--><a target='_blank' title='Rule - WCAG Documentation' href='http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html'><!--WCAG_ANCHOR_SOURCE--><!--WCAG_ANCHOR_IMG--><img alt='WCAG' style='width: 23px; height: 17px;' src='W3C.png' /><!--WCAG_ANCHOR_IMG--><!--WCAG_ANCHOR_SOURCE2--></a><!--WCAG_ANCHOR_SOURCE2-->
+<!--EMAILER_LINK--><a id='emailerLink' title='Rule - Email Bug Details' href="mailto:sizu@ebay.com?subject=Please look into the following bug identified by ARR&body=Test Details:%0A  Page Name: Test%0A  URL: http://www.ebay.com%0A  Rule Name: ruleSkiptoMainContent%0A  Rule Code: 0Skip%0A  Rule Compliance Level: AA%0A%0AReasons:%0A  1 . This page has no skip to main content target.  Try &lt;div id='mainContent' role='main' tabindex='-1'&gt;...&lt;/div&gt;."><!--EMAILER_LINK--><img alt='Emailer' style='width: 17px; height: 17px;' src='Emailer.png' /></a>
+
+<!--PATTERNS_LINK--><!--PATTERNS_LINK_ANCHOR--><a id='patternLink' title='Rule - Accessibility Pattern' target='_blank' href='https://ebay.gitbook.io/mindpatterns/navigation/skip-navigation'><!--PATTERNS_LINK_ANCHOR--><img alt='Accessibility Patterns' alt="MIND" style='width: 17px; height: 17px;' src='MIND4.png' /></a><!--PATTERNS_LINK-->
+					<!--OVERLAY_ANCHOR_TARGET--><div class='modal' id='0Skip_HELP' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><!--OVERLAY_ANCHOR_TARGET-->
+						<h1>
+							<!--RULE_NAME-->Validate Skip to Main Content<!--RULE_NAME-->
+						</h1>
+						<b>Compliance Level:</b>
+						<!--COMPLIANCE_LEVEL2-->AA<!--COMPLIANCE_LEVEL2-->
+						<!--RULE_DETAILS--><!--skipToMainCont-->
+	<h3>Description</h3>
+	<ol>
+		<li>This method conforms to the WCAG rule <a href="http://www.w3.org/TR/2007/WD-UNDERSTANDING-WCAG20-20071211/navigation-mechanisms-skip.html">2.4.1<a/>.</li>
+		<li>This method checks whether a user for a screen reader is given provision to skip to the main content.</li>
+		<li>This check verifies unsighted user if wishes to jump or not straight into the main content of the page.</li>			
+	</ol>
+	<!--skipToMainCont--><!--RULE_DETAILS-->
+						<img class='close' src='close.png' />
+					</div>
+					<!--OVERLAY_MASK_TARGET--><!--OVERLAY_MASK_TARGET-->
+					<!--FAILED_RULE-->
+					<!--FAILED_RULE_OUTER-->
+				</TD>
+				<TD width="90%" style="word-break: break-all;" valign="top">
+					<!--REASONS--><!--REASON-->
+					<table width="100%" border=0>
+						<!--TEST_STEPS--><!--TEST_STEP_ITEM-->
+						<tr class='testDetailRow'>
+							<td>
+								<!--TEST_STEP_DETAILS-->1 . This page has no skip to main content target.  Try &lt;div id='mainContent' role='main' tabindex='-1'&gt;...&lt;/div&gt;.<br>
+
+<a title='View Element in Snapshot Overlay' class='modalInput' rel='#TestHTML_FF_20_57_43_518_'><img alt='camera' style='width: 32px; height: 25px;' src='cam.png' /></a><div class='modal' id='TestHTML_FF_20_57_43_518_' style='background-color:#fff;display:none;padding:15px;border:2px solid #333;-webkit-border-radius:6px;'><image src='TestHTML_FF_20_57_43_518_.jpg' width='100%' height='100%'/><br><img class='close' src='close.png' /></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tag=html<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xpath=/html[1]<!--TEST_STEP_DETAILS-->
+							</td>
+						</tr>
+						<!--TEST_STEP_ITEM--><!--TEST_STEPS-->
+					</table>
+					
+					<!--REASON--><!--REASONS-->
+				</TD>
+			</TR>
+			<!--ROW_TEMPLATE--><!--ROWS_TEMPLATE-->
+		</TABLE>
+		
+		
+</body>
+</html>
