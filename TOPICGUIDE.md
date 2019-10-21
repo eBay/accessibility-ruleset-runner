@@ -33,4 +33,6 @@
 <ul>
 <li><b><a href='examples/chromeextension/README.md#headings-parser'>Headings Parser</a>:</b> Creating a tool to highlight landmarks and headers can be helpful for developers.</li>
 <li><b><a href='examples/chromeextension/README.md#mind-patterns'>MIND Patterns</a>:</b> Creating accessibility patterns for common components is helpful to bake accessibility into the development process.</li>
+<li><b><a href='examples/java/output/HomePage_URLS_TO_TEST_was_not_set.ruleset.runner.output.txt#L971'>Sample JSON Output</a>:</b> A JSON Object is used to store the results after running rulesets.</li>
+<li><b><a href='https://htmlpreview.github.io/?https://github.com/ebay/accessibility-ruleset-runner/blob/master/examples/java/output/HomePage_URLS_TO_TEST_was_not_set_ARR_Report.html'>Sample HTML Report</a>:</b> Results can be visualized using an HTML Report with helpful links and screenshots.</li>
 </ul>
