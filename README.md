@@ -1,5 +1,5 @@
 # eBay Accessibility Ruleset Runner
-eBay Accessibility Ruleset Runner automates 20% of <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a> AA recommendations, saving time on manual testing.
+The eBay Accessibility Ruleset Runner automates 20% of <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a> AA recommendations, saving time on manual testing.
 
 ## Summary
 Getting started with accessibility testing can be difficult.  Not only are there a variety of tools out there to choose from but testers must be accessibility experts to sort through the large number of false positives identified by these tools.  In addition, accessibility testing requires a lot of time to perform manual acceptance tests and only a small portion of these tests can be automated.
