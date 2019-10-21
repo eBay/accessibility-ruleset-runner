@@ -54,7 +54,7 @@ Here are some projects that follow the <a href='topics/GENERALSTEPSFORRUNNINGRUL
 
 ### Creating a Ruleset
 
-In creating our custom ruleset, we have found certain general principles that may help you in creating or modifying rulesets.
+In creating our custom ruleset, we have found certain general principles that may help when creating or modifying rulesets.
 
 <ol>
 <li>Rulesets should place an emphasis on 0 false positives.  By having 0 false positives, there is no room for interpretation and teams can be required to have 100% pass rate prior to launching a new feature.
