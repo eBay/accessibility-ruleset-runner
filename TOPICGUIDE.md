@@ -28,6 +28,13 @@
 <li><b><a href='topics/GENERALSTEPSFORRUNNINGRULESETS.md#view-setup'>View Setup</a>:</b> Prior to running a ruleset, it is important to clearly define the View (ie what is being tested).</li>
 </ul>
 
+## Sample Results
+
+<ul>
+<li><b><a href='examples/java/output/HomePage_URLS_TO_TEST_was_not_set.ruleset.runner.output.txt#L971'>JSON Output</a>:</b> A JSON Object is used to store the results after running rulesets.</li>
+<li><b><a href='https://htmlpreview.github.io/?https://github.com/ebay/accessibility-ruleset-runner/blob/master/examples/java/output/HomePage_URLS_TO_TEST_was_not_set_ARR_Report.html'>HTML Report</a>:</b> Results can be visualized using an HTML Report with helpful links and screenshots.</li>
+</ul>
+
 ## Additional Resources
 
 <ul>
