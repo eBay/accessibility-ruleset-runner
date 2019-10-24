@@ -22,7 +22,7 @@ Follow these steps:
 
 ### Step 3: Invoke the Ruleset Runner
 
-To run the <a href='../../rulesets'>Rulesets</a>, follow these steps:
+The following steps are used to run the <a href='../../rulesets'>Rulesets</a>:
 
 <ul>
 <li>Right click, select "Accessibility", select "Ruleset Runner", select "Add Overlays".</li>
