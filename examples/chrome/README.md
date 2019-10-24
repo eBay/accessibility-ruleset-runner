@@ -17,7 +17,7 @@ Follow these steps:
 
 ### Step 3: Copy and Paste the Javascript Files 
 
-To invoke the ruleset methods (<a href='../../rulesets'>Rulesets</a>) directly within the browser console, they must be copied into the console. For both rulesets (custom.ruleset.X.X.X.js and aXe.ruleset.X.X.X.js), do follow these steps:
+To run the (<a href='../../rulesets'>Rulesets</a>) directly within the browser console, we need to first copy over the appropriate code. For both rulesets (custom.ruleset.X.X.X.js and aXe.ruleset.X.X.X.js), do follow these steps:
 
 <ul>
 <li>Click Raw to get to the raw version of the file.</li>
@@ -38,7 +38,7 @@ var results = axs.Audit.run();
 JSON.stringify(results);
 ```
 
-The output should match the <a href='output/ChromeDeveloperConsole.custom.ruleset.runner.output.txt'>custom Ruleset Runner Output</a>.
+The output should match the <a href='output/ChromeDeveloperConsole.custom.ruleset.runner.output.txt'>Custom Ruleset Runner Output</a>.
 
 To run the custom ruleset on one particular element, modify the following command appropriately:
 ```sh
