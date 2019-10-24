@@ -37,6 +37,8 @@ Each example has its own Readme file which includes information about the follow
 <li>Modifications to include in your project</li>
 </ul>
 
+The ruleset runner examples require zero configuration.  This “one click” setup allows new users to quickly run the examples, to get an idea of what the ruleset runner does.  In other words, the ruleset runners are preconfigured to test a default web page and the examples can typically be run using a single command.
+
 Here are some basic examples:
 
 <ul>
@@ -56,7 +58,7 @@ Here are some projects that follow the <a href='topics/GENERALSTEPSFORRUNNINGRUL
 
 ### Creating a Ruleset
 
-In creating our custom ruleset, we have found certain general principles for creating or modifying rulesets.
+We created these general principles after reviewing publically available accessibility tools.  These principles were used to build our custom ruleset.  Later, we started using the <a href='https://github.com/dequelabs/axe-core'>aXe</a> ruleset from <a href='https://www.deque.com/'>Deque Systems</a> due to their alignment with these principles.
 
 <ol>
 <li>Rulesets should place an emphasis on 0 false positives.  By having 0 false positives, there is no room for interpretation and teams can be required to have 100% pass rate prior to launching a new feature.
