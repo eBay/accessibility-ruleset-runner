@@ -75,7 +75,7 @@ Various parameters/properties were included to give examples of possible paramet
 
 #### Run Rulesets
 
-Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
+Results from the <a href="rulesets#custom-ruleset">Custom Ruleset</a> and the <a href="rulesets#axe-ruleset">aXe Ruleset</a> are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
 
 #### Process Results
 
