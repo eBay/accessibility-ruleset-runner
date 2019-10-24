@@ -58,7 +58,7 @@ Here are some projects that follow the <a href='topics/GENERALSTEPSFORRUNNINGRUL
 
 ### Creating a Ruleset
 
-We created these general principles after reviewing publically available accessibility tools.  These principles were used to build our <a href="rulesets#custom-ruleset">Custom Ruleset</a>.  Later, we started using the <a href="rulesets#axe-ruleset">aXe Ruleset</a> ruleset from <a href='https://www.deque.com/'>Deque Systems</a> due to their alignment with these principles.
+We created these general principles after reviewing publically available accessibility tools.  These principles were used to build our <a href="rulesets#custom-ruleset">Custom Ruleset</a>.  Later, we started using the <a href="rulesets#axe-ruleset">aXe Ruleset</a> from <a href='https://www.deque.com/'>Deque Systems</a> due to their alignment with these principles.
 
 <ol>
 <li>Rulesets should place an emphasis on 0 false positives.  By having 0 false positives, there is no room for interpretation and teams can be required to have 100% pass rate prior to launching a new feature.
