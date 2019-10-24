@@ -28,7 +28,7 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 
 <b>Note:</b> Windows users may need to add the location of pip (ie C:\Python27\Scripts) to the Path environment variable.
 
-## Running Ruleset Runners To Test a Website
+## Running Rulesets Against a Website
 
 ### Step 1: Install Package Dependencies
 
@@ -48,7 +48,7 @@ pip freeze
 
 #### Custom Ruleset
 
-To invoke the custom ruleset runner, use the following command:
+Assuming you are in the proper directory (examples/python), the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
 
 ```sh
 python custom.ruleset.runner.py
@@ -58,7 +58,7 @@ The output should match the <a href='output/eBay.custom.ruleset.runner.output.tx
 
 #### aXe Ruleset
 
-To invoke the aXe ruleset runner, use the following command:
+Assuming you are in the proper directory (examples/python), the following command is used to run the <a href="rulesets#axe-ruleset">aXe Ruleset</a>:
 
 ```sh
 python aXe.ruleset.runner.py
