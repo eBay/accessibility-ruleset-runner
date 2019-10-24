@@ -70,7 +70,7 @@ In creating our custom ruleset, we have found certain general principles for cre
 </li>
 </ol>
 
-## Contribution
+### Contribution
 Contributions in terms of patches, features, or comments are always welcome. Refer to the <a href='CONTRIBUTING.md'>Contributing Guidelines</a> for help. Submit Github issues for any feature enhancements, bugs, or documentation problems as well as questions and comments.
 
 # Topic Guide
