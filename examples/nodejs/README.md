@@ -11,7 +11,7 @@ These examples show how to run the rulesets using a Selenium/Mocha/Chai framewor
 
 See the <a href='../../rulesets/tests/README.md#prerequisites'>prerequisites</a>.
 
-## Running Ruleset Runners To Test a Website
+## Running Rulesets Against a Website
 
 These steps show how to run the code, after it has been downloaded.
 
@@ -27,7 +27,7 @@ npm install
 
 #### Custom Ruleset
 
-To invoke the custom ruleset runner, use the following command:
+Assuming you are in the proper directory (examples/nodejs), the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
 
 ```sh
 npm run custom.ruleset.runner
@@ -37,7 +37,7 @@ The output should match the <a href='output/Google.custom.ruleset.runner.output.
 
 #### aXe Ruleset
 
-To invoke the aXe ruleset runner, use the following command:
+Assuming you are in the proper directory (examples/nodejs), the following command is used to run the <a href="rulesets#axe-ruleset">aXe Ruleset</a>:
 
 ```sh
 npm run aXe.ruleset.runner
