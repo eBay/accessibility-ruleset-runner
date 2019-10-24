@@ -37,7 +37,7 @@ See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information
 <li><a href='https://mvnrepository.com/artifact/org.json/json/20160810'>json 20160810</a></li>
 </ul>
 
-## Running Ruleset Runners To Test a Website
+## Running Rulesets Against a Website
 
 To invoke the ruleset runner, use the following command (in the examples/java folder):
 
