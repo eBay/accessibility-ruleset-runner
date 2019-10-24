@@ -52,6 +52,8 @@ Here are some projects that follow the <a href='topics/GENERALSTEPSFORRUNNINGRUL
 <li><a href='examples/java/README.md'>Java with Selenium/TestNG</a></li>
 </ul>
 
+## Next Steps
+
 ### Creating a Ruleset
 
 In creating our custom ruleset, we have found certain general principles for creating or modifying rulesets.
@@ -68,7 +70,7 @@ In creating our custom ruleset, we have found certain general principles for cre
 </li>
 </ol>
 
-# Contribution
+## Contribution
 Contributions in terms of patches, features, or comments are always welcome. Refer to the <a href='CONTRIBUTING.md'>Contributing Guidelines</a> for help. Submit Github issues for any feature enhancements, bugs, or documentation problems as well as questions and comments.
 
 # Topic Guide
