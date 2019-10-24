@@ -23,7 +23,7 @@ To install these node modules, from the accessibility-ruleset-runner/examples/no
 npm install
 ```
 
-### Step 2: Invoke Ruleset Runners
+### Step 2: Invoke the Ruleset Runners
 
 #### Custom Ruleset
 
