@@ -39,7 +39,7 @@ See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information
 
 ## Running Rulesets Against a Website
 
-To run the <a href='../../rulesets'>Rulesets</a>, use the following command (in the examples/java folder):
+Assuming you are in the proper directory (examples/java), the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
 
 ```sh
 mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
