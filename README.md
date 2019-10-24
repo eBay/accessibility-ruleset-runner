@@ -1,5 +1,5 @@
 # eBay Accessibility Ruleset Runner
-eBay Accessibility Ruleset Runner automates 20% of <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a> AA recommendations, saving time on manual testing.
+The eBay Accessibility Ruleset Runner automates 20% of <a href='https://www.w3.org/TR/WCAG20/'>WCAG 2.0</a> AA recommendations, saving time on manual testing.
 
 ## Summary
 Getting started with accessibility testing can be difficult.  Not only are there a variety of tools out there to choose from but testers must be accessibility experts to sort through the large number of false positives identified by these tools.  In addition, accessibility testing requires a lot of time to perform manual acceptance tests and only a small portion of these tests can be automated.
@@ -37,6 +37,8 @@ Each example has its own Readme file which includes information about the follow
 <li>Modifications to include in your project</li>
 </ul>
 
+The ruleset runner examples require zero configuration.  This “one click” setup allows new users to quickly run the examples, to get an idea of what the ruleset runner does.  In other words, the ruleset runners are preconfigured to test a default web page and the examples can typically be run using a single command.
+
 Here are some basic examples:
 
 <ul>
@@ -52,9 +54,11 @@ Here are some projects that follow the <a href='topics/GENERALSTEPSFORRUNNINGRUL
 <li><a href='examples/java/README.md'>Java with Selenium/TestNG</a></li>
 </ul>
 
+## Next Steps
+
 ### Creating a Ruleset
 
-In creating our custom ruleset, we have found certain general principles that may help you in creating or modifying rulesets.
+We created these general principles after reviewing publically available accessibility tools.  These principles were used to build our <a href="rulesets#custom-ruleset">Custom Ruleset</a>.  Later, we started using the <a href="rulesets#axe-ruleset">aXe Ruleset</a> ruleset from <a href='https://www.deque.com/'>Deque Systems</a> due to their alignment with these principles.
 
 <ol>
 <li>Rulesets should place an emphasis on 0 false positives.  By having 0 false positives, there is no room for interpretation and teams can be required to have 100% pass rate prior to launching a new feature.
@@ -68,7 +72,7 @@ In creating our custom ruleset, we have found certain general principles that ma
 </li>
 </ol>
 
-# Contribution
+### Contribution
 Contributions in terms of patches, features, or comments are always welcome. Refer to the <a href='CONTRIBUTING.md'>Contributing Guidelines</a> for help. Submit Github issues for any feature enhancements, bugs, or documentation problems as well as questions and comments.
 
 # Topic Guide

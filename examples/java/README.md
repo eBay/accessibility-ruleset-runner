@@ -37,9 +37,9 @@ See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information
 <li><a href='https://mvnrepository.com/artifact/org.json/json/20160810'>json 20160810</a></li>
 </ul>
 
-## Running Ruleset Runners To Test a Website
+## Running Rulesets Against a Website
 
-To invoke the ruleset runner, use the following command (in the examples/java folder):
+Assuming you are in the proper directory (examples/java), the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
 
 ```sh
 mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
@@ -75,7 +75,7 @@ Various parameters/properties were included to give examples of possible paramet
 
 #### Run Rulesets
 
-Results from the Custom Ruleset and the aXe Ruleset are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
+Results from the <a href="rulesets#custom-ruleset">Custom Ruleset</a> and the <a href="rulesets#axe-ruleset">aXe Ruleset</a> are combined into a single JSON object.  This step can be modified to change how the rulesets are executed.
 
 #### Process Results
 
