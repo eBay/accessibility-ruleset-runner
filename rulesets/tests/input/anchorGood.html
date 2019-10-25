@@ -29,7 +29,7 @@
 </a>
 
 <h3>Pass Example A.4</h3>
-	<p>eBay Exemption: Basic Link with Title which opens in a new window</p>
+	<p>Exception: Basic Link with Title which opens in a new window</p>
 	<a id="anchor_A.4.1" href="http://example.com/subscribe.html" 
      target="_blank" 
      title="opens in new window or tab">
@@ -37,7 +37,7 @@
 </a>
 
 <h3>Pass Example A.5</h3>
-	<p>eBay Exemption: Basic Link with Hidden Text to describe opens in a new window</p>
+	<p>Exception: Basic Link with Hidden Text to describe opens in a new window</p>
 	<a id="anchor_A.5.1" href="http://example.com/subscribe.html" 
      target="_blank">
      <span style="visibility:hidden;">opens in new window or tab</span>
@@ -113,7 +113,7 @@
 	</span>
 
 <h3>Pass Example B.4</h3>
-	<p>eBay Exemption: Anchor Tags which have missing href are not tabbable</p>
+	<p>Exception: Anchor Tags which have missing href are not tabbable</p>
 	<span class="pngwp" style="display: inline-block;">
 		<a id="anchor_B.4.1" class="arrow left firefinder-match"></a>
 		<b class="pg sel">1</b>
@@ -134,7 +134,7 @@
 	</a>
 
 <h3>Pass Example B.6</h3>
-	<p>eBay Exemption: For URLs with query parameters, we will assume the hrefs are the same.</p>
+	<p>Exception: For URLs with query parameters, we will assume the hrefs are the same.</p>
 	<span> <a id="anchor_B.6.1" href="https://signin.qa.ebay.com/ws/eBayISAPI.dll?SignIn&ru=http://www.qa.ebay.com/sch/ebayadvsearch?amp%3B_odkw=test&%3B_osacat=0&%3B_from=R40&%3BLH_Complete=1&%3B_nkw=test&%3B_sacat=0">Sign In</a>
 	</span>
 	<span> <a id="anchor_B.6.2" href=" https://signin.qa.ebay.com/ws/eBayISAPI.dll?SignIn&ru=http://www.qa.ebay.com/sch/ebayadvsearch/?rt=nc&_odkw=test&_osacat=0&_from=R40&LH_Complete=1&_nkw=test&_sacat=0">Sign In</a>
@@ -222,27 +222,27 @@
 
 <h3>Pass Example C.4</h3>
 <!-- We want the code to flag both errors and warnings and this case can be removed in  -->
-    <p>eBay exemption: Two links go to the same page except for hash tags.</p>
+    <p>Exception: Two links go to the same page except for hash tags.</p>
     <a id="ttl_anchor_C.4.1" href="http://mylink1.com">Anchor Text 4.1</a>
 	<a id="ttl_anchor_C.4.2" href="http://mylink1.com#testMark">Anchor Text 4.1</a>
 	
-    <p>eBay exemption: Two links go to differnt places but the link text matches.  This is okay if the id starts with "ttl_" and the class is "g-asm" which is an item title.</p>
+    <p>Exemption (Post Processed): Two links go to differnt places but the link text matches.  This is okay if the id starts with "ttl_" and the class is "g-asm" which is an item title.</p>
     <a id="ttl_anchor_C.4.3" class="g-asm" href="http://mylink3.com">Anchor Text 4.2</a>
 	<a id="ttl_anchor_C.4.4" class="g-asm" href="http://mylink4.com">Anchor Text 4.2</a>
 
-    <p>eBay exemption: Two links go to differnt places but the link text matches.  This is okay if the class is "s-item__link" which is an item title.</p>
+    <p>Exemption (Post Processed): Two links go to differnt places but the link text matches.  This is okay if the class is "s-item__link" which is an item title.</p>
 	<a id="anchor_C.4.5" class="s-item__link" href="http://mylink5.com">Anchor Text 4.3</a>
 	<a id="anchor_C.4.6" class="s-item__link" href="http://mylink6.com">Anchor Text 4.3</a>
 
-    <p>eBay exemption: Two links go to differnt places but the link text matches.  This is okay if the class ancestor has item-title as class.</p>
+    <p>Exemption (Post Processed): Two links go to differnt places but the link text matches.  This is okay if the class ancestor has item-title as class.</p>
 	<span class="item-title"><a id="anchor_C.4.7" href="http://mylink7.com">Anchor Text 4.4</a></span>
 	<span class="item-title"><a id="anchor_C.4.8" href="http://mylink8.com">Anchor Text 4.4</a></span>
 	
-	<p>eBay exemption: Two links go to different places but the link has visibility hidden
+	<p>Exception: Two links go to different places but the link has visibility hidden
 	<a id="anchor_C.4.9" href="http://mylink9.com" style="visibility:hidden;">Anchor Text 4.5</a>
 	<a id="anchor_C.4.10" href="http://mylink10.com" style="visibility:hidden;">Anchor Text 4.5</a>
 	
-	<p>eBay exemption: Two links go to different places but the link has display none
+	<p>Exception: Two links go to different places but the link has display none
 	<a id="anchor_C.4.11" href="http://mylink11.com" style="display:none;">Anchor Text 4.6</a>
 	<a id="anchor_C.4.12" href="http://mylink12.com" style="display:none;">Anchor Text 4.6</a>
 	
