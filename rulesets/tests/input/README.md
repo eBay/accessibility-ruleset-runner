@@ -4,7 +4,7 @@ This is a <a href='../README.md#test-library'>Test Library</a> for the <a href="
 There are four types of code snippets:
 <ul>
 <li><b>Good:</b> Code satisfies accessibility criteria.</li>
-<li><b>Exception: Code satisfies accessibility criteria but is not recommended.</b></li>
+<li><b>Exception:</b> Code satisfies accessibility criteria but is not recommended.</b></li>
 <li><b>Exemption:</b> Code fails to satisfy accessibility criteria but is not expected to be fixed.  (see also <a href='../README.md#exemptions'>Exemptions</a>)</li>
 <li><b>Bad:</b> Code fails to satisfy accessibility criteria.</li>
 </ul>
