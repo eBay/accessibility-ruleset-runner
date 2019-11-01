@@ -463,10 +463,12 @@ function formElementIFrameHasSubmitButton(formElement) {
 	var iframeElements = getElementsByXpath(WAEDocumentFunction(), ".//iframe", formElement);
 	var iframeElement = iframeElements.iterateNext();
 	while(iframeElement != null) {
-		var innerDoc = iframeElement.contentDocument || iframeElement.contentWindow.document;
-		if(formElementFindNonHiddenInputElement(innerDoc, innerDoc, ".//*[(local-name()='input' and @type='submit') or (local-name()='input' and @type='image') or (local-name()='button' and @type='submit')]") != null) {
-			return true;
-		}
+		try{
+		    var innerDoc = iframeElement.contentDocument || iframeElement.contentWindow.document;
+		    if(formElementFindNonHiddenInputElement(innerDoc, innerDoc, ".//*[(local-name()='input' and @type='submit') or (local-name()='input' and @type='image') or (local-name()='button' and @type='submit')]") != null) {
+		    return true;
+		    }
+		}catch(err){}
 		iframeElement = iframeElements.iterateNext();
 	}
 }
@@ -1041,5 +1043,5 @@ var axs={
 	  XPATH_ROOT:null
   },
   message:"",
-  version:"1.1.32",
+  version:"1.1.33",
 };
