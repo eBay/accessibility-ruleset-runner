@@ -468,7 +468,7 @@ function formElementIFrameHasSubmitButton(formElement) {
 		    if(formElementFindNonHiddenInputElement(innerDoc, innerDoc, ".//*[(local-name()='input' and @type='submit') or (local-name()='input' and @type='image') or (local-name()='button' and @type='submit')]") != null) {
 		    return true;
 		    }
-		}catch(err){}
+		} catch (err) {}
 		iframeElement = iframeElements.iterateNext();
 	}
 }
