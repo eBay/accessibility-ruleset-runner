@@ -12,7 +12,7 @@
   "author": "sizu@ebay.com",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@ebay/accessibility-ruleset-runner": "^1.0.0",
+    //"@ebay/accessibility-ruleset-runner": "^X.X.X",
     "chai": "^4.2.0",
     "fs": "0.0.1-security",
     "mocha": "^6.1.3",
