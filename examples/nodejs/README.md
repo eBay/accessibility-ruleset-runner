@@ -66,6 +66,8 @@ These steps show how to use the published NPM module in your project.
 npm install @ebay/accessibility-ruleset-runner --save-dev
 ```
 
+<b>Note:</b> You may modify the version by editing the package.json file.
+
 2. Edit the custom.ruleset.runner.js and axe.ruleset.runner.js to point to the installed custom.ruleset.X.X.X.js and axe.ruleset.X.X.X.js javascript files (replace X's appropriately)
 ```sh
 var customRuleset = fs.readFileSync('./node_modules/accessibility-ruleset-runner/rulesets/custom.ruleset.X.X.X.js','utf8');
