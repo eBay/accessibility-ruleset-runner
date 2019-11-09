@@ -37,7 +37,7 @@ describe('Run custom ruleset', function () {
   
   it('should find no FAIL', function (done) { 
     var url = "http://www.google.com";
-    var customRuleset = fs.readFileSync('../../rulesets/custom.ruleset.1.1.32.js','utf8');
+    var customRuleset = fs.readFileSync('../../rulesets/custom.ruleset.1.1.33.js','utf8');
     //var customRuleset = fs.readFileSync('./node_modules/accessibility-ruleset-runner/rulesets/custom.ruleset.1.1.32.js','utf8'); // Use this after "npm install accessibility-ruleset-runner"
     customRuleset = customRuleset + ' return JSON.stringify(axs.Audit.run());';
 	

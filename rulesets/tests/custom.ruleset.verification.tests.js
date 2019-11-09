@@ -20,7 +20,7 @@ var chrome = require('selenium-webdriver/chrome');
 var assert = require('chai').assert;
 var fs = require('fs');
 
-var customRuleset = fs.readFileSync('custom.ruleset.1.1.32.js','utf8');
+var customRuleset = fs.readFileSync('custom.ruleset.1.1.33.js','utf8');
 	  
 // In Chrome, The Images do not load.  This can wait until images load in async call.
 // runner must be defined, see createRunner
