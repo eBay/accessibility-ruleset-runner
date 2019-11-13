@@ -25,7 +25,7 @@ $ pip --version
 pip 18.1 from c:\python27\lib\site-packages\pip (python 2.7)
 ```
 
-<b>Note:</b> Python 2.7.16 is required but other version may vary.
+<b>Note:</b> Python 2.7 is required but other than that, versions may vary.
 
 If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation by running the commands above).
 
