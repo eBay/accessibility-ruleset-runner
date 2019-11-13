@@ -40,7 +40,7 @@ $ python --version
 Python 2.7.16
 
 $ pip --version
-pip --version
+pip 18.1 from c:\python27\lib\site-packages\pip (python 2.7)
 ```
 
 ## Running Rulesets Against a Website
