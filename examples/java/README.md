@@ -19,10 +19,6 @@ We assume the following are installed:
 
 To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a> have already been installed, type the appropriate commands to print the version.
 
-If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation).
-
-<b>Note:</b> Unless the version is specified below, it may be different than what you see here.
-
 ```sh
 $ chromedriver --version
 ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
@@ -40,6 +36,10 @@ Java home: C:\Program Files\Java\jdk1.8.0_144\jre
 Default locale: en_US, platform encoding: Cp1252
 OS name: "windows 10", version: "10.0", arch: "amd64", family: "dos"
 ```
+
+<b>Note:</b> Java 8 and Maven 3 are required but other than that, versions may vary.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation by running the commands above).
 
 ### ChromeDriver
 
