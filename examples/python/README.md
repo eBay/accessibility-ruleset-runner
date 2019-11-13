@@ -30,20 +30,17 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 
 ### Verify Prerequisites
 
-To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> are installed correctly, try these commands:
+To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> are installed correctly, type the appropriate commands to print the version (versions may vary).
 
 ```sh
-chromedriver --version
-python --version
-pip --version
-```
-
-You should see the corresponding versions print to the console (versions may vary):
-
-```sh
+$ chromedriver --version
 ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ python --version
 Python 2.7.16
-pip 18.1 from c:\python27\lib\site-packages\pip (python 2.7)
+
+$ pip --version
+pip --version
 ```
 
 ## Running Rulesets Against a Website
