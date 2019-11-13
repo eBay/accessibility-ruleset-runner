@@ -38,7 +38,7 @@ python --version
 pip --version
 ```
 
-You should see something like the following (ChromeDriver version will depend on Chrome version):
+You should see the corresponding versions print to the console (versions may vary):
 
 ```sh
 ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
