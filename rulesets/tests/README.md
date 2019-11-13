@@ -36,6 +36,24 @@ Node Version Manager (NVM) is a tool that allows users to swtich between differe
 <li>Windows users may download an NVM installer from <a href='https://github.com/coreybutler/nvm-windows'>NVM Windows Repository</a> (ie <a href='https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip'>NVM Windows 1.1.7</a>).</li>
 </ul>
 
+### Verify Prerequisites
+
+To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://nodejs.org/en/'>Node.js</a> are installed correctly, try these commands:
+
+```sh
+chromedriver --version
+node --version
+npm --version
+```
+
+You should see the corresponding versions print to the console (versions may vary):
+
+```sh
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+v10.15.3
+6.4.1
+```
+
 ## Running Verification Tests to Test the Custom Ruleset
 
 The verification tests for the custom ruleset are based on five main categories as listed in the description of the <a href="../../rulesets#custom-ruleset">Custom Ruleset</a>.  These steps show how to run the tests, after the code has been downloaded.
