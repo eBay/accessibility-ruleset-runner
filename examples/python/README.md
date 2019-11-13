@@ -16,6 +16,8 @@ We assume the following are installed:
 
 See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
+<b>Note:</b> Make sure the "$HOME/bin" directory exists, it is on the system path and that <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is placed within the directory.
+
 ### Python 2.7.16
 
 <a href='https://www.python.org/doc/essays/blurb/'>Python</a> is an interpreted high-level programming language.  Its built in data structures and dynamic typing make it attractive for rapid development and scripting.  Visit the <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> Release for various installers.
