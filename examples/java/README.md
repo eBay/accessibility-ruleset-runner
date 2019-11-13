@@ -19,7 +19,9 @@ We assume the following are installed:
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
 
-See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+
+<b>Note:</b> Make sure the "$HOME/bin" directory exists, it is on the system path and that <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is placed within the directory.
 
 ### Java 8
 
