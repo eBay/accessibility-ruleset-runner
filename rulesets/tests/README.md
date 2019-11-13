@@ -32,7 +32,7 @@ $ npm --version
 
 <b>Note:</b> Versions may vary.
 
-If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation).
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation by running the commands above).
 
 ### ChromeDriver
 
