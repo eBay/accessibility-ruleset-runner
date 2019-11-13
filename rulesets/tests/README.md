@@ -38,19 +38,16 @@ Node Version Manager (NVM) is a tool that allows users to swtich between differe
 
 ### Verify Prerequisites
 
-To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://nodejs.org/en/'>Node.js</a> are installed correctly, try these commands:
+To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://nodejs.org/en/'>Node.js</a> are installed correctly, type the appropriate commands to print the version (versions may vary).
 
 ```sh
-chromedriver --version
-node --version
-npm --version
-```
-
-You should see the corresponding versions print to the console (versions may vary):
-
-```sh
+$ chromedriver --version
 ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ node --version
 v10.15.3
+
+$ npm --version
 6.4.1
 ```
 
