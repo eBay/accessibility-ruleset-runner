@@ -19,10 +19,6 @@ We assume the following are installed:
 
 To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://nodejs.org/en/'>Node.js</a> have already been installed, type the appropriate commands to print the version.
 
-If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation).
-
-<b>Note:</b> Unless the version is specified below, it may be different than what you see here.
-
 ```sh
 $ chromedriver --version
 ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
@@ -33,6 +29,10 @@ v10.15.3
 $ npm --version
 6.4.1
 ```
+
+<b>Note:</b> Versions may vary.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation).
 
 ### ChromeDriver
 
