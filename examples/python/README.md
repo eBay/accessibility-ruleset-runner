@@ -1,7 +1,7 @@
 # Python with Selenium Examples
 These examples show how to run the rulesets using Selenium Webdriver.
 
-## Pre-Requisites:
+## Prerequisites
 
 We assume the following are installed:
 
@@ -16,8 +16,6 @@ We assume the following are installed:
 
 See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
-<b>Note:</b> Make sure the "$HOME/bin" directory exists, it is on the system path and that <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is placed within the directory.
-
 ### Python 2.7.16
 
 <a href='https://www.python.org/doc/essays/blurb/'>Python</a> is an interpreted high-level programming language.  Its built in data structures and dynamic typing make it attractive for rapid development and scripting.  Visit the <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> Release for various installers.
@@ -29,6 +27,24 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 <a href='https://pypi.org/project/pip/'>pip</a> is the package installer for Python.  pip comes preinstalled for Python versions above Python 2.7.9.  If you need to install pip manually, you may visit the <a href='https://pip.pypa.io/en/stable/installing/'>pip installation page</a>.
 
 <b>Note:</b> Windows users may need to add the location of pip (ie C:\Python27\Scripts) to the Path environment variable.
+
+### Verify Prerequisites
+
+To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> are installed correctly, try these commands:
+
+```sh
+chromedriver --version
+python --version
+pip --version
+```
+
+You should see something like the following (ChromeDriver version will depend on Chrome version):
+
+```sh
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+Python 2.7.16
+pip 18.1 from c:\python27\lib\site-packages\pip (python 2.7)
+```
 
 ## Running Rulesets Against a Website
 
