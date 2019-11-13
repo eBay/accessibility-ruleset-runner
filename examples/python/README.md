@@ -10,6 +10,21 @@ We assume the following are installed:
 <li><a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a></li>
 </ul>
 
+### Verify Prerequisites
+
+To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> have already been installed or to verify that they have been installed correctly, type the appropriate commands to print the version (versions may vary).
+
+```sh
+$ chromedriver --version
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ python --version
+Python 2.7.16
+
+$ pip --version
+pip 18.1 from c:\python27\lib\site-packages\pip (python 2.7)
+```
+
 ### ChromeDriver
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
@@ -27,21 +42,6 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 <a href='https://pypi.org/project/pip/'>pip</a> is the package installer for Python.  pip comes preinstalled for Python versions above Python 2.7.9.  If you need to install pip manually, you may visit the <a href='https://pip.pypa.io/en/stable/installing/'>pip installation page</a>.
 
 <b>Note:</b> Windows users may need to add the location of pip (ie C:\Python27\Scripts) to the Path environment variable.
-
-### Verify Prerequisites
-
-To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> are installed correctly, type the appropriate commands to print the version (versions may vary).
-
-```sh
-$ chromedriver --version
-ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
-
-$ python --version
-Python 2.7.16
-
-$ pip --version
-pip 18.1 from c:\python27\lib\site-packages\pip (python 2.7)
-```
 
 ## Running Rulesets Against a Website
 
