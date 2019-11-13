@@ -42,7 +42,7 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 
 ### Verify Prerequisites
 
-To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a> are installed correctly, type the appropriate commands (commands and output shown below).
+To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a> are installed correctly, type the appropriate commands to print the version (versions may vary).
 
 ```sh
 $ chromedriver --version
