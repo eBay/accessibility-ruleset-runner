@@ -15,6 +15,25 @@ We assume the following are installed:
 <li><a href='https://nodejs.org/en/'>Node.js</a></li>
 </ul>
 
+### Verify Prerequisites
+
+To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://nodejs.org/en/'>Node.js</a> have already been installed, type the appropriate commands to print the version.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation).
+
+<b>Note:</b> Unless the version is specified below, it may be different than what you see here.
+
+```sh
+$ chromedriver --version
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ node --version
+v10.15.3
+
+$ npm --version
+6.4.1
+```
+
 ### ChromeDriver
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
@@ -35,21 +54,6 @@ Node Version Manager (NVM) is a tool that allows users to swtich between differe
 <li>Mac/Unix users may install NVM by following the steps listed on the <a href='https://github.com/nvm-sh/nvm'>NVM Repository</a>.</li>
 <li>Windows users may download an NVM installer from <a href='https://github.com/coreybutler/nvm-windows'>NVM Windows Repository</a> (ie <a href='https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip'>NVM Windows 1.1.7</a>).</li>
 </ul>
-
-### Verify Prerequisites
-
-To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://nodejs.org/en/'>Node.js</a> are installed correctly, type the appropriate commands to print the version (versions may vary).
-
-```sh
-$ chromedriver --version
-ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
-
-$ node --version
-v10.15.3
-
-$ npm --version
-6.4.1
-```
 
 ## Running Verification Tests to Test the Custom Ruleset
 
