@@ -15,6 +15,32 @@ We assume the following are installed:
 <li><a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a></li>
 </ul>
 
+### Verify Prerequisites
+
+To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a> have already been installed, type the appropriate commands to print the version.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation).
+
+<b>Note:</b> Unless the version is specified below, it may be different than what you see here.
+
+```sh
+$ chromedriver --version
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ java -version
+java version "1.8.0_144"
+Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
+
+$ mvn --version
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 08:22:22-0700)
+Maven home: C:\apache-maven-3.1.1
+Java version: 1.8.0_144, vendor: Oracle Corporation
+Java home: C:\Program Files\Java\jdk1.8.0_144\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "dos"
+```
+
 ### ChromeDriver
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
@@ -38,29 +64,6 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 <li><a href='https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.4.0'>selenium-java 3.4.0</a></li>
 <li><a href='https://mvnrepository.com/artifact/org.json/json/20160810'>json 20160810</a></li>
 </ul>
-
-
-### Verify Prerequisites
-
-To verify <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a> are installed correctly, type the appropriate commands to print the version (versions may vary).
-
-```sh
-$ chromedriver --version
-ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
-
-$ java -version
-java version "1.8.0_144"
-Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
-Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
-
-$ mvn --version
-Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 08:22:22-0700)
-Maven home: C:\apache-maven-3.1.1
-Java version: 1.8.0_144, vendor: Oracle Corporation
-Java home: C:\Program Files\Java\jdk1.8.0_144\jre
-Default locale: en_US, platform encoding: Cp1252
-OS name: "windows 10", version: "10.0", arch: "amd64", family: "dos"
-```
 
 ## Running Rulesets Against a Website
 
