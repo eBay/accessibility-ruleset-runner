@@ -21,6 +21,8 @@ We assume the following are installed:
 
 See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
 
+<b>Note:</b> Make sure the "$HOME/bin" directory exists, it is on the system path and that <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is placed within the directory.
+
 ### Node.js
 
 <a href='https://nodejs.org/en/'>Node.js</a> is a JavaScript runtime built on Chrome's V8 JavaScript engine.  Visit the <a href='https://nodejs.org/en/download/'>Node.js Downloads</a> for various intallers.
