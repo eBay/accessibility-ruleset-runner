@@ -12,7 +12,11 @@ We assume the following are installed:
 
 ### Verify Prerequisites
 
-To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> have already been installed or to verify that they have been installed correctly, type the appropriate commands to print the version (versions may vary).
+To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> have already been installed, type the appropriate commands to print the version.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation).
+
+<b>Note:</b> Unless the version is specified below, it may be different than what you see here.
 
 ```sh
 $ chromedriver --version
