@@ -1,7 +1,7 @@
 # Python with Selenium Examples
 These examples show how to run the rulesets using Selenium Webdriver.
 
-## Pre-Requisites:
+## Prerequisites
 
 We assume the following are installed:
 
@@ -9,6 +9,25 @@ We assume the following are installed:
 <li><a href='http://chromedriver.chromium.org/'>ChromeDriver</a></li>
 <li><a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a></li>
 </ul>
+
+### Verify Prerequisites
+
+To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.python.org/downloads/release/python-2716/'>Python 2.7.16</a> have already been installed, type the appropriate commands to print the version.
+
+```sh
+$ chromedriver --version
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ python --version
+Python 2.7.16
+
+$ pip --version
+pip 18.1 from c:\python27\lib\site-packages\pip (python 2.7)
+```
+
+<b>Note:</b> Python 2.7 is required but other than that, versions may vary.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation by running the commands above).
 
 ### ChromeDriver
 
@@ -30,6 +49,15 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 
 ## Running Rulesets Against a Website
 
+### Step 0: Download Code and Change the Directory
+
+Run the following commands:
+
+```sh
+git clone https://github.com/eBay/accessibility-ruleset-runner/
+cd accessibility-ruleset-runner/examples/python
+```
+
 ### Step 1: Install Package Dependencies
 
 You can install Selenium by executing the following command in the terminal.
@@ -48,7 +76,7 @@ pip freeze
 
 #### Custom Ruleset
 
-Assuming you are in the proper directory (examples/python), the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
+From the examples/python directory, the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
 
 ```sh
 python custom.ruleset.runner.py

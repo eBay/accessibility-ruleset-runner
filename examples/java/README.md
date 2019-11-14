@@ -15,11 +15,39 @@ We assume the following are installed:
 <li><a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a></li>
 </ul>
 
+### Verify Prerequisites
+
+To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html'>Java 8</a> have already been installed, type the appropriate commands to print the version.
+
+```sh
+$ chromedriver --version
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ java -version
+java version "1.8.0_144"
+Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
+Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
+
+$ mvn --version
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 08:22:22-0700)
+Maven home: C:\apache-maven-3.1.1
+Java version: 1.8.0_144, vendor: Oracle Corporation
+Java home: C:\Program Files\Java\jdk1.8.0_144\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "dos"
+```
+
+<b>Note:</b> Java 8 and Maven 3 are required but other than that, versions may vary.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation by running the commands above).
+
 ### ChromeDriver
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
 
-See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+
+<b>Note:</b> Make sure the "$HOME/bin" directory exists, it is on the system path and that <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is placed within the directory.
 
 ### Java 8
 
@@ -39,7 +67,26 @@ See <a href='../CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information
 
 ## Running Rulesets Against a Website
 
-Assuming you are in the proper directory (examples/java), the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
+### Step 0: Download Code and Change the Directory
+
+Run the following commands:
+
+```sh
+git clone https://github.com/eBay/accessibility-ruleset-runner/
+cd accessibility-ruleset-runner/examples/java
+```
+
+### Step 1: Install Package Dependencies
+
+You can install all dependencies by executing the following command in the terminal.
+
+```sh
+mvn install -e -s settings_apache_maven_repo.xml
+```
+
+### Step 2: Invoke the Ruleset Runner
+
+From the examples/java directory, the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
 
 ```sh
 mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
