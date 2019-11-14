@@ -26,8 +26,8 @@ The rules of the custom ruleset are grouped into 5 main categories (see below). 
 
 <li>Anchors
 <ul>
-<li>H33 Anchor Tag Title For New Windows, <a href='https://www.w3.org/TR/WCAG20-TECHS/H33.html'>H33</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs'>2.4.4</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-link'>2.4.9</a>)</li>
-<li>H33 Links Repeated, <a href='https://www.w3.org/TR/WCAG20-TECHS/H33.html'>H33</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs'>2.4.4</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-link'>2.4.9</a>)</li>
+<li>H30 Opening New Windows, <a href='https://www.w3.org/TR/WCAG20-TECHS/H30.html'>H30</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs'>2.4.4</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-link'>2.4.9</a>)</li>
+<li>H30 Links Repeated, <a href='https://www.w3.org/TR/WCAG20-TECHS/H30.html'>H30</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs'>2.4.4</a>, <a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-link'>2.4.9</a>)</li>
 <li>H75 Unique Anchor IDs, <a href='https://www.w3.org/TR/WCAG20-TECHS/H57.html'>H57</a> (<a href='http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-doc-lang-id'>3.1.1</a>)</li>
 </ul>
 </li>

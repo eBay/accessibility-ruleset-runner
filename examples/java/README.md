@@ -78,7 +78,7 @@ cd accessibility-ruleset-runner/examples/java
 
 ### Step 1: Install Package Dependencies
 
-You can install all dependencies by executing the following command in the terminal.
+To install dependencies, run the following command from the examples/java directory:
 
 ```sh
 mvn install -e -DskipTests=true -s settings_apache_maven_repo.xml
@@ -86,15 +86,15 @@ mvn install -e -DskipTests=true -s settings_apache_maven_repo.xml
 
 ### Step 2: Invoke the Ruleset Runner
 
-From the examples/java directory, the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
+To run the <a href='../../rulesets'>Rulesets</a>, run the following command from the examples/java directory:
 
 ```sh
-mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
+mvn test -e -Dtest=arr.AccessibilityRulesetRunnerTest -s settings_apache_maven_repo.xml
 ```
 
 The output should match the <a href='output/HomePage_URLS_TO_TEST_was_not_set.ruleset.runner.output.txt'>Ruleset Runner Output</a> and an <a href='https://htmlpreview.github.io/?https://github.com/ebay/accessibility-ruleset-runner/blob/master/examples/java/output/HomePage_URLS_TO_TEST_was_not_set_ARR_Report.html'>HTML Report</a> should be created.
 
-Actually, the use of the settings file and location of the test to run are explicit and simply running the following should work.
+The above command explicitly defines the location of the settings file and test but the following command should also work:
 
 ```sh
 mvn test

@@ -54,8 +54,8 @@ public enum CustomRulesetRulesErrorCodes {
 	IFRAME_NEEDS_TITLE(CustomRulesetRules.ruleH64FramesTitleAttribute, "064_A_1"),
 	
 	// Anchor
-	ANCHOR_OPENS_A_NEW_WINDOW(CustomRulesetRules.ruleH33LinkOpensinNewWindow, "033_AA_1"),
-	ANCHOR_LINKS_REPEATED(CustomRulesetRules.ruleH33sameAnchorLinks, "133_AA_1"), 
+	ANCHOR_OPENS_A_NEW_WINDOW(CustomRulesetRules.ruleH30OpeningNewWindows, "030_AA_1"),
+	ANCHOR_LINKS_REPEATED(CustomRulesetRules.ruleH30OpeningNewWindows, "130_AA_1"), 
 	ANCHOR_UNIQUE_IDS(CustomRulesetRules.ruleH75uniqueIDs, "075_AA_1"), 
 
 	// Core
