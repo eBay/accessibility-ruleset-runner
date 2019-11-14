@@ -78,7 +78,7 @@ cd accessibility-ruleset-runner/examples/java
 
 ### Step 1: Install Package Dependencies
 
-You can install all dependencies by executing the following command in the terminal.
+To install dependencies, from the examples/java directory, run the following command:
 
 ```sh
 mvn install -e -DskipTests=true -s settings_apache_maven_repo.xml
