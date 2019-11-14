@@ -15,18 +15,17 @@
 // limitations under the License.
 //////////////////////////////////////////////////////////////////////////
 
-package util;
+package report;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
+import util.HTMLGenerator;
 import arr.CustomRulesetRules;
 import arr.CustomRulesetRulesErrorCodes;
 

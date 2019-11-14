@@ -30,8 +30,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import report.JSONToHTMLConverter;
 import util.ARRProperties;
-import util.JSONToHTMLConverter;
 import util.ScreenshotsProcessor;
 import util.ScreenshotsProcessor.ScreenShotElementRectangle;
 import util.UrlProvider;
