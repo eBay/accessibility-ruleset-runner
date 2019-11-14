@@ -78,7 +78,7 @@ cd accessibility-ruleset-runner/examples/java
 
 ### Step 1: Install Package Dependencies
 
-To install dependencies, from the examples/java directory, run the following command:
+To install dependencies, run the following command from the examples/java directory:
 
 ```sh
 mvn install -e -DskipTests=true -s settings_apache_maven_repo.xml
@@ -86,7 +86,7 @@ mvn install -e -DskipTests=true -s settings_apache_maven_repo.xml
 
 ### Step 2: Invoke the Ruleset Runner
 
-From the examples/java directory, the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
+To run the <a href='../../rulesets'>Rulesets</a>, run the following command from the examples/java directory:
 
 ```sh
 mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
