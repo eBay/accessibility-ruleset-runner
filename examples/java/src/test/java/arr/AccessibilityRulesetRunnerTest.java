@@ -32,6 +32,7 @@ import org.testng.annotations.Test;
 
 import report.JSONToHTMLConverter;
 import util.ARRProperties;
+import util.FileDownloader;
 import util.ScreenshotsProcessor;
 import util.ScreenshotsProcessor.ScreenShotElementRectangle;
 import util.UrlProvider;
@@ -53,6 +54,9 @@ import util.WebDriverHolder;
  * Note: Class name must end with Test suffix to be run by mvn test from the command line
  */
 public class AccessibilityRulesetRunnerTest {	
+	private static final String CUSTOM_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/custom.ruleset.1.1.32.js";
+	private static final String AXE_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.2.3.1.js";
+	
 	@Test(dataProvider = "urlsToTest", dataProviderClass = UrlProvider.class)
 	public void accessibilityRulesetRunnerTest(String url, String viewName) throws Exception {
 
@@ -144,7 +148,7 @@ public class AccessibilityRulesetRunnerTest {
 			jsonParameters.put("XPATH_ROOT", xpathRoot);
 		}
 
-		String customRuleset = RulesetDownloader.getCustomRulesetJS();
+		String customRuleset = FileDownloader.downloadJS(CUSTOM_RULESET_LOCATION);
 		String customResponse = (String) ((JavascriptExecutor) driver)
 				.executeScript(customRuleset
 						+ "return JSON.stringify(axs.Audit.run(" + jsonParameters.toString() + "));");
@@ -156,7 +160,7 @@ public class AccessibilityRulesetRunnerTest {
 		// Run aXe Ruleset
 		String aXeRulesToRun = "['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']";
 
-		String aXeRuleset = RulesetDownloader.getAXERulesetJS();
+		String aXeRuleset = FileDownloader.downloadJS(AXE_RULESET_LOCATION);
 		
 		Map aXeResponse = (Map) ((JavascriptExecutor) driver)
 				.executeAsyncScript(aXeRuleset
