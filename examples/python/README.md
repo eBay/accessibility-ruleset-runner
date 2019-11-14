@@ -60,7 +60,7 @@ cd accessibility-ruleset-runner/examples/python
 
 ### Step 1: Install Package Dependencies
 
-To install the Selenium dependency, run the following command from the examples/python directory:
+To install the selenium dependency, run the following command from the examples/python directory:
 
 ```sh
 pip install selenium
