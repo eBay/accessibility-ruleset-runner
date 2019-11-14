@@ -17,8 +17,6 @@
 
 package arr;
 
-import org.json.JSONObject;
-
 public enum CustomRulesetRules {
 
 	  // Page Layout

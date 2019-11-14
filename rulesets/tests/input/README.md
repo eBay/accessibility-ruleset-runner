@@ -1,5 +1,5 @@
 # Custom Ruleset Test Library
-This is a <a href='../README.md#test-library'>Test Library</a> for the <a href="../../rulesets/README.md#custom-ruleset">Custom Ruleset</a>.
+This is a <a href='../README.md#test-library'>Test Library</a> for the <a href="../../README.md#custom-ruleset">Custom Ruleset</a>.
 
 There are four types of code snippets:
 <ul>
