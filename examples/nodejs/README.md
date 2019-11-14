@@ -24,7 +24,7 @@ cd accessibility-ruleset-runner/examples/nodejs
 
 ### Step 1: Install Package Dependencies
 
-To install these node modules, from the accessibility-ruleset-runner/examples/nodejs folder, run:
+To install dependencies, from the examples/nodejs directory, run the following command:
 
 ```sh
 npm install
