@@ -15,11 +15,32 @@ We assume the following are installed:
 <li><a href='https://nodejs.org/en/'>Node.js</a></li>
 </ul>
 
+### Verify Prerequisites
+
+To check if <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> and <a href='https://nodejs.org/en/'>Node.js</a> have already been installed, type the appropriate commands to print the version.
+
+```sh
+$ chromedriver --version
+ChromeDriver 2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab)
+
+$ node --version
+v10.15.3
+
+$ npm --version
+6.4.1
+```
+
+<b>Note:</b> Versions may vary.
+
+If the prerequisite has not been installed, first use the information below to install, then run the appropriate commands to print the version (ie verify the installation by running the commands above).
+
 ### ChromeDriver
 
 <a href='https://www.seleniumhq.org/'>Selenium</a> is a tool that automates browsers and <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is the Chrome implementation of WebDriver, which is an open source tool for automated testing of webapps across many browsers.
 
 See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more information about installation.
+
+<b>Note:</b> Make sure the "$HOME/bin" directory exists, it is on the system path and that <a href='http://chromedriver.chromium.org/'>ChromeDriver</a> is placed within the directory.
 
 ### Node.js
 

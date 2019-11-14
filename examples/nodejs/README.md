@@ -13,7 +13,14 @@ See the <a href='../../rulesets/tests/README.md#prerequisites'>prerequisites</a>
 
 ## Running Rulesets Against a Website
 
-These steps show how to run the code, after it has been downloaded.
+### Step 0: Download Code and Change the Directory
+
+Run the following commands:
+
+```sh
+git clone https://github.com/eBay/accessibility-ruleset-runner/
+cd accessibility-ruleset-runner/examples/nodejs
+```
 
 ### Step 1: Install Package Dependencies
 
@@ -27,7 +34,7 @@ npm install
 
 #### Custom Ruleset
 
-Assuming you are in the proper directory (examples/nodejs), the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
+From the examples/nodejs directory, the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
 
 ```sh
 npm run custom.ruleset.runner
@@ -65,6 +72,8 @@ These steps show how to use the published NPM module in your project.
 ```sh
 npm install @ebay/accessibility-ruleset-runner --save-dev
 ```
+
+<b>Note:</b> You may modify the version by editing the package.json file.
 
 2. Edit the custom.ruleset.runner.js and axe.ruleset.runner.js to point to the installed custom.ruleset.X.X.X.js and axe.ruleset.X.X.X.js javascript files (replace X's appropriately)
 ```sh
