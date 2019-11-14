@@ -81,7 +81,7 @@ cd accessibility-ruleset-runner/examples/java
 You can install all dependencies by executing the following command in the terminal.
 
 ```sh
-mvn install -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
+mvn install -e -s settings_apache_maven_repo.xml
 ```
 
 ### Step 2: Invoke the Ruleset Runner
