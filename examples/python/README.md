@@ -49,6 +49,15 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 
 ## Running Rulesets Against a Website
 
+### Step 0: Download Code and Change the Directory
+
+Run the following commands:
+
+```sh
+git clone https://github.com/eBay/accessibility-ruleset-runner/
+cd accessibility-ruleset-runner/examples/python
+```
+
 ### Step 1: Install Package Dependencies
 
 You can install Selenium by executing the following command in the terminal.
@@ -67,7 +76,7 @@ pip freeze
 
 #### Custom Ruleset
 
-Assuming you are in the proper directory (examples/python), the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
+From the examples/python directory, the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
 
 ```sh
 python custom.ruleset.runner.py
