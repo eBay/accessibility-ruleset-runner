@@ -67,7 +67,26 @@ See <a href='../../topics/CHROMEDRIVERHELP.md'>Chrome Driver Help</a> for more i
 
 ## Running Rulesets Against a Website
 
-Assuming you are in the proper directory (examples/java), the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
+### Step 0: Download Code and Change the Directory
+
+Run the following commands:
+
+```sh
+git clone https://github.com/eBay/accessibility-ruleset-runner/
+cd accessibility-ruleset-runner/examples/java
+```
+
+### Step 1: Install Package Dependencies
+
+You can install all dependencies by executing the following command in the terminal.
+
+```sh
+mvn install -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
+```
+
+### Step 2: Invoke the Ruleset Runner
+
+From the examples/java directory, the following command is used to run the <a href='../../rulesets'>Rulesets</a>:
 
 ```sh
 mvn test -e -s settings_apache_maven_repo.xml -Dtest=arr.AccessibilityRulesetRunnerTest
