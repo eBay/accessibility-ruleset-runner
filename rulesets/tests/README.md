@@ -68,7 +68,7 @@ git clone https://github.com/eBay/accessibility-ruleset-runner/
 cd accessibility-ruleset-runner/rulesets/tests
 ```
 
-<b>Note:</b> If you are contributing to this project, you should clone your forked repository instead of "https://github.com/eBay/accessibility-ruleset-runner/".  Also, if you have already cloned the repository, you can skip this step.
+<b>Note:</b> If you are contributing to this project, you should clone your forked repository instead of cloning "https://github.com/eBay/accessibility-ruleset-runner/".  Also, if you have already cloned the repository, you can skip this step, as there is no need to download the code again.
 
 ### Step 1: Install Package Dependencies
 
