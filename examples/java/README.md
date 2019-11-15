@@ -76,6 +76,8 @@ git clone https://github.com/eBay/accessibility-ruleset-runner/
 cd accessibility-ruleset-runner/examples/java
 ```
 
+<b>Note:</b> If you are running examples from a forked repository, you might use slightly different commands than those given above.  Also, if you have already downloaded the code, you do not need to run this step.
+
 ### Step 1: Install Package Dependencies
 
 To install dependencies, run the following command from the examples/java directory:
