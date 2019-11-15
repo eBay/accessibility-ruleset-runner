@@ -1,6 +1,6 @@
 {
   "name": "@ebay/accessibility-ruleset-runner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Accessibility Ruleset Runner",
   "scripts": {
     "custom.ruleset.verification.tests": "mocha tests/custom.ruleset.verification.tests.js"
