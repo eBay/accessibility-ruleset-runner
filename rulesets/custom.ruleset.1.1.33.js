@@ -36,8 +36,8 @@ AccessibilityEngine = function(jsonParameters) {
 			jsonParameters.rulesToRun[5] = "H35 Applet Tag Alt Attribute";
 			jsonParameters.rulesToRun[6] = "H53 Object Tag Alt Attribute";
 			jsonParameters.rulesToRun[7] = "H64 IFrame Tag Title Attribute";
-			jsonParameters.rulesToRun[8] = "H33 Anchor Tag Title For New Windows";
-			jsonParameters.rulesToRun[9] = "H33 Links Repeated";
+			jsonParameters.rulesToRun[8] = "H30 Opening New Windows";
+			jsonParameters.rulesToRun[9] = "H30 Links Repeated";
 			jsonParameters.rulesToRun[10] = "H75 Unique Anchor IDs";
 			jsonParameters.rulesToRun[11] = "H46 Embed Tag";
 			jsonParameters.rulesToRun[12] = "H25 Title Tag";
@@ -105,12 +105,11 @@ AccessibilityEngine = function(jsonParameters) {
 					result = ruleH53altTextForObject();
 				} else if (ruleToRun == "H64 IFrame Tag Title Attribute") {
 					result = ruleH64FramesTitleAttribute();
-				} else if (ruleToRun == "H33 Anchor Tag Title For New Windows") {
-					result = ruleH33LinkOpensinNewWindow();
+				} else if (ruleToRun == "H30 Opening New Windows") {
+					result = ruleH30OpeningNewWindows();
 					result.message = axs.message; // Debug;
-				} else if (ruleToRun == "H33 Links Repeated") {
-					result = ruleH33sameAnchorLinks();
-					result.message = axs.message; // Debug;
+				} else if (ruleToRun == "H30 Links Repeated") {
+					result = ruleH30LinksRepeated();
 				} else if (ruleToRun == "H75 Unique Anchor IDs") {
 					result = ruleH75uniqueIDs();
 					result.message = axs.message; // Debug;
@@ -463,10 +462,12 @@ function formElementIFrameHasSubmitButton(formElement) {
 	var iframeElements = getElementsByXpath(WAEDocumentFunction(), ".//iframe", formElement);
 	var iframeElement = iframeElements.iterateNext();
 	while(iframeElement != null) {
-		var innerDoc = iframeElement.contentDocument || iframeElement.contentWindow.document;
-		if(formElementFindNonHiddenInputElement(innerDoc, innerDoc, ".//*[(local-name()='input' and @type='submit') or (local-name()='input' and @type='image') or (local-name()='button' and @type='submit')]") != null) {
-			return true;
-		}
+		try{
+		    var innerDoc = iframeElement.contentDocument || iframeElement.contentWindow.document;
+		    if(formElementFindNonHiddenInputElement(innerDoc, innerDoc, ".//*[(local-name()='input' and @type='submit') or (local-name()='input' and @type='image') or (local-name()='button' and @type='submit')]") != null) {
+		    return true;
+		    }
+		} catch (err) {}
 		iframeElement = iframeElements.iterateNext();
 	}
 }
@@ -650,8 +651,8 @@ function ruleH46EmbedElement() {
 }
 
 //ANCHORS
-function ruleH33LinkOpensinNewWindow() {
-	var result = createResult("H33 Anchor Tag Title For New Windows", "033", "AA");
+function ruleH30OpeningNewWindows() {
+	var result = createResult("H30 Opening New Windows", "030", "AA");
 	var anchorElements = getElementsByXpath(WAEDocumentFunction(), xpathRootPrefix+"//a[@target='_blank']", xpathRoot);
 
 	var anchorElement = anchorElements.iterateNext();
@@ -675,7 +676,7 @@ function ruleH33LinkOpensinNewWindow() {
 			// Char:26371, 22312, (26032), 35222, (31383), 25110, 27161, 31844, 20013, (38283), 21855
 			// 會在新視窗或標籤中開啟 means 'Will open in a new window or tab'
 		} else {
-			addResultFailed(result, anchorElement, "033_AA_1");
+			addResultFailed(result, anchorElement, "030_AA_1");
 			addAdditionalFieldHREF(result, anchorElement.href);
 			addAdditionalFieldScreenReaderLabel(result, screenReaderLabel);
 			addAdditionalFieldScreenReaderDescription(result, screenReaderDescription);
@@ -687,8 +688,8 @@ function ruleH33LinkOpensinNewWindow() {
 	return result;
 }
 
-function ruleH33sameAnchorLinks() {
-	var result = createResult("H33 Links Repeated", "133", "AA");
+function ruleH30LinksRepeated() {
+	var result = createResult("H30 Links Repeated", "130", "AA");
 	var anchorElements = getElementsByXpath(WAEDocumentFunction(), xpathRootPrefix+"//a[not(descendant::img)]", xpathRoot);
 	var currentAnchorHref = [];
 	var currentAnchorAnchorElement = [];
@@ -719,7 +720,7 @@ function ruleH33sameAnchorLinks() {
 		} else if (foundHref.indexOf(removeHashParameters(removeQueryParameters(anchorHREF))) != -1) { // Should be equals, not contains
 			addResultPassed(result);
 		} else {
-			addResultFailed(result, anchorElement, "133_AA_1");
+			addResultFailed(result, anchorElement, "130_AA_1");
 			addAdditionalFieldHREF(result, anchorElement.href);
 			addAdditionalFieldFoundHREF(result, foundHref);	
 			addAdditionalFieldScreenReaderLabel(result, screenReaderLabel);
@@ -1041,5 +1042,5 @@ var axs={
 	  XPATH_ROOT:null
   },
   message:"",
-  version:"1.1.32",
+  version:"1.1.33",
 };

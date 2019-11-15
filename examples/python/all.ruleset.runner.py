@@ -20,6 +20,8 @@ from os.path import dirname, abspath
 from selenium import webdriver
 
 class AllRulesetSeleniumTest(unittest.TestCase):
+    file1 = '../../rulesets/aXe.ruleset.2.3.1.js'
+    file2 = '../../rulesets/custom.ruleset.1.1.33.js'
 
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -59,14 +61,13 @@ class AllRulesetSeleniumTest(unittest.TestCase):
     def set_accesibility_rules_from_files(self, file1, file2, element=None, mode='all', rules_to_run=None):
 
         #Modify the Path per User's working directory
-        ruleset_directory = dirname(dirname(abspath(__file__))) + '../../rulesets/'
 
-        path = ruleset_directory + file1
+        path = dirname(dirname(abspath(__file__))) + self.file1
 
         with open(path ,'r') as axe_ruleset:
             axe_rules = axe_ruleset.read()
 
-        path = ruleset_directory + file2
+        path = dirname(dirname(abspath(__file__))) + self.file2
 
         with open(path,'r') as custom_ruleset:
             custom_rules = custom_ruleset.read()
@@ -89,15 +90,15 @@ class AllRulesetSeleniumTest(unittest.TestCase):
 
         if mode=='all' or mode=='custom':
             print('Injecting Accessibility Ruleset Runner - Custom Ruleset mode')
-            accesibility_ruleset = self.set_accesibility_rules_from_files(file1='aXe.ruleset.2.3.1.js',
-                                                                          file2='custom.ruleset.1.1.32.js')
+            accesibility_ruleset = self.set_accesibility_rules_from_files(self.file1,
+                                                                          self.file2)
             accesibility_ruleset_response = self.driver.execute_script(accesibility_ruleset)
             print(accesibility_ruleset_response)
 
             if customElement:
                 print('Injecting Accessibility Ruleset Runner - Custom Ruleset mode by Element')
-                accesibility_ruleset_on_element = self.set_accesibility_rules_from_files(file1='aXe.ruleset.2.3.1.js',
-                                                                                         file2='custom.ruleset.1.1.32.js',
+                accesibility_ruleset_on_element = self.set_accesibility_rules_from_files(self.file1,
+                                                                                         self.file2,
                                                                                          element=customElement)
                 accesibility_ruleset_on_element_response = self.driver.execute_script(accesibility_ruleset_on_element)
                 print(accesibility_ruleset_on_element_response)
@@ -106,12 +107,12 @@ class AllRulesetSeleniumTest(unittest.TestCase):
 
             if mode=='axe':
                 print('Injecting Accessibility Ruleset Runner - axe mode')
-                accesibility_ruleset = self.set_accesibility_rules_from_files(file1='aXe.ruleset.2.3.1.js',
-                                                                          file2='custom.ruleset.1.1.32.js', mode=mode, rules_to_run=rules_to_run)
+                accesibility_ruleset = self.set_accesibility_rules_from_files(self.file1,
+                                                                          self.file2, mode=mode, rules_to_run=rules_to_run)
             else:
                 print('Injecting Accessibility Ruleset Runner - All Rulesets')
-                accesibility_ruleset = self.set_accesibility_rules_from_files(file1='aXe.ruleset.2.3.1.js',
-                                                                              file2='custom.ruleset.1.1.32.js')
+                accesibility_ruleset = self.set_accesibility_rules_from_files(self.file1,
+                                                                              self.file2)
             accesibility_ruleset_response = self.driver.execute_script(accesibility_ruleset)
 
             print(accesibility_ruleset_response)
