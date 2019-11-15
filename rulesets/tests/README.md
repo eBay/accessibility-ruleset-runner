@@ -68,6 +68,8 @@ git clone https://github.com/eBay/accessibility-ruleset-runner/
 cd accessibility-ruleset-runner/rulesets/tests
 ```
 
+<b>Note:</b> If you are contributing to this project, you should clone your forked repository instead of "https://github.com/eBay/accessibility-ruleset-runner/".  Also, if you have already cloned the repository, you can skip this step.
+
 ### Step 1: Install Package Dependencies
 
 To install dependencies (from the <a href='https://registry.npmjs.org/'>Public NPM Registry</a>), run the following command from the rulesets/tests directory:
@@ -78,7 +80,7 @@ npm install
 
 ### Step 2: Run Tests
 
-To run the tests, use the following command:
+To run the tests, run the following command from the rulesets/tests directory:
 
 ```sh
 npm run custom.ruleset.verification.tests
