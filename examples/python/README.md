@@ -58,15 +58,17 @@ git clone https://github.com/eBay/accessibility-ruleset-runner/
 cd accessibility-ruleset-runner/examples/python
 ```
 
+<b>Note:</b> If you are working from a forked repository, you might use slightly different commands than those given above.  Also, if you have already downloaded the code, you can skip step.
+
 ### Step 1: Install Package Dependencies
 
-You can install Selenium by executing the following command in the terminal.
+To install the selenium dependency, run the following command from the examples/python directory:
 
 ```sh
 pip install selenium
 ```
 
-Run the following command to verify selenium (ie version 3.141.0) and urllib3 (ie version 1.25.3) were installed successfully.
+To verify selenium (ie version 3.141.0) and urllib3 (ie version 1.25.3) were installed successfully, run the following command from the examples/python directory:
 
 ```sh
 pip freeze
@@ -76,7 +78,7 @@ pip freeze
 
 #### Custom Ruleset
 
-From the examples/python directory, the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
+To run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>, run the following command from the examples/python directory:
 
 ```sh
 python custom.ruleset.runner.py
@@ -86,7 +88,7 @@ The output should match the <a href='output/eBay.custom.ruleset.runner.output.tx
 
 #### aXe Ruleset
 
-Assuming you are in the proper directory (examples/python), the following command is used to run the <a href="rulesets#axe-ruleset">aXe Ruleset</a>:
+To run the <a href="rulesets#axe-ruleset">aXe Ruleset</a>, run the following command from the examples/python directory:
 
 ```sh
 python aXe.ruleset.runner.py

@@ -36,7 +36,7 @@ class CustomRulesetSeleniumTest(unittest.TestCase):
 
     def set_accesibility_rules_from_file(self):
         #Modify the Path per User's working directory
-        path = dirname(dirname(abspath(__file__))) + '../../rulesets/custom.ruleset.1.1.32.js'
+        path = dirname(dirname(abspath(__file__))) + '../../rulesets/custom.ruleset.1.1.33.js'
         with open(path,'r') as custom_ruleset:
             custom_rules = custom_ruleset.read()
 

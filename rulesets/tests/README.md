@@ -57,11 +57,22 @@ Node Version Manager (NVM) is a tool that allows users to swtich between differe
 
 ## Running Verification Tests to Test the Custom Ruleset
 
-The verification tests for the custom ruleset are based on five main categories as listed in the description of the <a href="../../rulesets#custom-ruleset">Custom Ruleset</a>.  These steps show how to run the tests, after the code has been downloaded.
+The verification tests for the custom ruleset are based on five main categories as listed in the description of the <a href="../../rulesets#custom-ruleset">Custom Ruleset</a>.
+
+### Step 0: Download Code and Change the Directory
+
+Run the following commands:
+
+```sh
+git clone https://github.com/eBay/accessibility-ruleset-runner/
+cd accessibility-ruleset-runner/rulesets/tests
+```
+
+<b>Note:</b> If you are working from a forked repository, you might use slightly different commands than those given above.  Also, if you have already downloaded the code, you can skip step.
 
 ### Step 1: Install Package Dependencies
 
-To install these node modules (from the <a href='https://registry.npmjs.org/'>Public NPM Registry</a>), from the accessibility-ruleset-runner/rulesets folder, run:
+To install dependencies (from the <a href='https://registry.npmjs.org/'>Public NPM Registry</a>), run the following command from the rulesets/tests directory:
 
 ```sh
 npm install
@@ -69,7 +80,7 @@ npm install
 
 ### Step 2: Run Tests
 
-To run the tests, use the following command:
+To run the tests, run the following command from the rulesets/tests directory:
 
 ```sh
 npm run custom.ruleset.verification.tests

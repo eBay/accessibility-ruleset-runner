@@ -20,7 +20,7 @@ var chrome = require('selenium-webdriver/chrome');
 var assert = require('chai').assert;
 var fs = require('fs');
 
-var customRuleset = fs.readFileSync('custom.ruleset.1.1.32.js','utf8');
+var customRuleset = fs.readFileSync('custom.ruleset.1.1.33.js','utf8');
 	  
 // In Chrome, The Images do not load.  This can wait until images load in async call.
 // runner must be defined, see createRunner
@@ -67,16 +67,16 @@ var processExemptions = function (results) {
       var elementID = failedElement["elementID"];
       var elementClass = failedElement["elementClass"];
       var elementXPATH = failedElement["elementXPATH"];
-      if(ruleName === "H33 Links Repeated" && elementClass && elementClass === "vip") {
+      if(ruleName === "H30 Links Repeated" && elementClass && elementClass === "vip") {
         failedElements.splice(j,1); // remove failedElement at index j
         passed = passed + 1;
-      } else if (ruleName === "H33 Links Repeated" && elementClass && elementClass === "s-item__link") {
+      } else if (ruleName === "H30 Links Repeated" && elementClass && elementClass === "s-item__link") {
         failedElements.splice(j,1); // remove failedElement at index j
         passed = passed + 1;
-      } else if (ruleName === "H33 Links Repeated" && elementID && elementID.startsWith("ttl_") && elementClass && elementClass.includes("g-asm")) {
+      } else if (ruleName === "H30 Links Repeated" && elementID && elementID.startsWith("ttl_") && elementClass && elementClass.includes("g-asm")) {
         failedElements.splice(j,1); // remove failedElement at index j
         passed = passed + 1;
-      } else if (ruleName === "H33 Links Repeated" && elementXPATH && elementXPATH.includes("class='item-title'")) {
+      } else if (ruleName === "H30 Links Repeated" && elementXPATH && elementXPATH.includes("class='item-title'")) {
         failedElements.splice(j,1); // remove failedElement at index j
         passed = passed + 1;
       }
@@ -240,7 +240,7 @@ describe('Test custom ruleset against anchorBad', function () {
     var html = fs.readFileSync('tests/input/anchorBad.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
-    var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
+    var rulesToRun = ['H30 Opening New Windows','H30 Links Repeated','H75 Unique Anchor IDs'];
 	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');
@@ -253,15 +253,15 @@ describe('Test custom ruleset against anchorBad', function () {
         verifyRuleNumberOfAssertionsTracked(results,0,1);
         verifyRuleNumberOfAssertionsFailed(results,0,1);
         verifyFailureElementIdentificationStringEquals(results,0,0,"a...anchor_A.1.1");
-        verifyFailureErrorCodeEquals(results,0,0,"033_AA_1");
+        verifyFailureErrorCodeEquals(results,0,0,"030_AA_1");
         verifyRuleNumberOfAssertionsTracked(results,1,9);
         verifyRuleNumberOfAssertionsFailed(results,1,3);
         verifyFailureElementIdentificationStringEquals(results,1,0,"a...anchor_B.1.2");
-        verifyFailureErrorCodeEquals(results,1,0,"133_AA_1");
+        verifyFailureErrorCodeEquals(results,1,0,"130_AA_1");
         verifyFailureElementIdentificationStringEquals(results,1,1,"a...anchor_B.2.2");
-        verifyFailureErrorCodeEquals(results,1,1,"133_AA_1");
+        verifyFailureErrorCodeEquals(results,1,1,"130_AA_1");
         verifyFailureElementIdentificationStringEquals(results,1,2,"a...anchor_B.3.2");
-        verifyFailureErrorCodeEquals(results,1,2,"133_AA_1");
+        verifyFailureErrorCodeEquals(results,1,2,"130_AA_1");
         verifyRuleNumberOfAssertionsTracked(results,2,9);
         verifyRuleNumberOfAssertionsFailed(results,2,1);
         verifyFailureElementIdentificationStringEquals(results,2,0,"a...anchor_C.1.1");
@@ -286,7 +286,7 @@ describe('Test custom ruleset against anchorGood', function () {
     var html = fs.readFileSync('tests/input/anchorGood.html','utf8');
     var innerHTML = "document.body.innerHTML='"+modifyHTML(html)+"';";
 
-    var rulesToRun = ['H33 Anchor Tag Title For New Windows','H33 Links Repeated','H75 Unique Anchor IDs'];
+    var rulesToRun = ['H30 Opening New Windows','H30 Links Repeated','H75 Unique Anchor IDs'];
 	var runner = 'return JSON.stringify(axs.Audit.run({rulesToRun: '+JSON.stringify(rulesToRun)+'}));';
 
     driver = getDriver('chrome');

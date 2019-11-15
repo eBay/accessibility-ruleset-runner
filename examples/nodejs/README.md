@@ -22,9 +22,11 @@ git clone https://github.com/eBay/accessibility-ruleset-runner/
 cd accessibility-ruleset-runner/examples/nodejs
 ```
 
+<b>Note:</b> If you are working from a forked repository, you might use slightly different commands than those given above.  Also, if you have already downloaded the code, you can skip step.
+
 ### Step 1: Install Package Dependencies
 
-To install these node modules, from the accessibility-ruleset-runner/examples/nodejs folder, run:
+To install dependencies, run the following command from the examples/nodejs directory:
 
 ```sh
 npm install
@@ -34,7 +36,7 @@ npm install
 
 #### Custom Ruleset
 
-From the examples/nodejs directory, the following command is used to run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>:
+To run the <a href="rulesets#custom-ruleset">Custom Ruleset</a>, run the following command from the examples/nodejs directory:
 
 ```sh
 npm run custom.ruleset.runner
@@ -44,7 +46,7 @@ The output should match the <a href='output/Google.custom.ruleset.runner.output.
 
 #### aXe Ruleset
 
-Assuming you are in the proper directory (examples/nodejs), the following command is used to run the <a href="rulesets#axe-ruleset">aXe Ruleset</a>:
+To run the <a href="rulesets#axe-ruleset">aXe Ruleset</a>, run the following command from the examples/nodejs directory:
 
 ```sh
 npm run aXe.ruleset.runner
