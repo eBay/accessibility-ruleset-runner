@@ -67,8 +67,8 @@ describe('Run aXe ruleset', function () {
   
   it.only('should find no violations', (done) => { 
     var url = "http://www.google.com";
-    var aXeRuleset = fs.readFileSync('../../rulesets/aXe.ruleset.2.3.1.js','utf8');
-    //var aXeRuleset = fs.readFileSync('./node_modules/accessibility-ruleset-runner/rulesets/aXe.ruleset.2.3.1.js','utf8'); // Use this after "npm install accessibility-ruleset-runner"
+    var aXeRuleset = fs.readFileSync('../../rulesets/aXe.ruleset.3.4.0.js','utf8');
+    //var aXeRuleset = fs.readFileSync('./node_modules/accessibility-ruleset-runner/rulesets/aXe.ruleset.3.4.0.js','utf8'); // Use this after "npm install accessibility-ruleset-runner"
 
     driver = getDriver('chrome');
 
@@ -76,9 +76,8 @@ describe('Run aXe ruleset', function () {
     .get(url)
     .then(function() {
       // Configure which rules to run.  Each of these rules corresponds to a WCAG 2.0 AA guideline
-      var rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description'];
-
-      driver.executeAsyncScript(aXeRuleset+'axe.a11yCheck(document, {runOnly: {type: "rule", values: '+JSON.stringify(rulesToRun)+'}}, arguments[arguments.length - 1]);', 'aXe ruleset')
+      var rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scope-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description'];
+      driver.executeAsyncScript((aXeRuleset + '; sendResults = arguments[arguments.length - 1]; axe.run({runOnly: {type: "rule", values: ' + JSON.stringify(rulesToRun) + '}}, function (err, results) { sendResults(err || results); });'),'aXe 3.4.0 ruleset')
       .then(createRuleResultsCallback(rulesToRun, done)
       ).catch((err) => {
         console.log(err);

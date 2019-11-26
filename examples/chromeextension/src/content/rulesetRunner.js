@@ -17,7 +17,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 CustomRulesetImportJSURL = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/custom.ruleset.1.1.33.js";
-AXERulesetImportJSURL = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.2.3.1.js";
+AXERulesetImportJSURL = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.3.4.0.js";
 
 RulesetRunner=function() {
   var processTracker = {};
@@ -425,14 +425,7 @@ AjaxCallForFormSubmission=function(processTracker) {
   console.log('Running aXe Ruleset...');
   eval(processTracker.axeRuleset); // Needs to be in this scope
   // Might be nice to make an ajax call here to change the rules list
-  var rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast',
-	'document-title','duplicate-id','empty-heading',
-	'heading-order','href-no-hash',
-	'html-lang-valid',
-	'image-redundant-alt','input-image-alt',
-	'label','layout-table','link-name',
-	'marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup',
-	'scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description'
+  var rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scope-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description'
   //'definition-list','dlitem',
   //'frame-title','frame-title-unique',
   //'html-has-lang',
@@ -443,11 +436,11 @@ AjaxCallForFormSubmission=function(processTracker) {
   ];
 
   processTracker.results.axe = [];
-  axe.a11yCheck(CFDocumentFunction(), { runOnly: {type: 'rule', values: rulesToRun }}, ProcessTrackerCallback(processTracker, rulesToRun));
+  axe.run({ runOnly: {type: 'rule', values: rulesToRun }}, ProcessTrackerCallback(processTracker, rulesToRun));
 }
 
 ProcessTrackerCallback=function(processTracker, rulesToRun) {
-  return function(axeresults) {
+  return function(err, axeresults) {
     // Could potentially do a simple assignment, but we filter axeresults client side so POST works
     // processTracker.results.axe - axeresults;
 
