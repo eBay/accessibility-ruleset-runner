@@ -55,8 +55,7 @@ import util.WebDriverHolder;
  */
 public class AccessibilityRulesetRunnerTest {	
 	private static final String CUSTOM_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/custom.ruleset.1.1.33.js";
-	private static final String AXE_RULESET_LOCATION = "file:///C:/Users/surbandaru/viewrulerset/accessibility-ruleset-runner-1/rulesets/aXe.ruleset.3.4.0.js";
-	//private static final String AXE_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.3.4.0.js";
+	private static final String AXE_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.3.4.0.js";
 	
 	@Test(dataProvider = "urlsToTest", dataProviderClass = UrlProvider.class)
 	public void accessibilityRulesetRunnerTest(String url, String viewName) throws Exception {
