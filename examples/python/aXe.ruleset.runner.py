@@ -37,15 +37,15 @@ class AXERulesetSeleniumTest(unittest.TestCase):
     def set_accesibility_rules_from_file(self):
 
         #Modify the Path per User's working directory
-        path = dirname(dirname(abspath(__file__))) + '../../rulesets/aXe.ruleset.2.3.1.js'
+        path = dirname(dirname(abspath(__file__))) + '../../rulesets/aXe.ruleset.3.4.0.js'
 
         with open(path ,'r') as axe_ruleset:
             axe_rules = axe_ruleset.read()
 
-        rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']
-		
-        accesibility_rules = axe_rules + "axe.a11yCheck(document, {runOnly: {type: 'rule', values: " + str(rulesToRun) + "}}, arguments[arguments.length - 1]);"
-		
+        rulesToRun = ['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scope-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']		
+
+        accesibility_rules = axe_rules + '; sendResults = arguments[arguments.length - 1]; axe.run({runOnly: {type: "rule", values: ' + str(rulesToRun) + '}}, function (err, results) { sendResults(err || results); });'
+
         return accesibility_rules
 
     def inject_accessiblity_ruleset_runner(self):

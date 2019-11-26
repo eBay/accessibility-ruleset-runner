@@ -54,8 +54,9 @@ import util.WebDriverHolder;
  * Note: Class name must end with Test suffix to be run by mvn test from the command line
  */
 public class AccessibilityRulesetRunnerTest {	
-	private static final String CUSTOM_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/custom.ruleset.1.1.32.js";
-	private static final String AXE_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.2.3.1.js";
+	private static final String CUSTOM_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/custom.ruleset.1.1.33.js";
+	private static final String AXE_RULESET_LOCATION = "file:///C:/Users/surbandaru/viewrulerset/accessibility-ruleset-runner-1/rulesets/aXe.ruleset.3.4.0.js";
+	//private static final String AXE_RULESET_LOCATION = "https://raw.githubusercontent.com/eBay/accessibility-ruleset-runner/master/rulesets/aXe.ruleset.3.4.0.js";
 	
 	@Test(dataProvider = "urlsToTest", dataProviderClass = UrlProvider.class)
 	public void accessibilityRulesetRunnerTest(String url, String viewName) throws Exception {
@@ -158,13 +159,13 @@ public class AccessibilityRulesetRunnerTest {
 
 	private void runAXERuleset(WebDriver driver, JSONObject results) {
 		// Run aXe Ruleset
-		String aXeRulesToRun = "['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','href-no-hash','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scopr-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']";
+		String aXeRulesToRun = "['area-alt','accesskeys','aria-allowed-attr','aria-required-attr','aria-required-children','aria-required-parent','aria-roles','aria-valid-attr-value','aria-valid-attr','audio-caption','blink','button-name','bypass','checkboxgroup','color-contrast','document-title','duplicate-id','empty-heading','heading-order','html-lang-valid','image-redundant-alt','input-image-alt','label','layout-table','link-name','marquee','meta-refresh','meta-viewport','meta-viewport-large','object-alt','radiogroup','scope-attr-valid','server-side-image-map','tabindex','table-duplicate-name','td-headers-attr','th-has-data-cells','valid-lang','video-caption','video-description']";
 
 		String aXeRuleset = FileDownloader.downloadJS(AXE_RULESET_LOCATION);
 		
 		Map aXeResponse = (Map) ((JavascriptExecutor) driver)
 				.executeAsyncScript(aXeRuleset
-						+ " axe.a11yCheck(document, {runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, arguments[arguments.length - 1]);");
+						+ "; sendResults = arguments[arguments.length - 1]; axe.run({runOnly: {type: 'rule', values: "+aXeRulesToRun+"}}, function (err, results) { sendResults(err || results); });");
 
 		results.put("axe", new JSONObject(aXeResponse));
 //		System.out.println("ValidationRules: aXeResponse:" + aXeResponse);
